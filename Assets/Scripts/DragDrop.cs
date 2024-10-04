@@ -29,6 +29,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         canvasGroup.alpha = .6f;
         // Permite que el objeto sea atravesado por rayos de detección
         canvasGroup.blocksRaycasts = false;
+        // Coloca el objeto en un ángulo de 45º
+        rectTransform.rotation = Quaternion.Euler(0, 0, 45);
     }
 
     // Método que se llama mientras se arrastra el objeto
@@ -36,10 +38,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     {
         // Actualiza la posición anclada del objeto basado en el movimiento del puntero y el factor de escala del canvas
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
-
-        // Calcula la rotación basada en el movimiento del puntero
-        float rotationAngle = eventData.delta.x; // Puedes ajustar esto para cambiar la sensibilidad de la rotación
-        rectTransform.Rotate(Vector3.forward, rotationAngle);
     }
 
     // Método que se llama al finalizar el arrastre del objeto
@@ -49,6 +47,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         canvasGroup.alpha = 1f;
         // Impide que el objeto sea atravesado por rayos de detección
         canvasGroup.blocksRaycasts = true;
+        // Coloca el objeto en un ángulo de 90º
+        rectTransform.rotation = Quaternion.Euler(0, 0, 90);
     }
 
     // Método que se llama al presionar el puntero sobre el objeto

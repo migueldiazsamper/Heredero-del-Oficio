@@ -18,6 +18,10 @@ public class ItemEliminate : MonoBehaviour, IDropHandler
         {
             // Posiciona este objeto en la misma posición anclada que el referenceGameObject
             GetComponent<RectTransform>().anchoredPosition = referenceGameObject.GetComponent<RectTransform>().anchoredPosition;
+            if ( UpdatePercentage.percentageOfTotal < 100 )
+            {
+                UpdatePercentage.percentageOfTotal += 10;
+            }
         }
     }
 
