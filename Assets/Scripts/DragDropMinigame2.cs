@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Definición de la clase DragDrop que hereda de MonoBehaviour e implementa varias interfaces de eventos de Unity
+// Definición de la clase DragDropMinigame2 que hereda de MonoBehaviour e implementa varias interfaces de eventos de Unity
 public class DragDropMinigame2 : MonoBehaviour , IPointerDownHandler , IBeginDragHandler , IEndDragHandler , IDragHandler
 {
     // Referencia al componente Canvas, asignada desde el inspector de Unity
@@ -29,8 +29,6 @@ public class DragDropMinigame2 : MonoBehaviour , IPointerDownHandler , IBeginDra
         canvasGroup.alpha = .6f;
         // Permite que el objeto sea atravesado por rayos de detección
         canvasGroup.blocksRaycasts = false;
-        /* // Coloca el objeto en un ángulo de 45º
-        rectTransform.rotation = Quaternion.Euler(0, 0, 45); */
     }
 
     // Método que se llama mientras se arrastra el objeto
@@ -47,8 +45,16 @@ public class DragDropMinigame2 : MonoBehaviour , IPointerDownHandler , IBeginDra
         canvasGroup.alpha = 1f;
         // Impide que el objeto sea atravesado por rayos de detección
         canvasGroup.blocksRaycasts = true;
-        /* // Coloca el objeto en un ángulo de 90º
-        rectTransform.rotation = Quaternion.Euler(0, 0, 90); */
+
+        // Coloca el objeto en el centro del slot
+        bool isNotCentered = eventData.pointerEnter != null && eventData.pointerEnter.GetComponent< RectTransform >() != null;
+        
+        if ( isNotCentered )
+        {
+            RectTransform slotRectTransform = eventData.pointerEnter.GetComponent< RectTransform >();
+            // Ajusta la posición del objeto arrastrado para que esté en el centro del slot
+            rectTransform.position = slotRectTransform.position;
+        }
     }
 
     // Método que se llama al presionar el puntero sobre el objeto
