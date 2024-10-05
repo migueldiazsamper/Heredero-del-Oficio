@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Definición de la clase ChangeScenes que hereda de MonoBehaviour
 public class ChangeScenes : MonoBehaviour
 {
-    public void LoadNextScene()
+    // Método público que carga la siguiente escena en el índice de construcción
+    public void LoadNextScene ()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        // Carga la escena siguiente en el índice de construcción de escenas
+        SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex + 1 );
     }
 }
