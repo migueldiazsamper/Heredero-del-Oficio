@@ -91,12 +91,4 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
             }   
         }
     }
-
-    void Update()
-    {
-        /* Debug.Log("Current Rotation: " + currentRotation);
-        Debug.Log("Correct Rotation: " + correctRotation);
-        Debug.Log("Initial Rotation: " + initialRotation);
-        Debug.Log("Current Rotation In Degrees " + rectTransform.rotation.eulerAngles.z); */
-    }
 }
