@@ -12,6 +12,7 @@ public class DragDropMinigame2 : MonoBehaviour , IPointerDownHandler , IBeginDra
     // Referencias a los componentes RectTransform y CanvasGroup del objeto
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+    
 
     // Método Awake que se llama al inicializar el script
     private void Awake ()
@@ -35,25 +36,42 @@ public class DragDropMinigame2 : MonoBehaviour , IPointerDownHandler , IBeginDra
     public void OnDrag ( PointerEventData eventData )
     {
         // Actualiza la posición anclada del objeto basado en el movimiento del puntero y el factor de escala del canvas
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        // rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 
     // Método que se llama al finalizar el arrastre del objeto
-    public void OnEndDrag ( PointerEventData eventData )
+    public void OnEndDrag(PointerEventData eventData)
     {
         // Restaura la opacidad del objeto
         canvasGroup.alpha = 1f;
         // Impide que el objeto sea atravesado por rayos de detección
         canvasGroup.blocksRaycasts = true;
 
-        // Coloca el objeto en el centro del slot
-        bool isNotCentered = eventData.pointerEnter != null && eventData.pointerEnter.GetComponent< RectTransform >() != null;
-        
-        if ( isNotCentered )
+        // Verifica si el objeto se soltó sobre un slot
+        if (eventData.pointerEnter != null && eventData.pointerEnter.GetComponent<RectTransform>() != null)
         {
-            RectTransform slotRectTransform = eventData.pointerEnter.GetComponent< RectTransform >();
-            // Ajusta la posición del objeto arrastrado para que esté en el centro del slot
-            rectTransform.position = slotRectTransform.position;
+            // Obtiene el componente del script asociado al slot
+            ItemSlot slotScript = eventData.pointerEnter.GetComponent<ItemSlot>();
+
+            if (slotScript != null)
+            {
+                if (slotScript.freeOfItem)
+                {
+                    // Coloca el objeto en el centro del slot
+                    RectTransform slotRectTransform = eventData.pointerEnter.GetComponent<RectTransform>();
+                    rectTransform.position = slotRectTransform.position;
+                    slotScript.freeOfItem = false; // Marca el slot como ocupado
+                }
+                else
+                {
+                    // Genera una posición aleatoria en la pantalla
+                    float randomX = Random.Range(-Screen.width / 2, Screen.width / 2);
+                    float randomY = Random.Range(-Screen.height / 2, Screen.height / 2);
+
+                    // Asigna la nueva posición aleatoria al objeto arrastrado
+                    rectTransform.anchoredPosition = new Vector2(randomX, randomY);
+                }
+            }
         }
     }
 
