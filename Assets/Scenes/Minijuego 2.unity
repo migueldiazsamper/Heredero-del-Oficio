@@ -371,6 +371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &126850705
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,6 +488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &130191617
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,6 +605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &150494127
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,6 +1078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &318251614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,6 +1284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &458768421
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,8 +1357,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b56e838dd97971a43bc6342a33b8599b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1396,6 +1401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &491980730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,6 +1518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &542972259
 GameObject:
   m_ObjectHideFlags: 0
@@ -1843,6 +1850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &616252455
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,6 +2056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &759037653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,6 +2262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &773076271
 GameObject:
   m_ObjectHideFlags: 0
@@ -2369,6 +2379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &804252938
 GameObject:
   m_ObjectHideFlags: 0
@@ -2663,6 +2674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &810935823
 GameObject:
   m_ObjectHideFlags: 0
@@ -2779,6 +2791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &828825402
 GameObject:
   m_ObjectHideFlags: 0
@@ -3254,6 +3267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &1096160570
 GameObject:
   m_ObjectHideFlags: 0
@@ -3430,6 +3444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &1135661653
 GameObject:
   m_ObjectHideFlags: 0
@@ -3635,6 +3650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &1200063276
 GameObject:
   m_ObjectHideFlags: 0
@@ -3840,6 +3856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &1271806359
 GameObject:
   m_ObjectHideFlags: 0
@@ -4134,6 +4151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &1377112760
 GameObject:
   m_ObjectHideFlags: 0
@@ -4339,6 +4357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &1422947796
 GameObject:
   m_ObjectHideFlags: 0
@@ -4455,6 +4474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &1515284946
 GameObject:
   m_ObjectHideFlags: 0
@@ -4631,6 +4651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &1560603143
 GameObject:
   m_ObjectHideFlags: 0
@@ -4779,6 +4800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &1650859579
 GameObject:
   m_ObjectHideFlags: 0
@@ -5163,6 +5185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &1870407583
 GameObject:
   m_ObjectHideFlags: 0
@@ -5499,6 +5522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &1934596690
 GameObject:
   m_ObjectHideFlags: 0
@@ -6039,6 +6063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
+  correctRotation: 3
 --- !u!1 &2112543711
 GameObject:
   m_ObjectHideFlags: 0
