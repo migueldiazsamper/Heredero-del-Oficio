@@ -12,17 +12,31 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     private Canvas canvas;
 
     private int currentRotation = 0; // Rotación actual del objeto
-    [ SerializeField ] private int correctRotation = 3;
-    int initialRotation;
+    [ SerializeField ] private int correctRotation = 0;
+    int initialRotation = 0;
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         canvas = GetComponentInParent<Canvas>();
-        initialRotation = Random.Range(0, 4);
+        initialRotation = Random.Range(1, 4);
         currentRotation = initialRotation;
-        rectTransform.Rotate(0, 0, initialRotation * 90);
+        switch ( initialRotation )
+        {
+            case 1:
+                rectTransform.rotation = Quaternion.Euler(0, 0, -90);  // Esto también rotará el objeto 90 grados en el eje Z
+                break;
+            case 2:
+                rectTransform.rotation = Quaternion.Euler(0, 0, 180);  // Esto también rotará el objeto 180 grados en el eje Z
+                break;
+            case 3:
+                rectTransform.rotation = Quaternion.Euler(0, 0, 90);  // Esto también rotará el objeto 270 grados en el eje Z
+                break;
+            default:
+                break;
+        }
+        // rectTransform.Rotate(0, 0, initialRotation * 90);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -63,24 +77,26 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
         if (currentSlot != null)
         {
             rectTransform.Rotate(0, 0, -90);
+
+
             if ( ++currentRotation > 3 )
             {
                 currentRotation = 0;
             }
-
-            switch ( currentRotation )
-            {
-                case 0:
-                    rectTransform.Rotate(0, 0, 0);
-                    break;
-                case 1:
-                    rectTransform.Rotate(0, 0, 90);
-            }
+            Debug.Log("Current Rotation: " + currentRotation);
 
             if ( currentRotation == correctRotation )
             {
                 Debug.Log("Correcto");
-            }
+            }   
         }
+    }
+
+    void Update()
+    {
+        /* Debug.Log("Current Rotation: " + currentRotation);
+        Debug.Log("Correct Rotation: " + correctRotation);
+        Debug.Log("Initial Rotation: " + initialRotation);
+        Debug.Log("Current Rotation In Degrees " + rectTransform.rotation.eulerAngles.z); */
     }
 }
