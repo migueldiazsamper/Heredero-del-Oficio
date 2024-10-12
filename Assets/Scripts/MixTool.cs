@@ -28,6 +28,9 @@ public class MixTool : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         // Permite que el objeto sea arrastrado
         canvasGroup.alpha = 0.6f; // Reduce la opacidad para indicar que está siendo arrastrado
         canvasGroup.blocksRaycasts = false; // Permite que el objeto sea atravesado por rayos de detección
+
+        // Rota el objeto 45 grados
+        rectTransform.Rotate(0, 0, 45);
     }
 
     // Método que se llama mientras se arrastra la herramienta
@@ -51,5 +54,8 @@ public class MixTool : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
             // Llama al método para mezclar colores
             manager.MixColors();
         }
+
+        // Rota el objeto de vuelta a su rotación original
+        rectTransform.Rotate(0, 0, -45);
     }
 }

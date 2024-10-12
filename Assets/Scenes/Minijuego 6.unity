@@ -713,15 +713,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c54b5d50e58704547be2f4d778e241f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pigmentos:
-  - {fileID: 1834811187}
-  - {fileID: 1825437806}
-  - {fileID: 1360905947}
-  - {fileID: 370123856}
-  - {fileID: 885439196}
   slot1: {fileID: 1737257442}
   slot2: {fileID: 431288129}
   mixedColorSprite: {fileID: 986855560}
+  mixTrigger: {fileID: 986855559}
 --- !u!1 &1737257437 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6975255976064987523, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
