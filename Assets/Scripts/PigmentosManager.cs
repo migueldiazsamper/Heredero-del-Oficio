@@ -4,15 +4,15 @@ using UnityEngine;
 // Clase que gestiona la lógica de los pigmentos y los slots
 public class PigmentosManager : MonoBehaviour
 {
-    // Lista de pigmentos
-    public List<Pigmento> pigmentos;
-
     // Referencia a los dos slots
     public SlotPigmento slot1;
     public SlotPigmento slot2;
 
     // Referencia al sprite que representa el color mezclado
     public SpriteRenderer mixedColorSprite;
+
+    // Referencia al trigger para mezclar colores
+    public RectTransform mixTrigger;
 
     // Diccionario que define las mezclas de colores
     private Dictionary<string, Color> colorMixes = new Dictionary<string, Color>
@@ -83,6 +83,7 @@ public class PigmentosManager : MonoBehaviour
         {
             // Cambia el color del sprite al color mezclado
             mixedColorSprite.color = colorMixes[mixKey];
+            Debug.Log("Colores mezclados: " + color1 + " + " + color2 + " = " + colorMixes[mixKey]);
         }
         else
         {

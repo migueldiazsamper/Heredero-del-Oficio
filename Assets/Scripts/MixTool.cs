@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 // Clase que representa la herramienta para mezclar colores
-public class MixTool : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
+public class MixTool : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     // Referencia al PigmentosManager
     private PigmentosManager manager;
@@ -44,12 +44,12 @@ public class MixTool : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         canvasGroup.alpha = 1f;
         // Impide que el objeto sea atravesado por rayos de detección
         canvasGroup.blocksRaycasts = true;
-    }
 
-    // Método que se llama al soltar la herramienta en el trigger
-    public void OnDrop(PointerEventData eventData)
-    {
-        // Llama al método para mezclar colores
-        manager.MixColors();
+        // Verifica si la herramienta se soltó en el trigger
+        if (RectTransformUtility.RectangleContainsScreenPoint(manager.mixTrigger, Input.mousePosition))
+        {
+            // Llama al método para mezclar colores
+            manager.MixColors();
+        }
     }
 }
