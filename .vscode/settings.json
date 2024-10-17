@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Heredero-del-Oficio-Ruben.sln"
+    "dotnet.defaultSolution": "Heredero-del-Oficio.sln"
 }
