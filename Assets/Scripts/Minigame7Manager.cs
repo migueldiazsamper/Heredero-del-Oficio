@@ -10,7 +10,7 @@ public class Minigame7Manager : MonoBehaviour
     List< Transform > pieces;
 
     int emptyLocation;
-    int size;
+    public int size = 3;
 
     void CreateGamePieces ( float gapThickness )
     {
@@ -52,7 +52,6 @@ public class Minigame7Manager : MonoBehaviour
     void Start ()
     {
         pieces = new List< Transform >();
-        size = 4;
         CreateGamePieces( 0.01f );
         Shuffle();
     }
