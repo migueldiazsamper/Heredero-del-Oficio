@@ -15,9 +15,9 @@ public class CombustibleHorno : MonoBehaviour
     private float currentLife; // Unidades de vida que tiene la madera mientras se quema
     private bool isBurning;
     private bool isBurnt;
-    private float heatProduced;
-    [SerializeField] private TextMeshProUGUI text;
-
+    public float heatValue = 0;
+    private TemperaturaHorno temperatureScript;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,7 @@ public class CombustibleHorno : MonoBehaviour
         isBurning = false;
         currentLife = woodLife;
         isBurnt = false;
+        temperatureScript = FindObjectOfType<TemperaturaHorno>();
     }
 
     // Update is called once per frame
@@ -35,8 +36,7 @@ public class CombustibleHorno : MonoBehaviour
         if(isBurning)
         {   
             currentLife -= Time.deltaTime; // Pierde 1 unidad de vida por segundo
-            heatProduced += Time.deltaTime;
-            text.text = heatProduced.ToString();
+            heatValue += Time.deltaTime; // La temperatura que le da al horno aumenta en 2 por segundo
             if(currentLife <= 0)
             {
                 isBurning = false;
@@ -54,6 +54,8 @@ public class CombustibleHorno : MonoBehaviour
         {
             isBurning = true;  
             ChangeDragPermission(false);
+            temperatureScript.AddHeat(heatValue);
+
         } 
     }
 
