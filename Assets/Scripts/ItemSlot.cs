@@ -21,8 +21,17 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 // Obtiene el componente RectTransform del objeto arrastrado y lo posiciona en la misma posición anclada que este componente
                 eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
                 StartCoroutine(SetFreeOfItemFalseWithDelay()); // Inicia la corrutina para cambiar freeOfItem a false después de medio segundo
-                eventData.pointerDrag.GetComponent<DraggableItem>().currentSlot = this; // Asigna este slot como el slot actual del objeto arrastrado
-            }
+                //Comprueba si el objeto arrastrado tiene un script DraggableItem. Si no lo tiene, usa el del minijuego 4 
+                bool isDraggableItem = eventData.pointerDrag.GetComponent<DraggableItem>() != null;
+                if(isDraggableItem)
+                {
+                    eventData.pointerDrag.GetComponent<DraggableItem>().currentSlot = this; // Asigna este slot como el slot actual del objeto arrastrado
+                }
+                else
+                {
+                    eventData.pointerDrag.GetComponent<DragDropMinigame4>().currentSlot = this;
+                }
+            }   
         }
     }
 
