@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Minigame7Manager : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class Minigame7Manager : MonoBehaviour
 
     int emptyLocation;
     public int size = 3;
+
+    int numberOfMoves = 0; 
+    [ SerializeField ] TextMeshProUGUI movesText;
 
     void CreateGamePieces ( float gapThickness )
     {
@@ -51,6 +55,8 @@ public class Minigame7Manager : MonoBehaviour
 
     void Start ()
     {
+        numberOfMoves = 0;
+        movesText.text = $"Moves: {numberOfMoves}";
         pieces = new List< Transform >();
         CreateGamePieces( 0.01f );
         Shuffle();
@@ -72,18 +78,26 @@ public class Minigame7Manager : MonoBehaviour
                     {
                         if ( SwapIfValid( iterativePiece , -size , size ) )
                         {
+                            numberOfMoves++;
+                            movesText.text = $"Moves: {numberOfMoves}";
                             break;
                         }
                         if ( SwapIfValid( iterativePiece , +size , size ) )
                         {
+                            numberOfMoves++;
+                            movesText.text = $"Moves: {numberOfMoves}";
                             break;
                         }
                         if ( SwapIfValid( iterativePiece , -1 , 0 ) )
                         {
+                            numberOfMoves++;
+                            movesText.text = $"Moves: {numberOfMoves}";
                             break;
                         }
                         if ( SwapIfValid( iterativePiece , +1 , size - 1 ) )
                         {
+                            numberOfMoves++;
+                            movesText.text = $"Moves: {numberOfMoves}";
                             break;
                         }
                     }
