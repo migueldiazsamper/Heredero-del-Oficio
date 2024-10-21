@@ -12,15 +12,9 @@ public class TemperaturaHorno : MonoBehaviour
     [SerializeField] TextMeshProUGUI text;
     private float totalTemperature;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
     // Update is called once per frame
     void Update()
     {
-
         //currentTemp = totalTemperature;
         totalTemperature -= Time.deltaTime*5;
         //totalTemperature = 0;
