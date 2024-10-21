@@ -56,7 +56,7 @@ public class Minigame7Manager : MonoBehaviour
     void Start ()
     {
         numberOfMoves = 0;
-        movesText.text = $"Moves: {numberOfMoves}";
+        movesText.text = $"Movimientos: {numberOfMoves}";
         pieces = new List< Transform >();
         CreateGamePieces( 0.01f );
         Shuffle();
@@ -64,6 +64,8 @@ public class Minigame7Manager : MonoBehaviour
 
     void Update ()
     {
+        movesText.text = $"Movimientos: {numberOfMoves}";
+
         bool pieceClicked = Input.GetMouseButtonDown( 0 );
         if ( pieceClicked )
         {
@@ -79,25 +81,21 @@ public class Minigame7Manager : MonoBehaviour
                         if ( SwapIfValid( iterativePiece , -size , size ) )
                         {
                             numberOfMoves++;
-                            movesText.text = $"Moves: {numberOfMoves}";
                             break;
                         }
                         if ( SwapIfValid( iterativePiece , +size , size ) )
                         {
                             numberOfMoves++;
-                            movesText.text = $"Moves: {numberOfMoves}";
                             break;
                         }
                         if ( SwapIfValid( iterativePiece , -1 , 0 ) )
                         {
                             numberOfMoves++;
-                            movesText.text = $"Moves: {numberOfMoves}";
                             break;
                         }
                         if ( SwapIfValid( iterativePiece , +1 , size - 1 ) )
                         {
                             numberOfMoves++;
-                            movesText.text = $"Moves: {numberOfMoves}";
                             break;
                         }
                     }
