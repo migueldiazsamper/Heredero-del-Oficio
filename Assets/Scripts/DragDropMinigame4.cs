@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Image = UnityEngine.UI.Image; //Hay overlap entre el image de UnityUI y el VSCode. Esto lo arregla
 
 // Definición de la clase DragDropMinigame4 que hereda de MonoBehaviour e implementa varias interfaces de eventos de Unity
 public class DragDropMinigame4 : MonoBehaviour, IBeginDragHandler , IEndDragHandler , IDragHandler
@@ -10,11 +11,12 @@ public class DragDropMinigame4 : MonoBehaviour, IBeginDragHandler , IEndDragHand
     [ SerializeField ] private Canvas canvas;
     //Referencia a un objeto que tenga el script ItemSlot, se usa para saber si el objeto está en un slot y en cual
     public ItemSlot currentSlot;
-
+    private ItemSlot lastSlot;
     // Referencias a los componentes RectTransform, CanvasGroup y CombustibleHorno del objeto
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private CombustibleHorno combustibleHorno;
+    [SerializeField] WoodHandler woodHandler;
 
     // Método Awake que se llama al inicializar el script
     private void Awake ()
@@ -23,6 +25,7 @@ public class DragDropMinigame4 : MonoBehaviour, IBeginDragHandler , IEndDragHand
         rectTransform = GetComponent< RectTransform >();
         canvasGroup = GetComponent< CanvasGroup >();
         combustibleHorno = GetComponent<CombustibleHorno>();
+        woodHandler = FindFirstObjectByType<WoodHandler>();
     }
 
     // Método que se llama al comenzar a arrastrar el objeto
@@ -34,14 +37,6 @@ public class DragDropMinigame4 : MonoBehaviour, IBeginDragHandler , IEndDragHand
             canvasGroup.alpha = .6f;
             // Permite que el objeto sea atravesado por rayos de detección
             canvasGroup.blocksRaycasts = false;
-
-            // Si el objeto está en un slot, marca el slot como libre
-            bool wasInSlot = currentSlot != null;
-            if ( wasInSlot )
-            {
-                currentSlot.freeOfItem = true; // Marca el slot como libre
-                currentSlot = null; // El objeto ya no está en ningún slot
-            }
         }
     }
 
@@ -59,36 +54,64 @@ public class DragDropMinigame4 : MonoBehaviour, IBeginDragHandler , IEndDragHand
     // Método que se llama al finalizar el arrastre del objeto
     public void OnEndDrag(PointerEventData eventData)
     {
-        // Restaura la opacidad del objeto
-        canvasGroup.alpha = 1f;
-        // Impide que el objeto sea atravesado por rayos de detección
-        canvasGroup.blocksRaycasts = true;
-
-        // Verifica si el objeto se soltó sobre un slot o la basura
-        if (eventData.pointerEnter != null && eventData.pointerEnter.GetComponent<RectTransform>() != null)
+        if(combustibleHorno.IsDraggingAllowed())
         {
-            // Comprueba si existe el componente del script asociado al slot y lo obtiene en caso positivo
-            ItemSlot slotScript = eventData.pointerEnter.GetComponent<ItemSlot>();
+            // Restaura la opacidad del objeto
+            canvasGroup.alpha = 1f;
+            // Impide que el objeto sea atravesado por rayos de detección
+            canvasGroup.blocksRaycasts = true;
 
-            if (slotScript != null)
+            // Verifica si el objeto se soltó sobre un slot o la basura
+            if (eventData.pointerEnter != null && eventData.pointerEnter.GetComponent<RectTransform>() != null)
             {
-                if (slotScript.freeOfItem)
+                // Comprueba si existe el componente del script asociado al slot y lo obtiene en caso positivo
+                ItemSlot slotScript = eventData.pointerEnter.GetComponent<ItemSlot>();
+
+                if (slotScript != null)
                 {
-                    // Coloca el objeto en el centro del slot
-                    RectTransform slotRectTransform = eventData.pointerEnter.GetComponent<RectTransform>();
-                    rectTransform.position = slotRectTransform.position;
-                    slotScript.freeOfItem = false; // Marca el slot como ocupado
-                    combustibleHorno.StartBurning(); // Comienza el quemado de la madera
+                    if (slotScript.freeOfItem)
+                    {
+                        // Coloca el objeto en el centro del slot
+                        RectTransform slotRectTransform = eventData.pointerEnter.GetComponent<RectTransform>();
+                        rectTransform.position = slotRectTransform.position;
+                        slotScript.freeOfItem = false; // Marca el slot como ocupado
+                        combustibleHorno.StartBurning(); // Comienza el quemado de la madera
+                        slotScript.currentMaderita = combustibleHorno;
+                        woodHandler.RemoveMaderitaFromDeck(gameObject); //Marcamos que la maderita ya no está en la baraja
+                        woodHandler.AddMaderitaToDeck(); //Añadimos una nueva maderita al slot vacío de la baraja
+                    }
                 }
+
+                // Si no es un slot, comprueba si el objeto es la basura
+                else if(eventData.pointerEnter.CompareTag("Trash"))
+                {   
+                    if(combustibleHorno.IsBurnt())
+                    {
+                        currentSlot.freeOfItem = true; // Marca el slot como libre
+                        currentSlot = null; // El objeto ya no está en ningún slot
+                        woodHandler.ResetMaderita(this, false); //False porque la maderita no viene del deck
+                    }
+                    else woodHandler.ResetMaderita(this, true); //Si se posa una madera que viene del deck en la basura, se resetea normal
+
+                }
+
+            }
+            
+            //Si no se soltó sobre slot o basura, comprueba si está quemado, si lo está, devuélvelo a donde estaba
+            else if(combustibleHorno.IsBurnt())
+            {
+                rectTransform.position = currentSlot.GetComponent<RectTransform>().position;
             }
 
-            // Si no es un slot, comprueba si el objeto es la basura
-            else if(eventData.pointerEnter.CompareTag("Trash"))
+            else
             {
-                canvasGroup.alpha = 0f;
+                woodHandler.ResetMaderita(this, true); //True porque la maderita sí viene del deck
             }
         }
+    }
 
-        
+    public void SetCurrentMaderitaAsNull()
+    {
+        currentSlot.GetComponent<ItemSlot>().currentMaderita = null;
     }
 }

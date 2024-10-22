@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class ItemSlot : MonoBehaviour, IDropHandler
 {
     public bool freeOfItem = true; // Indicador de si el área de este componente está libre de objetos
+    public CombustibleHorno currentMaderita;
 
     // Método que se ejecuta cuando un objeto es soltado en el área de este componente
     public void OnDrop(PointerEventData eventData)
@@ -40,5 +41,12 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     {
         yield return new WaitForSeconds(0.15f);
         freeOfItem = false; // Marca el área de este componente como ocupada
+    }
+
+    public float CurrentMaderitaHeatValue() //Función para obtener el valor de calor de la madera en este slot
+    {   
+        //Si no hay madera devolverá 0
+        if(currentMaderita!=null) return currentMaderita.heatValue;
+        else return -1f;
     }
 }
