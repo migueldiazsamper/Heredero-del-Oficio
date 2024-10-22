@@ -17,9 +17,9 @@ public class CombustibleHorno : MonoBehaviour
     private bool isBurnt;
     public float heatValue = 0;
     private TemperaturaHorno temperatureScript;
-    
+    [SerializeField] private int heatValueMultiplier;
+    private Image imageComponent;
 
-    // Start is called before the first frame update
     void Start()
     {
         isDraggingAllowed = true;
@@ -27,6 +27,7 @@ public class CombustibleHorno : MonoBehaviour
         currentLife = woodLife;
         isBurnt = false;
         temperatureScript = FindObjectOfType<TemperaturaHorno>();
+        imageComponent = GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -36,13 +37,13 @@ public class CombustibleHorno : MonoBehaviour
         if(isBurning)
         {   
             currentLife -= Time.deltaTime; // Pierde 1 unidad de vida por segundo
-            heatValue += Time.deltaTime; // La temperatura que le da al horno aumenta en 2 por segundo
             if(currentLife <= 0)
             {
                 isBurning = false;
                 isBurnt = true;
-                GetComponent<Image>().color = Color.red;
+                imageComponent.color = Color.red;
                 ChangeDragPermission(true);
+                GetComponent<DragDropMinigame4>().SetCurrentMaderitaAsNull();
             }
         }
     }
@@ -54,8 +55,10 @@ public class CombustibleHorno : MonoBehaviour
         {
             isBurning = true;  
             ChangeDragPermission(false);
-            temperatureScript.AddHeat(heatValue);
-
+            //Al comenzar el quemado, la madera adquiere un valor aleatorio de vida entre 4 y 8 inclusives
+            woodLife = UnityEngine.Random.Range(4, 9); //Escrito como UnityEngine porque hay conflictos entre varios métodos con el mismo nombre
+            currentLife = woodLife;
+            heatValue = woodLife * heatValueMultiplier; //El valor de calor que aporta una madera depende de su duración
         } 
     }
 
@@ -67,5 +70,32 @@ public class CombustibleHorno : MonoBehaviour
     public void ChangeDragPermission(bool targetBool) // Función simple para cambiar los permisos de arrastre
     {   
         isDraggingAllowed = targetBool;
+    }
+
+    public bool IsBurnt()
+    {
+        return isBurnt;
+    }
+
+    public void ChangeBurntStatus(bool targetBool)
+    {
+        isBurnt = targetBool;
+    }
+    public void ResetMaderita()
+    {
+        //Si la madera no estaba consumida, no hace nada
+        //Si está consumida, resetea la posición, el color y su estado de quemado
+        if(isBurnt)
+        {
+            
+            imageComponent.color = Color.white;
+            isBurnt = false;
+            GetComponent<RectTransform>().anchoredPosition = new Vector2(796, 45);
+        }
+    }
+
+    public void SetWoodLife(float value)
+    {
+        woodLife = value;
     }
 }
