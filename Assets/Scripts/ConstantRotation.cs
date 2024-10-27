@@ -5,10 +5,10 @@ using UnityEngine;
 public class ConstantRotation : MonoBehaviour
 {
     [SerializeField] private float difficulty; // Velocidad de rotación ajustable
-    [SerializeField] float inputInterval; // Intervalo de cambio al introducir input
+    [SerializeField] private float inputInterval; // Intervalo de cambio al introducir input
     private float angle; // Ángulo de rotación
     private float updateInterval = 0.1f; // Intervalo de pausa para la corrutina
-    private bool finish; // Indicador de finalización
+    private bool Isfinish; // Indicador de finalización
 
     // M�todo para obtener el �ngulo actual
     public float GetAngle()
@@ -16,10 +16,16 @@ public class ConstantRotation : MonoBehaviour
         return angle;
     }
 
+    // M�todo para obtener la dificultad actual
+    public float GetDifficulty()
+    {
+        return difficulty;
+    }
+
     // M�todo para finalizar la rotaci�n
     public void MakeFinish()
     {
-        finish = true;
+        Isfinish = true;
     }
 
     // M�todo que actualiza la rotaci�n del GameObject
@@ -36,7 +42,7 @@ public class ConstantRotation : MonoBehaviour
     IEnumerator VariationCoroutine()
     {
         // Bucle infinito hasta que pierdas o ganes
-        while (!finish)
+        while (!Isfinish)
         {          
             // Ajusta el ángulo según su inclinación para que se aleje del punto de equilibrio
             if (angle > 0)
@@ -49,7 +55,7 @@ public class ConstantRotation : MonoBehaviour
             }
 
             // Actualiza la rotación del GameObject
-            //UpdateGameObjectRotation();
+            UpdateGameObjectRotation();
 
             // Espera el tiempo del intervalo de pausa antes de continuar
             yield return new WaitForSeconds(updateInterval);
@@ -60,7 +66,7 @@ public class ConstantRotation : MonoBehaviour
     void Start()
     {
         // Inicia el �ngulo en 0� y establece que el juego no est� en estado terminado
-        finish = false;
+        Isfinish = false;
         angle = 0.0f;
 
         // Inicia la corrutina de variaci�n de rotaci�n
@@ -71,18 +77,18 @@ public class ConstantRotation : MonoBehaviour
     void Update()
     {
         // Actualiza la rotación del GameObject
-        UpdateGameObjectRotation();
+        // UpdateGameObjectRotation();
 
         // Detecta si has pulsado la tecla Derecha o Izquierda para ajustar el �ngulo adecuadamente
         bool rightArrowIsDown = Input.GetKeyDown(KeyCode.RightArrow);
         bool leftArrowIsDown = Input.GetKeyDown(KeyCode.LeftArrow);
 
-        if (rightArrowIsDown)
+        if (rightArrowIsDown && !Isfinish)
         {
             angle -= inputInterval;
         }
 
-        else if (leftArrowIsDown)
+        else if (leftArrowIsDown && !Isfinish)
         {
             angle += inputInterval;
         }
