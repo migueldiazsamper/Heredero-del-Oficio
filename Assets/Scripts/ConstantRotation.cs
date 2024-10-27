@@ -97,4 +97,24 @@ public class ConstantRotation : MonoBehaviour
         UpdateGameObjectRotation();
     }
 
+    // Método para manejar click izquierdo
+    public void OnLeftButtonClick()
+    {
+        if (!Isfinish)
+        {
+            angle += inputInterval;
+            UpdateGameObjectRotation();
+        }
+    }
+
+    // Método para manejar click derecho
+    public void OnRightButtonClick()
+    {
+        if (!Isfinish)
+        {
+            angle -= inputInterval;
+            UpdateGameObjectRotation();
+        }
+    }
+
 }
