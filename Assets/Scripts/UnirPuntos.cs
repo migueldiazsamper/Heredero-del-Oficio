@@ -40,7 +40,7 @@ public class UnirPuntos : MonoBehaviour
         {
             isDragging = false;
             RaycastHit2D hit = Physics2D.Raycast(endPoint, Vector2.zero);
-            if (hit.collider != null && hit.collider.TryGetComponent(out UnirLineas) && IDout == UnirLineas.GetIDin())  //Chequeamos que el ID del punto que comienza
+            if (hit.collider != null && hit.collider.TryGetComponent(out UnirPuntos unirPuntos) && IDout == unirPuntos.GetIDin())  //Chequeamos que el ID del punto que comienza
                                                                                                                         //la línea coincide con el que recibe
             {
                 Debug.Log("UNIÓN");
