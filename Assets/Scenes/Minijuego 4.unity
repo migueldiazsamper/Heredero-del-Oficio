@@ -1416,6 +1416,8 @@ MonoBehaviour:
   coolingValue: 10
   thermometer: {fileID: 998100125}
   maxTemp: 1500
+  ceramic1: {fileID: 1914194606}
+  ceramic2: {fileID: 1252619832}
 --- !u!4 &788645764
 Transform:
   m_ObjectHideFlags: 0

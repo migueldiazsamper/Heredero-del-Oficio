@@ -10,18 +10,22 @@ using UnityEngine.UI;
 public class TemperaturaHorno : MonoBehaviour
 {
 
-    [SerializeField] TextMeshProUGUI text;
+    [SerializeField]    TextMeshProUGUI text;
     private float totalTemperature;
-    [SerializeField] GameObject[] itemSlotArray;
+    [SerializeField]    GameObject[] itemSlotArray;
     public float coolingValue;
     [SerializeField] Image thermometer;
     [SerializeField] float maxTemp = 1500f;
+    [SerializeField] GameObject ceramic1;
+    SpriteRenderer ceramic1Image;
+    [SerializeField] GameObject ceramic2;
+    SpriteRenderer ceramic2Image;
 
-    void Start()
-    {
+    void Awake(){
+        ceramic1Image = ceramic1.GetComponent<SpriteRenderer>();
+        ceramic2Image = ceramic2.GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         CalculateTotalTemp();
@@ -29,6 +33,7 @@ public class TemperaturaHorno : MonoBehaviour
         if(totalTemperature <= 0) totalTemperature = 0;
         if (totalTemperature >= maxTemp) totalTemperature = maxTemp;
         thermometer.fillAmount = totalTemperature/maxTemp;
+        ChangeCeramicColor();
     }
 
     public void CalculateTotalTemp()
@@ -39,7 +44,29 @@ public class TemperaturaHorno : MonoBehaviour
             maderitaHeatValue = itemSlot.GetComponent<ItemSlot>().CurrentMaderitaHeatValue();
             if(maderitaHeatValue >= 0) totalTemperature += maderitaHeatValue*Time.deltaTime;
             else totalTemperature -= coolingValue*Time.deltaTime;
-            //else coolingMultiplier += 2f;
+        }
+    }
+
+    void ChangeCeramicColor(){
+        if(totalTemperature < 500){
+            ceramic1Image.color = Color.blue;
+            ceramic2Image.color = Color.blue;
+        }
+        else if(totalTemperature < 1000){
+            ceramic1Image.color = Color.cyan;
+            ceramic2Image.color = Color.cyan;
+        }
+        else if(totalTemperature < 1200){
+            ceramic1Image.color = Color.yellow;
+            ceramic2Image.color = Color.yellow;
+        }
+        else if (totalTemperature <= 1400){
+            ceramic1Image.color = Color.white;
+            ceramic2Image.color = Color.white;
+        }
+        else{
+            ceramic1Image.color = Color.red;
+            ceramic2Image.color = Color.red;
         }
     }
 }
