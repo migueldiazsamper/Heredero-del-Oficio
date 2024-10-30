@@ -6,10 +6,11 @@ public class CheckIfDefeat : MonoBehaviour
     // Referencia a otro componente llamado ConstantRotation que está en el mismo objeto
     private ConstantRotation constantRotation;
 
-    // Tiempo en segundos que debe pasar para considerar una derrota (10 segundos)
-    [ SerializeField ] private float defeatInterval = 10f;
-    // Temporizador que cuenta el tiempo transcurrido
-    private float timer;
+    // Referencia pública al objeto de referencia de rotación
+    public GameObject rotationReference;
+
+    // Referencia pública al componente CountDownTimer
+    public CountDownTimer countDownTimer;
 
     // Este método se llama una vez cuando el script se inicializa
     void Awake ()
@@ -19,34 +20,33 @@ public class CheckIfDefeat : MonoBehaviour
     }
 
     // Este método se llama una vez por cada frame (fotograma) del juego
-    void Update ()
+    void Update()
     {
-        // Obtiene el ángulo actual de rotación del componente ConstantRotation
-        float angle = constantRotation.GetAngle();
-
-        // Verifica si el ángulo está entre -45 y 45 grados
-        bool isBelowThreshold = angle < 45f && angle > -45f;
-
-        if ( isBelowThreshold )
+        if (rotationReference != null)
         {
-            // Si el ángulo está dentro del rango, reinicia el temporizador a 0
-            timer = 0f;
-            // Sale del método Update y espera al siguiente frame
-            return;
-        }
+            // Obtiene la rotación "z" del transform del objeto de referencia de rotación
+            float rotationZ = rotationReference.transform.rotation.eulerAngles.z;
 
-        // Si el ángulo está fuera del rango, incrementa el temporizador con el tiempo transcurrido desde el último frame
-        timer += Time.deltaTime;
+            // Ajusta el valor de rotationZ para que esté en el rango [-180, 180]
+            if (rotationZ > 180f)
+            {
+                rotationZ -= 360f;
+            }
 
-        // Verifica si el temporizador ha superado el intervalo de derrota (10 segundos)
-        bool isAboveThreshold = timer > defeatInterval;
+            // Verifica si la rotación "z" está entre -45 y 45 grados
+            bool isBelowThreshold = rotationZ < 45f && rotationZ > -45f;
 
-        if ( isAboveThreshold )
-        {
-            // Si el temporizador ha superado el intervalo, llama al método MakeFinish del componente ConstantRotation para detener la rotación
-            constantRotation.MakeFinish();
-            // Reinicia el temporizador a 0
-            timer = 0f;
+            if (!isBelowThreshold)
+            {
+                // Si se ha superado el intervalo, llama al método MakeFinish del componente ConstantRotation para detener la rotación
+                constantRotation.MakeFinish();
+
+                // Detiene el temporizador en CountDownTimer
+                if (countDownTimer != null)
+                {
+                    countDownTimer.SetisTimeUp(true);
+                }
+            }
         }
     }
 }
