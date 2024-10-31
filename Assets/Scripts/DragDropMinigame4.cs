@@ -48,6 +48,7 @@ public class DragDropMinigame4 : MonoBehaviour, IBeginDragHandler , IEndDragHand
         {
             // Actualiza la posición anclada del objeto basado en el movimiento del puntero y el factor de escala del canvas
             rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+            Debug.Log("ESTA MOVIENDOSE");
         }
     }
 
