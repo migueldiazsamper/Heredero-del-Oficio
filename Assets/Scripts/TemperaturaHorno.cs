@@ -11,6 +11,7 @@ public class TemperaturaHorno : MonoBehaviour
 {
 
     [SerializeField]    TextMeshProUGUI text;
+    [SerializeField]    TextMeshProUGUI scoreText;
     private float totalTemperature;
     [SerializeField]    GameObject[] itemSlotArray;
     public float coolingValue;
@@ -20,16 +21,22 @@ public class TemperaturaHorno : MonoBehaviour
     SpriteRenderer ceramic1Image;
     [SerializeField] GameObject ceramic2;
     SpriteRenderer ceramic2Image;
+    int score = 0;
 
     void Awake(){
         ceramic1Image = ceramic1.GetComponent<SpriteRenderer>();
         ceramic2Image = ceramic2.GetComponent<SpriteRenderer>();
     }
 
+    void Start(){
+        StartCoroutine(ScoreManagementCoroutine());
+    }
+
     void Update()
     {
         CalculateTotalTemp();
         text.text = Math.Floor(totalTemperature).ToString();
+        scoreText.text = score.ToString();
         if(totalTemperature <= 0) totalTemperature = 0;
         if (totalTemperature >= maxTemp) totalTemperature = maxTemp;
         thermometer.fillAmount = totalTemperature/maxTemp;
@@ -67,6 +74,30 @@ public class TemperaturaHorno : MonoBehaviour
         else{
             ceramic1Image.color = Color.red;
             ceramic2Image.color = Color.red;
+        }
+    }
+
+    IEnumerator ScoreManagementCoroutine(){ //Cada segundo y medio se chequeará la temperatura y se cambiará la puntuación acorde a ella
+        
+        while(true){
+            
+            //Cambia la puntuación
+            if(totalTemperature < 1200) {
+                score -= 1;
+                yield return new WaitForSeconds(1.5f); //Espera 1.5s para volver a comprobar
+            }
+            else if(totalTemperature <= 1400){
+                score += 1;
+                yield return new WaitForSeconds(1.5f); //Espera 1.5s para volver a comprobar
+            } 
+            else {
+                score -= 1;
+                yield return new WaitForSeconds(0.5f); //Si estás sobrecalentado, restas más puntos y más rápido
+                
+            }
+
+            if(score < 0) score = 0;
+            
         }
     }
 }

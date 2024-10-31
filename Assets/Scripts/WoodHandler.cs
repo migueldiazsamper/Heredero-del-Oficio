@@ -8,6 +8,7 @@ public class WoodHandler : MonoBehaviour
 {
     [SerializeField] GameObject[] woodPool;
     [SerializeField] List<GameObject> deckSlots;
+    private int woodTypesNum = 3;
     private void Start()
     {
         /*
@@ -58,7 +59,7 @@ public class WoodHandler : MonoBehaviour
         {
             GameObject maderita = GetFirstInactiveMaderita(); //Obtenemos la primera madera libre del pool
             maderita.SetActive(true);
-            GiveWoodNewType(maderita, Random.Range(0, 4));
+            GiveWoodNewType(maderita, Random.Range(0, woodTypesNum));
             deckSlots.Insert(deckSlots.Count, maderita); //Insertamos la nueva madera en la lista
             OrganizeDeck(); //Por último movemos las maderas que ya hay a sus posiciones correctas
         }
@@ -74,16 +75,12 @@ public class WoodHandler : MonoBehaviour
                 maderita.GetComponent<CombustibleHorno>().SetWoodLife(3f); //Nuevo valor de duración (el calor viene dado por la duración)
                 maderita.GetComponent<Image>().color = Color.blue; //Nuevo sprite dependiendo del tipo
                 break;
-            case 1: //Madera pequeña
+            case 1: //Madera mediana
                 maderita.GetComponent<CombustibleHorno>().SetWoodLife(5f); //Nuevo valor de duración (el calor viene dado por la duración)
                 maderita.GetComponent<Image>().color = Color.green; //Nuevo sprite dependiendo del tipo
                 break;
-            case 2: //Madera pequeña
+            default: //Madera grande
                 maderita.GetComponent<CombustibleHorno>().SetWoodLife(7f); //Nuevo valor de duración (el calor viene dado por la duración)
-                maderita.GetComponent<Image>().color = Color.yellow; //Nuevo sprite dependiendo del tipo
-                break;
-            case 3: //Madera pequeña
-                maderita.GetComponent<CombustibleHorno>().SetWoodLife(9f); //Nuevo valor de duración (el calor viene dado por la duración)
                 maderita.GetComponent<Image>().color = Color.magenta; //Nuevo sprite dependiendo del tipo
                 break;
         }
