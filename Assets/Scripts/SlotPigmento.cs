@@ -8,13 +8,13 @@ public class SlotPigmento : MonoBehaviour
     public Pigmento currentPigment;
 
     // Verifica si el slot está vacío
-    public bool IsEmpty()
+    public bool IsEmpty ()
     {
         return currentPigment == null;
     }
 
     // Coloca un pigmento en el slot
-    public void PlacePigment(Pigmento pigmento)
+    public void PlacePigment( Pigmento pigmento )
     {
         currentPigment = pigmento;
         pigmento.transform.position = transform.position;
