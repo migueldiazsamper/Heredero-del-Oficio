@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minijuego 2.unity
     guid: 242de3b00ede5ff49a1d05be2f6663f9
+  - enabled: 1
+    path: Assets/Scenes/Minijuego 5/Lima_Detras.unity
+    guid: 0fd82ed18844a3640a860097c7c309f8
   m_configObjects: {}
