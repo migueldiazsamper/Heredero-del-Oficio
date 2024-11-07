@@ -26,7 +26,8 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private bool isCarryingPigment = false; //Booleano que cambia a true después de sacar la cuchara de un bote de pigmento
-    private Vector2 startingPosition;
+
+    private string currentColor;
 
 
     // Método Awake que se llama al inicializar el script
@@ -44,7 +45,6 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     }
 
     public void Start (){
-        startingPosition = rectTransform.position;
         liquidoCanvasGroup.alpha = 0f;
     }
 
@@ -62,6 +62,7 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             cabezaCanvasGroup.alpha = 1f;
 
         }
+
     }   
     public void OnDrag(PointerEventData pointerEventData)
     {
@@ -86,12 +87,13 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             isCarryingPigment = true;
 
             liquido.GetComponent<Image>().color = pointerEventData.pointerEnter.GetComponent<Pigmento>().ProvideColor();
+            currentColor = pointerEventData.pointerEnter.GetComponent<Pigmento>().colorString;
         }
         
         
         else if(isCarryingPigment){ //Si lleva pigmento y no la sueltas en el bol
             if(pointerEventData.pointerEnter.CompareTag("BolCombinarPigmentos")){
-                //code
+                
             }
             isCarryingPigment = false;
             liquidoCanvasGroup.alpha = 0;
