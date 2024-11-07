@@ -24,8 +24,7 @@ public class ActivarBotonLimar : MonoBehaviour
     // Método para restar 1 al contador
     public void RestarContador()
     {
-        contador--;
-        if (contador <= 0)
+        if (--contador <= 0)
         {
             // Activa el objeto cuando el contador llegue a 0
             gameObject.SetActive(true);
