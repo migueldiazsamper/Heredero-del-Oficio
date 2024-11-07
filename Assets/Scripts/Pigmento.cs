@@ -14,6 +14,7 @@ public class Pigmento : MonoBehaviour, IPointerClickHandler
     {
         // Obtiene la referencia al PigmentosManager
         manager = FindObjectOfType<PigmentosManager>();
+
     }
 
     // Método que se llama al hacer clic en el pigmento
@@ -21,5 +22,16 @@ public class Pigmento : MonoBehaviour, IPointerClickHandler
     {
         // Intenta colocar el pigmento en un slot
         manager.SelectPigment(this);
+    }
+
+    public Color ProvideColor(){
+        switch (color){
+            case "Black":   return Color.black;
+            case "Magenta": return Color.magenta;
+            case "Cyan":    return Color.cyan;
+            case "Yellow":  return Color.yellow;
+            case "White":   return Color.white;
+            default: return Color.white;
+        }
     }
 }

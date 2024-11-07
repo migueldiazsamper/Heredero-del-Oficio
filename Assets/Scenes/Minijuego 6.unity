@@ -133,8 +133,9 @@ GameObject:
   - component: {fileID: 39377325}
   - component: {fileID: 39377327}
   - component: {fileID: 39377326}
+  - component: {fileID: 39377328}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Liquido
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -197,6 +198,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39377324}
   m_CullTransparentMesh: 1
+--- !u!225 &39377328
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39377324}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &100893500
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +219,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 100893501}
+  - component: {fileID: 100893502}
+  - component: {fileID: 100893503}
   m_Layer: 0
   m_Name: Cuchara
   m_TagString: Untagged
@@ -232,9 +247,39 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 687, y: -28}
+  m_AnchoredPosition: {x: 692, y: -42}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &100893502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100893500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a927f27877bf30d47a653fe1a9a46e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cabeza: {fileID: 988479653}
+  cuerpo: {fileID: 341422406}
+  liquido: {fileID: 39377324}
+  offSetBoteX: 23.1
+  offSetBoteY: 43.7
+  canvas: {fileID: 1731773590}
+--- !u!225 &100893503
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100893500}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &250697228
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +366,7 @@ GameObject:
   - component: {fileID: 341422407}
   - component: {fileID: 341422409}
   - component: {fileID: 341422408}
+  - component: {fileID: 341422410}
   m_Layer: 0
   m_Name: Cuerpo
   m_TagString: Untagged
@@ -385,6 +431,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341422406}
   m_CullTransparentMesh: 1
+--- !u!225 &341422410
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341422406}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &370123850 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4003243564964359461, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
@@ -521,7 +579,7 @@ GameObject:
   - component: {fileID: 986855560}
   m_Layer: 0
   m_Name: Color Final Mezclado
-  m_TagString: Untagged
+  m_TagString: BolCombinarPigmentos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -646,6 +704,7 @@ GameObject:
   - component: {fileID: 988479654}
   - component: {fileID: 988479656}
   - component: {fileID: 988479655}
+  - component: {fileID: 988479657}
   m_Layer: 0
   m_Name: Cabeza
   m_TagString: Untagged
@@ -710,6 +769,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988479653}
   m_CullTransparentMesh: 1
+--- !u!225 &988479657
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988479653}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1139797709
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,6 +885,14 @@ PrefabInstance:
     - target: {fileID: 446762319712057817, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
       propertyPath: timerText
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 459350816481780723, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
+      propertyPath: m_TagString
+      value: BotePigmento
+      objectReference: {fileID: 0}
+    - target: {fileID: 736884506209534805, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
+      propertyPath: m_TagString
+      value: BotePigmento
       objectReference: {fileID: 0}
     - target: {fileID: 857948484910659185, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
       propertyPath: m_AnchorMax.y
@@ -963,6 +1042,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4003243564964359461, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
+      propertyPath: m_TagString
+      value: BotePigmento
+      objectReference: {fileID: 0}
     - target: {fileID: 4287923325778199235, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -982,6 +1065,10 @@ PrefabInstance:
     - target: {fileID: 4287923325778199235, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737062301650792019, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
+      propertyPath: m_TagString
+      value: BotePigmento
       objectReference: {fileID: 0}
     - target: {fileID: 5373996800889674462, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1111,6 +1198,10 @@ PrefabInstance:
       propertyPath: referenceGameObject
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8586531628565641622, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
+      propertyPath: m_TagString
+      value: BotePigmento
+      objectReference: {fileID: 0}
     - target: {fileID: 9077927472425594820, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0.5
@@ -1229,6 +1320,11 @@ MonoBehaviour:
   slot2: {fileID: 431288129}
   mixedColorSprite: {fileID: 986855560}
   mixTrigger: {fileID: 986855559}
+--- !u!223 &1731773590 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 3046258631773066900, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
+  m_PrefabInstance: {fileID: 1699926176}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1737257437 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6975255976064987523, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
