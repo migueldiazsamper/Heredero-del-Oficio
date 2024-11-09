@@ -6,6 +6,14 @@ using UnityEngine.EventSystems;
 
 public class PaloEsmalte : MonoBehaviour, IBeginDragHandler , IEndDragHandler , IDragHandler
 {
+    //Spawning position for mixing
+    const int STARTING_POSITION_X = -500; 
+    const int STARTING_POSITION_Y = 200; 
+    
+    //Half points used to calculate the sense of the movement
+    const float HALF_POSITION_X = -650f;
+    const float HALF_POSITION_Y = 200f;
+
     RectTransform rectTransform;
     float anchoredXAxis, anchoredYAxis;
     [SerializeField] float moveSpeed = 1f;
@@ -17,11 +25,10 @@ public class PaloEsmalte : MonoBehaviour, IBeginDragHandler , IEndDragHandler , 
     
     void Awake(){
         rectTransform = GetComponent<RectTransform>();
-
     }
 
     void Start(){
-        rectTransform.anchoredPosition = new Vector2(-500, 200); //Posición de inicio
+        rectTransform.anchoredPosition = new Vector2(STARTING_POSITION_X, STARTING_POSITION_Y); //Posición de inicio
     }
 
     void Update(){
@@ -38,16 +45,16 @@ public class PaloEsmalte : MonoBehaviour, IBeginDragHandler , IEndDragHandler , 
             }
             anchoredXAxis = rectTransform.anchoredPosition.x;
             anchoredYAxis = rectTransform.anchoredPosition.y;
-            if(anchoredXAxis > -650f && anchoredYAxis >= 200f){ //Cuadrante superior derecho
+            if(anchoredXAxis > HALF_POSITION_X && anchoredYAxis >= HALF_POSITION_Y){ //Cuadrante superior derecho
                 rectTransform.anchoredPosition = new Vector2(anchoredXAxis - moveSpeed, anchoredYAxis + moveSpeed);
             }
-            else if(anchoredXAxis <= -650f && anchoredYAxis > 200f){ //Cuadrante superior izquierdo
+            else if(anchoredXAxis <= HALF_POSITION_X && anchoredYAxis > HALF_POSITION_Y){ //Cuadrante superior izquierdo
                 rectTransform.anchoredPosition = new Vector2(anchoredXAxis - moveSpeed, anchoredYAxis - moveSpeed);
             }
-            else if(anchoredXAxis < -650f && anchoredYAxis <= 200f){ //Cuadrante inferior izquierdo
+            else if(anchoredXAxis < HALF_POSITION_X && anchoredYAxis <= HALF_POSITION_Y){ //Cuadrante inferior izquierdo
                 rectTransform.anchoredPosition = new Vector2(anchoredXAxis + moveSpeed, anchoredYAxis - moveSpeed);
             }
-            else if(anchoredXAxis >= -650f && anchoredYAxis < 200f){ //Cuadrante inferior derecho
+            else if(anchoredXAxis >= HALF_POSITION_X && anchoredYAxis < HALF_POSITION_Y){ //Cuadrante inferior derecho
                 rectTransform.anchoredPosition = new Vector2(anchoredXAxis + moveSpeed, anchoredYAxis + moveSpeed);
             }
         }
@@ -59,7 +66,7 @@ public class PaloEsmalte : MonoBehaviour, IBeginDragHandler , IEndDragHandler , 
             isMixing = false;
         }
         else{
-            rectTransform.anchoredPosition = new Vector2(-500, 200);
+            rectTransform.anchoredPosition = new Vector2(STARTING_POSITION_X, STARTING_POSITION_Y);
             logicManager.GetComponent<LogicEsmalte>().FirstActivityFinished();
         } 
     }
