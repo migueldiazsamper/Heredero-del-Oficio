@@ -12,7 +12,7 @@ public class DialogueManager : MonoBehaviour
     [ SerializeField ] private TextMeshProUGUI dialogueText;
 
     private Story currentStory;
-    private bool dialogueIsPlaying = false;
+    public bool dialogueIsPlaying { get; private set; }
     private static DialogueManager instance;
 
     private void Awake ()
@@ -27,8 +27,55 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    private void Start ()
+    {
+        dialogueIsPlaying = false;
+        dialoguePanel.SetActive( false );
+    }
+
+    private void Update ()
+    {
+        if ( ! dialogueIsPlaying )
+        {
+            return;
+        }
+
+        if (  Input.GetKeyDown( KeyCode.Space ) )
+        {
+            ContinueStory();
+        }
+    }
+
     public static DialogueManager GetInstance ()
     {
         return instance;
+    }
+
+    public void EnterDialogueMode ( TextAsset inkJSON )
+    {
+        currentStory = new Story( inkJSON.text );
+        dialogueIsPlaying = true;
+        dialoguePanel.SetActive( true );
+        ContinueStory();
+    }
+
+    private void ExitDialogueMode ()
+    {
+        dialogueIsPlaying = false;
+        dialoguePanel.SetActive( false );
+        dialogueText.text = "";
+    }
+
+    private void ContinueStory ()
+    {
+        bool thereAreMoreLines = currentStory.canContinue;
+        if ( thereAreMoreLines )
+        {
+            dialogueText.text = currentStory.Continue();
+        }
+        else
+        {
+            ExitDialogueMode();
+        }
     }
 }
