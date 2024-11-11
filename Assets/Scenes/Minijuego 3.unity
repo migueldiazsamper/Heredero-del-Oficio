@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 183090005}
   - component: {fileID: 183090004}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: QuitText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -970,6 +970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 256006708}
   mainMenuScene: {fileID: 102900000, guid: 526f5bbe6589cbf498d21288b1135c18, type: 3}
+  isPaused: 0
 --- !u!1 &574069216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,7 +1417,7 @@ GameObject:
   - component: {fileID: 1122630598}
   - component: {fileID: 1122630597}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: OptionsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1461,7 +1462,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Opciones
+  m_text: Opciones WIP
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
