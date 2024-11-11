@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 // Esta clase se llama CheckIfDefeat y se encarga de verificar si se ha alcanzado una condición de derrota en el juego
 public class CheckIfDefeat : MonoBehaviour
@@ -11,6 +12,7 @@ public class CheckIfDefeat : MonoBehaviour
 
     // Referencia pública al componente CountDownTimer
     public CountDownTimer countDownTimer;
+
 
     // Este método se llama una vez cuando el script se inicializa
     void Awake ()

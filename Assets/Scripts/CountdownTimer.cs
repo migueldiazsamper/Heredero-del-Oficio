@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
@@ -24,6 +25,8 @@ public class CountDownTimer : MonoBehaviour
     // Referencia al componente ConstantRotation
     [SerializeField] ConstantRotation constantRotation;
 
+    // Referencia pública al botón de victoria
+    public Button victoryButton;
 
     // Método que devuelve si el tiempo se ha agotado
     public bool GetisTimeUp()
@@ -42,6 +45,7 @@ public class CountDownTimer : MonoBehaviour
     {
         remainingTime = startMinutes * 60 + startSeconds;
         UpdateTimerText();
+        victoryButton.gameObject.SetActive(false);
     }
 
     // Método que actualiza el texto del temporizador en pantalla con el tiempo restante
@@ -66,6 +70,8 @@ public class CountDownTimer : MonoBehaviour
                 constantRotation.MakeFinish();
                 isTimeUp = true;
                 UpdateTimerText();
+
+                victoryButton.gameObject.SetActive(true);
             }
         }
     }
