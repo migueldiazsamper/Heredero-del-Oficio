@@ -15,4 +15,10 @@ public class ChangeScenes : MonoBehaviour
         // Carga la escena que corresponde al índice calculado
         SceneManager.LoadScene( nextSceneIndex );
     }
+
+    
+    public void ReloadScene(){
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+    }
 }

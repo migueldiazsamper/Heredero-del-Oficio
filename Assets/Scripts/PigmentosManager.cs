@@ -7,10 +7,10 @@ using Image = UnityEngine.UI.Image; //Hay overlap entre el image de UnityUI y el
 public class PigmentosManager : MonoBehaviour
 {
 
-    
-    private Image mixedColorSprite;
+    [SerializeField] GameObject cuchara;
+    [SerializeField] private Image mixedColorSpriteImage;
 
-    private int colorCounter = 0;
+    public int colorCounter {get; private set;} = 0;
     private int[] colorPalette = new int[5]; //Este array contiene el nº usado de cada color en formato {b, m, c, y, w}
 
     // Diccionario que define las mezclas de colores
@@ -38,17 +38,23 @@ public class PigmentosManager : MonoBehaviour
         { "WhiteBlack", Color.gray }, // Blanco + Negro = Gris (inversa)
         // Agrega más combinaciones según sea necesario
     };
+
+
     void Awake(){
         for(int i = 0; i < 5; i++) colorPalette[i] = 0;
-        mixedColorSprite = GetComponentInChildren<Image>();
     }
-    public void AddColorToMix(String color){
+
+    
+    public void AddColorToMix(String colorString){
         if(colorCounter <= 5){
             colorCounter++;
-            AddColorToPalette(color);
-            DisplayColor();
+            AddColorToPalette(colorString);
+            DisplayColor(colorString);
+            Debug.Log(colorCounter);
+
+            //If there are 5 colors, lock the spoon for mixing
+            if(colorCounter == 5) cuchara.GetComponent<DragDropCuchara>().LockToBowl();
         }
-        //If there are 5 colors, lock the spoon to the bowl to begin stirring
     }
 
     private void AddColorToPalette(String color){
@@ -61,7 +67,20 @@ public class PigmentosManager : MonoBehaviour
         }
     }
 
-    private void DisplayColor(){
+    private void DisplayColor(String colorString){
         ///Show the last color added
+        mixedColorSpriteImage.color = ProvideColor(colorString);
     }
+
+    public Color ProvideColor(String colorString){
+        switch (colorString){
+            case "Black":   return Color.black;
+            case "Magenta": return Color.magenta;
+            case "Cyan":    return Color.cyan;
+            case "Yellow":  return Color.yellow;
+            case "White":   return Color.white;
+            default: return Color.white;
+        }
+    }
+
 }

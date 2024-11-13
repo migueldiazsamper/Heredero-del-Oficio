@@ -8,6 +8,9 @@ using Image = UnityEngine.UI.Image; //Hay overlap entre el image de UnityUI y el
 
 public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
+    [SerializeField] GameObject listoButton;
+    [SerializeField] GameObject resetButton;
+    [SerializeField] PigmentosManager pigmentosManager;
     //Referencias a las partes que conforman la cuchara
     [SerializeField] GameObject cabeza;
     [SerializeField] GameObject cuerpo;
@@ -15,7 +18,7 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     private CanvasGroup cabezaCanvasGroup;
     private CanvasGroup cuerpoCanvasGroup;
     private CanvasGroup liquidoCanvasGroup;
-    //
+    //Offsets para asegurar que la cuchara queda bien al quedar solo el cuerpo visible en el bote
     [SerializeField] private float offSetBoteX;
     [SerializeField] private float offSetBoteY;
     
@@ -29,10 +32,30 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
 
     private string currentColor;
 
+    ///Variables relacionadas con la fase de mezclar todos los pigmentos del bol
+    ///Spawning position for mixing
+    const int STARTING_POSITION_X = 180; 
+    const int STARTING_POSITION_Y = 30; 
+    
+    //Half points used to calculate the sense of the movement
+    const float HALF_POSITION_X = 15f;
+    const float HALF_POSITION_Y = 30f;
+    private bool isLockedToBowl = false;
+    private bool isMixing = false;
+    private float anchoredXAxis, anchoredYAxis;
+    [SerializeField] float moveSpeedX = 1f;
+    float moveSpeedY;
+    private bool finishedMixing = false;
+    [SerializeField] private float mixingWaitTime;
+
+
 
     // Método Awake que se llama al inicializar el script
     private void Awake ()
-    {
+    {   
+        moveSpeedY = moveSpeedX / 1.5f;
+
+        pigmentosManager = FindFirstObjectByType<PigmentosManager>();
         // Obtiene y almacena el componente RectTransform del objeto
         rectTransform = GetComponent< RectTransform >();
         // Obtiene y almacena el componente CanvasGroup del objeto
@@ -49,61 +72,107 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     }
 
     public void OnBeginDrag(PointerEventData pointerEventData){
-        
-        // Reduce la opacidad del objeto
-        canvasGroup.alpha = .9f;
-        // Permite que el objeto sea atravesado por rayos de detección
-        canvasGroup.blocksRaycasts = false;
-        // Coloca el objeto en un ángulo de 45º
-        rectTransform.rotation = Quaternion.Euler( 0 , 0 , 45 );
+        if(!isLockedToBowl){
+            // Reduce la opacidad del objeto
+            canvasGroup.alpha = .9f;
+            // Permite que el objeto sea atravesado por rayos de detección
+            canvasGroup.blocksRaycasts = false;
+            // Coloca el objeto en un ángulo de 45º
+            rectTransform.rotation = Quaternion.Euler( 0 , 0 , 45 );
 
-        if(isCarryingPigment){
-            liquidoCanvasGroup.alpha = 1f;
-            cabezaCanvasGroup.alpha = 1f;
+            if(isCarryingPigment){
+                liquidoCanvasGroup.alpha = 1f;
+                cabezaCanvasGroup.alpha = 1f;
 
+            }
         }
-
     }   
     public void OnDrag(PointerEventData pointerEventData)
-    {
+    {   
+        if(isLockedToBowl){
+            if(!isMixing){
+                StartCoroutine(MixingCountDown());
+                isMixing = true;
+            }
+            anchoredXAxis = rectTransform.anchoredPosition.x;
+            anchoredYAxis = rectTransform.anchoredPosition.y;
+            if(anchoredXAxis > HALF_POSITION_X && anchoredYAxis >= HALF_POSITION_Y){ //Cuadrante superior derecho
+                rectTransform.anchoredPosition = new Vector2(anchoredXAxis - moveSpeedX, anchoredYAxis + moveSpeedY);
+            }
+            else if(anchoredXAxis <= HALF_POSITION_X && anchoredYAxis > HALF_POSITION_Y){ //Cuadrante superior izquierdo
+                rectTransform.anchoredPosition = new Vector2(anchoredXAxis - moveSpeedX, anchoredYAxis - moveSpeedY);
+            }
+            else if(anchoredXAxis < HALF_POSITION_X && anchoredYAxis <= HALF_POSITION_Y){ //Cuadrante inferior izquierdo
+                rectTransform.anchoredPosition = new Vector2(anchoredXAxis + moveSpeedX, anchoredYAxis - moveSpeedY);
+            }
+            else if(anchoredXAxis >= HALF_POSITION_X && anchoredYAxis < HALF_POSITION_Y){ //Cuadrante inferior derecho
+                rectTransform.anchoredPosition = new Vector2(anchoredXAxis + moveSpeedX, anchoredYAxis + moveSpeedY);
+            }
+        }
         // Actualiza la posición anclada del objeto basado en el movimiento del puntero y el factor de escala del canvas
-        rectTransform.anchoredPosition += pointerEventData.delta / canvas.scaleFactor;
+        else rectTransform.anchoredPosition += pointerEventData.delta / canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData pointerEventData){
-        // Restaura la opacidad del objeto
-        canvasGroup.alpha = 1f;
-        // Impide que el objeto sea atravesado por rayos de detección
-        canvasGroup.blocksRaycasts = true;
-        
-        ///Al dejar la cuchara sobre un bote de pigmentos hacemos invisible todo menos el cuerpo
-        ///y el cuerpo queda sobre el bote para dar el efecto de que la cuchara está dentro del bote
-        if(pointerEventData.pointerEnter.CompareTag("BotePigmento")){
-            cabezaCanvasGroup.alpha = 0;
-            liquidoCanvasGroup.alpha = 0;
-            rectTransform.rotation = Quaternion.Euler( 0, 0, 165);
-            RectTransform boteRectTransform = pointerEventData.pointerEnter.GetComponent< RectTransform >();
-            rectTransform.anchoredPosition = new Vector2(boteRectTransform.anchoredPosition.x + offSetBoteX ,boteRectTransform.anchoredPosition.y + offSetBoteY);
-            isCarryingPigment = true;
+        if(!isLockedToBowl){
+            // Restaura la opacidad del objeto
+            canvasGroup.alpha = 1f;
+            // Impide que el objeto sea atravesado por rayos de detección
+            canvasGroup.blocksRaycasts = true;
+            
+            ///Al dejar la cuchara sobre un bote de pigmentos hacemos invisible todo menos el cuerpo
+            ///y el cuerpo queda sobre el bote para dar el efecto de que la cuchara está dentro del bote
+            if(pointerEventData.pointerEnter.CompareTag("BotePigmento") && pointerEventData != null){
+                cabezaCanvasGroup.alpha = 0;
+                liquidoCanvasGroup.alpha = 0;
+                rectTransform.rotation = Quaternion.Euler( 0, 0, 165);
+                RectTransform boteRectTransform = pointerEventData.pointerEnter.GetComponent< RectTransform >();
+                rectTransform.anchoredPosition = new Vector2(boteRectTransform.anchoredPosition.x + offSetBoteX ,boteRectTransform.anchoredPosition.y + offSetBoteY);
+                isCarryingPigment = true;
 
-            liquido.GetComponent<Image>().color = pointerEventData.pointerEnter.GetComponent<Pigmento>().ProvideColor();
-            currentColor = pointerEventData.pointerEnter.GetComponent<Pigmento>().colorString;
-        }
-        
-        
-        else if(isCarryingPigment){ //Si lleva pigmento y no la sueltas en el bol
-            if(pointerEventData.pointerEnter.CompareTag("BolCombinarPigmentos")){
-                
+                currentColor = pointerEventData.pointerEnter.GetComponent<Pigmento>().colorString;
+                liquido.GetComponent<Image>().color = pigmentosManager.ProvideColor(currentColor);
             }
-            isCarryingPigment = false;
-            liquidoCanvasGroup.alpha = 0;
+            
+            
+            else if(isCarryingPigment){ 
+                if(pointerEventData.pointerEnter.CompareTag("BolCombinarPigmentos") && pointerEventData != null){ //Si lleva pigmento y la sueltas en el bol
+                    if(pigmentosManager.colorCounter < 5) pigmentosManager.AddColorToMix(currentColor);
+                }
+                isCarryingPigment = false;
+                liquidoCanvasGroup.alpha = 0;
+            }
+            // Coloca el objeto en un ángulo de 90º
+            else rectTransform.rotation = Quaternion.Euler( 0 , 0 , 45 );  
         }
 
+        if(!finishedMixing){
+            StopAllCoroutines();
+            isMixing = false;
+        }
+        else{
+            rectTransform.anchoredPosition = new Vector2(STARTING_POSITION_X, STARTING_POSITION_Y);
+            listoButton.SetActive(true);
+            resetButton.SetActive(true);
+            this.enabled = false;
+        }
 
-        // Coloca el objeto en un ángulo de 90º
-        else rectTransform.rotation = Quaternion.Euler( 0 , 0 , 45 );
+    }
 
+    IEnumerator MixingCountDown(){
+        yield return new WaitForSeconds(mixingWaitTime);
+        finishedMixing = true;
+        Debug.Log(finishedMixing);
+        OnEndDrag(null);
+    }
 
-        
+    public void LockToBowl(){
+        // Cuando llegas al límite de colores, la cuchara se bloquea en el bol para que remuevas
+        cabezaCanvasGroup.alpha = 0;
+        liquidoCanvasGroup.alpha = 0;
+        rectTransform.rotation = Quaternion.Euler( 0, 0, 165);
+        rectTransform.anchoredPosition = new Vector2(STARTING_POSITION_X, STARTING_POSITION_Y);
+        isLockedToBowl = true;
+        OnEndDrag(null);
     }
 }
