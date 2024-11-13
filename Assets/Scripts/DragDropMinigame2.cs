@@ -12,7 +12,9 @@ public class DragDropMinigame2 : MonoBehaviour , IPointerDownHandler , IBeginDra
     // Referencias a los componentes RectTransform y CanvasGroup del objeto
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
-    
+
+    private Transform slotsParent;
+    private Transform piecesParent;
 
     // Método Awake que se llama al inicializar el script
     private void Awake ()
@@ -21,6 +23,9 @@ public class DragDropMinigame2 : MonoBehaviour , IPointerDownHandler , IBeginDra
         rectTransform = GetComponent< RectTransform >();
         // Obtiene y almacena el componente CanvasGroup del objeto
         canvasGroup = GetComponent< CanvasGroup >();
+        // Encuentra los padres de los slots y las piezas
+        slotsParent = GameObject.Find( "Slots" ).transform;
+        piecesParent = GameObject.Find( "Piezas" ).transform;
     }
 
     // Método que se llama al comenzar a arrastrar el objeto
@@ -35,8 +40,8 @@ public class DragDropMinigame2 : MonoBehaviour , IPointerDownHandler , IBeginDra
     // Método que se llama mientras se arrastra el objeto
     public void OnDrag ( PointerEventData eventData )
     {
-        // Actualiza la posición anclada del objeto basado en el movimiento del puntero y el factor de escala del canvas
-        // rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        // Cambia el orden de los padres para renderizar las piezas por debajo de los slots
+        slotsParent.SetSiblingIndex( piecesParent.GetSiblingIndex() + 1 );
     }
 
     // Método que se llama al finalizar el arrastre del objeto
@@ -46,6 +51,9 @@ public class DragDropMinigame2 : MonoBehaviour , IPointerDownHandler , IBeginDra
         canvasGroup.alpha = 1f;
         // Impide que el objeto sea atravesado por rayos de detección
         canvasGroup.blocksRaycasts = true;
+
+        // Cambia el orden de los padres para renderizar las piezas por encima de los slots
+        piecesParent.SetSiblingIndex( slotsParent.GetSiblingIndex() + 1 );
 
         // Verifica si el objeto se soltó sobre un slot
         if (eventData.pointerEnter != null && eventData.pointerEnter.GetComponent<RectTransform>() != null)
