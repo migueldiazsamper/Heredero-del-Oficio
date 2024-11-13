@@ -2691,6 +2691,7 @@ MonoBehaviour:
   startMinutes: 1
   startSeconds: 0
   constantRotation: {fileID: 0}
+  victoryButton: {fileID: 0}
 --- !u!1 &1867560329
 GameObject:
   m_ObjectHideFlags: 0
@@ -2847,6 +2848,7 @@ GameObject:
   - component: {fileID: 2008833106}
   - component: {fileID: 2008833105}
   - component: {fileID: 2008833104}
+  - component: {fileID: 2008833107}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2928,6 +2930,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2008833107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008833103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17de6bfc0d5f22e4ca142493e722f7b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuSceneAsset: {fileID: 102900000, guid: 526f5bbe6589cbf498d21288b1135c18, type: 3}
+  pauseMenuSceneAsset: {fileID: 102900000, guid: a7ea126554e51294d9b770155fd14234, type: 3}
 --- !u!1 &2140765078
 GameObject:
   m_ObjectHideFlags: 0
