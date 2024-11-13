@@ -7,6 +7,10 @@ public class Minigame7Manager : MonoBehaviour
 {
     [ SerializeField ] private Transform gameTransform;
     [ SerializeField ] private Transform piecePrefab;
+    [ SerializeField ] private Transform backgroundPrefab; // Referencia al prefab del fondo
+    [ SerializeField ] private Transform canvasTransform;
+
+    [SerializeField] private Vector3 boardScale = Vector3.one;
 
     List< Transform > pieces;
 
@@ -51,19 +55,36 @@ public class Minigame7Manager : MonoBehaviour
                 }
             }
         }
+
+        // Genera el fondo del minijuego
+        GenerateBackground();
     }
+
+    void GenerateBackground()
+    {
+        // Instancia el fondo
+        Transform background = Instantiate(backgroundPrefab, canvasTransform);
+
+        // Establece la escala del fondo
+        background.localScale = new Vector3(0.925f, 0.925f, 1);
+
+        // Establece la posición del fondo, colocando un valor negativo en el eje Z para que esté detrás de las piezas
+        background.localPosition = new Vector3(0, 0, 1);
+    }
+
 
     void Start ()
     {
         numberOfMoves = 0;
         movesText.text = $"Movimientos: {numberOfMoves}";
-        pieces = new List< Transform >();
-        CreateGamePieces( 0.01f );
+        pieces = new List<Transform>();
+        CreateGamePieces(0.01f);
         Shuffle();
     }
 
     void Update ()
     {
+        gameTransform.localScale = boardScale; // Aplica la escala del tablero
         movesText.text = $"Movimientos: {numberOfMoves}";
 
         bool pieceClicked = Input.GetMouseButtonDown( 0 );
