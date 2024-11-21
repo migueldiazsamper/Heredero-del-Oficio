@@ -348,7 +348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &918583851
 RectTransform:
   m_ObjectHideFlags: 0
@@ -682,7 +682,7 @@ GameObject:
   - component: {fileID: 1506229340}
   - component: {fileID: 1506229339}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: DialogueCanvasV1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -842,6 +842,10 @@ PrefabInstance:
     - target: {fileID: 3240689403656722469, guid: c19ad80263d85aa4287ac953ae720def, type: 3}
       propertyPath: m_Name
       value: Lluna
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240689403656722469, guid: c19ad80263d85aa4287ac953ae720def, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3780106379593363664, guid: c19ad80263d85aa4287ac953ae720def, type: 3}
       propertyPath: m_Size.x
@@ -1059,6 +1063,14 @@ PrefabInstance:
     - target: {fileID: 3240689403656722469, guid: c19ad80263d85aa4287ac953ae720def, type: 3}
       propertyPath: m_Name
       value: CasasTrabajadoresBloque1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240689403656722469, guid: c19ad80263d85aa4287ac953ae720def, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712826757174896058, guid: c19ad80263d85aa4287ac953ae720def, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
