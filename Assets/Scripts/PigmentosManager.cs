@@ -1,18 +1,17 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Image = UnityEngine.UI.Image; //Hay overlap entre el image de UnityUI y el VSCode. Esto lo arregla
 
 // Clase que gestiona la lógica de los pigmentos y los slots
 public class PigmentosManager : MonoBehaviour
 {
-    // Referencia a los dos slots
-    public SlotPigmento slot1;
-    public SlotPigmento slot2;
 
-    // Referencia al sprite que representa el color mezclado
-    public SpriteRenderer mixedColorSprite;
+    [SerializeField] GameObject cuchara;
+    [SerializeField] private Image mixedColorSpriteImage;
 
-    // Referencia al trigger para mezclar colores
-    public RectTransform mixTrigger;
+    public int colorCounter {get; private set;} = 0;
+    private int[] colorPalette = new int[5]; //Este array contiene el nº usado de cada color en formato {b, m, c, y, w}
 
     // Diccionario que define las mezclas de colores
     private Dictionary<string, Color> colorMixes = new Dictionary<string, Color>
@@ -40,54 +39,48 @@ public class PigmentosManager : MonoBehaviour
         // Agrega más combinaciones según sea necesario
     };
 
-    // Método que se llama al seleccionar un pigmento
-    public void SelectPigment(Pigmento pigmento)
-    {
-        // Verifica si ambos slots están ocupados
-        if (!slot1.IsEmpty() && !slot2.IsEmpty())
-        {
-            Debug.Log("Ambos slots están ocupados. No se puede seleccionar más colores.");
-            return;
-        }
 
-        // Coloca el pigmento en el primer slot vacío
-        if (slot1.IsEmpty())
-        {
-            slot1.PlacePigment(pigmento);
-        }
-        else if (slot2.IsEmpty())
-        {
-            slot2.PlacePigment(pigmento);
+    void Awake(){
+        for(int i = 0; i < 5; i++) colorPalette[i] = 0;
+    }
+
+    
+    public void AddColorToMix(String colorString){
+        if(colorCounter <= 5){
+            colorCounter++;
+            AddColorToPalette(colorString);
+            DisplayColor(colorString);
+            Debug.Log(colorCounter);
+
+            //If there are 5 colors, lock the spoon for mixing
+            if(colorCounter == 5) cuchara.GetComponent<DragDropCuchara>().LockToBowl();
         }
     }
 
-    // Método que se llama al usar la herramienta en el trigger
-    public void MixColors()
-    {
-        // Verifica si ambos slots están ocupados
-        if (slot1.IsEmpty() || slot2.IsEmpty())
-        {
-            Debug.Log("Ambos slots deben estar ocupados para mezclar colores.");
-            return;
-        }
-
-        // Obtiene los colores de los pigmentos en los slots
-        string color1 = slot1.currentPigment.color;
-        string color2 = slot2.currentPigment.color;
-
-        // Genera la clave para buscar en el diccionario de mezclas
-        string mixKey = color1 + color2;
-
-        // Verifica si la mezcla existe en el diccionario
-        if (colorMixes.ContainsKey(mixKey))
-        {
-            // Cambia el color del sprite al color mezclado
-            mixedColorSprite.color = colorMixes[mixKey];
-            Debug.Log("Colores mezclados: " + color1 + " + " + color2 + " = " + colorMixes[mixKey]);
-        }
-        else
-        {
-            Debug.Log("Mezcla de colores no definida.");
+    private void AddColorToPalette(String color){
+        switch (color){
+            case "Black": colorPalette[0]++; break;
+            case "Magenta": colorPalette[1]++; break;
+            case "Cyan": colorPalette[2]++; break;
+            case "Yellow": colorPalette[3]++; break;
+            case "White": colorPalette[4]++; break;
         }
     }
+
+    private void DisplayColor(String colorString){
+        ///Show the last color added
+        mixedColorSpriteImage.color = ProvideColor(colorString);
+    }
+
+    public Color ProvideColor(String colorString){
+        switch (colorString){
+            case "Black":   return Color.black;
+            case "Magenta": return Color.magenta;
+            case "Cyan":    return Color.cyan;
+            case "Yellow":  return Color.yellow;
+            case "White":   return Color.white;
+            default: return Color.white;
+        }
+    }
+
 }

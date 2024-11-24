@@ -28,8 +28,9 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 {
                     eventData.pointerDrag.GetComponent<DraggableItem>().currentSlot = this; // Asigna este slot como el slot actual del objeto arrastrado
                 }
-                else
+                else //[Minijuego 4] Marcar en la madera que su slot actual es el de este script
                 {
+                    if(eventData.pointerDrag.GetComponent<DragDropMinigame4>() != null)
                     eventData.pointerDrag.GetComponent<DragDropMinigame4>().currentSlot = this;
                 }
             }   
@@ -43,7 +44,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         freeOfItem = false; // Marca el área de este componente como ocupada
     }
 
-    public float CurrentMaderitaHeatValue() //Función para obtener el valor de calor de la madera en este slot
+    public float CurrentMaderitaHeatValue() //[Minijuego 4] Función para obtener el valor de calor de la madera en este slot
     {   
         //Si no hay madera devolverá 0
         if(currentMaderita!=null) return currentMaderita.heatValue;

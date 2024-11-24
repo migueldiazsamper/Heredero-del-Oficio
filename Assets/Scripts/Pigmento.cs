@@ -2,24 +2,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 // Clase que representa un pigmento
-public class Pigmento : MonoBehaviour, IPointerClickHandler
+public class Pigmento : MonoBehaviour
 {
     // Identificador del color del pigmento
-    public string color;
+    public string colorString;
 
-    // Referencia al PigmentosManager
-    private PigmentosManager manager;
-
-    private void Start()
-    {
-        // Obtiene la referencia al PigmentosManager
-        manager = FindObjectOfType<PigmentosManager>();
-    }
-
-    // Método que se llama al hacer clic en el pigmento
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        // Intenta colocar el pigmento en un slot
-        manager.SelectPigment(this);
-    }
 }
