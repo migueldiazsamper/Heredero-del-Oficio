@@ -13,12 +13,15 @@ public class CheckIfDefeat : MonoBehaviour
     // Referencia pública al componente CountDownTimer
     public CountDownTimer countDownTimer;
 
+    [SerializeField] private GameObject listoButton;
+
 
     // Este método se llama una vez cuando el script se inicializa
     void Awake ()
     {
         // Obtiene el componente ConstantRotation del mismo objeto y lo guarda en la variable constantRotation
         constantRotation = GetComponent< ConstantRotation >();
+        listoButton.SetActive(false);
     }
 
     // Este método se llama una vez por cada frame (fotograma) del juego
@@ -48,6 +51,8 @@ public class CheckIfDefeat : MonoBehaviour
                 {
                     countDownTimer.SetisTimeUp(true);
                 }
+
+                listoButton.SetActive(true);
             }
         }
     }

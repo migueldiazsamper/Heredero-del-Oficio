@@ -76,7 +76,7 @@ public class Minigame7Manager : MonoBehaviour
     void Start ()
     {
         numberOfMoves = 0;
-        movesText.text = $"MOVIMIENTOS:\n{numberOfMoves}";
+        movesText.text = $"Has movido\n{numberOfMoves} piezas";
         pieces = new List<Transform>();
         CreateGamePieces(0.01f);
         Shuffle();
@@ -85,7 +85,14 @@ public class Minigame7Manager : MonoBehaviour
     void Update ()
     {
         gameTransform.localScale = boardScale; // Aplica la escala del tablero
-        movesText.text = $"MOVIMIENTOS:\n{numberOfMoves}";
+        if ( numberOfMoves == 1 )
+        {
+            movesText.text = $"Has movido\n{numberOfMoves} pieza";
+        }
+        else
+        {
+            movesText.text = $"Has movido\n{numberOfMoves} piezas";
+        }
 
         bool pieceClicked = Input.GetMouseButtonDown( 0 );
         if ( pieceClicked )

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 // Definición de la clase Timer que hereda de MonoBehaviour
 public class CountDownTimer : MonoBehaviour
@@ -27,6 +28,8 @@ public class CountDownTimer : MonoBehaviour
 
     // Referencia pública al botón de victoria
     public Button victoryButton;
+
+    [SerializeField] private int minigame;
 
     // Método que devuelve si el tiempo se ha agotado
     public bool GetisTimeUp()
@@ -72,6 +75,15 @@ public class CountDownTimer : MonoBehaviour
                 UpdateTimerText();
 
                 victoryButton.gameObject.SetActive(true);
+
+            }
+        }
+        else
+        {
+            timerText.text = "00:00";
+            if (minigame == 4)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }

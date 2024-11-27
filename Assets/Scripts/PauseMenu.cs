@@ -7,14 +7,12 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private Slider musicVolumeSlider; // Referencia al slider del volumen de la música
     [SerializeField] private Slider sfxVolumeSlider; // Referencia al slider del volumen de los efectos de sonido
 
-    // Método para reanudar el juego
-    public void ResumeGame()
-    {
-        PauseMenuManager.Instance.ResumeGame();
-    }
+    [SerializeField] private GameObject pauseMenuUI; // Referencia al menú de pausa
+
+    [SerializeField] private GameObject[] objetos; // Referencia al objeto de los puntos
 
     // Método para ir al menú principal
-    public void GoToMainMenu()
+    /* public void GoToMainMenu()
     {
         PauseMenuManager.Instance.ResumeGame();
 
@@ -26,6 +24,33 @@ public class PauseMenu : MonoBehaviour
         }
 
         SceneManager.LoadScene(PauseMenuManager.Instance.mainMenuScene);
+    } */
+
+    public void PausarJuego()
+    {
+        Time.timeScale = 0;
+        pauseMenuUI.SetActive(true);
     }
 
+    public void ReanudarJuego()
+    {
+        Time.timeScale = 1;
+        pauseMenuUI.SetActive(false);
+    }
+
+    public void OcultarObjetos()
+    {
+        foreach (GameObject objeto in objetos)
+        {
+            objeto.SetActive(false);
+        }
+    }
+
+    public void MostrarObjetos()
+    {
+        foreach (GameObject objeto in objetos)
+        {
+            objeto.SetActive(true);
+        }
+    }
 }
