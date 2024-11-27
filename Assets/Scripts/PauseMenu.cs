@@ -4,17 +4,13 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] private Slider musicVolumeSlider; // Referencia al slider del volumen de la música
-    [SerializeField] private Slider sfxVolumeSlider; // Referencia al slider del volumen de los efectos de sonido
-
     [SerializeField] private GameObject pauseMenuUI; // Referencia al menú de pausa
-
     [SerializeField] private GameObject[] objetos; // Referencia al objeto de los puntos
 
     // Método para ir al menú principal
-    /* public void GoToMainMenu()
+    public void GoToMainMenu()
     {
-        PauseMenuManager.Instance.ResumeGame();
+        ReanudarJuego();
 
         // Buscar y destruir el objeto AudioManager
         GameObject audioManager = GameObject.Find("AudioManager");
@@ -23,8 +19,9 @@ public class PauseMenu : MonoBehaviour
             Destroy(audioManager);
         }
 
-        SceneManager.LoadScene(PauseMenuManager.Instance.mainMenuScene);
-    } */
+        // Cargar la escena del menú principal
+        SceneManager.LoadScene("MainMenu");
+    }
 
     public void PausarJuego()
     {

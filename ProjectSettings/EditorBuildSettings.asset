@@ -41,7 +41,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pueblo.unity
     guid: 90feb66d152956f499983e91a0dc3134
-  - enabled: 1
-    path: Assets/Scenes/PauseMenu.unity
-    guid: a7ea126554e51294d9b770155fd14234
   m_configObjects: {}
