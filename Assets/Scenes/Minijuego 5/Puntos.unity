@@ -489,13 +489,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17de6bfc0d5f22e4ca142493e722f7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicVolumeSlider: {fileID: 0}
-  sfxVolumeSlider: {fileID: 0}
   pauseMenuUI: {fileID: 416109033}
-  puntos:
-  - {fileID: 286204171}
-  - {fileID: 987958155}
+  objetos:
   - {fileID: 715343751}
+  - {fileID: 987958155}
+  - {fileID: 286204171}
 --- !u!1001 &416109031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -530,7 +528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3234411486764000571, guid: 835bcbd473da1954483348de4c90d04a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: MostrarPuntos
+      value: MostrarObjetos
       objectReference: {fileID: 0}
     - target: {fileID: 3234411486764000571, guid: 835bcbd473da1954483348de4c90d04a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -735,7 +733,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 405575199}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: OcultarPuntos
+        m_MethodName: OcultarObjetos
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1768,10 +1766,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17de6bfc0d5f22e4ca142493e722f7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicVolumeSlider: {fileID: 0}
-  sfxVolumeSlider: {fileID: 0}
   pauseMenuUI: {fileID: 0}
-  puntos: []
+  objetos: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
