@@ -15,6 +15,12 @@ public class DialogueManager : MonoBehaviour
     public bool dialogueIsPlaying { get; private set; }
     private static DialogueManager instance;
 
+    private bool isTyping = false;
+
+    [SerializeField] private float typingSpeed = 0.05f; // Velocidad de tipeo
+
+    private Animator animator;
+
     private void Awake ()
     {
         if ( instance == null )
@@ -25,6 +31,8 @@ public class DialogueManager : MonoBehaviour
         {
             Destroy( this.gameObject );
         }
+
+        animator = GameObject.Find("PersonajePrincipal").GetComponent<Animator>();
     }
 
     private void Start ()
@@ -42,7 +50,16 @@ public class DialogueManager : MonoBehaviour
 
         if (  Input.GetKeyDown( KeyCode.Space ) )
         {
-            ContinueStory();
+            if ( isTyping )
+            {
+                StopAllCoroutines();
+                isTyping = false;
+                dialogueText.text = currentStory.currentText;
+            }
+            else
+            {
+                ContinueStory();
+            }
         }
     }
 
@@ -53,6 +70,9 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode ( TextAsset inkJSON )
     {
+        animator.SetBool("isIdle", true);
+        animator.SetBool("isRunningRight", false);
+        animator.SetBool("isRunningLeft", false);
         currentStory = new Story( inkJSON.text );
         dialogueIsPlaying = true;
         dialoguePanel.SetActive( true );
@@ -64,6 +84,9 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive( false );
         dialogueText.text = "";
+        animator.SetBool("isIdle", false);
+        animator.SetBool("isRunningRight", true);
+        animator.SetBool("isRunningLeft", true);
     }
 
     private void ContinueStory ()
@@ -71,11 +94,25 @@ public class DialogueManager : MonoBehaviour
         bool thereAreMoreLines = currentStory.canContinue;
         if ( thereAreMoreLines )
         {
-            dialogueText.text = currentStory.Continue();
+            string nextLine = currentStory.Continue();
+            StopAllCoroutines();
+            isTyping = true;
+            StartCoroutine(TypeLine(nextLine));
         }
         else
         {
             ExitDialogueMode();
+            isTyping = false;
+        }
+    }
+
+    private IEnumerator TypeLine(string line)
+    {
+        dialogueText.text = "";
+        foreach (char letter in line.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
         }
     }
 }

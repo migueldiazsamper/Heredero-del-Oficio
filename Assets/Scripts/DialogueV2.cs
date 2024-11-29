@@ -24,6 +24,9 @@ public class DialogueV2 : MonoBehaviour
     private Story currentStory;
     private int currentGamePhase = 0;
 
+    [SerializeField] private float typingSpeed = 0.05f; // Velocidad de tipeo
+    private bool isTyping = false;
+
     private void Start ()
     {
         stories = new Story[ inkJSONs.Length ];
@@ -61,7 +64,16 @@ public class DialogueV2 : MonoBehaviour
 
         if (  Input.GetKeyDown( KeyCode.Space ) )
         {
-            NextLine();
+            if ( isTyping )
+            {
+                StopAllCoroutines();
+                isTyping = false;
+                dialogueText.text = currentStory.currentText;
+            }
+            else
+            {
+                NextLine(); 
+            }
         }
     }
 
@@ -76,11 +88,25 @@ public class DialogueV2 : MonoBehaviour
         bool thereAreMoreLines = currentStory.canContinue;
         if ( thereAreMoreLines )
         {
-            dialogueText.text = currentStory.Continue();
+            string nextLine = currentStory.Continue();
+            StopAllCoroutines();
+            isTyping = true;
+            StartCoroutine(TypeLine(nextLine));
         }
         else
         {
             NextNPC();
+            isTyping = false;
+        }
+    }
+
+    private IEnumerator TypeLine(string line)
+    {
+        dialogueText.text = "";
+        foreach (char letter in line.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
         }
     }
 }

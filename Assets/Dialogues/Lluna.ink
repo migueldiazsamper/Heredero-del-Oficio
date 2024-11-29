@@ -1,3 +1,4 @@
 ¡Oh no, Jaume-kun, no abuses de mí!
 ¡Para ya de manosearme!
-Soy un acólito del gobierno socialista, lo admito.
+Laura ya me lo advirtió en su momento...
+¡En Castellón estás desatado!
