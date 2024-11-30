@@ -1041,9 +1041,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17de6bfc0d5f22e4ca142493e722f7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicVolumeSlider: {fileID: 0}
-  sfxVolumeSlider: {fileID: 0}
   pauseMenuUI: {fileID: 1150343821}
+  objetos: []
 --- !u!1001 &1150343820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1600,9 +1599,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17de6bfc0d5f22e4ca142493e722f7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicVolumeSlider: {fileID: 0}
-  sfxVolumeSlider: {fileID: 0}
   pauseMenuUI: {fileID: 0}
+  objetos: []
 --- !u!1 &1898758417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1761,7 +1759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 508e32581d642f1449d5fc297bdc9269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: {fileID: 102900000, guid: 0fd82ed18844a3640a860097c7c309f8, type: 3}
+  sceneToLoad: {fileID: 102900000, guid: 897c58aea0e4c354f9fcf4aeb462a568, type: 3}
 --- !u!114 &2065828790
 MonoBehaviour:
   m_ObjectHideFlags: 0

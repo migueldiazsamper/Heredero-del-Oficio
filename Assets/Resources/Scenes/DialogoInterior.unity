@@ -122,6 +122,81 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &88625768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 88625769}
+  - component: {fileID: 88625771}
+  - component: {fileID: 88625770}
+  m_Layer: 5
+  m_Name: Fondo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &88625769
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88625768}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1896243290}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &88625770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88625768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &88625771
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88625768}
+  m_CullTransparentMesh: 1
 --- !u!1 &218457889
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,38 +243,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inkJSONs:
   - {fileID: 4900000, guid: c7ad575fc3b5054479b4fc50a2e8df07, type: 3}
-  - {fileID: 4900000, guid: 396f625361e59d94995cba726c7d5d3e, type: 3}
-  - {fileID: 4900000, guid: 4b1c72bbbd2fd584fac09311a0810882, type: 3}
-  - {fileID: 4900000, guid: 1fc98870ea64477479cfd79c6eaf22de, type: 3}
-  - {fileID: 4900000, guid: 1fc98870ea64477479cfd79c6eaf22de, type: 3}
-  - {fileID: 4900000, guid: 914a59d21b984fb4f88e6aff675d2c5c, type: 3}
-  - {fileID: 4900000, guid: 1fc98870ea64477479cfd79c6eaf22de, type: 3}
-  - {fileID: 4900000, guid: c41d9055de15ba14eb410a480d537afc, type: 3}
-  - {fileID: 4900000, guid: 0c3dee88311d109428203fd09e0d5334, type: 3}
-  isLeft: 010000000001000101
+  - {fileID: 4900000, guid: d85465342a415394dac55f80e50e2f41, type: 3}
+  - {fileID: 4900000, guid: 7efbb1bcce5c4574b8b098da1630ac0f, type: 3}
+  - {fileID: 4900000, guid: 84f1900cc4c739a4895bc8aee856570d, type: 3}
+  - {fileID: 4900000, guid: a067b662cfdbcd24ab51201d867aa5af, type: 3}
+  - {fileID: 4900000, guid: 17f0af77a776f8342bf4c2837cd1fd3e, type: 3}
+  - {fileID: 4900000, guid: 80b74302a1a3cd54e952aee8ea95ce4f, type: 3}
+  - {fileID: 4900000, guid: 278cb34d805e491448116a91a65dd205, type: 3}
+  - {fileID: 4900000, guid: d0ed05bca9d30fb41a1811c7e03686c4, type: 3}
+  - {fileID: 4900000, guid: f35b10dc403761b48abe12476bf0bd12, type: 3}
+  - {fileID: 4900000, guid: df4247261e860d34ab4f4dd9a5ed9212, type: 3}
+  - {fileID: 4900000, guid: 55725fb27199b514797396f3cb97d1d3, type: 3}
+  - {fileID: 4900000, guid: 645ba690e4be30f49838fb054385b9ca, type: 3}
+  - {fileID: 4900000, guid: eb9022d9f69bf9c4683f996fe03145e3, type: 3}
+  - {fileID: 4900000, guid: 8a5e25b039e2e904990224c9e570d482, type: 3}
+  - {fileID: 4900000, guid: f2518dd6bd47a8a448365ce41cf89219, type: 3}
+  isLeft: 01000101010101010000010100000101
   portraits:
   - {fileID: 21300000, guid: e8d6bbbf45bd75c47879f67771d5a5b3, type: 3}
+  - {fileID: 21300000, guid: ca94efc7eb47b32488fca2be19993b6c, type: 3}
   - {fileID: 21300000, guid: 6405cefc77c21f940a89ef3e49d92883, type: 3}
+  - {fileID: 21300000, guid: 6405cefc77c21f940a89ef3e49d92883, type: 3}
+  - {fileID: 21300000, guid: 4e28bbe2900c1f446be6a98a3b0b14c9, type: 3}
   - {fileID: 21300000, guid: 4e28bbe2900c1f446be6a98a3b0b14c9, type: 3}
   - {fileID: 21300000, guid: ca94efc7eb47b32488fca2be19993b6c, type: 3}
   - {fileID: 21300000, guid: ca94efc7eb47b32488fca2be19993b6c, type: 3}
+  - {fileID: 21300000, guid: ca94efc7eb47b32488fca2be19993b6c, type: 3}
+  - {fileID: 21300000, guid: ca94efc7eb47b32488fca2be19993b6c, type: 3}
+  - {fileID: 21300000, guid: b16c90fe654cdb841ba513fc37980435, type: 3}
   - {fileID: 21300000, guid: b16c90fe654cdb841ba513fc37980435, type: 3}
   - {fileID: 21300000, guid: ca94efc7eb47b32488fca2be19993b6c, type: 3}
+  - {fileID: 21300000, guid: ca94efc7eb47b32488fca2be19993b6c, type: 3}
   - {fileID: 21300000, guid: 1aa7b10cad0928d4488a346fd3ba12a0, type: 3}
-  - {fileID: 21300000, guid: 43a5d00aa156f1441a5bb59a9f29caf5, type: 3}
+  - {fileID: 21300000, guid: 1aa7b10cad0928d4488a346fd3ba12a0, type: 3}
   names:
   - "MAR\xCDA TERESA"
-  - JUAN FERRER
+  - DIRECTOR
+  - JUAN
+  - JUAN
+  - LLUISA
   - LLUISA
   - PEDRO
-  - "RUB\xC9N FERN\xC1NDEZ"
+  - PEDRO
+  - CANDELA
+  - CANDELA
   - AGUSTINA
-  - ANGOLIE FERRANDO
+  - AGUSTINA
+  - FRANCESC
+  - FRANCESC
   - LLUC
-  - '?'
+  - LLUC
   portraitGameObject: {fileID: 1677568784}
   dialogueText: {fileID: 315880261}
   nameText: {fileID: 554930154}
+  fondoMina: {fileID: 21300000, guid: 2f355d6957c41cd4aa071ef578c84ce3, type: 3}
+  fondoDialogoNormal: {fileID: 21300000, guid: 3cb5d651ee8fd0f49812d62bbff709f2, type: 3}
+  fondo: {fileID: 88625768}
   typingSpeed: 0.05
 --- !u!1 &237265899
 GameObject:
@@ -1224,6 +1323,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 88625769}
   - {fileID: 486043427}
   - {fileID: 1677568785}
   m_Father: {fileID: 0}

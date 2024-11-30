@@ -6,28 +6,12 @@ using UnityEngine.SceneManagement;
 public class PhasesManager : MonoBehaviour
 {
     public static PhasesManager instance;
+
     public int currentPhase = 0;
-    public int maxPhases = 8;
-
+    public int maxPhases = 16;
     public int puntuacionTotal = 0;
-
-    public string[] scenes;
-
-    Dictionary<int, string> phasesAndScenes = new Dictionary<int, string>
-    {
-        { 0, "" },
-        { 1, "" },
-        { 2, "" },
-        { 3, "" },
-        { 4, "" },
-        { 5, "" },
-        { 6, "" },
-        { 7, "" }
-    };
-
     public bool nextIsPueblo = false;
-
-    private bool[] nextIsDialogue = { false, false, true, false, true, false, true, false };
+    public bool tieneQueEntrarEnMina = false;
 
     private void Awake()
     {

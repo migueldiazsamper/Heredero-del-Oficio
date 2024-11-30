@@ -257,9 +257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17de6bfc0d5f22e4ca142493e722f7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicVolumeSlider: {fileID: 0}
-  sfxVolumeSlider: {fileID: 0}
   pauseMenuUI: {fileID: 1220248715}
+  objetos: []
 --- !u!1 &224408022 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6826881190812315882, guid: 3fdd97ef0a2be9f409f5aa888d27ff4b, type: 3}
@@ -274,12 +273,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 197365061}
     m_Modifications:
     - target: {fileID: 6233220255757289843, guid: 3fdd97ef0a2be9f409f5aa888d27ff4b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233220255757289843, guid: 3fdd97ef0a2be9f409f5aa888d27ff4b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 828623625}
     - target: {fileID: 6233220255757289843, guid: 3fdd97ef0a2be9f409f5aa888d27ff4b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadNextScene
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233220255757289843, guid: 3fdd97ef0a2be9f409f5aa888d27ff4b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Lima_Delante
       objectReference: {fileID: 0}
     - target: {fileID: 6409988264223252309, guid: 3fdd97ef0a2be9f409f5aa888d27ff4b, type: 3}
       propertyPath: m_Pivot.x
@@ -1375,9 +1382,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17de6bfc0d5f22e4ca142493e722f7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicVolumeSlider: {fileID: 0}
-  sfxVolumeSlider: {fileID: 0}
   pauseMenuUI: {fileID: 0}
+  objetos: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

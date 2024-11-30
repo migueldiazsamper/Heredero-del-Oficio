@@ -1436,19 +1436,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPhase: 0
-  maxPhases: 8
-  puntuacionTotal: 25
-  scenes:
-  - DialogoInterior
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  maxPhases: 16
+  puntuacionTotal: 10
   nextIsPueblo: 0
+  tieneQueEntrarEnMina: 0
 --- !u!4 &1741917712
 Transform:
   m_ObjectHideFlags: 0
@@ -1508,7 +1499,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.185
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -3029,7 +3029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1803677359}
   startMinutes: 0
-  startSeconds: 3
+  startSeconds: 5
   constantRotation: {fileID: 0}
   victoryButton: {fileID: 0}
   minigame: 4

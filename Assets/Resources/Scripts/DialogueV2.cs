@@ -20,6 +20,9 @@ public class DialogueV2 : MonoBehaviour
     [ SerializeField ] private GameObject portraitGameObject;
     [ SerializeField ] private TextMeshProUGUI dialogueText;
     [ SerializeField ] private TextMeshProUGUI nameText;
+    [ SerializeField ] private Sprite fondoMina;
+    [ SerializeField ] private Sprite fondoDialogoNormal;
+    [ SerializeField ] private GameObject fondo;
     
     private Story[] stories;
     private Story currentStory;
@@ -42,61 +45,34 @@ public class DialogueV2 : MonoBehaviour
 
     private void Update ()
     {
-        if ( PhasesManager.instance.currentPhase == 8 )
+        if ( PhasesManager.instance.currentPhase == 2 || PhasesManager.instance.currentPhase == 3 )
         {
-            if (PhasesManager.instance.puntuacionTotal >= 10) // Final Condesa
-            {
-                isLeft[PhasesManager.instance.currentPhase] = true;
-
-                string portraitPath = "Art/Portraits Diálogos/CondesaSprite";
-                Sprite portraitSprite = Resources.Load<Sprite>(portraitPath);
-                portraitGameObject.GetComponent<Image>().sprite = portraitSprite;
-
-                nameText.text = "CONDESA DE ARANDA";
-
-                // Carga el JSON específico para el final de la Condesa
-                string jsonPath = "Dialogues/Diálogos Finales/Condesa";
-                TextAsset jsonTextAsset = Resources.Load<TextAsset>(jsonPath);
-                currentStory = new Story(jsonTextAsset.text);
-            }
-            else // Final con el padre
-            {
-                isLeft[PhasesManager.instance.currentPhase] = false;
-
-                string portraitPath = "Art/Portraits Diálogos/PadreSprite";
-                Sprite portraitSprite = Resources.Load<Sprite>(portraitPath);
-                portraitGameObject.GetComponent<Image>().sprite = portraitSprite;
-
-                nameText.text = "MANEL";
-
-                // Carga el JSON específico para el final con el padre
-                string jsonPath = "Dialogues/Diálogos Finales/Manel";
-                TextAsset jsonTextAsset = Resources.Load<TextAsset>(jsonPath);
-                currentStory = new Story(jsonTextAsset.text);
-            }
+            fondo.GetComponent<Image>().sprite = fondoMina;
         }
         else
         {
-            // Asigna la imagen del portrait correspondiente
-            portraitGameObject.GetComponent<Image>().sprite = portraits[PhasesManager.instance.currentPhase];
-
-            // Ajusta las posiciones según el valor de isLeft
-            if (isLeft[PhasesManager.instance.currentPhase])
-            {
-                nameText.rectTransform.anchoredPosition = new Vector2(35, nameText.rectTransform.anchoredPosition.y);
-                dialogueText.rectTransform.anchoredPosition = new Vector2(15, dialogueText.rectTransform.anchoredPosition.y);
-                portraitGameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-640, portraitGameObject.GetComponent<RectTransform>().anchoredPosition.y);
-            }
-            else
-            {
-                nameText.rectTransform.anchoredPosition = new Vector2(-520, nameText.rectTransform.anchoredPosition.y);
-                dialogueText.rectTransform.anchoredPosition = new Vector2(-545, dialogueText.rectTransform.anchoredPosition.y);
-                portraitGameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(640, portraitGameObject.GetComponent<RectTransform>().anchoredPosition.y);
-            }
-
-            // Asigna el nombre del personaje
-            nameText.text = names[PhasesManager.instance.currentPhase];
+            fondo.GetComponent<Image>().sprite = fondoDialogoNormal;
         }
+        
+        // Asigna la imagen del portrait correspondiente
+        portraitGameObject.GetComponent<Image>().sprite = portraits[PhasesManager.instance.currentPhase];
+
+        // Ajusta las posiciones según el valor de isLeft
+        if (isLeft[PhasesManager.instance.currentPhase])
+        {
+            nameText.rectTransform.anchoredPosition = new Vector2(35, nameText.rectTransform.anchoredPosition.y);
+            dialogueText.rectTransform.anchoredPosition = new Vector2(15, dialogueText.rectTransform.anchoredPosition.y);
+            portraitGameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-640, portraitGameObject.GetComponent<RectTransform>().anchoredPosition.y);
+        }
+        else
+        {
+            nameText.rectTransform.anchoredPosition = new Vector2(-520, nameText.rectTransform.anchoredPosition.y);
+            dialogueText.rectTransform.anchoredPosition = new Vector2(-545, dialogueText.rectTransform.anchoredPosition.y);
+            portraitGameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(640, portraitGameObject.GetComponent<RectTransform>().anchoredPosition.y);
+        }
+
+        // Asigna el nombre del personaje
+        nameText.text = names[PhasesManager.instance.currentPhase];
 
         if (  Input.GetKeyDown( KeyCode.Space ) )
         {
@@ -115,29 +91,32 @@ public class DialogueV2 : MonoBehaviour
 
     private void NextNPC ()
     {
-        PhasesManager.instance.nextIsPueblo = !PhasesManager.instance.nextIsPueblo;
-        Debug.Log(PhasesManager.instance.nextIsPueblo);
+        if ( PhasesManager.instance.currentPhase >= 2 )
+        {
+            PhasesManager.instance.nextIsPueblo = !PhasesManager.instance.nextIsPueblo;
+        }
+        else
+        {
+            PhasesManager.instance.nextIsPueblo = true;
+        }
+        
+        PhasesManager.instance.NextPhase();
+
 
         if (  PhasesManager.instance.nextIsPueblo )
         {
             ChangeScenes.LoadScene("Pueblo");
-            PhasesManager.instance.NextPhase();
         }
         else
         {
-            if (PhasesManager.instance.currentPhase == 8)
-            {
-                Application.Quit();
-            }
-            else if (PhasesManager.instance.currentPhase == 5)
+            if (PhasesManager.instance.currentPhase == 11)
             {
                 ChangeScenes.LoadScene("Esmalte");
             }
             else
             {
-                ChangeScenes.LoadScene("Minijuego " + PhasesManager.instance.currentPhase);
+                ChangeScenes.LoadScene("Minijuego " + PhasesManager.instance.currentPhase / 2);
             }
-
         }
         
         currentStory = stories[ PhasesManager.instance.currentPhase ];

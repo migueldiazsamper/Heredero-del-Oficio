@@ -38,13 +38,38 @@ public class EntradaFabrica : MonoBehaviour
 
     private void Update ()
     {
+        if ( PhasesManager.instance.currentPhase == 2 )
+        {
+            this.gameObject.SetActive( false );
+        }
+        else
+        {
+            this.gameObject.SetActive( true );
+        }
+
         if ( playerInRange )
         {
             visualCue.SetActive( true );
 
             if (  Input.GetKeyDown( KeyCode.E ) )
             {
-                ChangeScenes.LoadScene("DialogoInterior");
+                if (PhasesManager.instance.currentPhase > 15)
+                {
+                    if (PhasesManager.instance.puntuacionTotal >= 10) // Final Condesa
+                    {
+                        Debug.Log("Final Condesa");
+                        ChangeScenes.LoadScene("Condesa");
+                    }
+                    else // Final con el padre
+                    {
+                        Debug.Log("Final Padre");
+                        ChangeScenes.LoadScene("Manel");
+                    }
+                }
+                else
+                {
+                    ChangeScenes.LoadScene("DialogoInterior");
+                }
             }
         }
         else
