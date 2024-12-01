@@ -11,7 +11,8 @@ public class PhasesManager : MonoBehaviour
     public int maxPhases = 16;
     public int puntuacionTotal = 0;
     public bool nextIsPueblo = false;
-    public bool tieneQueEntrarEnMina = false;
+    public int vecesMina = 0;
+    public bool tieneQueHablarConSabio = false;
 
     private void Awake()
     {
@@ -23,7 +24,13 @@ public class PhasesManager : MonoBehaviour
     {
         if (currentPhase < maxPhases)
         {
-            currentPhase++;
+            if (++currentPhase == 8)
+            {
+                if ( currentPhase == 8 )
+                {
+                    tieneQueHablarConSabio = true;
+                }
+            }
         }
     }
 }

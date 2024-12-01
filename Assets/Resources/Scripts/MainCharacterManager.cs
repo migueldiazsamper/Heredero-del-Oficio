@@ -8,10 +8,17 @@ public class MainCharacterManager : MonoBehaviour
     public Transform characterTransform;
     public Transform cameraTransform;
     private Animator animator;
+    [SerializeField] private GameObject visualCue;
+
+    public void SetVisualCue(bool toggle)
+    {
+        visualCue.SetActive(toggle);
+    }
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        visualCue.SetActive(false);
     }
 
     void Start()

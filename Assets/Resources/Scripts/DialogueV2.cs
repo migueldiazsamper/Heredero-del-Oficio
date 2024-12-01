@@ -20,9 +20,9 @@ public class DialogueV2 : MonoBehaviour
     [ SerializeField ] private GameObject portraitGameObject;
     [ SerializeField ] private TextMeshProUGUI dialogueText;
     [ SerializeField ] private TextMeshProUGUI nameText;
-    [ SerializeField ] private Sprite fondoMina;
+    /* [ SerializeField ] private Sprite fondoMina;
     [ SerializeField ] private Sprite fondoDialogoNormal;
-    [ SerializeField ] private GameObject fondo;
+    [ SerializeField ] private GameObject fondo; */
     
     private Story[] stories;
     private Story currentStory;
@@ -45,14 +45,14 @@ public class DialogueV2 : MonoBehaviour
 
     private void Update ()
     {
-        if ( PhasesManager.instance.currentPhase == 2 || PhasesManager.instance.currentPhase == 3 )
+        /* if ( PhasesManager.instance.currentPhase == 2 || PhasesManager.instance.currentPhase == 3 )
         {
             fondo.GetComponent<Image>().sprite = fondoMina;
         }
         else
         {
             fondo.GetComponent<Image>().sprite = fondoDialogoNormal;
-        }
+        } */
         
         // Asigna la imagen del portrait correspondiente
         portraitGameObject.GetComponent<Image>().sprite = portraits[PhasesManager.instance.currentPhase];

@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class EntradaFabrica : MonoBehaviour
 {
-    [ Header ( "Visual Cue" ) ]
-    [ SerializeField ] private GameObject visualCue;
-
     private GameObject player;
 
     private bool playerInRange;
 
+    private MainCharacterManager mainCharacterManager;
+
     private void Awake()
     {
         player = GameObject.Find("PersonajePrincipal");
-        visualCue.SetActive( false );
         playerInRange = false;
+        mainCharacterManager = FindObjectOfType<MainCharacterManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,6 +23,7 @@ public class EntradaFabrica : MonoBehaviour
         if (  playerEntered )
         {
             playerInRange = true;
+            mainCharacterManager.SetVisualCue( true );
         }
     }
 
@@ -33,24 +33,30 @@ public class EntradaFabrica : MonoBehaviour
         if (  playerEntered )
         {
             playerInRange = false;
+            mainCharacterManager.SetVisualCue( false );
         }
+    }
+
+    void ManageBoxCollider()
+    {
+        BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
+        if (boxCollider == null) return;
+
+        bool shouldDisableCollider = 
+            (PhasesManager.instance.currentPhase == 2 && PhasesManager.instance.vecesMina < 3) ||
+            (PhasesManager.instance.currentPhase == 12 && PhasesManager.instance.vecesMina == 4) ||
+            (PhasesManager.instance.currentPhase == 14 && PhasesManager.instance.vecesMina == 5) ||
+            (PhasesManager.instance.currentPhase == 8);
+
+        boxCollider.enabled = !shouldDisableCollider;
     }
 
     private void Update ()
     {
-        if ( PhasesManager.instance.currentPhase == 2 )
-        {
-            this.gameObject.SetActive( false );
-        }
-        else
-        {
-            this.gameObject.SetActive( true );
-        }
+        ManageBoxCollider();
 
         if ( playerInRange )
         {
-            visualCue.SetActive( true );
-
             if (  Input.GetKeyDown( KeyCode.E ) )
             {
                 if (PhasesManager.instance.currentPhase > 15)
@@ -69,10 +75,6 @@ public class EntradaFabrica : MonoBehaviour
                     ChangeScenes.LoadScene("DialogoInterior");
                 }
             }
-        }
-        else
-        {
-            visualCue.SetActive( false );
         }
     }
 }

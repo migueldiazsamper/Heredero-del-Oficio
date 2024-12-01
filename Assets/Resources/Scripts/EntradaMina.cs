@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class EntradaMina : MonoBehaviour
 {
-    [ Header ( "Visual Cue" ) ]
-    [ SerializeField ] private GameObject visualCue;
-
     private GameObject player;
 
     private bool playerInRange;
 
+    private MainCharacterManager mainCharacterManager;
+
     private void Awake()
     {
         player = GameObject.Find("PersonajePrincipal");
-        visualCue.SetActive( false );
         playerInRange = false;
+        mainCharacterManager = FindObjectOfType<MainCharacterManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,6 +23,7 @@ public class EntradaMina : MonoBehaviour
         if (  playerEntered )
         {
             playerInRange = true;
+            mainCharacterManager.SetVisualCue( true );
         }
     }
 
@@ -33,32 +33,44 @@ public class EntradaMina : MonoBehaviour
         if (  playerEntered )
         {
             playerInRange = false;
+            mainCharacterManager.SetVisualCue( false );
         }
     }
 
     private void Update ()
     {
-        if ( PhasesManager.instance.currentPhase == 2 )
+        if ( PhasesManager.instance.currentPhase == 2 && ( PhasesManager.instance.vecesMina == 2 || PhasesManager.instance.vecesMina == 0 ) )
         {
-            this.gameObject.SetActive( true );
-        }
-        else
-        {
-            this.gameObject.SetActive( false );
-        }
-
-        if ( playerInRange )
-        {
-            visualCue.SetActive( true );
-
-            if (  Input.GetKeyDown( KeyCode.E ) )
+            BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
+            if (boxCollider != null)
             {
-                ChangeScenes.LoadScene("DialogoInterior");
+                boxCollider.enabled = true;
             }
         }
         else
         {
-            visualCue.SetActive( false );
+            BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
+            if (boxCollider != null)
+            {
+                boxCollider.enabled = false;
+            }
+        }
+
+        if ( playerInRange )
+        {
+            if (  Input.GetKeyDown( KeyCode.E ) )
+            {
+                if ( PhasesManager.instance.vecesMina == 0 )
+                {
+                    ChangeScenes.LoadScene("Mina");
+                }
+                else
+                {
+                    ChangeScenes.LoadScene("Pueblo");
+                }
+
+                PhasesManager.instance.vecesMina++;
+            }
         }
     }
 }

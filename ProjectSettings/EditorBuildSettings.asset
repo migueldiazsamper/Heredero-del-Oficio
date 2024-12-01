@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Scenes/Manel.unity
     guid: 76158bfa77d0b724ea65717de6387870
+  - enabled: 1
+    path: Assets/Resources/Scenes/Mina.unity
+    guid: f8b63cb322535964c9957c0b373bc268
   m_configObjects: {}
