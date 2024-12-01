@@ -57,12 +57,10 @@ public class EntradaFabrica : MonoBehaviour
                 {
                     if (PhasesManager.instance.puntuacionTotal >= 10) // Final Condesa
                     {
-                        Debug.Log("Final Condesa");
                         ChangeScenes.LoadScene("Condesa");
                     }
                     else // Final con el padre
                     {
-                        Debug.Log("Final Padre");
                         ChangeScenes.LoadScene("Manel");
                     }
                 }

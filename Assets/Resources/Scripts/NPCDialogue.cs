@@ -7,6 +7,9 @@ public class NPCDialogue : MonoBehaviour
     [ Header ( "Personaje" ) ]
     [ SerializeField ] private GameObject personaje;
 
+    [ Header ( "Visual Cue" ) ]
+    [ SerializeField ] private GameObject visualCue;
+
     [ Header ( "Outline Skin" ) ]
     [ SerializeField ] private Sprite outlineSkin;
 
@@ -29,6 +32,7 @@ public class NPCDialogue : MonoBehaviour
         if ( playerInRange && ! DialogueManager.GetInstance().dialogueIsPlaying )
         {
             personaje.GetComponent<SpriteRenderer>().sprite = outlineSkin;
+            visualCue.SetActive( true );
 
             if (  Input.GetKeyDown( KeyCode.E ) )
             {
@@ -37,6 +41,7 @@ public class NPCDialogue : MonoBehaviour
         }
         else
         {
+            visualCue.SetActive( false );
             personaje.GetComponent<SpriteRenderer>().sprite = noOutlineSkin;
         }
     }
