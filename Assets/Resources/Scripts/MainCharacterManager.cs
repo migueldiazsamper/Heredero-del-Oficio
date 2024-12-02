@@ -29,7 +29,7 @@ public class MainCharacterManager : MonoBehaviour
         animator.SetBool("isRunningRight", false);
     }
 
-    void Update()
+    public void FixedUpdate()
     {
         if ( ! DialogueManager.GetInstance().dialogueIsPlaying )
         {
