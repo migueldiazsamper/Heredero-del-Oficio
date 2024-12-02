@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 89204638}
   m_Layer: 0
   m_Name: "Bander\xEDnPalacioSprite (1)"
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 148375623}
   m_Layer: 0
   m_Name: "se\xF1alSprite"
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 166019320}
   m_Layer: 0
   m_Name: CasasTrabajadoresBloque1Adornadas
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 243696867}
   m_Layer: 0
   m_Name: EntradaZonaHornosSprite
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -700,7 +700,7 @@ GameObject:
   - component: {fileID: 247484560}
   m_Layer: 0
   m_Name: gatito
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -915,7 +915,7 @@ GameObject:
   - component: {fileID: 331264114}
   m_Layer: 0
   m_Name: aspas
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1105,7 +1105,7 @@ GameObject:
   - component: {fileID: 495076243}
   m_Layer: 0
   m_Name: MandarinoSprite (2)
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1365,7 +1365,7 @@ GameObject:
   - component: {fileID: 498694446}
   m_Layer: 0
   m_Name: casa4
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1495,7 +1495,7 @@ GameObject:
   - component: {fileID: 504409362}
   m_Layer: 0
   m_Name: CasasTrabajadoresBloque2Adornado
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1625,7 +1625,7 @@ GameObject:
   - component: {fileID: 515508918}
   m_Layer: 0
   m_Name: MandarinoSprite (7)
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1870,7 +1870,7 @@ GameObject:
   - component: {fileID: 520389908}
   m_Layer: 0
   m_Name: casa2
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2075,7 +2075,7 @@ GameObject:
   - component: {fileID: 616612884}
   m_Layer: 0
   m_Name: casa8
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2205,7 +2205,7 @@ GameObject:
   - component: {fileID: 630799297}
   m_Layer: 0
   m_Name: MandarinoSprite (10)
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2412,7 +2412,7 @@ GameObject:
   - component: {fileID: 701583910}
   m_Layer: 0
   m_Name: MandarinoSprite (11)
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2541,7 +2541,7 @@ GameObject:
   - component: {fileID: 721542271}
   m_Layer: 0
   m_Name: paloArriba
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2626,7 +2626,7 @@ GameObject:
   - component: {fileID: 735539846}
   m_Layer: 0
   m_Name: MandarinoSprite (9)
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3018,7 +3018,7 @@ GameObject:
   - component: {fileID: 856854623}
   m_Layer: 0
   m_Name: GallinasSprite
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3103,7 +3103,7 @@ GameObject:
   - component: {fileID: 864876528}
   m_Layer: 0
   m_Name: casa7
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3233,7 +3233,7 @@ GameObject:
   - component: {fileID: 876369429}
   m_Layer: 0
   m_Name: casa6
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3363,7 +3363,7 @@ GameObject:
   - component: {fileID: 895764181}
   m_Layer: 0
   m_Name: MandarinoSprite (4)
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3571,7 +3571,7 @@ GameObject:
   - component: {fileID: 951578641}
   m_Layer: 0
   m_Name: "CasaPeque\xF1a3BallaPeque\xF1aSprite"
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3876,7 +3876,7 @@ GameObject:
   - component: {fileID: 1029244788}
   m_Layer: 0
   m_Name: MandarinoSprite (8)
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4096,7 +4096,7 @@ GameObject:
   - component: {fileID: 1073463948}
   m_Layer: 0
   m_Name: casa5
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4361,7 +4361,7 @@ GameObject:
   - component: {fileID: 1115593827}
   m_Layer: 0
   m_Name: TiendaSprite2
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4626,7 +4626,7 @@ GameObject:
   - component: {fileID: 1177691934}
   m_Layer: 0
   m_Name: ParedZonaHornosSprite
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4758,7 +4758,7 @@ GameObject:
   - component: {fileID: 1178363742}
   m_Layer: 0
   m_Name: panaderia
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4979,7 +4979,7 @@ GameObject:
   - component: {fileID: 1188312674}
   m_Layer: 0
   m_Name: ZonaHornosSprite
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5246,7 +5246,7 @@ GameObject:
   - component: {fileID: 1213794288}
   m_Layer: 0
   m_Name: "Bander\xEDnPalacioSprite"
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5376,7 +5376,7 @@ GameObject:
   - component: {fileID: 1230952177}
   m_Layer: 0
   m_Name: casa3
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5506,7 +5506,7 @@ GameObject:
   - component: {fileID: 1239148643}
   m_Layer: 0
   m_Name: MandarinoSprite (12)
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5636,7 +5636,7 @@ GameObject:
   - component: {fileID: 1246997560}
   m_Layer: 0
   m_Name: PalacioSprite
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5767,7 +5767,7 @@ GameObject:
   - component: {fileID: 1253817371}
   m_Layer: 0
   m_Name: "CasaPeque\xF1a3BallaPeque\xF1aSprite (1)"
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5992,7 +5992,7 @@ GameObject:
   - component: {fileID: 1322507543}
   m_Layer: 0
   m_Name: MandarinoSprite
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6156,7 +6156,7 @@ GameObject:
   - component: {fileID: 1451931664}
   m_Layer: 0
   m_Name: MandarinoSprite (3)
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6286,7 +6286,7 @@ GameObject:
   - component: {fileID: 1503023653}
   m_Layer: 0
   m_Name: MandarinoSprite (1)
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6535,7 +6535,7 @@ GameObject:
   - component: {fileID: 1508090628}
   m_Layer: 0
   m_Name: fabricaSprite
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6665,7 +6665,7 @@ GameObject:
   - component: {fileID: 1555758629}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7333,7 +7333,7 @@ GameObject:
   - component: {fileID: 1637910798}
   m_Layer: 0
   m_Name: "CasaPeque\xF1a3BallaPeque\xF1aSprite (3)"
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7705,7 +7705,7 @@ GameObject:
   - component: {fileID: 1860965766}
   m_Layer: 0
   m_Name: MandarinoSprite (13)
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7835,7 +7835,7 @@ GameObject:
   - component: {fileID: 1913820692}
   m_Layer: 0
   m_Name: MandarinoSprite (6)
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8032,7 +8032,7 @@ GameObject:
   - component: {fileID: 1945243752}
   m_Layer: 0
   m_Name: paloAbajo
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8164,7 +8164,7 @@ GameObject:
   - component: {fileID: 1984320211}
   m_Layer: 0
   m_Name: MandarinoSprite (5)
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8294,7 +8294,7 @@ GameObject:
   - component: {fileID: 2061293623}
   m_Layer: 0
   m_Name: estatua
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8425,7 +8425,7 @@ GameObject:
   - component: {fileID: 2089857657}
   m_Layer: 0
   m_Name: "CasaPeque\xF1a3BallaPeque\xF1aSprite (2)"
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8635,7 +8635,7 @@ GameObject:
   - component: {fileID: 2123031541}
   m_Layer: 0
   m_Name: casa1
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8764,7 +8764,7 @@ GameObject:
   - component: {fileID: 2128855346}
   m_Layer: 0
   m_Name: miu
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8922,6 +8922,10 @@ PrefabInstance:
     - target: {fileID: 2465624979270190929, guid: e3e6cf4741e0afe4a8ef5d1321094438, type: 3}
       propertyPath: m_Name
       value: PersonajePrincipal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465624979270190929, guid: e3e6cf4741e0afe4a8ef5d1321094438, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4856973534163632445, guid: e3e6cf4741e0afe4a8ef5d1321094438, type: 3}
       propertyPath: cameraTransform

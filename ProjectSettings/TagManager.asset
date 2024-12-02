@@ -8,6 +8,7 @@ TagManager:
   - WoodHandler
   - BotePigmento
   - BolCombinarPigmentos
+  - Edificio
   layers:
   - Default
   - TransparentFX
