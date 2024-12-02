@@ -541,7 +541,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 50277471822f4b9408a677c5ff93b120, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -700,7 +700,7 @@ GameObject:
   - component: {fileID: 247484560}
   m_Layer: 0
   m_Name: gatito
-  m_TagString: Edificio
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -745,7 +745,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: fcf9d7a3a814e9247af59efac8b7fcd9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -915,7 +915,7 @@ GameObject:
   - component: {fileID: 331264114}
   m_Layer: 0
   m_Name: aspas
-  m_TagString: Edificio
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -996,7 +996,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: c4e4be13204e4d245887d37a1aeeb80e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2774,8 +2774,8 @@ Transform:
   m_Children:
   - {fileID: 1508090626}
   - {fileID: 243696865}
-  - {fileID: 1188312672}
   - {fileID: 1177691932}
+  - {fileID: 1188312672}
   - {fileID: 1246997558}
   - {fileID: 148375622}
   - {fileID: 1213794286}
@@ -4055,7 +4055,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.46721864, y: -1.861517}
+  m_Offset: {x: 1.7225828, y: -1.2770061}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4066,7 +4066,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.9207778, y: 3.7665138}
+  m_Size: {x: 1.9679852, y: 2.5974922}
   m_EdgeRadius: 0
 --- !u!4 &1033289207
 Transform:
@@ -4077,7 +4077,7 @@ Transform:
   m_GameObject: {fileID: 1033289204}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.6, y: 116.2, z: -0.09807699}
+  m_LocalPosition: {x: 26.83, y: 115.51, z: -0.09807699}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4626,7 +4626,7 @@ GameObject:
   - component: {fileID: 1177691934}
   m_Layer: 0
   m_Name: ParedZonaHornosSprite
-  m_TagString: Edificio
+  m_TagString: Pared
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4686,7 +4686,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 6b90359d3b0f55145a1cfb21010938f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4977,6 +4977,7 @@ GameObject:
   - component: {fileID: 1188312673}
   - component: {fileID: 1188312675}
   - component: {fileID: 1188312674}
+  - component: {fileID: 1188312676}
   m_Layer: 0
   m_Name: ZonaHornosSprite
   m_TagString: Edificio
@@ -5140,6 +5141,51 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.92235756, y: 0.57629013}
+  m_EdgeRadius: 0
+--- !u!61 &1188312676
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188312671}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2.9257867, y: 0.34094477}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.1, y: 5.59}
+    newSize: {x: 10.1, y: 5.59}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.248427, y: 4.9081106}
   m_EdgeRadius: 0
 --- !u!1 &1193222711
 GameObject:
@@ -6665,7 +6711,7 @@ GameObject:
   - component: {fileID: 1555758629}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Edificio
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8764,7 +8810,7 @@ GameObject:
   - component: {fileID: 2128855346}
   m_Layer: 0
   m_Name: miu
-  m_TagString: Edificio
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8809,7 +8855,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: c2f87714dba9f4a4e8f5ca3399ecf57e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8917,6 +8963,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 225722077229858823, guid: e3e6cf4741e0afe4a8ef5d1321094438, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752420610214528342, guid: e3e6cf4741e0afe4a8ef5d1321094438, type: 3}
+      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2465624979270190929, guid: e3e6cf4741e0afe4a8ef5d1321094438, type: 3}
