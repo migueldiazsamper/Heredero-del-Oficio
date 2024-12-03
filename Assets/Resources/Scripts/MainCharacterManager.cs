@@ -6,7 +6,7 @@ public class MainCharacterManager : MonoBehaviour
 {
     [SerializeField] private float speed = 1.0f;
     [SerializeField] private Transform characterTransform;
-    [SerializeField] private Transform cameraTransform;
+    // [SerializeField] private Transform cameraTransform;
     [SerializeField] private GameObject visualCue;
     private Animator animator;
 
@@ -83,7 +83,7 @@ public class MainCharacterManager : MonoBehaviour
             }
         }
 
-        cameraTransform.position = new Vector3(characterTransform.position.x, characterTransform.position.y, cameraTransform.position.z);
+        // cameraTransform.position = new Vector3(characterTransform.position.x, characterTransform.position.y, cameraTransform.position.z);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
