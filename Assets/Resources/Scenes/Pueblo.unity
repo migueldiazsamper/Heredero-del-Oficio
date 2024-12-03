@@ -789,7 +789,7 @@ GameObject:
   - component: {fileID: 266925981}
   m_Layer: 0
   m_Name: "CasaPeque\xF1aBallaSprite (3)"
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -899,12 +899,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266925980}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 59.74, y: 66.17, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 29.75815, y: -10.02018, z: 0.42588544}
   m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2099379179}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &275178923
 GameObject:
@@ -1155,7 +1155,7 @@ GameObject:
   - component: {fileID: 390883880}
   m_Layer: 0
   m_Name: "CasaPeque\xF1aBallaSprite (2)"
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1265,12 +1265,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390883879}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.829998, y: 45.18, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.8481464, y: -31.010178, z: 0.42588544}
   m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2099379179}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &402319204
 GameObject:
@@ -1759,7 +1759,7 @@ GameObject:
   - component: {fileID: 502579410}
   m_Layer: 0
   m_Name: "CasaPeque\xF1aSprite (1)"
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1869,12 +1869,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502579409}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.72, y: 54.09, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.261852, y: -22.100178, z: 0.42588544}
   m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2099379179}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &504409360
 GameObject:
@@ -2783,6 +2783,8 @@ Transform:
   - {fileID: 148375622}
   - {fileID: 1213794286}
   - {fileID: 89204636}
+  - {fileID: 1052085368}
+  - {fileID: 1089678957}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &757444629
@@ -2798,7 +2800,7 @@ GameObject:
   - component: {fileID: 757444630}
   m_Layer: 0
   m_Name: "CasaPeque\xF1aSprite"
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2908,12 +2910,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 757444629}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.35, y: 71.35, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -23.631851, y: -4.8401794, z: 0.42588544}
   m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2099379179}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &802633074
 GameObject:
@@ -4053,8 +4055,8 @@ GameObject:
   - component: {fileID: 1052085370}
   - component: {fileID: 1052085369}
   m_Layer: 0
-  m_Name: ZonaHornosArcosSprite
-  m_TagString: Untagged
+  m_Name: PilaresFabrica
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4119,12 +4121,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052085366}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.73, y: 115.27, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 27.73, y: 15.269997, z: 1.0641106}
   m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 753783944}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1052085369
 BoxCollider2D:
@@ -4490,8 +4492,8 @@ GameObject:
   - component: {fileID: 1089678956}
   - component: {fileID: 1089678958}
   m_Layer: 0
-  m_Name: ZonaHornosCasetaSprite
-  m_TagString: Untagged
+  m_Name: CasetaFabrica
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4556,12 +4558,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089678955}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.58, y: 116.48, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 32.58, y: 16.480003, z: 1.0641106}
   m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 753783944}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1089678958
 BoxCollider2D:
@@ -6552,7 +6554,7 @@ GameObject:
   - component: {fileID: 1499706350}
   m_Layer: 0
   m_Name: "CasaPeque\xF1aSprite (2)"
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6662,12 +6664,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499706349}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.09, y: 44.03, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.1081486, y: -32.16018, z: 0.42588544}
   m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2099379179}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1503023650
 GameObject:
@@ -6931,7 +6933,7 @@ GameObject:
   - component: {fileID: 1506604122}
   m_Layer: 0
   m_Name: "CasaPeque\xF1aBallaSprite"
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7041,12 +7043,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506604121}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.09, y: 72.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -27.891851, y: -3.690178, z: 0.42588544}
   m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2099379179}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1508090625
 GameObject:
@@ -7882,7 +7884,7 @@ GameObject:
   - component: {fileID: 1607482182}
   m_Layer: 0
   m_Name: "CasaPeque\xF1aBallaSprite (1)"
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7992,12 +7994,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607482181}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.46, y: 55.24, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -12.5218525, y: -20.950176, z: 0.42588544}
   m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2099379179}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1613828069
 GameObject:
@@ -8146,7 +8148,7 @@ Transform:
   m_GameObject: {fileID: 1688284712}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.28, y: 60.88, z: -0.06725742}
+  m_LocalPosition: {x: -0.68, y: 60.88, z: -0.06725742}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8331,7 +8333,7 @@ GameObject:
   - component: {fileID: 1817564793}
   m_Layer: 0
   m_Name: "CasaPeque\xF1aSprite (3)"
-  m_TagString: Untagged
+  m_TagString: Edificio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8441,12 +8443,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817564792}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 64, y: 65.02, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 34.01815, y: -11.170181, z: 0.42588544}
   m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2099379179}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1849581729
 GameObject:
@@ -9065,7 +9067,15 @@ Transform:
   m_LocalPosition: {x: 29.981852, y: 76.19018, z: -0.42588544}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 757444632}
+  - {fileID: 1506604124}
+  - {fileID: 502579412}
+  - {fileID: 1607482184}
+  - {fileID: 390883882}
+  - {fileID: 1499706352}
+  - {fileID: 1817564795}
+  - {fileID: 266925983}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2123031538
@@ -9095,7 +9105,7 @@ Transform:
   m_GameObject: {fileID: 2123031538}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35.42, y: -4.54, z: 0.42588544}
+  m_LocalPosition: {x: -34.98, y: -3.13, z: 0.42588544}
   m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -9438,13 +9448,3 @@ SceneRoots:
   - {fileID: 1416224224}
   - {fileID: 2146117097}
   - {fileID: 1291719520}
-  - {fileID: 1052085368}
-  - {fileID: 1089678957}
-  - {fileID: 757444632}
-  - {fileID: 1506604124}
-  - {fileID: 502579412}
-  - {fileID: 1607482184}
-  - {fileID: 390883882}
-  - {fileID: 1499706352}
-  - {fileID: 1817564795}
-  - {fileID: 266925983}
