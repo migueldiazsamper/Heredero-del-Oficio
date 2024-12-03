@@ -55,6 +55,11 @@ public class EntradaFabrica : MonoBehaviour
     {
         ManageBoxCollider();
 
+        if ( PhasesManager.instance.currentPhase == 16 )
+        {
+            transform.position = new Vector3( 52.2f, 98.76f, 0.0f );
+        }
+
         if ( playerInRange )
         {
             if (  Input.GetKeyDown( KeyCode.E ) )

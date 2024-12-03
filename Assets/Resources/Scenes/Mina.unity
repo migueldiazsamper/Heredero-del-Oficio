@@ -1119,6 +1119,8 @@ MonoBehaviour:
   noOutlineSkin: {fileID: 21300000, guid: 76f7761bcc53af348944ed282f72cad5, type: 3}
   inkJSON: {fileID: 4900000, guid: 183df40e23daaff42a4f19d17e056767, type: 3}
   isInMina: 1
+  isLluna: 0
+  isSabio: 0
 --- !u!1 &1613828069
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,7 +1151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2f2577c75f1ad14cb65d5de3301f9c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vecesMina: 0
 --- !u!61 &1613828071
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1381,6 +1382,18 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 1193222714}
+    - target: {fileID: 8433315412600971134, guid: e3e6cf4741e0afe4a8ef5d1321094438, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894536329176609262, guid: e3e6cf4741e0afe4a8ef5d1321094438, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1688983
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894536329176609262, guid: e3e6cf4741e0afe4a8ef5d1321094438, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.5595442
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

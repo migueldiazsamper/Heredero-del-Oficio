@@ -258,16 +258,16 @@ MonoBehaviour:
   - {fileID: 4900000, guid: eb9022d9f69bf9c4683f996fe03145e3, type: 3}
   - {fileID: 4900000, guid: 8a5e25b039e2e904990224c9e570d482, type: 3}
   - {fileID: 4900000, guid: f2518dd6bd47a8a448365ce41cf89219, type: 3}
-  isLeft: 01000101010101010000010100000101
+  isLeft: 01000000000001010000010100000101
   portraits:
   - {fileID: 21300000, guid: e8d6bbbf45bd75c47879f67771d5a5b3, type: 3}
-  - {fileID: 21300000, guid: ca94efc7eb47b32488fca2be19993b6c, type: 3}
+  - {fileID: 21300000, guid: 16b152f3df1b80e4bbd65bbc6ce2d8ba, type: 3}
   - {fileID: 21300000, guid: 6405cefc77c21f940a89ef3e49d92883, type: 3}
   - {fileID: 21300000, guid: 6405cefc77c21f940a89ef3e49d92883, type: 3}
   - {fileID: 21300000, guid: 4e28bbe2900c1f446be6a98a3b0b14c9, type: 3}
   - {fileID: 21300000, guid: 4e28bbe2900c1f446be6a98a3b0b14c9, type: 3}
-  - {fileID: 21300000, guid: ca94efc7eb47b32488fca2be19993b6c, type: 3}
-  - {fileID: 21300000, guid: ca94efc7eb47b32488fca2be19993b6c, type: 3}
+  - {fileID: 21300000, guid: 07a5b7839268d2e4eb60327e006bfcc8, type: 3}
+  - {fileID: 21300000, guid: 07a5b7839268d2e4eb60327e006bfcc8, type: 3}
   - {fileID: 21300000, guid: ca94efc7eb47b32488fca2be19993b6c, type: 3}
   - {fileID: 21300000, guid: ca94efc7eb47b32488fca2be19993b6c, type: 3}
   - {fileID: 21300000, guid: b16c90fe654cdb841ba513fc37980435, type: 3}
@@ -296,9 +296,6 @@ MonoBehaviour:
   portraitGameObject: {fileID: 1677568784}
   dialogueText: {fileID: 315880261}
   nameText: {fileID: 554930154}
-  fondoMina: {fileID: 21300000, guid: 2f355d6957c41cd4aa071ef578c84ce3, type: 3}
-  fondoDialogoNormal: {fileID: 21300000, guid: 3cb5d651ee8fd0f49812d62bbff709f2, type: 3}
-  fondo: {fileID: 88625768}
   typingSpeed: 0.05
 --- !u!1 &237265899
 GameObject:

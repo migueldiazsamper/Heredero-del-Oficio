@@ -71,7 +71,7 @@ public class EscenaManel : MonoBehaviour
 
     private void NextNPC ()
     {
-        Application.Quit();
+        SceneManager.LoadScene("MainMenu");
     }
 
     private void NextLine ()
