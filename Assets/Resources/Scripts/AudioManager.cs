@@ -3,11 +3,12 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [Header("Audio Sources")]
-    [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource SFXSource;
+    public AudioSource musicSource;
+    public AudioSource SFXSource;
 
     [Header("Audio Clips")]
     public AudioClip backgroundMusic;
+    public AudioClip testSFX;
 
     // El metodo Awake se ejecuta antes del Start
     private void Awake()
