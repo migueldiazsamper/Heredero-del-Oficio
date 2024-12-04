@@ -1633,7 +1633,6 @@ GameObject:
   - component: {fileID: 2008833106}
   - component: {fileID: 2008833105}
   - component: {fileID: 2008833104}
-  - component: {fileID: 2008833107}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1715,31 +1714,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2008833107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008833103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17de6bfc0d5f22e4ca142493e722f7b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 0}
-  objetos: []
-  settings: {fileID: 0}
-  pause: {fileID: 0}
-  musicSlider: {fileID: 0}
-  soundSlider: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2008833106}
+  - {fileID: 828623624}
   - {fileID: 745716314}
   - {fileID: 286204176}
   - {fileID: 987958160}
   - {fileID: 715343756}
-  - {fileID: 828623624}
