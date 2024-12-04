@@ -10,21 +10,33 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject main;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider soundSlider;
-    private AudioManager audioManager;
 
 
     // El metodo Awake prepara los elementos necesarios al inicio del juego
-    private void Awake()
+    private void Start()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-        audioManager.musicSource.volume = musicSlider.value;
-        audioManager.SFXSource.volume = soundSlider.value;  
+        if (  AudioManager.GetInstance() == null)
+        {
+            Debug.LogError("No se ha encontrado el objeto AudioManager");
+        }
+        else
+        {
+            if ( musicSlider.value == null || soundSlider.value == null)
+            {
+                Debug.LogError("No se ha encontrado el objeto Slider");
+            }
+            else
+            {
+                AudioManager.GetInstance().musicSource.volume = musicSlider.value;
+                AudioManager.GetInstance().SFXSource.volume = soundSlider.value;
+            }
+        }
     }
 
     public void PlayGame()
     {
         // Reproducir sonido botón
-        audioManager.PlaySFX(audioManager.testSFX);
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().testSFX);
 
         // Cargar la escena del menú principal
         string scenePath = AssetDatabase.GetAssetPath(firstScene);
@@ -35,7 +47,7 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         // Reproducir sonido botón
-        audioManager.PlaySFX(audioManager.testSFX);
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().testSFX);
 
         // Salir del juego
         Application.Quit();
@@ -44,7 +56,7 @@ public class MainMenu : MonoBehaviour
     public void SettingsPanel()
     {
         // Reproducir sonido botón
-        audioManager.PlaySFX(audioManager.testSFX);
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().testSFX);
 
         // Cargar panel opciones
         main.SetActive(false);
@@ -54,7 +66,7 @@ public class MainMenu : MonoBehaviour
     public void SettingsReturn()
     {
         // Reproducir sonido botón
-        audioManager.PlaySFX(audioManager.testSFX);
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().testSFX);
 
         // Regresar al menú principal
         main.SetActive(true);
@@ -64,12 +76,12 @@ public class MainMenu : MonoBehaviour
     public void ChangeMusicVolume()
     {
         // Cambiar volumen de la música
-        audioManager.musicSource.volume = musicSlider.value;    
+        AudioManager.GetInstance().musicSource.volume = musicSlider.value;    
     }
 
     public void ChangeSoundVolume()
     {
         // Cambiar volumen de la música
-        audioManager.SFXSource.volume = soundSlider.value;    
+        AudioManager.GetInstance().SFXSource.volume = soundSlider.value;    
     }
 }

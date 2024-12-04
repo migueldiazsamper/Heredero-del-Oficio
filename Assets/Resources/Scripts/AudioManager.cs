@@ -10,10 +10,25 @@ public class AudioManager : MonoBehaviour
     public AudioClip backgroundMusic;
     public AudioClip testSFX;
 
+    public static AudioManager instance; // Propiedad para acceder a la instancia
+
+    public static AudioManager GetInstance()
+    {
+        return instance;
+    }
+
     // El metodo Awake se ejecuta antes del Start
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // El meto Start se ejecuta al inicio del juego

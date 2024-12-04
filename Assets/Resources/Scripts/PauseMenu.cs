@@ -27,13 +27,6 @@ public class PauseMenu : MonoBehaviour
     {
         ReanudarJuego();
 
-        // Buscar y destruir el objeto AudioManager
-        GameObject audioManagerCopy = GameObject.Find("AudioManager");
-        if (audioManagerCopy != null)
-        {
-            Destroy(audioManagerCopy);
-        }
-
         // Cargar la escena del menú principal
         SceneManager.LoadScene("MainMenu");
     }

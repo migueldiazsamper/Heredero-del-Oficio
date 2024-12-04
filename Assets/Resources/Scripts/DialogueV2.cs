@@ -53,99 +53,112 @@ public class DialogueV2 : MonoBehaviour
         {
             fondo.GetComponent<Image>().sprite = fondoDialogoNormal;
         } */
-        
-        // Asigna la imagen del portrait correspondiente
-        portraitGameObject.GetComponent<Image>().sprite = portraits[PhasesManager.instance.currentPhase];
 
-        // Ajusta las posiciones según el valor de isLeft
-        if (isLeft[PhasesManager.instance.currentPhase])
+        if (Time.timeScale == 1)
         {
-            nameText.rectTransform.anchoredPosition = new Vector2(35, nameText.rectTransform.anchoredPosition.y);
-            dialogueText.rectTransform.anchoredPosition = new Vector2(15, dialogueText.rectTransform.anchoredPosition.y);
-            portraitGameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-640, portraitGameObject.GetComponent<RectTransform>().anchoredPosition.y);
-        }
-        else
-        {
-            nameText.rectTransform.anchoredPosition = new Vector2(-520, nameText.rectTransform.anchoredPosition.y);
-            dialogueText.rectTransform.anchoredPosition = new Vector2(-545, dialogueText.rectTransform.anchoredPosition.y);
-            portraitGameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(640, portraitGameObject.GetComponent<RectTransform>().anchoredPosition.y);
-        }
+            // Asigna la imagen del portrait correspondiente
+            portraitGameObject.GetComponent<Image>().sprite = portraits[PhasesManager.instance.currentPhase];
 
-        // Asigna el nombre del personaje
-        nameText.text = names[PhasesManager.instance.currentPhase];
-
-        if (  Input.GetKeyDown( KeyCode.Space ) )
-        {
-            if ( isTyping )
+            // Ajusta las posiciones según el valor de isLeft
+            if (isLeft[PhasesManager.instance.currentPhase])
             {
-                StopAllCoroutines();
-                isTyping = false;
-                dialogueText.text = currentStory.currentText;
+                nameText.rectTransform.anchoredPosition = new Vector2(35, nameText.rectTransform.anchoredPosition.y);
+                dialogueText.rectTransform.anchoredPosition = new Vector2(15, dialogueText.rectTransform.anchoredPosition.y);
+                portraitGameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-640, portraitGameObject.GetComponent<RectTransform>().anchoredPosition.y);
             }
             else
             {
-                NextLine(); 
+                nameText.rectTransform.anchoredPosition = new Vector2(-520, nameText.rectTransform.anchoredPosition.y);
+                dialogueText.rectTransform.anchoredPosition = new Vector2(-545, dialogueText.rectTransform.anchoredPosition.y);
+                portraitGameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(640, portraitGameObject.GetComponent<RectTransform>().anchoredPosition.y);
+            }
+
+            // Asigna el nombre del personaje
+            nameText.text = names[PhasesManager.instance.currentPhase];
+
+            if (  Input.GetKeyDown( KeyCode.Space ) )
+            {
+                if ( isTyping )
+                {
+                    StopAllCoroutines();
+                    isTyping = false;
+                    dialogueText.text = currentStory.currentText;
+                }
+                else
+                {
+                    NextLine(); 
+                }
             }
         }
+        
     }
 
     private void NextNPC ()
     {
-        if ( PhasesManager.instance.currentPhase >= 2 )
+        if (Time.timeScale == 1)
         {
-            PhasesManager.instance.nextIsPueblo = !PhasesManager.instance.nextIsPueblo;
-        }
-        else
-        {
-            PhasesManager.instance.nextIsPueblo = true;
-        }
-        
-        PhasesManager.instance.NextPhase();
-
-
-        if (  PhasesManager.instance.nextIsPueblo )
-        {
-            ChangeScenes.LoadScene("Pueblo");
-        }
-        else
-        {
-            if (PhasesManager.instance.currentPhase == 11)
+            if ( PhasesManager.instance.currentPhase >= 2 )
             {
-                ChangeScenes.LoadScene("Esmalte");
+                PhasesManager.instance.nextIsPueblo = !PhasesManager.instance.nextIsPueblo;
             }
             else
             {
-                ChangeScenes.LoadScene("Minijuego " + PhasesManager.instance.currentPhase / 2);
+                PhasesManager.instance.nextIsPueblo = true;
             }
+            
+            PhasesManager.instance.NextPhase();
+
+
+            if (  PhasesManager.instance.nextIsPueblo )
+            {
+                ChangeScenes.LoadScene("Pueblo");
+            }
+            else
+            {
+                if (PhasesManager.instance.currentPhase == 11)
+                {
+                    ChangeScenes.LoadScene("Esmalte");
+                }
+                else
+                {
+                    ChangeScenes.LoadScene("Minijuego " + PhasesManager.instance.currentPhase / 2);
+                }
+            }
+            
+            currentStory = stories[ PhasesManager.instance.currentPhase ];
         }
-        
-        currentStory = stories[ PhasesManager.instance.currentPhase ];
     }
 
     private void NextLine ()
     {
-        bool thereAreMoreLines = currentStory.canContinue;
-        if ( thereAreMoreLines )
+        if (Time.timeScale == 1)
         {
-            string nextLine = currentStory.Continue();
-            StopAllCoroutines();
-            isTyping = true;
-            StartCoroutine(TypeLine(nextLine));
-        }
-        else
-        {
-            NextNPC();
-            isTyping = false;
+            bool thereAreMoreLines = currentStory.canContinue;
+            if ( thereAreMoreLines )
+            {
+                string nextLine = currentStory.Continue();
+                StopAllCoroutines();
+                isTyping = true;
+                StartCoroutine(TypeLine(nextLine));
+            }
+            else
+            {
+                NextNPC();
+                isTyping = false;
+            }
         }
     }
 
     private IEnumerator TypeLine(string line)
     {
-        dialogueText.text = "";
-        foreach (char letter in line.ToCharArray())
+        if (Time.timeScale == 1)
         {
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+            dialogueText.text = "";
+            foreach (char letter in line.ToCharArray())
+            {
+                dialogueText.text += letter;
+                yield return new WaitForSeconds(typingSpeed);
+            }
         }
     }
 }
