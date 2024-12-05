@@ -152,6 +152,7 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
         }
         else{
             rectTransform.anchoredPosition = new Vector2(STARTING_POSITION_X, STARTING_POSITION_Y);
+            pigmentosManager.MixColors();
             listoButton.SetActive(true);
             resetButton.SetActive(true);
             this.enabled = false;

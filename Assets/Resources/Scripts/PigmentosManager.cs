@@ -13,38 +13,10 @@ public class PigmentosManager : MonoBehaviour
     public int colorCounter {get; private set;} = 0;
     private int[] colorPalette = new int[5]; //Este array contiene el nº usado de cada color en formato {b, m, c, y, w}
 
-    // Diccionario que define las mezclas de colores
-    private Dictionary<string, Color> colorMixes = new Dictionary<string, Color>
-    {
-        { "CyanMagenta", Color.blue }, // Cian + Magenta = Azul
-        { "MagentaCyan", Color.blue }, // Magenta + Cian = Azul (inversa)
-        { "CyanYellow", Color.green }, // Cian + Amarillo = Verde
-        { "YellowCyan", Color.green }, // Amarillo + Cian = Verde (inversa)
-        { "MagentaYellow", Color.red }, // Magenta + Amarillo = Rojo
-        { "YellowMagenta", Color.red }, // Amarillo + Magenta = Rojo (inversa)
-        { "CyanBlack", new Color(0f, 0.5f, 0.5f) }, // Cian + Negro = Cian Oscuro
-        { "BlackCyan", new Color(0f, 0.5f, 0.5f) }, // Negro + Cian = Cian Oscuro (inversa)
-        { "MagentaBlack", new Color(0.5f, 0f, 0.5f) }, // Magenta + Negro = Magenta Oscuro
-        { "BlackMagenta", new Color(0.5f, 0f, 0.5f) }, // Negro + Magenta = Magenta Oscuro (inversa)
-        { "YellowBlack", new Color(0.5f, 0.5f, 0f) }, // Amarillo + Negro = Amarillo Oscuro
-        { "BlackYellow", new Color(0.5f, 0.5f, 0f) }, // Negro + Amarillo = Amarillo Oscuro (inversa)
-        { "CyanWhite", new Color(0.5f, 1f, 1f) }, // Cian + Blanco = Cian Claro
-        { "WhiteCyan", new Color(0.5f, 1f, 1f) }, // Blanco + Cian = Cian Claro (inversa)
-        { "MagentaWhite", new Color(1f, 0.5f, 1f) }, // Magenta + Blanco = Magenta Claro
-        { "WhiteMagenta", new Color(1f, 0.5f, 1f) }, // Blanco + Magenta = Magenta Claro (inversa)
-        { "YellowWhite", new Color(1f, 1f, 0.5f) }, // Amarillo + Blanco = Amarillo Claro
-        { "WhiteYellow", new Color(1f, 1f, 0.5f) }, // Blanco + Amarillo = Amarillo Claro (inversa)
-        { "BlackWhite", Color.gray }, // Negro + Blanco = Gris
-        { "WhiteBlack", Color.gray }, // Blanco + Negro = Gris (inversa)
-        // Agrega más combinaciones según sea necesario
-    };
-
-
     void Awake(){
         for(int i = 0; i < 5; i++) colorPalette[i] = 0;
     }
 
-    
     public void AddColorToMix(String colorString){
         if(colorCounter <= 5){
             colorCounter++;
@@ -70,6 +42,7 @@ public class PigmentosManager : MonoBehaviour
     private void DisplayColor(String colorString){
         ///Show the last color added
         mixedColorSpriteImage.color = ProvideColor(colorString);
+        Debug.Log(mixedColorSpriteImage.color);
     }
 
     public Color ProvideColor(String colorString){
@@ -79,8 +52,22 @@ public class PigmentosManager : MonoBehaviour
             case "Cyan":    return Color.cyan;
             case "Yellow":  return Color.yellow;
             case "White":   return Color.white;
-            default: return Color.white;
+            //La paleta está en formato BMCYW
+            case "02030": return new Color(0.98f, 0.38f, 0.01f);
+            case "10220": return new Color(0.07f, 0.29f, 0.03f);
+            case "10112": return new Color(0.44f, 0.94f, 0.37f);
+            case "10400": return new Color(0.00f, 0.07f, 0.37f);
+            case "02120": return new Color(0.42f, 0.20f, 0.02f);
+            case "00302": return new Color(0.22f, 0.80f, 0.95f);
+            case "01112": return new Color(0.82f, 0.71f, 0.55f);
+            default: return Color.grey;
         }
     }
 
+    public void MixColors(){
+        //Conversión del array paleta a un string para poder hacer los chequeos
+        string colorPaletteString = string.Join("", colorPalette);
+        Debug.Log(colorPaletteString);
+        DisplayColor(colorPaletteString);
+    }
 }
