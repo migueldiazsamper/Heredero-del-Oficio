@@ -1,46 +1,77 @@
 using UnityEngine;
 
+/// <summary>
+/// Clase para gestionar el audio del juego, incluyendo música de fondo y efectos de sonido (SFX).
+/// Implementa un patrón Singleton para garantizar una instancia única.
+/// </summary>
+
 public class AudioManager : MonoBehaviour
 {
-    [Header("Audio Sources")]
+    [ Header( "Audio Sources" ) ]
     public AudioSource musicSource;
     public AudioSource SFXSource;
 
-    [Header("Audio Clips")]
+    [ Header( "Audio Clips" ) ]
     public AudioClip backgroundMusic;
     public AudioClip testSFX;
 
-    public static AudioManager instance; // Propiedad para acceder a la instancia
+    // Instancia estática para implementar el patrón Singleton.
+    public static AudioManager instance;
 
-    public static AudioManager GetInstance()
+    /// <summary>
+    /// Devuelve la instancia única de AudioManager.
+    /// </summary>
+    
+    public static AudioManager GetInstance ()
     {
         return instance;
     }
 
-    // El metodo Awake se ejecuta antes del Start
-    private void Awake()
+    /// <summary>
+    /// Método Awake: se ejecuta antes de Start. Configura la instancia Singleton
+    /// y evita que se destruya al cambiar de escena.
+    /// </summary>
+
+    private void Awake ()
     {
-        if (instance == null)
+        // Comprueba si ya existe una instancia de AudioManager.
+        bool noExisteInstancia = instance == null;
+
+        if ( noExisteInstancia )
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+
+            // Hace que este GameObject persista entre escenas.
+            DontDestroyOnLoad( gameObject );
         }
         else
         {
-            Destroy(gameObject);
+            // Si ya hay una instancia, destruye este GameObject duplicado.
+            Destroy( gameObject );
         }
     }
 
-    // El meto Start se ejecuta al inicio del juego
-    void Start()
+    /// <summary>
+    /// Método Start: se ejecuta al inicio del juego.
+    /// Reproduce la música de fondo si está configurada.
+    /// </summary>
+
+    private void Start ()
     {
+        // Asigna el clip de música de fondo al AudioSource correspondiente.
         musicSource.clip = backgroundMusic;
+
+        // Reproduce la música de fondo.
         musicSource.Play();
     }
 
-    // El metodo PlaySFX activa un sonido en el juego
-    public void PlaySFX(AudioClip clip)
+    /// <summary>
+    /// Reproduce un efecto de sonido (SFX) con el AudioSource de efectos.
+    /// </summary>
+    /// <param name="clip">El AudioClip que se reproducirá.</param>
+
+    public void PlaySFX ( AudioClip clip )
     {
-        SFXSource.PlayOneShot(clip);
+        SFXSource.PlayOneShot( clip );
     }
 }

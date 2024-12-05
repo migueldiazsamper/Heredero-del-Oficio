@@ -15,22 +15,8 @@ public class MainMenu : MonoBehaviour
     // El metodo Awake prepara los elementos necesarios al inicio del juego
     private void Start()
     {
-        if (  AudioManager.GetInstance() == null)
-        {
-            Debug.LogError("No se ha encontrado el objeto AudioManager");
-        }
-        else
-        {
-            if ( musicSlider.value == null || soundSlider.value == null)
-            {
-                Debug.LogError("No se ha encontrado el objeto Slider");
-            }
-            else
-            {
-                AudioManager.GetInstance().musicSource.volume = musicSlider.value;
-                AudioManager.GetInstance().SFXSource.volume = soundSlider.value;
-            }
-        }
+        AudioManager.GetInstance().musicSource.volume = musicSlider.value;
+        AudioManager.GetInstance().SFXSource.volume = soundSlider.value;
     }
 
     public void PlayGame()

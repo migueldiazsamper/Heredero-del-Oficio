@@ -3,41 +3,69 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Esta clase permite cambiar de escena en un juego de Unity
+/// <summary>
+/// Clase para gestionar los cambios de escena en un juego de Unity.
+/// Implementa un patrón Singleton para facilitar su acceso.
+/// </summary>
+
 public class ChangeScenes : MonoBehaviour
 {
+    // Instancia estática para implementar el patrón Singleton.
     public static ChangeScenes instance;
 
-    private void Awake()
+    /// <summary>
+    /// Método Awake: asegura que solo exista una instancia de esta clase.
+    /// </summary>
+    
+    private void Awake ()
     {
-        if (instance == null)
+        // Verifica si ya existe una instancia.
+        bool noExisteInstancia = instance == null;
+
+        if ( noExisteInstancia )
         {
             instance = this;
         }
         else
         {
-            Destroy(this);
+            // Destruye este componente si ya hay una instancia activa.
+            Destroy( this );
         }
     }
-    // Este método público carga la siguiente escena en el índice de construcción
+
+    /// <summary>
+    /// Carga la siguiente escena según el índice de construcción actual.
+    /// </summary>
+    
     public static void LoadNextScene ()
     {
-        // Obtiene el índice de la escena actual y le suma 1 para obtener el índice de la siguiente escena
+        // Calcula el índice de la siguiente escena.
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
 
-        // Carga la escena que corresponde al índice calculado
+        // Carga la escena correspondiente al índice calculado.
         SceneManager.LoadScene( nextSceneIndex );
     }
 
+    /// <summary>
+    /// Carga una escena específica por su nombre.
+    /// </summary>
+    /// <param name="sceneName">El nombre de la escena que se cargará.</param>
+    
     public static void LoadScene ( string sceneName )
     {
         SceneManager.LoadScene( sceneName );
     }
 
+    /// <summary>
+    /// Recarga la escena actual.
+    /// </summary>
     
-    public void ReloadScene()
+    public void ReloadScene ()
     {
-        Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
+        // Obtiene la escena activa actual.
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        // Carga nuevamente la escena actual por su nombre.
+        SceneManager.LoadScene( currentScene.name );
     }
 }
