@@ -7281,7 +7281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1506229339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8109,7 +8109,7 @@ PrefabInstance:
     - target: {fileID: 6274426739441291991, guid: c19ad80263d85aa4287ac953ae720def, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: a80033e903f7de442bfebb07eb0c2e24, type: 3}
+      objectReference: {fileID: 21300000, guid: 1d8f5e2cb75438a49bdc03d181da0bda, type: 3}
     - target: {fileID: 6274426739441291991, guid: c19ad80263d85aa4287ac953ae720def, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -8159,8 +8159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   personaje: {fileID: 1570533346}
-  outlineSkin: {fileID: 21300000, guid: a80033e903f7de442bfebb07eb0c2e24, type: 3}
-  noOutlineSkin: {fileID: 21300000, guid: a80033e903f7de442bfebb07eb0c2e24, type: 3}
+  outlineSkin: {fileID: 21300000, guid: df461eb16961d6e44a37d7a2d3ed7b74, type: 3}
+  noOutlineSkin: {fileID: 21300000, guid: 1d8f5e2cb75438a49bdc03d181da0bda, type: 3}
   inkJSON: {fileID: 4900000, guid: 88fc7ed5a74ff59468c614ec8f52d7ca, type: 3}
   isInMina: 1
   isLluna: 0
@@ -8293,7 +8293,7 @@ PrefabInstance:
     - target: {fileID: 6274426739441291991, guid: c19ad80263d85aa4287ac953ae720def, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 76f7761bcc53af348944ed282f72cad5, type: 3}
+      objectReference: {fileID: 21300000, guid: 8476eea6386663f42803204e6a661d12, type: 3}
     - target: {fileID: 6274426739441291991, guid: c19ad80263d85aa4287ac953ae720def, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -8330,8 +8330,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   personaje: {fileID: 1259393204}
-  outlineSkin: {fileID: 21300000, guid: 2e59bff9241edcc4c9124cb49b83dfbf, type: 3}
-  noOutlineSkin: {fileID: 21300000, guid: 76f7761bcc53af348944ed282f72cad5, type: 3}
+  outlineSkin: {fileID: 21300000, guid: a66c326f66f3d6e4f884a9c5bf92bdaa, type: 3}
+  noOutlineSkin: {fileID: 21300000, guid: 8476eea6386663f42803204e6a661d12, type: 3}
   inkJSON: {fileID: 4900000, guid: 183df40e23daaff42a4f19d17e056767, type: 3}
   isInMina: 1
   isLluna: 1

@@ -35,6 +35,12 @@ public class MainCharacterManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            rb.velocity = Vector2.zero;
+            return;
+        }
+        
         UpdateMovement();
     }
 

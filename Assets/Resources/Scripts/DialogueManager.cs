@@ -32,7 +32,7 @@ public class DialogueManager : MonoBehaviour
             Destroy( this.gameObject );
         }
 
-        animator = GameObject.Find("PersonajePrincipal").GetComponent<Animator>();
+        animator = GameObject.Find( "PersonajePrincipal" ).GetComponent<Animator>();
     }
 
     private void Start ()
@@ -48,19 +48,23 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (  Input.GetKeyDown( KeyCode.Space ) )
+        if (Time.timeScale == 1)
         {
-            if ( isTyping )
+            if (  Input.GetKeyDown( KeyCode.Space ) )
             {
-                StopAllCoroutines();
-                isTyping = false;
-                dialogueText.text = currentStory.currentText;
-            }
-            else
-            {
-                ContinueStory();
+                if ( isTyping )
+                {
+                    StopAllCoroutines();
+                    isTyping = false;
+                    dialogueText.text = currentStory.currentText;
+                }
+                else
+                {
+                    ContinueStory();
+                }
             }
         }
+
     }
 
     public static DialogueManager GetInstance ()
@@ -70,13 +74,12 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode ( TextAsset inkJSON )
     {
-        animator.SetBool("isIdle", true);
-        animator.SetBool("isRunningRight", false);
-        animator.SetBool("isRunningLeft", false);
         currentStory = new Story( inkJSON.text );
         dialogueIsPlaying = true;
         dialoguePanel.SetActive( true );
         ContinueStory();
+        animator.SetFloat( "speedX", 0 );
+        animator.SetFloat( "speedY", 0 );
     }
 
     private void ExitDialogueMode ()
@@ -84,9 +87,6 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive( false );
         dialogueText.text = "";
-        animator.SetBool("isIdle", false);
-        animator.SetBool("isRunningRight", true);
-        animator.SetBool("isRunningLeft", true);
     }
 
     private void ContinueStory ()

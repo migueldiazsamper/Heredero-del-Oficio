@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &62088358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,6 +474,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 835bcbd473da1954483348de4c90d04a, type: 3}
+--- !u!1 &518577366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7598850470386643784, guid: 835bcbd473da1954483348de4c90d04a, type: 3}
+  m_PrefabInstance: {fileID: 518577365}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &518577367 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6865765090255866806, guid: 835bcbd473da1954483348de4c90d04a, type: 3}
@@ -501,6 +506,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &518577370 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7157198517461099004, guid: 835bcbd473da1954483348de4c90d04a, type: 3}
+  m_PrefabInstance: {fileID: 518577365}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &518577371 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6565511453291284396, guid: 835bcbd473da1954483348de4c90d04a, type: 3}
@@ -1170,10 +1180,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17de6bfc0d5f22e4ca142493e722f7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 0}
+  pauseMenuUI: {fileID: 518577370}
   objetos: []
   settings: {fileID: 518577371}
-  pause: {fileID: 0}
+  pause: {fileID: 518577366}
   musicSlider: {fileID: 518577369}
   soundSlider: {fileID: 518577368}
 --- !u!1001 &1575821485
@@ -1269,11 +1279,23 @@ PrefabInstance:
       value: 2.8390198
       objectReference: {fileID: 0}
     - target: {fileID: 6274426739441291991, guid: c19ad80263d85aa4287ac953ae720def, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274426739441291991, guid: c19ad80263d85aa4287ac953ae720def, type: 3}
+      propertyPath: m_Size.y
+      value: 4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274426739441291991, guid: c19ad80263d85aa4287ac953ae720def, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 76f7761bcc53af348944ed282f72cad5, type: 3}
+      objectReference: {fileID: 21300000, guid: 1d8f5e2cb75438a49bdc03d181da0bda, type: 3}
     - target: {fileID: 6274426739441291991, guid: c19ad80263d85aa4287ac953ae720def, type: 3}
       propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274426739441291991, guid: c19ad80263d85aa4287ac953ae720def, type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -1304,8 +1326,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   personaje: {fileID: 1259393204}
-  outlineSkin: {fileID: 21300000, guid: 2e59bff9241edcc4c9124cb49b83dfbf, type: 3}
-  noOutlineSkin: {fileID: 21300000, guid: 76f7761bcc53af348944ed282f72cad5, type: 3}
+  outlineSkin: {fileID: 21300000, guid: df461eb16961d6e44a37d7a2d3ed7b74, type: 3}
+  noOutlineSkin: {fileID: 21300000, guid: 1d8f5e2cb75438a49bdc03d181da0bda, type: 3}
   inkJSON: {fileID: 4900000, guid: cca679482c6f96f4ba86b91252423375, type: 3}
   isInMina: 1
   isLluna: 0
