@@ -159,6 +159,7 @@ public class DialogueV2 : MonoBehaviour
                 dialogueText.text += letter;
                 yield return new WaitForSeconds(typingSpeed);
             }
+            isTyping = false;
         }
     }
 }
