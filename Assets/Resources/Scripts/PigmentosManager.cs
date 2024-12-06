@@ -53,13 +53,12 @@ public class PigmentosManager : MonoBehaviour
             case "Yellow":  return Color.yellow;
             case "White":   return Color.white;
             //La paleta está en formato BMCYW
-            case "02030": return new Color(0.98f, 0.38f, 0.01f);
-            case "10220": return new Color(0.07f, 0.29f, 0.03f);
-            case "10112": return new Color(0.44f, 0.94f, 0.37f);
-            case "10400": return new Color(0.00f, 0.07f, 0.37f);
-            case "02120": return new Color(0.42f, 0.20f, 0.02f);
-            case "00302": return new Color(0.22f, 0.80f, 0.95f);
-            case "01112": return new Color(0.82f, 0.71f, 0.55f);
+            case "02030": return new Color(1.0f, 0.392f, 0.129f); // Naranja
+            case "10220": return new Color(0.388f, 0.349f, 0.078f); // Verde Oliva Oscuro
+            case "10112": return new Color(0.663f, 0.627f, 0.271f); // Verde Oliva Claro
+            case "10400": return new Color(0.267f, 0.337f, 0.659f); // Azul Oscuro
+            case "00302": return new Color(0.588f, 0.733f, 0.898f); // Azul Claro
+            case "01112": return new Color(0.596f, 0.329f, 0.0f); // Marrón/Ocre Claro
             default: return Color.grey;
         }
     }
