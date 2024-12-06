@@ -2497,7 +2497,43 @@ MonoBehaviour:
   musicSource: {fileID: 1777319099}
   SFXSource: {fileID: 130504088}
   backgroundMusic: {fileID: 8300000, guid: 9355d3ae97970d84aae0cf2846ff441c, type: 3}
-  testSFX: {fileID: 8300000, guid: 8778e8ef3225db6448e517a964b90989, type: 3}
+  buttonClick: {fileID: 8300000, guid: a850b15bc4a16594a9f2bd46b0abad9e, type: 3}
+  positiveFeedback: {fileID: 8300000, guid: eef4e316d50c58a47a8a6abb8451074f, type: 3}
+  negativeFeedback: {fileID: 8300000, guid: 48d853c4c65f59448bc396844c5c60fe, type: 3}
+  characterMovement: {fileID: 8300000, guid: c8342b2d4ae332445b0f2a6847910256, type: 3}
+  enterBuilding: {fileID: 8300000, guid: 8a9dc291d09445847a5e8f0e5f41c348, type: 3}
+  enterMine: {fileID: 8300000, guid: 0dbd44b4a9df67948a34861b8d156125, type: 3}
+  dialogueSound: {fileID: 0}
+  voiceManel: {fileID: 0}
+  voiceMaria: {fileID: 0}
+  voiceLluna: {fileID: 0}
+  voiceSabio: {fileID: 0}
+  voiceCondesa: {fileID: 0}
+  voiceDirector: {fileID: 0}
+  voiceJuan: {fileID: 0}
+  voiceLluisa: {fileID: 0}
+  voiceZorro: {fileID: 0}
+  voiceCandela: {fileID: 0}
+  voiceAgustina: {fileID: 0}
+  voiceFrancesc: {fileID: 0}
+  voiceLluc: {fileID: 0}
+  grabSand: {fileID: 0}
+  cleanSand: {fileID: 0}
+  grabPiece: {fileID: 0}
+  dropPiece: {fileID: 0}
+  rotatePiece: {fileID: 0}
+  grabWood: {fileID: 0}
+  dropWood: {fileID: 0}
+  burningWood: {fileID: 0}
+  mixingSpoonEnamel: {fileID: 0}
+  enamelPiece: {fileID: 0}
+  scratchEnamel: {fileID: 0}
+  scratchBase: {fileID: 0}
+  linkPoints: {fileID: 0}
+  insertSpoon: {fileID: 0}
+  putPigment: {fileID: 0}
+  mixingSpoonPigments: {fileID: 0}
+  movePuzzlePiece: {fileID: 0}
 --- !u!4 &2020572072
 Transform:
   m_ObjectHideFlags: 0

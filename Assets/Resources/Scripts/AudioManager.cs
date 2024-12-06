@@ -11,9 +11,71 @@ public class AudioManager : MonoBehaviour
     public AudioSource musicSource;
     public AudioSource SFXSource;
 
-    [ Header( "Audio Clips" ) ]
+    [ Header( "------- Audio Clips -------" ) ]
     public AudioClip backgroundMusic;
-    public AudioClip testSFX;
+    public AudioClip buttonClick;
+    public AudioClip positiveFeedback;
+    public AudioClip negativeFeedback;
+
+    [ Header( "Town" ) ]
+
+    public AudioClip characterMovement;
+    public AudioClip enterBuilding;
+    public AudioClip enterMine;
+
+    [ Header( "Diálogos" ) ]
+
+    public AudioClip dialogueSound;
+    public AudioClip voiceManel;
+    public AudioClip voiceMaria;
+    public AudioClip voiceLluna;
+    public AudioClip voiceSabio;
+    public AudioClip voiceCondesa;
+    public AudioClip voiceDirector;
+    public AudioClip voiceJuan;
+    public AudioClip voiceLluisa;
+    public AudioClip voiceZorro;
+    public AudioClip voiceCandela;
+    public AudioClip voiceAgustina;
+    public AudioClip voiceFrancesc;
+    public AudioClip voiceLluc;
+
+    [ Header( "Minijuego Barro" ) ]
+
+    public AudioClip grabSand;
+    public AudioClip cleanSand;
+
+    [ Header( "Minijuego Moldes" ) ]
+
+    public AudioClip grabPiece;
+    public AudioClip dropPiece;
+    public AudioClip rotatePiece;
+
+    [ Header( "Minijuego Piezas Frágiles" ) ]
+
+    [ Header( "Minijuego Primera Cocción" ) ]
+
+    public AudioClip grabWood;
+    public AudioClip dropWood;
+    public AudioClip burningWood;
+
+    [ Header( "Minijuego Esmalte" ) ]
+
+    public AudioClip mixingSpoonEnamel;
+    public AudioClip enamelPiece;
+    public AudioClip scratchEnamel;
+    public AudioClip scratchBase;
+    public AudioClip linkPoints;
+
+    [ Header( "Minijuego Pigmentos" ) ]
+
+    public AudioClip insertSpoon;
+    public AudioClip putPigment;
+    public AudioClip mixingSpoonPigments;
+
+    [ Header( "Minijuego Segunda Cocción" ) ]
+
+    public AudioClip movePuzzlePiece;
 
     // Instancia estática para implementar el patrón Singleton.
     public static AudioManager instance;

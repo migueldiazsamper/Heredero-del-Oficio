@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         // Reproducir sonido botón
-        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().testSFX);
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick);
 
         // Cargar la escena del menú principal
         string scenePath = AssetDatabase.GetAssetPath(firstScene);
@@ -33,7 +33,7 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         // Reproducir sonido botón
-        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().testSFX);
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick);
 
         // Salir del juego
         Application.Quit();
@@ -42,7 +42,7 @@ public class MainMenu : MonoBehaviour
     public void SettingsPanel()
     {
         // Reproducir sonido botón
-        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().testSFX);
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick);
 
         // Cargar panel opciones
         main.SetActive(false);
@@ -52,7 +52,7 @@ public class MainMenu : MonoBehaviour
     public void SettingsReturn()
     {
         // Reproducir sonido botón
-        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().testSFX);
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick);
 
         // Regresar al menú principal
         main.SetActive(true);

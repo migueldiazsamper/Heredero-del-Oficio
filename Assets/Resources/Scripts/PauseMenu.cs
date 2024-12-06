@@ -34,7 +34,7 @@ public class PauseMenu : MonoBehaviour
     public void PausarJuego()
     {
         // Reproducir sonido botón
-        audioManager.PlaySFX(audioManager.testSFX);
+        audioManager.PlaySFX(audioManager.buttonClick);
 
         Time.timeScale = 0;
         pauseMenuUI.SetActive(true);
@@ -44,7 +44,7 @@ public class PauseMenu : MonoBehaviour
     public void ReanudarJuego()
     {
         // Reproducir sonido botón
-        audioManager.PlaySFX(audioManager.testSFX);
+        audioManager.PlaySFX(audioManager.buttonClick);
 
         Time.timeScale = 1;
         pauseMenuUI.SetActive(false);
@@ -69,7 +69,7 @@ public class PauseMenu : MonoBehaviour
     public void SettingsPanel()
     {
         // Reproducir sonido botón
-        audioManager.PlaySFX(audioManager.testSFX);
+        audioManager.PlaySFX(audioManager.buttonClick);
 
         // Cargar panel opciones
         pause.SetActive(false);
@@ -79,7 +79,7 @@ public class PauseMenu : MonoBehaviour
     public void SettingsReturn()
     {
         // Reproducir sonido botón
-        audioManager.PlaySFX(audioManager.testSFX);
+        audioManager.PlaySFX(audioManager.buttonClick);
 
         // Regresar al menú principal
         pause.SetActive(true);
