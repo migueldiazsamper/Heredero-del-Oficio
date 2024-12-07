@@ -13,13 +13,10 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private Slider soundSlider;
 
 
-    private AudioManager audioManager;
-
     private void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-        musicSlider.value = audioManager.musicSource.volume;
-        soundSlider.value = audioManager.SFXSource.volume; 
+        musicSlider.value = AudioManager.GetInstance().musicSource.volume;
+        soundSlider.value = AudioManager.GetInstance().SFXSource.volume; 
     }
     
     // Método para ir al menú principal
@@ -31,11 +28,13 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void PausarJuego()
+    public void playButtonSound()
     {
         // Reproducir sonido botón
-        audioManager.PlaySFX(audioManager.buttonClick);
-
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick);
+    }
+    public void PausarJuego()
+    {
         Time.timeScale = 0;
         pauseMenuUI.SetActive(true);
         settings.SetActive(false);
@@ -43,9 +42,6 @@ public class PauseMenu : MonoBehaviour
 
     public void ReanudarJuego()
     {
-        // Reproducir sonido botón
-        audioManager.PlaySFX(audioManager.buttonClick);
-
         Time.timeScale = 1;
         pauseMenuUI.SetActive(false);
     }
@@ -68,9 +64,6 @@ public class PauseMenu : MonoBehaviour
 
     public void SettingsPanel()
     {
-        // Reproducir sonido botón
-        audioManager.PlaySFX(audioManager.buttonClick);
-
         // Cargar panel opciones
         pause.SetActive(false);
         settings.SetActive(true);
@@ -78,9 +71,6 @@ public class PauseMenu : MonoBehaviour
 
     public void SettingsReturn()
     {
-        // Reproducir sonido botón
-        audioManager.PlaySFX(audioManager.buttonClick);
-
         // Regresar al menú principal
         pause.SetActive(true);
         settings.SetActive(false);
@@ -89,12 +79,12 @@ public class PauseMenu : MonoBehaviour
     public void ChangeMusicVolume()
     {
         // Cambiar volumen de la música
-        audioManager.musicSource.volume = musicSlider.value;    
+        AudioManager.GetInstance().musicSource.volume = musicSlider.value;    
     }
 
     public void ChangeSoundVolume()
     {
         // Cambiar volumen de la música
-        audioManager.SFXSource.volume = soundSlider.value;    
+        AudioManager.GetInstance().SFXSource.volume = soundSlider.value;    
     }
 }

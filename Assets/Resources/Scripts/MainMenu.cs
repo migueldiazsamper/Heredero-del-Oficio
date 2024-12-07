@@ -19,6 +19,11 @@ public class MainMenu : MonoBehaviour
         AudioManager.GetInstance().SFXSource.volume = soundSlider.value;
     }
 
+    public void playButtonSound()
+    {
+        // Reproducir sonido botón
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick);
+    }
     public void PlayGame()
     {
         // Reproducir sonido botón

@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     [ Header( "------- Audio Clips -------" ) ]
     public AudioClip backgroundMusic;
     public AudioClip buttonClick;
+    public AudioClip buttonHover;
     public AudioClip positiveFeedback;
     public AudioClip negativeFeedback;
 

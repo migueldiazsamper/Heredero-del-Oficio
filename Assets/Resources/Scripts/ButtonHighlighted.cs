@@ -89,6 +89,7 @@ public class ButtonHighlighted : MonoBehaviour
 
     void OnHoverEnter(Button button)
     {
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonHover);
         Debug.Log($"Hover sobre el botón: {button.name}");
     }
 
