@@ -60,6 +60,9 @@ public class EntradaHornos : MonoBehaviour
         {
             if (  Input.GetKeyDown( KeyCode.E ) )
             {
+                // Reproducir sonido entrar edificio
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().enterBuilding);
+
                 if (PhasesManager.instance.currentPhase > 15)
                 {
                     if (PhasesManager.instance.puntuacionTotal >= 10) // Final Condesa

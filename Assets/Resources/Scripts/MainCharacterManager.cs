@@ -86,6 +86,20 @@ public class MainCharacterManager : MonoBehaviour
                 animator.SetFloat("speedY", inputVelocity.y);
 
                 rb.velocity = inputVelocity * speed;
+
+                if(rb.velocity.magnitude >= 4.0f)
+                {
+                    if(!CharacterMovementSound.GetInstance().characterMovementSource.isPlaying)
+                    {
+                        // Reproducir sonido del personaje moviéndose
+                        CharacterMovementSound.GetInstance().PlayCharacterMovement();   
+                    }           
+                }
+                else
+                {
+                    // Detener sonido del personaje moviéndose
+                    CharacterMovementSound.GetInstance().StopCharacterMovement();
+                }
             }
         }
     }

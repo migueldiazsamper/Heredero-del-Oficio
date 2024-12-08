@@ -86,5 +86,6 @@ public class PauseMenu : MonoBehaviour
     {
         // Cambiar volumen de la música
         AudioManager.GetInstance().SFXSource.volume = soundSlider.value;    
+        CharacterMovementSound.GetInstance().characterMovementSource.volume = soundSlider.value; 
     }
 }

@@ -2485,6 +2485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1777319099}
   SFXSource: {fileID: 130504088}
+  characterMovementSource: {fileID: 0}
   backgroundMusic: {fileID: 8300000, guid: 9355d3ae97970d84aae0cf2846ff441c, type: 3}
   buttonClick: {fileID: 8300000, guid: a850b15bc4a16594a9f2bd46b0abad9e, type: 3}
   buttonHover: {fileID: 8300000, guid: 8778e8ef3225db6448e517a964b90989, type: 3}

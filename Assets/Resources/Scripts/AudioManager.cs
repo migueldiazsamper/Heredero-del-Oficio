@@ -20,7 +20,6 @@ public class AudioManager : MonoBehaviour
 
     [ Header( "Town" ) ]
 
-    public AudioClip characterMovement;
     public AudioClip enterBuilding;
     public AudioClip enterMine;
 
@@ -137,4 +136,5 @@ public class AudioManager : MonoBehaviour
     {
         SFXSource.PlayOneShot( clip );
     }
+
 }
