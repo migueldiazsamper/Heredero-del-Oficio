@@ -38430,6 +38430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterMovementSource: {fileID: 3222389097392003040}
+  slider: {fileID: 1617690728}
 --- !u!82 &3222389097392003040
 AudioSource:
   m_ObjectHideFlags: 0

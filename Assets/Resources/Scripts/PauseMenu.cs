@@ -13,7 +13,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private Slider soundSlider;
 
 
-    private void Awake()
+    private void Start()
     {
         musicSlider.value = AudioManager.GetInstance().musicSource.volume;
         soundSlider.value = AudioManager.GetInstance().SFXSource.volume; 
@@ -86,5 +86,9 @@ public class PauseMenu : MonoBehaviour
     {
         // Cambiar volumen de la música
         AudioManager.GetInstance().SFXSource.volume = soundSlider.value;
+        if(SceneManager.GetActiveScene().name == "Pueblo" || SceneManager.GetActiveScene().name == "Mina")
+        {
+            CharacterMovementSound.GetInstance().characterMovementSource.volume = soundSlider.value;
+        }
     }
 }

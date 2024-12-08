@@ -20,6 +20,8 @@ public class Minigame7Manager : MonoBehaviour
     int numberOfMoves = 0; 
     [ SerializeField ] TextMeshProUGUI movesText;
 
+    private bool notCompleted = true;
+
     void CreateGamePieces ( float gapThickness )
     {
         float width = 1 / ( float ) size;
@@ -143,10 +145,14 @@ public class Minigame7Manager : MonoBehaviour
             }
         }
 
-        if ( CheckCompletion() )
+        if ( CheckCompletion())
         {
             // Reproducir sonido feedback positivo
-            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);
+            if(notCompleted)
+            {
+                notCompleted = false;
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);
+            }
 
             Debug.Log( "Game Completed!" );
         }
@@ -177,8 +183,8 @@ public class Minigame7Manager : MonoBehaviour
                 return false;
             }
         }
-
         return true;
+        
     }
 
     void Shuffle ()

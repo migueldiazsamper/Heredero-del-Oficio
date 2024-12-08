@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class CharacterMovementSound : MonoBehaviour
 {
 
     public AudioSource characterMovementSource;
+    public Slider slider;
 
     public static CharacterMovementSound instance;
 
@@ -17,6 +19,11 @@ public class CharacterMovementSound : MonoBehaviour
     private void Awake ()
     {
         instance = this;
+    }
+
+    private void Start ()
+    {
+        characterMovementSource.volume = slider.value;
     }
 
     public void PlayCharacterMovement ()
