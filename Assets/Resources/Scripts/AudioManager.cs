@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     [ Header( "Audio Sources" ) ]
     public AudioSource musicSource;
     public AudioSource SFXSource;
+    public AudioSource LowSFXSource;
 
     [ Header( "------- Audio Clips -------" ) ]
     public AudioClip backgroundMusic;
@@ -26,19 +27,7 @@ public class AudioManager : MonoBehaviour
     [ Header( "Diálogos" ) ]
 
     public AudioClip dialogueSound;
-    public AudioClip voiceManel;
-    public AudioClip voiceMaria;
-    public AudioClip voiceLluna;
-    public AudioClip voiceSabio;
-    public AudioClip voiceCondesa;
-    public AudioClip voiceDirector;
-    public AudioClip voiceJuan;
-    public AudioClip voiceLluisa;
-    public AudioClip voiceZorro;
-    public AudioClip voiceCandela;
-    public AudioClip voiceAgustina;
-    public AudioClip voiceFrancesc;
-    public AudioClip voiceLluc;
+
 
     [ Header( "Minijuego Barro" ) ]
 
@@ -79,6 +68,7 @@ public class AudioManager : MonoBehaviour
 
     // Instancia estática para implementar el patrón Singleton.
     public static AudioManager instance;
+    public float masterSoundVolume;
 
     /// <summary>
     /// Devuelve la instancia única de AudioManager.
@@ -132,9 +122,14 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     /// <param name="clip">El AudioClip que se reproducirá.</param>
 
-    public void PlaySFX ( AudioClip clip )
+    public void PlaySFX ( AudioClip clip)
     {
         SFXSource.PlayOneShot( clip );
+    }
+
+    public void PlayLowSFX ( AudioClip clip)
+    {
+        LowSFXSource.PlayOneShot( clip );
     }
 
 }

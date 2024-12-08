@@ -136,9 +136,6 @@ public class DialogueV2 : MonoBehaviour
             bool thereAreMoreLines = currentStory.canContinue;
             if ( thereAreMoreLines )
             {
-                // Reproducir sonido npc (falta personalizar a cada uno)
-                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().voiceMaria);
-
                 string nextLine = currentStory.Continue();
                 StopAllCoroutines();
                 isTyping = true;

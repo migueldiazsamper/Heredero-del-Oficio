@@ -16,21 +16,7 @@ public class CharacterMovementSound : MonoBehaviour
 
     private void Awake ()
     {
-        // Comprueba si ya existe una instancia de AudioManager.
-        bool noExisteInstancia = instance == null;
-
-        if ( noExisteInstancia )
-        {
-            instance = this;
-
-            // Hace que este GameObject persista entre escenas.
-            DontDestroyOnLoad( gameObject );
-        }
-        else
-        {
-            // Si ya hay una instancia, destruye este GameObject duplicado.
-            Destroy( gameObject );
-        }
+        instance = this;
     }
 
     public void PlayCharacterMovement ()

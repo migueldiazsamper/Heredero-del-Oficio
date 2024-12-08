@@ -1810,6 +1810,134 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3628677767395357284, guid: b4b65d49994a75741a6e0f0b3fd64b40, type: 3}
   m_PrefabInstance: {fileID: 1909855888850294309}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1282916066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1282916068}
+  - component: {fileID: 1282916067}
+  m_Layer: 0
+  m_Name: LowSFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1282916067
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282916066}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.01
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1282916068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282916066}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2020572072}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1377750455
 GameObject:
   m_ObjectHideFlags: 0
@@ -2485,29 +2613,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1777319099}
   SFXSource: {fileID: 130504088}
-  characterMovementSource: {fileID: 0}
+  LowSFXSource: {fileID: 1282916067}
   backgroundMusic: {fileID: 8300000, guid: 9355d3ae97970d84aae0cf2846ff441c, type: 3}
   buttonClick: {fileID: 8300000, guid: a850b15bc4a16594a9f2bd46b0abad9e, type: 3}
   buttonHover: {fileID: 8300000, guid: 8778e8ef3225db6448e517a964b90989, type: 3}
   positiveFeedback: {fileID: 8300000, guid: eef4e316d50c58a47a8a6abb8451074f, type: 3}
   negativeFeedback: {fileID: 8300000, guid: 48d853c4c65f59448bc396844c5c60fe, type: 3}
-  characterMovement: {fileID: 8300000, guid: c8342b2d4ae332445b0f2a6847910256, type: 3}
   enterBuilding: {fileID: 8300000, guid: 8a9dc291d09445847a5e8f0e5f41c348, type: 3}
   enterMine: {fileID: 8300000, guid: 0dbd44b4a9df67948a34861b8d156125, type: 3}
   dialogueSound: {fileID: 8300000, guid: bc2645183a0ba1d4381ae9d1ffaac430, type: 3}
-  voiceManel: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
-  voiceMaria: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
-  voiceLluna: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
-  voiceSabio: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
-  voiceCondesa: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
-  voiceDirector: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
-  voiceJuan: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
-  voiceLluisa: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
-  voiceZorro: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
-  voiceCandela: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
-  voiceAgustina: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
-  voiceFrancesc: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
-  voiceLluc: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
   grabSand: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
   cleanSand: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
   grabPiece: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
@@ -2525,6 +2639,7 @@ MonoBehaviour:
   putPigment: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
   mixingSpoonPigments: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
   movePuzzlePiece: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  masterSoundVolume: 0
 --- !u!4 &2020572072
 Transform:
   m_ObjectHideFlags: 0
@@ -2540,6 +2655,7 @@ Transform:
   m_Children:
   - {fileID: 1777319098}
   - {fileID: 130504087}
+  - {fileID: 1282916068}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2036819728

@@ -80,7 +80,7 @@ public class ButtonHighlighted : MonoBehaviour
         {
             eventID = EventTriggerType.PointerExit
         };
-        pointerExit.callback.AddListener((eventData) => OnHoverExit(button));
+        //pointerExit.callback.AddListener((eventData) => OnHoverExit(button));
 
         // Añadir los eventos al trigger
         trigger.triggers.Add(pointerEnter);
@@ -89,12 +89,11 @@ public class ButtonHighlighted : MonoBehaviour
 
     void OnHoverEnter(Button button)
     {
-        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonHover);
-        Debug.Log($"Hover sobre el botón: {button.name}");
+        AudioManager.GetInstance().PlayLowSFX(AudioManager.GetInstance().buttonHover);
     }
 
-    void OnHoverExit(Button button)
+    /*void OnHoverExit(Button button)
     {
-        Debug.Log($"Se dejó de hacer hover sobre el botón: {button.name}");
-    }
+        
+    }*/
 }
