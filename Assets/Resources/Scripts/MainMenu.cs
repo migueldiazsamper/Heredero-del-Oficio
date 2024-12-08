@@ -73,6 +73,7 @@ public class MainMenu : MonoBehaviour
     public void ChangeSoundVolume()
     {
         // Cambiar volumen de la música
-        AudioManager.GetInstance().SFXSource.volume = soundSlider.value;    
+        AudioManager.GetInstance().SFXSource.volume = soundSlider.value;  
+        CharacterMovementSound.GetInstance().characterMovementSource.volume = soundSlider.value;   
     }
 }
