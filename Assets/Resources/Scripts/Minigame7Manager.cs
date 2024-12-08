@@ -108,21 +108,33 @@ public class Minigame7Manager : MonoBehaviour
                     {
                         if ( SwapIfValid( iterativePiece , -size , size ) )
                         {
+                            // Reproducir sonido pieza
+                            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().movePuzzlePiece);
+
                             numberOfMoves++;
                             break;
                         }
                         if ( SwapIfValid( iterativePiece , +size , size ) )
                         {
+                            // Reproducir sonido pieza
+                            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().movePuzzlePiece);
+
                             numberOfMoves++;
                             break;
                         }
                         if ( SwapIfValid( iterativePiece , -1 , 0 ) )
                         {
+                            // Reproducir sonido pieza
+                            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().movePuzzlePiece);
+
                             numberOfMoves++;
                             break;
                         }
                         if ( SwapIfValid( iterativePiece , +1 , size - 1 ) )
                         {
+                            // Reproducir sonido pieza
+                            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().movePuzzlePiece);
+                            
                             numberOfMoves++;
                             break;
                         }
@@ -133,6 +145,9 @@ public class Minigame7Manager : MonoBehaviour
 
         if ( CheckCompletion() )
         {
+            // Reproducir sonido feedback positivo
+            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);
+
             Debug.Log( "Game Completed!" );
         }
     }

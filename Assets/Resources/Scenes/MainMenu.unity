@@ -2334,7 +2334,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.318
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2493,37 +2493,37 @@ MonoBehaviour:
   characterMovement: {fileID: 8300000, guid: c8342b2d4ae332445b0f2a6847910256, type: 3}
   enterBuilding: {fileID: 8300000, guid: 8a9dc291d09445847a5e8f0e5f41c348, type: 3}
   enterMine: {fileID: 8300000, guid: 0dbd44b4a9df67948a34861b8d156125, type: 3}
-  dialogueSound: {fileID: 0}
-  voiceManel: {fileID: 0}
-  voiceMaria: {fileID: 0}
-  voiceLluna: {fileID: 0}
-  voiceSabio: {fileID: 0}
-  voiceCondesa: {fileID: 0}
-  voiceDirector: {fileID: 0}
-  voiceJuan: {fileID: 0}
-  voiceLluisa: {fileID: 0}
-  voiceZorro: {fileID: 0}
-  voiceCandela: {fileID: 0}
-  voiceAgustina: {fileID: 0}
-  voiceFrancesc: {fileID: 0}
-  voiceLluc: {fileID: 0}
-  grabSand: {fileID: 0}
-  cleanSand: {fileID: 0}
-  grabPiece: {fileID: 0}
-  dropPiece: {fileID: 0}
-  rotatePiece: {fileID: 0}
-  grabWood: {fileID: 0}
-  dropWood: {fileID: 0}
-  burningWood: {fileID: 0}
-  mixingSpoonEnamel: {fileID: 0}
-  enamelPiece: {fileID: 0}
-  scratchEnamel: {fileID: 0}
-  scratchBase: {fileID: 0}
-  linkPoints: {fileID: 0}
-  insertSpoon: {fileID: 0}
-  putPigment: {fileID: 0}
-  mixingSpoonPigments: {fileID: 0}
-  movePuzzlePiece: {fileID: 0}
+  dialogueSound: {fileID: 8300000, guid: bc2645183a0ba1d4381ae9d1ffaac430, type: 3}
+  voiceManel: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
+  voiceMaria: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
+  voiceLluna: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
+  voiceSabio: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
+  voiceCondesa: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
+  voiceDirector: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
+  voiceJuan: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
+  voiceLluisa: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
+  voiceZorro: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
+  voiceCandela: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
+  voiceAgustina: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
+  voiceFrancesc: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
+  voiceLluc: {fileID: 8300000, guid: 8da6fc4b97eb51148b93a3a5f80841e4, type: 3}
+  grabSand: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  cleanSand: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  grabPiece: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  dropPiece: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  rotatePiece: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  grabWood: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  dropWood: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  burningWood: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  mixingSpoonEnamel: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  enamelPiece: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  scratchEnamel: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  scratchBase: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  linkPoints: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  insertSpoon: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  putPigment: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  mixingSpoonPigments: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  movePuzzlePiece: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
 --- !u!4 &2020572072
 Transform:
   m_ObjectHideFlags: 0

@@ -15,8 +15,8 @@ public class MainMenu : MonoBehaviour
     // El metodo Awake prepara los elementos necesarios al inicio del juego
     private void Start()
     {
-        AudioManager.GetInstance().musicSource.volume = musicSlider.value;
-        AudioManager.GetInstance().SFXSource.volume = soundSlider.value;
+        musicSlider.value = AudioManager.GetInstance().musicSource.volume;
+        soundSlider.value = AudioManager.GetInstance().SFXSource.volume;
     }
 
     public void playButtonSound()

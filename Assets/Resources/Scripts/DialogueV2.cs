@@ -136,6 +136,9 @@ public class DialogueV2 : MonoBehaviour
             bool thereAreMoreLines = currentStory.canContinue;
             if ( thereAreMoreLines )
             {
+                // Reproducir sonido npc (falta personalizar a cada uno)
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().voiceMaria);
+
                 string nextLine = currentStory.Continue();
                 StopAllCoroutines();
                 isTyping = true;
@@ -155,9 +158,12 @@ public class DialogueV2 : MonoBehaviour
         {
             dialogueText.text = "";
             foreach (char letter in line.ToCharArray())
-            {
+            {                
                 dialogueText.text += letter;
                 yield return new WaitForSeconds(typingSpeed);
+
+                // Reproducir sonido pieza
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().dialogueSound);
             }
             isTyping = false;
         }
