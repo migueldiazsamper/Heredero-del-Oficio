@@ -159,7 +159,7 @@ public class DialogueV2 : MonoBehaviour
                 dialogueText.text += letter;
                 yield return new WaitForSeconds(typingSpeed);
 
-                // Reproducir sonido pieza
+                // Reproducir sonido diálogo
                 AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().dialogueSound);
             }
             isTyping = false;

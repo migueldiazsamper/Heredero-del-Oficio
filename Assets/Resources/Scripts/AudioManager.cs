@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour
     [ Header( "Minijuego Barro" ) ]
 
     public AudioClip grabSand;
-    public AudioClip cleanSand;
+    public AudioClip grabImpurity;
 
     [ Header( "Minijuego Moldes" ) ]
 
@@ -68,7 +68,6 @@ public class AudioManager : MonoBehaviour
 
     // Instancia estática para implementar el patrón Singleton.
     public static AudioManager instance;
-    public float masterSoundVolume;
 
     /// <summary>
     /// Devuelve la instancia única de AudioManager.

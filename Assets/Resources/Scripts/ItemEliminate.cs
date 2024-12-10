@@ -25,6 +25,17 @@ public class ItemEliminate : MonoBehaviour , IDropHandler
             if ( isBelow100 )
             {
                 UpdatePercentage.percentageOfTotal += 10;
+
+                // Reproducir sonido quitar impureza
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().grabImpurity);
+            }
+
+            bool is100 = UpdatePercentage.percentageOfTotal == 100;
+
+            if ( is100 )
+            {
+                // Reproducir sonido de completar porcentaje
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);
             }
         }
     }

@@ -2620,10 +2620,10 @@ MonoBehaviour:
   positiveFeedback: {fileID: 8300000, guid: eef4e316d50c58a47a8a6abb8451074f, type: 3}
   negativeFeedback: {fileID: 8300000, guid: 48d853c4c65f59448bc396844c5c60fe, type: 3}
   enterBuilding: {fileID: 8300000, guid: 8a9dc291d09445847a5e8f0e5f41c348, type: 3}
-  enterMine: {fileID: 8300000, guid: 0dbd44b4a9df67948a34861b8d156125, type: 3}
+  enterMine: {fileID: 8300000, guid: 8a9dc291d09445847a5e8f0e5f41c348, type: 3}
   dialogueSound: {fileID: 8300000, guid: bc2645183a0ba1d4381ae9d1ffaac430, type: 3}
   grabSand: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  cleanSand: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  grabImpurity: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
   grabPiece: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
   dropPiece: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
   rotatePiece: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
@@ -2639,7 +2639,6 @@ MonoBehaviour:
   putPigment: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
   mixingSpoonPigments: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
   movePuzzlePiece: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  masterSoundVolume: 0
 --- !u!4 &2020572072
 Transform:
   m_ObjectHideFlags: 0

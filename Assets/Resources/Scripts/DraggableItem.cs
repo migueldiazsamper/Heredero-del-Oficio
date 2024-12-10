@@ -48,6 +48,9 @@ public class DraggableItem : MonoBehaviour , IBeginDragHandler , IEndDragHandler
     // Método que se llama al comenzar a arrastrar el objeto
     public void OnBeginDrag ( PointerEventData eventData )
     {
+        // Reproducir sonido coger pieza
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().grabPiece);
+
         // Reduce la opacidad del objeto para indicar que está siendo arrastrado
         canvasGroup.alpha = .6f;
         // Permite que el objeto sea atravesado por rayos de detección (para que no interfiera con otros objetos)
@@ -88,6 +91,11 @@ public class DraggableItem : MonoBehaviour , IBeginDragHandler , IEndDragHandler
             float randomY = Random.Range( -Screen.height / 2 , Screen.height / 2 );
             rectTransform.anchoredPosition = new Vector2( randomX , randomY );
         }
+        else
+        {
+            // Reproducir sonido soltar pieza
+            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().dropPiece);
+        }
     }
 
     // Método que se llama al hacer clic en el objeto
@@ -101,6 +109,9 @@ public class DraggableItem : MonoBehaviour , IBeginDragHandler , IEndDragHandler
             // Rota el objeto 90 grados en el eje Z
             rectTransform.Rotate( 0 , 0 , -90 );
 
+            // Reproducir sonido rotar
+            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().rotatePiece);
+
             // Incrementa la rotación actual en 90 grados
             if ( ++currentRotation > 3 )
             {
@@ -112,7 +123,8 @@ public class DraggableItem : MonoBehaviour , IBeginDragHandler , IEndDragHandler
 
             if ( isCorrect )
             {
-                Debug.Log( "Correcto" ); // Imprime un mensaje en la consola si la rotación es correcta
+                // Reproducir sonido correcto
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);
             }   
         }
     }

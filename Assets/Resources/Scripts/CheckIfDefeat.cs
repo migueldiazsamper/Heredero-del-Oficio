@@ -65,9 +65,9 @@ public class CheckIfDefeat : MonoBehaviour
                 // Si el temporizador existe, marca el tiempo como agotado.
                 bool temporizadorExiste = countDownTimer != null;
 
-                if ( temporizadorExiste )
+                if ( temporizadorExiste && !countDownTimer.GetisDefeat() )
                 {
-                    countDownTimer.SetisTimeUp( true );
+                    countDownTimer.SetDefeat();
                 }
 
                 // Activa el botón para indicar el estado de derrota.

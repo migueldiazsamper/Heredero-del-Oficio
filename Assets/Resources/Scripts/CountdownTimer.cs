@@ -22,6 +22,8 @@ public class CountDownTimer : MonoBehaviour
 
     // Variable para almacenar si el tiempo se ha agotado
     private bool isTimeUp = false;
+    private bool isFinished = false;
+    private bool isDefeat = false;
 
     // Referencia al componente ConstantRotation
     [SerializeField] ConstantRotation constantRotation;
@@ -32,16 +34,20 @@ public class CountDownTimer : MonoBehaviour
     [SerializeField] private int minigame;
 
     // Método que devuelve si el tiempo se ha agotado
-    public bool GetisTimeUp()
+    public bool GetisDefeat()
     {
-        return isTimeUp;
+        return isDefeat;
     }
     
     // Método que establece si el tiempo se ha agotado
-    public void SetisTimeUp(bool value)
+    public void SetDefeat()
     {
-        isTimeUp = value;
+        // Reproducir sonido derrota
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().negativeFeedback);
+
+        isDefeat = true;
     }
+
 
     // Método que se llama al inicio del juego que inicializa el tiempo restante
     void Start()
@@ -88,7 +94,15 @@ public class CountDownTimer : MonoBehaviour
         }
         else
         {
-            timerText.text = "00:00";
+            if (minigame == 3)
+            {
+                if(!isDefeat && !isFinished) 
+                {
+                    // Reproducir sonido correcto
+                    AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);
+                    isFinished = true;
+                }
+            }
             if (minigame == 4)
             {
                 SceneManager.LoadScene("DialogoInterior");

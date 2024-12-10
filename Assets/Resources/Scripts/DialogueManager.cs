@@ -113,6 +113,9 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
+
+            // Reproducir sonido diálogo
+            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().dialogueSound);
         }
     }
 }

@@ -35,6 +35,9 @@ public class EliminarArena : MonoBehaviour , IPointerClickHandler
 
     private IEnumerator FadeOutAndDestroy ()
     {
+        // Reproducir sonido quitar arena
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().grabSand);
+
         // Desvanece y destruye el objeto actual
         yield return StartCoroutine( FadeOut( image ) );
 
