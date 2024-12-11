@@ -1,7 +1,7 @@
 ¡Mira quién ha llegado!
 ¿Necesitas algún pigmento para tu madre?
-¿Para tí?
-¿¡Ya estás estudiando en la academia de la fábrica?!
+¿Para ti?
+¡¿Ya estás estudiando en la academia de la fábrica?!
 Hace nada corrías por la plaza jugando y ahora ya estás a punto de trabajar para la condesa...
 ¡Está bien!
 ¡Estos pigmentos serán un regalo, no me des ni un dinero!

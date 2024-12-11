@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private SceneAsset firstScene; // Escena del primer nivel
     [SerializeField] private GameObject settings;
     [SerializeField] private GameObject main;
+    [SerializeField] private GameObject controls;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider soundSlider;
 
@@ -62,6 +63,26 @@ public class MainMenu : MonoBehaviour
         // Regresar al menú principal
         main.SetActive(true);
         settings.SetActive(false);
+    }
+
+    public void AbrirControles ()
+    {
+        // Reproducir sonido botón
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick);
+
+        // Regresar al menú principal
+        controls.SetActive(true);
+        settings.SetActive(false);
+    }
+
+    public void CerrarControles()
+    {
+        // Reproducir sonido botón
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick);
+
+        // Regresar al menú principal
+        controls.SetActive(false);
+        settings.SetActive(true);
     }
 
     public void ChangeMusicVolume()
