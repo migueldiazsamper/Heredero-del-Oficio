@@ -31,8 +31,11 @@ public class DragDropMinigame4 : MonoBehaviour, IBeginDragHandler , IEndDragHand
     // Método que se llama al comenzar a arrastrar el objeto
     public void OnBeginDrag ( PointerEventData eventData )
     {   
-        if(combustibleHorno.IsDraggingAllowed())
+        if(combustibleHorno.IsDraggingAllowed() && !CountDownTimer.instance.GetisTimeUp())
         {
+            // Reproducir sonido coger madera
+            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().grabWood);
+
             // Reduce la opacidad del objeto
             canvasGroup.alpha = .6f;
             // Permite que el objeto sea atravesado por rayos de detección
@@ -44,18 +47,17 @@ public class DragDropMinigame4 : MonoBehaviour, IBeginDragHandler , IEndDragHand
     public void OnDrag ( PointerEventData eventData )
     {
         //Le pedimos al script de las mecánicas si está permitido mover el objeto
-        if(combustibleHorno.IsDraggingAllowed())
+        if(combustibleHorno.IsDraggingAllowed() && !CountDownTimer.instance.GetisTimeUp())
         {
             // Actualiza la posición anclada del objeto basado en el movimiento del puntero y el factor de escala del canvas
             rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
-            Debug.Log("ESTA MOVIENDOSE");
         }
     }
 
     // Método que se llama al finalizar el arrastre del objeto
     public void OnEndDrag(PointerEventData eventData)
     {
-        if(combustibleHorno.IsDraggingAllowed())
+        if(combustibleHorno.IsDraggingAllowed() && !CountDownTimer.instance.GetisTimeUp())
         {
             // Restaura la opacidad del objeto
             canvasGroup.alpha = 1f;
@@ -86,6 +88,9 @@ public class DragDropMinigame4 : MonoBehaviour, IBeginDragHandler , IEndDragHand
                 // Si no es un slot, comprueba si el objeto es la basura
                 else if(eventData.pointerEnter.CompareTag("Trash"))
                 {   
+                    // Reproducir sonido tirar madera a la basura
+                    AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().dropWood);
+
                     if(combustibleHorno.IsBurnt())
                     {
                         currentSlot.freeOfItem = true; // Marca el slot como libre

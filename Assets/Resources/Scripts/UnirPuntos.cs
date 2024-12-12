@@ -24,6 +24,9 @@ public class UnirPuntos : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero); //Creamos un raycast hacia el punto sobre el que se ha hecho click
                 if (hit.collider != null && hit.collider.gameObject == gameObject) 
                 {
+                    // Reproduce el sonido de clicar un punto
+                    AudioManager.GetInstance().Play(AudioManager.GetInstance().grabPoint);
+
                     isDragging = true;
                     Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     mousePosition.z = 0f;
@@ -45,6 +48,9 @@ public class UnirPuntos : MonoBehaviour
                 if (hit.collider != null && hit.collider.TryGetComponent(out UnirPuntos unirPuntos) && IDout == unirPuntos.GetIDin())  //Chequeamos que el ID del punto que comienza
                                                                                                                             //la línea coincide con el que recibe
                 {
+                    // Reproduce el sonido de unir un punto
+                    AudioManager.GetInstance().Play(AudioManager.GetInstance().linkPoint);
+
                     Debug.Log("UNIÓN");
                     isConnected = true;
                 }

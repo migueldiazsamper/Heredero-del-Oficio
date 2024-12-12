@@ -11,6 +11,10 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     [SerializeField] GameObject listoButton;
     [SerializeField] GameObject resetButton;
     [SerializeField] PigmentosManager pigmentosManager;
+
+    // Color al que se debe llegar al mezclar todos los pigmentos
+    [SerializeField] private Color targetColor = PigmentosManager.colorNaranja; 
+    
     //Referencias a las partes que conforman la cuchara
     [SerializeField] GameObject cabeza;
     [SerializeField] GameObject cuerpo;
@@ -94,6 +98,13 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
                 StartCoroutine(MixingCountDown());
                 isMixing = true;
             }
+
+            // Reproducir sonido mezclar pigmentos del bol
+            if (!AudioManager.GetInstance().SFXSource.isPlaying)
+            {
+                AudioManager.GetInstance().Play(AudioManager.GetInstance().mixingSpoonPigments);
+            }
+
             anchoredXAxis = rectTransform.anchoredPosition.x;
             anchoredYAxis = rectTransform.anchoredPosition.y;
             if(anchoredXAxis > HALF_POSITION_X && anchoredYAxis >= HALF_POSITION_Y){ //Cuadrante superior derecho
@@ -110,10 +121,20 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             }
         }
         // Actualiza la posición anclada del objeto basado en el movimiento del puntero y el factor de escala del canvas
-        else rectTransform.anchoredPosition += pointerEventData.delta / canvas.scaleFactor;
+        else
+        { 
+            rectTransform.anchoredPosition += pointerEventData.delta / canvas.scaleFactor; 
+        }
     }
 
     public void OnEndDrag(PointerEventData pointerEventData){
+        
+        // Detener sonido mezclar pigmentos del bol
+        if (AudioManager.GetInstance().SFXSource.isPlaying)
+        {
+            AudioManager.GetInstance().StopSFX();
+        }
+
         if(!isLockedToBowl){
             // Restaura la opacidad del objeto
             canvasGroup.alpha = 1f;
@@ -123,6 +144,10 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             ///Al dejar la cuchara sobre un bote de pigmentos hacemos invisible todo menos el cuerpo
             ///y el cuerpo queda sobre el bote para dar el efecto de que la cuchara está dentro del bote
             if(pointerEventData.pointerEnter.CompareTag("BotePigmento") && pointerEventData != null){
+
+                // Reproducir sonido meter cuchara en bote
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().insertSpoon);
+
                 cabezaCanvasGroup.alpha = 0;
                 liquidoCanvasGroup.alpha = 0;
                 rectTransform.rotation = Quaternion.Euler( 0, 0, 165);
@@ -137,7 +162,13 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             
             else if(isCarryingPigment){ 
                 if(pointerEventData.pointerEnter.CompareTag("BolCombinarPigmentos") && pointerEventData != null){ //Si lleva pigmento y la sueltas en el bol
-                    if(pigmentosManager.colorCounter < 5) pigmentosManager.AddColorToMix(currentColor);
+                    if(pigmentosManager.colorCounter < 5)
+                    {
+                        // Reproducir sonido meter pigmento en bol
+                        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().putPigment);
+
+                        pigmentosManager.AddColorToMix(currentColor);
+                    }
                 }
                 isCarryingPigment = false;
                 liquidoCanvasGroup.alpha = 0;
@@ -151,10 +182,18 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             isMixing = false;
         }
         else{
+
             rectTransform.anchoredPosition = new Vector2(STARTING_POSITION_X, STARTING_POSITION_Y);
             pigmentosManager.MixColors();
             listoButton.SetActive(true);
             resetButton.SetActive(true);
+
+            if(pigmentosManager.mixedColorSpriteImage.GetComponent<Image>().color == targetColor)
+            {
+                // Reproducir sonido feedback positivo
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);   
+            }
+
             this.enabled = false;
         }
 

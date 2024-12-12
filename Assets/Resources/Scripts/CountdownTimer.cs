@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 // Definición de la clase Timer que hereda de MonoBehaviour
 public class CountDownTimer : MonoBehaviour
@@ -33,10 +34,23 @@ public class CountDownTimer : MonoBehaviour
 
     [SerializeField] private int minigame;
 
+    // Instancia estática para implementar el patrón Singleton
+    public static CountDownTimer instance;
+
     // Método que devuelve si el tiempo se ha agotado
     public bool GetisDefeat()
     {
         return isDefeat;
+    }
+
+    public bool GetisTimeUp()
+    {
+        return isTimeUp;
+    }
+    
+    public void Awake()
+    {
+        instance = this;
     }
     
     // Método que establece si el tiempo se ha agotado
@@ -71,7 +85,7 @@ public class CountDownTimer : MonoBehaviour
     // Método que se llama una vez por frame que decrementa el tiempo restante
     void Update()
     {
-        if (remainingTime > 0 && !isTimeUp)
+        if (remainingTime > 0 && !isTimeUp && !isDefeat)
         {
             remainingTime -= Time.deltaTime;
             UpdateTimerText();
@@ -83,13 +97,17 @@ public class CountDownTimer : MonoBehaviour
                 {
                     constantRotation.MakeFinish();
                 }
+
+                if (minigame == 4)
+                {
+                    // Reproducir sonido campanario
+                    AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().timeUpBell);
+                }
+
                 isTimeUp = true;
                 UpdateTimerText();
 
-                if (minigame == 3)
-                {
-                    victoryButton.gameObject.SetActive(true);
-                }
+                victoryButton.gameObject.SetActive(true);
             }
         }
         else
@@ -100,12 +118,9 @@ public class CountDownTimer : MonoBehaviour
                 {
                     // Reproducir sonido correcto
                     AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);
+
                     isFinished = true;
                 }
-            }
-            if (minigame == 4)
-            {
-                SceneManager.LoadScene("DialogoInterior");
             }
         }
     }

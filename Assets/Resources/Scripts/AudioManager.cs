@@ -47,14 +47,18 @@ public class AudioManager : MonoBehaviour
     public AudioClip grabWood;
     public AudioClip dropWood;
     public AudioClip burningWood;
+    public AudioClip timeUpBell;
 
     [ Header( "Minijuego Esmalte" ) ]
 
     public AudioClip mixingSpoonEnamel;
-    public AudioClip enamelPiece;
+    public AudioClip grabEnamelPiece;
+    public AudioClip EnamelPiece;
     public AudioClip scratchEnamel;
     public AudioClip scratchBase;
-    public AudioClip linkPoints;
+    public AudioClip grabPoint;
+    public AudioClip linkPoint;
+    
 
     [ Header( "Minijuego Pigmentos" ) ]
 
@@ -120,6 +124,18 @@ public class AudioManager : MonoBehaviour
     /// Reproduce un efecto de sonido (SFX) con el AudioSource de efectos.
     /// </summary>
     /// <param name="clip">El AudioClip que se reproducirá.</param>
+
+    public void Play ( AudioClip clip )
+    {
+        SFXSource.clip = clip;
+        SFXSource.Play();
+    }
+
+    public void StopSFX ()
+    {
+        SFXSource.Stop();
+        SFXSource.clip = null;
+    }
 
     public void PlaySFX ( AudioClip clip)
     {

@@ -2643,11 +2643,14 @@ MonoBehaviour:
   grabWood: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
   dropWood: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
   burningWood: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  timeUpBell: {fileID: 8300000, guid: 8a9dc291d09445847a5e8f0e5f41c348, type: 3}
   mixingSpoonEnamel: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  enamelPiece: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  grabEnamelPiece: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  EnamelPiece: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
   scratchEnamel: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
   scratchBase: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  linkPoints: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  grabPoint: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  linkPoint: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
   insertSpoon: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
   putPigment: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
   mixingSpoonPigments: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}

@@ -14,6 +14,7 @@ public class EliminarArena : MonoBehaviour , IPointerClickHandler
 
     // Referencia al componente Image
     private Image image;
+    private bool isFading = false;
 
     private void Start ()
     {
@@ -28,13 +29,14 @@ public class EliminarArena : MonoBehaviour , IPointerClickHandler
     // Método que se llama al hacer clic en el objeto
     public void OnPointerClick ( PointerEventData eventData )
     {
-        Debug.Log( "Objeto clickeado: " + gameObject.name );
         // Inicia la corrutina para desaparecer el objeto y los objetos especificados
-        StartCoroutine( FadeOutAndDestroy() );
+        if(!isFading) StartCoroutine( FadeOutAndDestroy() );
     }
 
     private IEnumerator FadeOutAndDestroy ()
     {
+        isFading = true;
+
         // Reproducir sonido quitar arena
         AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().grabSand);
 

@@ -43,6 +43,13 @@ public class PaloEsmalte : MonoBehaviour, IBeginDragHandler , IEndDragHandler , 
                 StartCoroutine(MixingCountDown());
                 isMixing = true;
             }
+
+            // Reproducir sonido mezclar esmalte del bol
+            if (!AudioManager.GetInstance().SFXSource.isPlaying)
+            {
+                AudioManager.GetInstance().Play(AudioManager.GetInstance().mixingSpoonEnamel);
+            }
+
             anchoredXAxis = rectTransform.anchoredPosition.x;
             anchoredYAxis = rectTransform.anchoredPosition.y;
             if(anchoredXAxis > HALF_POSITION_X && anchoredYAxis >= HALF_POSITION_Y){ //Cuadrante superior derecho
@@ -61,6 +68,13 @@ public class PaloEsmalte : MonoBehaviour, IBeginDragHandler , IEndDragHandler , 
     }
 
     public void OnEndDrag(PointerEventData pointerEventData){
+
+        // Detener sonido mezclar pigmentos del bol
+        if (AudioManager.GetInstance().SFXSource.isPlaying)
+        {
+            AudioManager.GetInstance().StopSFX();
+        }  
+
         if(!finishedMixing){
             StopAllCoroutines();
             isMixing = false;

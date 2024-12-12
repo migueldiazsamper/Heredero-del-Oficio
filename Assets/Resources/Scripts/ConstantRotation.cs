@@ -110,8 +110,8 @@ public class ConstantRotation : MonoBehaviour
     void Update ()
     {
         // Detecta si se ha presionado la tecla derecha o izquierda
-        bool rightArrowIsDown = Input.GetKeyDown(KeyCode.RightArrow);
-        bool leftArrowIsDown = Input.GetKeyDown(KeyCode.LeftArrow);
+        bool rightArrowIsDown = Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D);
+        bool leftArrowIsDown = Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A);
 
         bool isNotFinished = !Isfinish;
 

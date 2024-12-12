@@ -34,13 +34,20 @@ public class TemperaturaHorno : MonoBehaviour
 
     void Update()
     {
-        CalculateTotalTemp();
-        text.text = Math.Floor(totalTemperature).ToString();
-        scoreText.text = score.ToString();
-        if(totalTemperature <= 0) totalTemperature = 0;
-        if (totalTemperature >= maxTemp) totalTemperature = maxTemp;
-        thermometer.fillAmount = totalTemperature/maxTemp;
-        ChangeCeramicColor();
+        if(!CountDownTimer.instance.GetisTimeUp())
+        {
+            CalculateTotalTemp();
+            text.text = Math.Floor(totalTemperature).ToString();
+            scoreText.text = score.ToString();
+            if(totalTemperature <= 0) totalTemperature = 0;
+            if (totalTemperature >= maxTemp) totalTemperature = maxTemp;
+            thermometer.fillAmount = totalTemperature/maxTemp;
+            ChangeCeramicColor();
+        }
+        else
+        {
+            StopAllCoroutines();
+        }
     }
 
     public void CalculateTotalTemp()
@@ -88,10 +95,18 @@ public class TemperaturaHorno : MonoBehaviour
             }
             else if(totalTemperature <= 1400){
                 score += 1;
+
+                // Reproducir sonido feedback positivo
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);
+
                 yield return new WaitForSeconds(1.5f); //Espera 1.5s para volver a comprobar
             } 
             else {
                 score -= 1;
+
+                // Reproducir sonido feedback negativo
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().negativeFeedback);
+
                 yield return new WaitForSeconds(0.5f); //Si estás sobrecalentado, restas más puntos y más rápido
                 
             }

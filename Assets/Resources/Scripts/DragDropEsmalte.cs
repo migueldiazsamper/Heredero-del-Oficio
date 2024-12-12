@@ -35,6 +35,9 @@ public class DragDropEsmalte : MonoBehaviour , IBeginDragHandler , IEndDragHandl
     // Método que se llama al comenzar a arrastrar el objeto
     public void OnBeginDrag ( PointerEventData eventData )
     {
+        // Reproducir sonido de coger pieza
+        AudioManager.GetInstance().Play( AudioManager.GetInstance().grabEnamelPiece);
+
         // Reduce la opacidad del objeto
         canvasGroup.alpha = .6f;
         // Permite que el objeto sea atravesado por rayos de detección
@@ -73,8 +76,16 @@ public class DragDropEsmalte : MonoBehaviour , IBeginDragHandler , IEndDragHandl
     }
 
     IEnumerator DelayedDeactivation(){
+
+        // Reproducir sonido de pieza esmaltandose
+        AudioManager.GetInstance().Play( AudioManager.GetInstance().EnamelPiece);
+
         yield return new WaitForSeconds(1);
         piezaEsmaltada.SetActive(true);
+
+        // Reproducir sonido de pieza esmaltada
+        AudioManager.GetInstance().Play( AudioManager.GetInstance().EnamelPiece);
+
         piezaEsmaltada.GetComponent<DragDropEsmalte>().enabled = true;
         gameObject.SetActive(false);
     }

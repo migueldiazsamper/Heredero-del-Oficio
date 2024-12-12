@@ -32,6 +32,9 @@ public class LimarBase : MonoBehaviour, IPointerEnterHandler
             float newAlpha = Mathf.Clamp01(1f - (veces / (float)maxVeces));
             canvasGroup.alpha = newAlpha;
 
+            //Reproducir sonido de limar esmalte
+            AudioManager.instance.PlaySFX( AudioManager.instance.scratchBase );
+
             // Si se ha pasado el objeto el número máximo de veces, desactiva el objeto
             if (veces >= maxVeces)
             {

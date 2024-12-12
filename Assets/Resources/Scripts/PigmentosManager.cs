@@ -8,11 +8,17 @@ public class PigmentosManager : MonoBehaviour
 {
 
     [SerializeField] GameObject cuchara;
-    [SerializeField] private Image mixedColorSpriteImage;
+    public Image mixedColorSpriteImage;
 
     public int colorCounter {get; private set;} = 0;
     private int[] colorPalette = new int[5]; //Este array contiene el nº usado de cada color en formato {b, m, c, y, w}
 
+    public static Color colorNaranja = new Color(1.0f, 0.392f, 0.129f); // Naranja
+    public static Color colorVerdeOlivaOscuro = new Color(0.388f, 0.349f, 0.078f); // Verde Oliva Oscuro
+    public static Color colorVerdeOlivaClaro = new Color(0.663f, 0.627f, 0.271f); // Verde Oliva Claro
+    public static Color colorAzulOscuro = new Color(0.267f, 0.337f, 0.659f); // Azul Oscuro
+    public static Color colorAzulClaro = new Color(0.588f, 0.733f, 0.898f); // Azul Claro
+    public static Color colorMarron = new Color(0.596f, 0.329f, 0.0f); // Marrón
     void Awake(){
         for(int i = 0; i < 5; i++) colorPalette[i] = 0;
     }
@@ -53,12 +59,12 @@ public class PigmentosManager : MonoBehaviour
             case "Yellow":  return Color.yellow;
             case "White":   return Color.white;
             //La paleta está en formato BMCYW
-            case "02030": return new Color(1.0f, 0.392f, 0.129f); // Naranja
-            case "10220": return new Color(0.388f, 0.349f, 0.078f); // Verde Oliva Oscuro
-            case "10112": return new Color(0.663f, 0.627f, 0.271f); // Verde Oliva Claro
-            case "10400": return new Color(0.267f, 0.337f, 0.659f); // Azul Oscuro
-            case "00302": return new Color(0.588f, 0.733f, 0.898f); // Azul Claro
-            case "01112": return new Color(0.596f, 0.329f, 0.0f); // Marrón/Ocre Claro
+            case "02030": return colorNaranja;
+            case "10220": return colorVerdeOlivaOscuro;
+            case "10112": return colorVerdeOlivaClaro;
+            case "10400": return colorAzulOscuro;
+            case "00302": return colorAzulClaro;
+            case "01112": return colorMarron;
             default: return Color.grey;
         }
     }
