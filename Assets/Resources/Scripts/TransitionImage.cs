@@ -40,13 +40,12 @@ public class TransitionImage : MonoBehaviour
     }
     private IEnumerator LoadAnimationAfterTransition()
     {
-        Instantiate(transitionImage);
         transitionImage.GetComponent<Animator>().SetBool("AnimateOut", true);
         yield return new WaitForSeconds( 1f );
+
     }
-    // Update is called once per frame
-    void Update()
-    {
+
+    public void LoadAnimationBeforeTransition(){
         
     }
 }

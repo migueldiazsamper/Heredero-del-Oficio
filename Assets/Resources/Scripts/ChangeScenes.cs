@@ -53,7 +53,16 @@ public class ChangeScenes : MonoBehaviour
     
     public static void LoadScene ( string sceneName )
     {
+        
         SceneManager.LoadScene( sceneName );
+    }
+
+
+    private IEnumerator SceneChangeAnimation(){
+
+        
+        yield return new WaitForSeconds(1f);
+
     }
 
     /// <summary>
