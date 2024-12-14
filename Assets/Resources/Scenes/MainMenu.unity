@@ -2628,33 +2628,33 @@ MonoBehaviour:
   SFXSource: {fileID: 130504088}
   LowSFXSource: {fileID: 1282916067}
   backgroundMusic: {fileID: 8300000, guid: 9355d3ae97970d84aae0cf2846ff441c, type: 3}
-  buttonClick: {fileID: 8300000, guid: a850b15bc4a16594a9f2bd46b0abad9e, type: 3}
-  buttonHover: {fileID: 8300000, guid: 8778e8ef3225db6448e517a964b90989, type: 3}
-  positiveFeedback: {fileID: 8300000, guid: eef4e316d50c58a47a8a6abb8451074f, type: 3}
+  buttonClick: {fileID: 8300000, guid: b1d48b112e59f914da2e589d3f41ccd2, type: 3}
+  buttonHover: {fileID: 8300000, guid: df58d5bec37bdaa4c9523a2f19f4aed7, type: 3}
+  positiveFeedback: {fileID: 8300000, guid: e9610ae3de9cfb44d9183207f68ac6c9, type: 3}
   negativeFeedback: {fileID: 8300000, guid: 48d853c4c65f59448bc396844c5c60fe, type: 3}
   enterBuilding: {fileID: 8300000, guid: 8a9dc291d09445847a5e8f0e5f41c348, type: 3}
-  enterMine: {fileID: 8300000, guid: 8a9dc291d09445847a5e8f0e5f41c348, type: 3}
-  dialogueSound: {fileID: 8300000, guid: bc2645183a0ba1d4381ae9d1ffaac430, type: 3}
-  grabSand: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  grabImpurity: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  grabPiece: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  dropPiece: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  rotatePiece: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  grabWood: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  dropWood: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  burningWood: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  enterMine: {fileID: 8300000, guid: 3d66a4ce9bd1d3e4ea983709ec1d55d2, type: 3}
+  dialogueSound: {fileID: 8300000, guid: fce36020385d959468f829741e9897bf, type: 3}
+  grabSand: {fileID: 8300000, guid: 28c30c1fb3ca07e4993fe131e5aa1914, type: 3}
+  grabImpurity: {fileID: 8300000, guid: 440af3deebee62446a3e4e67cc094eea, type: 3}
+  grabPiece: {fileID: 8300000, guid: 960e94c4756ad3d44b4338ce5f66fd72, type: 3}
+  dropPiece: {fileID: 8300000, guid: 960e94c4756ad3d44b4338ce5f66fd72, type: 3}
+  rotatePiece: {fileID: 8300000, guid: 006a3facbf7efd34b82a0a841c449446, type: 3}
+  grabWood: {fileID: 8300000, guid: 9e37408240138dc4787e01c4f78cb6bf, type: 3}
+  dropWood: {fileID: 8300000, guid: bc5f3b809aba4dd44872850a4002123d, type: 3}
+  burningWood: {fileID: 8300000, guid: 8e1d2e3ef6c45414e95b9f1d421f516b, type: 3}
   timeUpBell: {fileID: 8300000, guid: 8a9dc291d09445847a5e8f0e5f41c348, type: 3}
-  mixingSpoonEnamel: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  grabEnamelPiece: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  EnamelPiece: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  scratchEnamel: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  scratchBase: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  grabPoint: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  linkPoint: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  insertSpoon: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  putPigment: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  mixingSpoonPigments: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
-  movePuzzlePiece: {fileID: 8300000, guid: 3eaf4317b8b960a40a9dc83a6f8faa2f, type: 3}
+  mixingSpoonEnamel: {fileID: 8300000, guid: d1cc30796aa0d654db017a08a873d72a, type: 3}
+  grabEnamelPiece: {fileID: 0}
+  EnamelPiece: {fileID: 8300000, guid: 17144a9e25ba3ae489950f13d9beee93, type: 3}
+  scratchEnamel: {fileID: 8300000, guid: b33a3ef8df4e4fa449a1085a6a186e4d, type: 3}
+  scratchBase: {fileID: 8300000, guid: 2610d25a831dc2b4198d3ac35c5a460d, type: 3}
+  grabPoint: {fileID: 8300000, guid: 17144a9e25ba3ae489950f13d9beee93, type: 3}
+  linkPoint: {fileID: 8300000, guid: 17144a9e25ba3ae489950f13d9beee93, type: 3}
+  insertSpoon: {fileID: 8300000, guid: c67a88ebcffa4154e8d22003b9178a6b, type: 3}
+  putPigment: {fileID: 8300000, guid: c67a88ebcffa4154e8d22003b9178a6b, type: 3}
+  mixingSpoonPigments: {fileID: 8300000, guid: d1cc30796aa0d654db017a08a873d72a, type: 3}
+  movePuzzlePiece: {fileID: 8300000, guid: 006a3facbf7efd34b82a0a841c449446, type: 3}
 --- !u!4 &2020572072
 Transform:
   m_ObjectHideFlags: 0
