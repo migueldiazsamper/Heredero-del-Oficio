@@ -40,6 +40,17 @@ public class DialogueV2 : MonoBehaviour
         }
 
         currentStory = stories[ PhasesManager.instance.currentPhase ];
+        StartCoroutine(WaitForTransitionToFinish());
+        
+    }
+
+    /*
+    Corrutina encargada de esperar a la transición para evitar que
+    el texto comience a escribirse antes de que el jugador pueda verlo
+    */
+    private IEnumerator WaitForTransitionToFinish(){
+        dialogueText.text = "";
+        yield return new WaitForSeconds( 0.2f );
         NextLine();
     }
 
