@@ -73,10 +73,6 @@ public class CountDownTimer : MonoBehaviour
     {
         remainingTime = startMinutes * 60 + startSeconds;
         UpdateTimerText();
-        if (minigame == 3)
-        {
-            victoryButton.gameObject.SetActive(false);
-        }
     }
 
     // Método que actualiza el texto del temporizador en pantalla con el tiempo restante
@@ -101,6 +97,7 @@ public class CountDownTimer : MonoBehaviour
                 if (minigame == 3)
                 {
                     constantRotation.MakeFinish();
+                    FindAnyObjectByType<CheckIfDefeat>().StopAllCoroutines();
                 }
 
                 if (minigame == 4)

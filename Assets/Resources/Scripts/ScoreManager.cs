@@ -61,11 +61,15 @@ public class ScoreManager : MonoBehaviour
         return Mathf.FloorToInt(20 / (elapsedTimeMinutes + 1));
     }
 
-    //El rango de puntuación del minijuego 3 es de [0, 15]
+    //El rango de puntuación del minijuego 3 es de [0, 20]
     private int CalculateMinigameScore3(){
         bool isVictory = FindAnyObjectByType<CountDownTimer>().GetIsVictory();
-        if(isVictory) return 15;
-        else return 0; 
+        CheckIfDefeat checkIfDefeat = FindAnyObjectByType<CheckIfDefeat>();
+        if(isVictory){
+            if(checkIfDefeat.GetScore()>=40) return 20;
+            else return Mathf.FloorToInt(checkIfDefeat.GetScore()/2);
+        }
+        else return 0;
     }
 
     //El rango de puntuación del minijuego 4 es de [0, 20]
@@ -89,12 +93,6 @@ public class ScoreManager : MonoBehaviour
     //El rango de puntuación del minijuego 7 es de [0, 30]
     private int CalculateMinigameScore7(){
         int numberOfMoves = FindAnyObjectByType<Minigame7Manager>().NumberOfMoves();
-        switch(numberOfMoves){
-            case <70: return 30;
-            case <100: return 25;
-            case <120: return 20;
-            case <150: return 15;
-            default: return Mathf.FloorToInt(numberOfMoves/20);
-        }
+        return Mathf.Max(0, 30 - 5 * Mathf.FloorToInt((numberOfMoves - 100) / 50));
     }
 }

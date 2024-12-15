@@ -10,7 +10,7 @@ public class PhasesManager : MonoBehaviour
     public int currentPhase = 0;
     public int maxPhases = 16;
     [SerializeField] private int puntuacionTotal = 0;
-    [SerializeField] private int puntuacionCondesa = 40;
+    [SerializeField] private int puntuacionCondesa = 80;
     public bool nextIsPueblo = false;
     public int vecesMina = 0;
     public bool tieneQueHablarConSabio = false;

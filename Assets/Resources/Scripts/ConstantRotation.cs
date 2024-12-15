@@ -124,7 +124,7 @@ public class ConstantRotation : MonoBehaviour
             //Reproducir sonido de clic al botono izquierdo
             AudioManager.GetInstance().Play( AudioManager.GetInstance().leftBalance);
 
-            angle += inputInterval;
+            angle += inputInterval * Random.Range(1.5f, 1.8f);
             UpdateGameObjectRotation();
         }
     }
@@ -140,7 +140,7 @@ public class ConstantRotation : MonoBehaviour
             //Reproducir sonido de clic al botono derecho
             AudioManager.GetInstance().Play( AudioManager.GetInstance().rightBalance);
 
-            angle -= inputInterval;
+            angle -= inputInterval * Random.Range(1.5f, 1.8f);
             UpdateGameObjectRotation();
         }
     }

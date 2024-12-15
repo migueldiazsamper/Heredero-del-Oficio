@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +20,8 @@ public class CheckIfDefeat : MonoBehaviour
 
     // Botón que se activa cuando se alcanza la condición de derrota.
     [ SerializeField ]
-    private GameObject listoButton;
+    private GameObject resetButton;
+    private int score = 0;
 
     /// <summary>
     /// Método Awake: inicializa referencias y configura el estado inicial del botón.
@@ -30,8 +32,10 @@ public class CheckIfDefeat : MonoBehaviour
         // Obtiene el componente ConstantRotation del mismo GameObject.
         constantRotation = GetComponent< ConstantRotation >();
 
-        // Asegura que el botón esté desactivado al inicio.
-        listoButton.SetActive( false );
+    }
+
+    private void Start(){
+        StartCoroutine(ScoreManagementCoroutine());
     }
 
     /// <summary>
@@ -68,11 +72,43 @@ public class CheckIfDefeat : MonoBehaviour
                 if ( temporizadorExiste && !countDownTimer.GetisDefeat() )
                 {
                     countDownTimer.SetDefeat();
+                    // Activa el botón para indicar el estado de derrota.
+                    resetButton.SetActive( true ); 
                 }
 
-                // Activa el botón para indicar el estado de derrota.
-                listoButton.SetActive( true );
+
+                StopAllCoroutines();
             }
         }
+    }
+
+    private IEnumerator ScoreManagementCoroutine(){ 
+
+        while(true){
+            float rotationZ = rotationReference.transform.rotation.eulerAngles.z;
+            // Normaliza el valor de rotationZ al rango [-180, 180].
+            
+            if ( rotationZ > 180f )
+            {
+                rotationZ -= 360f;
+            }
+            Debug.Log( "Pan: " + rotationZ );
+            if (rotationZ > -21f && rotationZ < 21f){
+                score += 2;
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);
+                Debug.Log("currentScore = " + score);
+            }
+            else{
+                score -= 1;
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().negativeFeedback);
+            }
+            
+            yield return new WaitForSeconds(1f);
+            
+        }
+    }
+
+    public int GetScore(){
+        return score;
     }
 }

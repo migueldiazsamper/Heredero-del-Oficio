@@ -14,6 +14,7 @@ public class ChangeScenes : MonoBehaviour
     // Instancia estática para implementar el patrón Singleton.
     public static ChangeScenes instance;
     private static TransitionImage transitionImage;
+    private static string[] nonMinigameScenes = {"Pueblo", "Mina", "DialogoInterior", "Condesa", "Manel", "MainMenu"};
 
     /// <summary>
     /// Método Awake: asegura que solo exista una instancia de esta clase.
@@ -51,25 +52,31 @@ public class ChangeScenes : MonoBehaviour
         
     }
 
-
-
-
     /// <summary>
     /// Carga una escena específica por su nombre.
     /// </summary>
     /// <param name="sceneName">El nombre de la escena que se cargará.</param>
     
-    public static void LoadScene ( string sceneName )
+    public static void LoadScene ( string sceneName, bool sceneReloaded = false)
     {
         //Calcula la puntuación del minijuego actual
-        if(GameObject.FindAnyObjectByType<ScoreManager>() !=null) GameObject.FindAnyObjectByType<ScoreManager>().AddMinigameScore();
+        string currentScene = SceneManager.GetActiveScene().name;
+        Debug.Log(currentScene);
+        
+        if(FindAnyObjectByType<ScoreManager>() != null && !sceneReloaded) FindAnyObjectByType<ScoreManager>().AddMinigameScore();
+        else if(!Array.Exists(nonMinigameScenes, scene => scene == currentScene)) SceneManager.LoadScene( sceneName );
+        else{
+            //Activa la animación de transición de escena
+            instance.StartCoroutine(SceneChangeTransition(() =>
+            {
+                // Carga la escena correspondiente
+                SceneManager.LoadScene( sceneName );
+            }));   
+        }
+    }
 
-        //Activa la animación de transición de escena
-        instance.StartCoroutine(SceneChangeTransition(() =>
-        {
-            // Carga la escena correspondiente
-            SceneManager.LoadScene( sceneName );
-        }));   
+    public static void LoadSceneButton(string sceneName){
+        LoadScene(sceneName);
     }
 
     /// <summary>
@@ -92,7 +99,9 @@ public class ChangeScenes : MonoBehaviour
         // Obtiene la escena activa actual.
         Scene currentScene = SceneManager.GetActiveScene();
 
+        Debug.Log("SCENE RELOADED");
+        
         // Carga nuevamente la escena actual por su nombre.
-        SceneManager.LoadScene( currentScene.name );
+        LoadScene( currentScene.name, true);
     }
 }
