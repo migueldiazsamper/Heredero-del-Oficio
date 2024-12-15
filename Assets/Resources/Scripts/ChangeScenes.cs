@@ -63,7 +63,15 @@ public class ChangeScenes : MonoBehaviour
         string currentScene = SceneManager.GetActiveScene().name;
         Debug.Log(currentScene);
         
-        if(FindAnyObjectByType<ScoreManager>() != null && !sceneReloaded) FindAnyObjectByType<ScoreManager>().AddMinigameScore();
+        if(FindAnyObjectByType<ScoreManager>() != null && !sceneReloaded) {
+            FindAnyObjectByType<ScoreManager>().AddMinigameScore();
+            //Activa la animación de transición de escena
+            instance.StartCoroutine(SceneChangeTransition(() =>
+            {
+                // Carga la escena correspondiente
+                SceneManager.LoadScene( sceneName );
+            }));   
+        }
         else if(!Array.Exists(nonMinigameScenes, scene => scene == currentScene)) SceneManager.LoadScene( sceneName );
         else{
             //Activa la animación de transición de escena
