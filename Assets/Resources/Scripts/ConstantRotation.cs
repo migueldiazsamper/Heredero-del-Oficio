@@ -109,23 +109,6 @@ public class ConstantRotation : MonoBehaviour
     
     void Update ()
     {
-        // Detecta si se ha presionado la tecla derecha o izquierda
-        bool rightArrowIsDown = Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D);
-        bool leftArrowIsDown = Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A);
-
-        bool isNotFinished = !Isfinish;
-
-        // Ajusta el ángulo si la tecla derecha es presionada
-        if ( rightArrowIsDown && isNotFinished )
-        {
-            angle -= inputInterval;
-        }
-        // Ajusta el ángulo si la tecla izquierda es presionada
-        else if ( leftArrowIsDown && isNotFinished )
-        {
-            angle += inputInterval;
-        }
-
         // Actualiza la rotación del GameObject
         UpdateGameObjectRotation();
     }
