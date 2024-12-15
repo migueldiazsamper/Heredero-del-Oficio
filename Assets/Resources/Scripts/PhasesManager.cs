@@ -9,7 +9,8 @@ public class PhasesManager : MonoBehaviour
 
     public int currentPhase = 0;
     public int maxPhases = 16;
-    public int puntuacionTotal = 0;
+    [SerializeField] private int puntuacionTotal = 0;
+    [SerializeField] private int puntuacionCondesa = 40;
     public bool nextIsPueblo = false;
     public int vecesMina = 0;
     public bool tieneQueHablarConSabio = false;
@@ -38,5 +39,17 @@ public class PhasesManager : MonoBehaviour
                 tieneQueHablarConSabio = true;
             }
         }
+    }
+
+    public int PuntuacionTotal(){
+        return puntuacionTotal;
+    }
+
+    public int PuntuacionCondesa(){
+        return puntuacionCondesa;
+    }
+
+    public void AddScore(int amount){
+        puntuacionTotal += amount;
     }
 }

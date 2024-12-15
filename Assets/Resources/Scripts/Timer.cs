@@ -22,4 +22,8 @@ public class Timer : MonoBehaviour
         // Actualiza el texto del temporizador en pantalla
         timerText.text = string.Format( "{0:00}:{1:00}" , minutes , seconds );
     }
+
+    public float ElapsedTime(){
+        return elapsedTime;
+    }
 }

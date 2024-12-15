@@ -25,6 +25,8 @@ public class DragDrop : MonoBehaviour , IPointerDownHandler , IBeginDragHandler 
     // Método que se llama al comenzar a arrastrar el objeto
     public void OnBeginDrag ( PointerEventData eventData )
     {
+        if (eventData.button != PointerEventData.InputButton.Left) return;
+        
         // Reduce la opacidad del objeto
         canvasGroup.alpha = .6f;
         // Permite que el objeto sea atravesado por rayos de detección
@@ -36,6 +38,8 @@ public class DragDrop : MonoBehaviour , IPointerDownHandler , IBeginDragHandler 
     // Método que se llama mientras se arrastra el objeto
     public void OnDrag ( PointerEventData eventData )
     {
+        if (eventData.button != PointerEventData.InputButton.Left) return;
+
         // Actualiza la posición anclada del objeto basado en el movimiento del puntero y el factor de escala del canvas
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
@@ -43,6 +47,8 @@ public class DragDrop : MonoBehaviour , IPointerDownHandler , IBeginDragHandler 
     // Método que se llama al finalizar el arrastre del objeto
     public void OnEndDrag ( PointerEventData eventData )
     {
+        if (eventData.button != PointerEventData.InputButton.Left) return;
+
         // Restaura la opacidad del objeto
         canvasGroup.alpha = 1f;
         // Impide que el objeto sea atravesado por rayos de detección

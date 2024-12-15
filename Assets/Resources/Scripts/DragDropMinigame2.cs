@@ -15,6 +15,7 @@ public class DragDropMinigame2 : MonoBehaviour , IPointerDownHandler , IBeginDra
 
     private Transform slotsParent;
     private Transform piecesParent;
+    private ItemSlot currentSlot;
 
     // Método Awake que se llama al inicializar el script
     private void Awake ()
@@ -31,15 +32,21 @@ public class DragDropMinigame2 : MonoBehaviour , IPointerDownHandler , IBeginDra
     // Método que se llama al comenzar a arrastrar el objeto
     public void OnBeginDrag ( PointerEventData eventData )
     {
+        if (eventData.button != PointerEventData.InputButton.Left) return;
+        
         // Reduce la opacidad del objeto
         canvasGroup.alpha = .6f;
         // Permite que el objeto sea atravesado por rayos de detección
         canvasGroup.blocksRaycasts = false;
+
+        if (currentSlot != null) currentSlot.freeOfItem = true;
     }
 
     // Método que se llama mientras se arrastra el objeto
     public void OnDrag ( PointerEventData eventData )
     {
+        if (eventData.button != PointerEventData.InputButton.Left) return;
+
         // Cambia el orden de los padres para renderizar las piezas por debajo de los slots
         slotsParent.SetSiblingIndex( piecesParent.GetSiblingIndex() + 1 );
     }
@@ -47,6 +54,8 @@ public class DragDropMinigame2 : MonoBehaviour , IPointerDownHandler , IBeginDra
     // Método que se llama al finalizar el arrastre del objeto
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (eventData.button != PointerEventData.InputButton.Left) return;
+        
         // Restaura la opacidad del objeto
         canvasGroup.alpha = 1f;
         // Impide que el objeto sea atravesado por rayos de detección
@@ -59,16 +68,16 @@ public class DragDropMinigame2 : MonoBehaviour , IPointerDownHandler , IBeginDra
         if (eventData.pointerEnter != null && eventData.pointerEnter.GetComponent<RectTransform>() != null)
         {
             // Obtiene el componente del script asociado al slot
-            ItemSlot slotScript = eventData.pointerEnter.GetComponent<ItemSlot>();
+            currentSlot = eventData.pointerEnter.GetComponent<ItemSlot>();
 
-            if (slotScript != null)
+            if (currentSlot != null)
             {
-                if (slotScript.freeOfItem)
+                if (currentSlot.freeOfItem)
                 {
                     // Coloca el objeto en el centro del slot
                     RectTransform slotRectTransform = eventData.pointerEnter.GetComponent<RectTransform>();
                     rectTransform.position = slotRectTransform.position;
-                    slotScript.freeOfItem = false; // Marca el slot como ocupado
+                    currentSlot.freeOfItem = false; // Marca el slot como ocupado
                 }
                 else
                 {

@@ -5,8 +5,8 @@ using UnityEngine;
 public class UnirPuntos : MonoBehaviour
 {
     private LineRenderer lineRenderer;
-    [SerializeField] private int IDout; //Con quién quieres conectar
-    [SerializeField] private int IDin; //Quién eres
+    [SerializeField] private int IDself; //Quién eres
+    [SerializeField] private int IDConection; //Con quién quieres conectar
     private bool isDragging; //Booleano que indica que la acción de arrastre está comenzada
     private Vector3 endPoint; //Punto final de la línea, se usa para comprobar si la línea llega hasta otro punto o no
     private bool isConnected = false;
@@ -45,7 +45,7 @@ public class UnirPuntos : MonoBehaviour
             {
                 isDragging = false;
                 RaycastHit2D hit = Physics2D.Raycast(endPoint, Vector2.zero);
-                if (hit.collider != null && hit.collider.TryGetComponent(out UnirPuntos unirPuntos) && IDout == unirPuntos.GetIDin())  //Chequeamos que el ID del punto que comienza
+                if (hit.collider != null && hit.collider.TryGetComponent(out UnirPuntos unirPuntos) && IDConection == unirPuntos.GetIDin())  //Chequeamos que el ID del punto que comienza
                                                                                                                             //la línea coincide con el que recibe
                 {
                     // Reproduce el sonido de unir un punto
@@ -53,6 +53,8 @@ public class UnirPuntos : MonoBehaviour
 
                     Debug.Log("UNIÓN");
                     isConnected = true;
+
+                    FindAnyObjectByType<DotsCheckCompletion>().CheckCompletion();
                 }
                 else    //Si se suelta la línea sin que esté en ningún punto correcto, se borra la línea
                 {
@@ -66,7 +68,11 @@ public class UnirPuntos : MonoBehaviour
 
     public int GetIDin()
     {
-        return IDin;
+        return IDself;
+    }
+
+    public bool IsConnected(){
+        return isConnected;
     }
     
 }

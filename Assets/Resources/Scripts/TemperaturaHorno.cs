@@ -21,7 +21,7 @@ public class TemperaturaHorno : MonoBehaviour
     SpriteRenderer ceramic1Image;
     [SerializeField] GameObject ceramic2;
     SpriteRenderer ceramic2Image;
-    int score = 0;
+    private int score = 0;
 
     void Awake(){
         ceramic1Image = ceramic1.GetComponent<SpriteRenderer>();
@@ -30,6 +30,10 @@ public class TemperaturaHorno : MonoBehaviour
 
     void Start(){
         StartCoroutine(ScoreManagementCoroutine());
+    }
+
+    public int GetScore(){
+        return score;
     }
 
     void Update()
@@ -94,7 +98,7 @@ public class TemperaturaHorno : MonoBehaviour
                 yield return new WaitForSeconds(1.5f); //Espera 1.5s para volver a comprobar
             }
             else if(totalTemperature <= 1400){
-                score += 1;
+                score += 2;
 
                 // Reproducir sonido feedback positivo
                 AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);
@@ -107,7 +111,7 @@ public class TemperaturaHorno : MonoBehaviour
                 // Reproducir sonido feedback negativo
                 AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().negativeFeedback);
 
-                yield return new WaitForSeconds(0.5f); //Si estás sobrecalentado, restas más puntos y más rápido
+                yield return new WaitForSeconds(1f); //Si estás sobrecalentado, restas más puntos y más rápido
                 
             }
 

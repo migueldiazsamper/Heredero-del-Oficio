@@ -30,6 +30,9 @@ public class DialogueV2 : MonoBehaviour
     [SerializeField] private float typingSpeed = 0.05f; // Velocidad de tipeo
     private bool isTyping = false;
 
+    private bool isPlayingTransitionAnimation = false;
+    private Animator transitionImageAnimator;
+
     private void Start ()
     {
         stories = new Story[ inkJSONs.Length ];
@@ -40,6 +43,17 @@ public class DialogueV2 : MonoBehaviour
         }
 
         currentStory = stories[ PhasesManager.instance.currentPhase ];
+        StartCoroutine(WaitForTransitionToFinish());
+        transitionImageAnimator = GameObject.Find("TransitionImage").GetComponent<Animator>();
+    }
+
+    /*
+    Corrutina encargada de esperar a la transición para evitar que
+    el texto comience a escribirse antes de que el jugador pueda verlo
+    */
+    private IEnumerator WaitForTransitionToFinish(){
+        dialogueText.text = "";
+        yield return new WaitForSeconds( 0.2f );
         NextLine();
     }
 
@@ -54,7 +68,10 @@ public class DialogueV2 : MonoBehaviour
             fondo.GetComponent<Image>().sprite = fondoDialogoNormal;
         } */
 
-        if (Time.timeScale == 1)
+        //Chequeo para saber si se está mostrando la animación de cambio de escena, para evitar que el sprite cambie durante la transición
+        isPlayingTransitionAnimation = transitionImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("TransitionImage_In");
+
+        if (Time.timeScale == 1 && !isPlayingTransitionAnimation)
         {
             // Asigna la imagen del portrait correspondiente
             portraitGameObject.GetComponent<Image>().sprite = portraits[PhasesManager.instance.currentPhase];

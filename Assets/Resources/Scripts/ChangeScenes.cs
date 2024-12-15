@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class ChangeScenes : MonoBehaviour
 {
     // Instancia estática para implementar el patrón Singleton.
     public static ChangeScenes instance;
+    private static TransitionImage transitionImage;
 
     /// <summary>
     /// Método Awake: asegura que solo exista una instancia de esta clase.
@@ -25,12 +27,14 @@ public class ChangeScenes : MonoBehaviour
         if ( noExisteInstancia )
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             // Destruye este componente si ya hay una instancia activa.
             Destroy( this );
         }
+        transitionImage = FindAnyObjectByType<TransitionImage>(); //Encuentra el único script TransitionImage que habrá en la escena
     }
 
     /// <summary>
@@ -42,9 +46,13 @@ public class ChangeScenes : MonoBehaviour
         // Calcula el índice de la siguiente escena.
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
 
-        // Carga la escena correspondiente al índice calculado.
-        SceneManager.LoadScene( nextSceneIndex );
+
+        SceneManager.LoadScene( nextSceneIndex );        
+        
     }
+
+
+
 
     /// <summary>
     /// Carga una escena específica por su nombre.
@@ -53,7 +61,26 @@ public class ChangeScenes : MonoBehaviour
     
     public static void LoadScene ( string sceneName )
     {
-        SceneManager.LoadScene( sceneName );
+        //Calcula la puntuación del minijuego actual
+        if(GameObject.FindAnyObjectByType<ScoreManager>() !=null) GameObject.FindAnyObjectByType<ScoreManager>().AddMinigameScore();
+
+        //Activa la animación de transición de escena
+        instance.StartCoroutine(SceneChangeTransition(() =>
+        {
+            // Carga la escena correspondiente
+            SceneManager.LoadScene( sceneName );
+        }));   
+    }
+
+    /// <summary>
+    /// Llama a la animación de transición de escena y espera a que termine
+    /// </summary>
+    /// <param name="afterDelay">Método void al que se llamará después de la espera</param>
+    private static IEnumerator SceneChangeTransition(Action afterDelay){
+
+        transitionImage.OnSceneChange();
+        yield return new WaitForSeconds(1f);
+        afterDelay?.Invoke();
     }
 
     /// <summary>

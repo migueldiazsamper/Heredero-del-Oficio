@@ -12,6 +12,8 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     [SerializeField] GameObject resetButton;
     [SerializeField] PigmentosManager pigmentosManager;
 
+    private bool isValidColor = false;
+
     // Color al que se debe llegar al mezclar todos los pigmentos
     [SerializeField] private Color targetColor = PigmentosManager.colorNaranja; 
     
@@ -76,6 +78,8 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     }
 
     public void OnBeginDrag(PointerEventData pointerEventData){
+        if (pointerEventData.button != PointerEventData.InputButton.Left) return;
+        
         if(!isLockedToBowl){
             // Reduce la opacidad del objeto
             canvasGroup.alpha = .9f;
@@ -93,6 +97,8 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     }   
     public void OnDrag(PointerEventData pointerEventData)
     {   
+        if (pointerEventData.button != PointerEventData.InputButton.Left) return;
+
         if(isLockedToBowl){
             if(!isMixing){
                 StartCoroutine(MixingCountDown());
@@ -129,6 +135,8 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
 
     public void OnEndDrag(PointerEventData pointerEventData){
         
+        if (pointerEventData.button != PointerEventData.InputButton.Left) return;
+
         // Detener sonido mezclar pigmentos del bol
         if (AudioManager.GetInstance().SFXSource.isPlaying)
         {
@@ -191,7 +199,8 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             if(pigmentosManager.mixedColorSpriteImage.GetComponent<Image>().color == targetColor)
             {
                 // Reproducir sonido feedback positivo
-                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);   
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);
+                isValidColor = true;
             }
 
             this.enabled = false;
@@ -214,5 +223,9 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
         rectTransform.anchoredPosition = new Vector2(STARTING_POSITION_X, STARTING_POSITION_Y);
         isLockedToBowl = true;
         OnEndDrag(null);
+    }
+
+    public bool IsValidColor(){
+        return isValidColor;
     }
 }
