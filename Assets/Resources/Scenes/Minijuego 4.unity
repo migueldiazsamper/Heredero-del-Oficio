@@ -4128,7 +4128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7069373577760843358, guid: 68718d7f976e0834fb0e88900812d5fa, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8533758827319948240, guid: 68718d7f976e0834fb0e88900812d5fa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4398,8 +4398,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1803677359}
-  startMinutes: 1
-  startSeconds: 30
+  startMinutes: 0
+  startSeconds: 5
   constantRotation: {fileID: 0}
   victoryButton: {fileID: 1826369947}
   minigame: 4

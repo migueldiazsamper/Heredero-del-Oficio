@@ -9,12 +9,15 @@ public class EntradaMina : MonoBehaviour
     private bool playerInRange;
 
     private MainCharacterManager mainCharacterManager;
+    [SerializeField] private GameObject transitionImage;
+    private Animator transitionImageAnimator;
 
     private void Awake()
     {
         player = GameObject.Find("PersonajePrincipal");
         playerInRange = false;
         mainCharacterManager = FindObjectOfType<MainCharacterManager>();
+        transitionImageAnimator = transitionImage.GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -56,7 +59,7 @@ public class EntradaMina : MonoBehaviour
             }
         }
 
-        if ( playerInRange )
+        if ( playerInRange && !transitionImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("TransitionImage_In"))
         {
             if (  Input.GetKeyDown( KeyCode.E ) )
             {

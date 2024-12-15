@@ -5,6 +5,7 @@ using Ink.Runtime;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class DialogueV2 : MonoBehaviour
 {

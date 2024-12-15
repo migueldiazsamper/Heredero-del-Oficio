@@ -1287,6 +1287,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3022251288228813404, guid: 1729eeba5dbc2cc4d9e81c5fac62b019, type: 3}
   m_PrefabInstance: {fileID: 1423897061}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1423897063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4473210956156451606, guid: 1729eeba5dbc2cc4d9e81c5fac62b019, type: 3}
+  m_PrefabInstance: {fileID: 1423897061}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1439383880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2259,6 +2264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2f2577c75f1ad14cb65d5de3301f9c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitionImage: {fileID: 1423897063}
 --- !u!61 &1613828071
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2790,6 +2796,10 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 1193222714}
+    - target: {fileID: 4856973534163632445, guid: e3e6cf4741e0afe4a8ef5d1321094438, type: 3}
+      propertyPath: transitionImage
+      value: 
+      objectReference: {fileID: 1423897063}
     - target: {fileID: 8433315412600971134, guid: e3e6cf4741e0afe4a8ef5d1321094438, type: 3}
       propertyPath: m_LocalPosition.y
       value: 2.89

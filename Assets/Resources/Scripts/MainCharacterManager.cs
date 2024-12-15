@@ -14,6 +14,8 @@ public class MainCharacterManager : MonoBehaviour
     private bool isShowingMap = false;
 
     private Rigidbody2D rb;
+    [SerializeField] private GameObject transitionImage;
+    private Animator transitionImageAnimator;
 
     public void SetVisualCue(bool toggle)
     {
@@ -26,16 +28,21 @@ public class MainCharacterManager : MonoBehaviour
         visualCue.SetActive(false);
         characterTransform = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
+        transitionImageAnimator = transitionImage.GetComponent<Animator>();
     }
 
     private void Update()
     {
         UpdateMap();
+        if(transitionImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("TransitionImage_In")){
+            animator.SetFloat("speedX", 0f);
+            animator.SetFloat("speedY", 0f);
+        }
     }
 
     private void FixedUpdate()
     {
-        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        if (DialogueManager.GetInstance().dialogueIsPlaying || transitionImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("TransitionImage_In"))
         {
             rb.velocity = Vector2.zero;
             return;
@@ -70,7 +77,7 @@ public class MainCharacterManager : MonoBehaviour
 
     private void UpdateMovement()
     {
-        if (!DialogueManager.GetInstance().dialogueIsPlaying)
+        if (!DialogueManager.GetInstance().dialogueIsPlaying && !transitionImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("TransitionImage_In"))
         {
             if (!isShowingMap)
             {

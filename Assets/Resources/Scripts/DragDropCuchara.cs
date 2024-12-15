@@ -135,7 +135,7 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
 
     public void OnEndDrag(PointerEventData pointerEventData){
         
-        if (pointerEventData.button != PointerEventData.InputButton.Left) return;
+        //if (pointerEventData.button != PointerEventData.InputButton.Left) return;
 
         // Detener sonido mezclar pigmentos del bol
         if (AudioManager.GetInstance().SFXSource.isPlaying)
