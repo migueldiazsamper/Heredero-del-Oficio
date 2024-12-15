@@ -7,12 +7,12 @@ using UnityEngine.EventSystems;
 public class PaloEsmalte : MonoBehaviour, IBeginDragHandler , IEndDragHandler , IDragHandler
 {
     //Spawning position for mixing
-    const int STARTING_POSITION_X = -500; 
-    const int STARTING_POSITION_Y = 125; 
+    const int STARTING_POSITION_X = -543; 
+    const int STARTING_POSITION_Y = 28; 
     
     //Half points used to calculate the sense of the movement
-    const float HALF_POSITION_X = -645f;
-    const float HALF_POSITION_Y = 125f;
+    const float HALF_POSITION_X = -641.5f;
+    const float HALF_POSITION_Y = 28f;
 
     RectTransform rectTransform;
     float anchoredXAxis, anchoredYAxis;

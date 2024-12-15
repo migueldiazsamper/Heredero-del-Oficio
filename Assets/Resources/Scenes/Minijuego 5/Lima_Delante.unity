@@ -1459,7 +1459,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: c34c58417ea2168428bd692ddf17291b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2517,11 +2517,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3022251288228813404, guid: 1729eeba5dbc2cc4d9e81c5fac62b019, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.01001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3022251288228813404, guid: 1729eeba5dbc2cc4d9e81c5fac62b019, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.0025482
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3022251288228813404, guid: 1729eeba5dbc2cc4d9e81c5fac62b019, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2541,7 +2541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4473210956156451606, guid: 1729eeba5dbc2cc4d9e81c5fac62b019, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2576,7 +2576,7 @@ PrefabInstance:
     - target: {fileID: 1698381969120639883, guid: ef8ccc54360acbc4ca49c8a47ccc4c28, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1842110218}
+      objectReference: {fileID: 197365062}
     - target: {fileID: 1698381969120639883, guid: ef8ccc54360acbc4ca49c8a47ccc4c28, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -2587,7 +2587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1698381969120639883, guid: ef8ccc54360acbc4ca49c8a47ccc4c28, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CambiarEscena
+      value: LoadNextScene
       objectReference: {fileID: 0}
     - target: {fileID: 1698381969120639883, guid: ef8ccc54360acbc4ca49c8a47ccc4c28, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -2595,7 +2595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1698381969120639883, guid: ef8ccc54360acbc4ca49c8a47ccc4c28, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ActivarBotonLimar, Assembly-CSharp
+      value: ChangeScenes, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1698381969120639883, guid: ef8ccc54360acbc4ca49c8a47ccc4c28, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -2719,7 +2719,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 508e32581d642f1449d5fc297bdc9269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: {fileID: 102900000, guid: 0fd82ed18844a3640a860097c7c309f8, type: 3}
 --- !u!1001 &1897953470
 PrefabInstance:
   m_ObjectHideFlags: 0

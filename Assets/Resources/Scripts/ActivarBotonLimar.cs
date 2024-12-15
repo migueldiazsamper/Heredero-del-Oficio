@@ -10,8 +10,8 @@ using UnityEditor;
 public class ActivarBotonLimar : MonoBehaviour
 {
     // Referencia a la escena que se cargará al ejecutar el método `CambiarEscena`.
-    [ SerializeField ]
-    private SceneAsset sceneToLoad;
+    // [ SerializeField ]
+    // private SceneAsset sceneToLoad;
 
     // Contador que rastrea la cantidad de esmaltes sobrantes.
     private int contador;
@@ -69,7 +69,7 @@ public class ActivarBotonLimar : MonoBehaviour
     /// Cambia a la escena especificada en `sceneToLoad` si está configurada.
     /// </summary>
 
-    public void CambiarEscena ()
+    /* public void CambiarEscena ()
     {
         // Verifica si hay una escena asignada para cargar.
         bool escenaAsignada = sceneToLoad != null;
@@ -90,5 +90,5 @@ public class ActivarBotonLimar : MonoBehaviour
             // Lanza un mensaje de error si no hay escena asignada.
             Debug.LogError( "Scene to load no está asignada en el inspector." );
         }
-    }
+    } */
 }

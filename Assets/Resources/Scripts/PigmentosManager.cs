@@ -19,6 +19,13 @@ public class PigmentosManager : MonoBehaviour
     public static Color colorAzulOscuro = new Color(0.267f, 0.337f, 0.659f); // Azul Oscuro
     public static Color colorAzulClaro = new Color(0.588f, 0.733f, 0.898f); // Azul Claro
     public static Color colorMarron = new Color(0.596f, 0.329f, 0.0f); // Marrón
+    public static Color negro = new Color(0.086f, 0.035f, 0.063f);
+    public static Color blanco = new Color(1.0f, 1.0f, 1.0f);
+    public static Color magenta = new Color(0.663f, 0.176f, 0.176f);
+    public static Color cian = new Color(0.341f, 0.635f, 0.863f);
+    public static Color amarillo = new Color(1.0f, 0.886f, 0.427f);
+
+
     void Awake(){
         for(int i = 0; i < 5; i++) colorPalette[i] = 0;
     }
@@ -53,11 +60,11 @@ public class PigmentosManager : MonoBehaviour
 
     public Color ProvideColor(String colorString){
         switch (colorString){
-            case "Black":   return Color.black;
-            case "Magenta": return Color.magenta;
-            case "Cyan":    return Color.cyan;
-            case "Yellow":  return Color.yellow;
-            case "White":   return Color.white;
+            case "Black":   return negro;
+            case "Magenta": return magenta;
+            case "Cyan":    return cian;
+            case "Yellow":  return amarillo;
+            case "White":   return blanco;
             //La paleta está en formato BMCYW
             case "02030": return colorNaranja;
             case "10220": return colorVerdeOlivaOscuro;

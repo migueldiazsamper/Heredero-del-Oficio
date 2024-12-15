@@ -48,7 +48,7 @@ public class MainMenu : MonoBehaviour
     public void SettingsPanel()
     {
         // Reproducir sonido botón
-        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick);
+        // AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick);
 
         // Cargar panel opciones
         main.SetActive(false);
