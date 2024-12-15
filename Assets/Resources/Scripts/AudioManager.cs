@@ -42,6 +42,9 @@ public class AudioManager : MonoBehaviour
 
     [ Header( "Minijuego Piezas Frágiles" ) ]
 
+    public AudioClip leftBalance;
+    public AudioClip rightBalance;
+
     [ Header( "Minijuego Primera Cocción" ) ]
 
     public AudioClip grabWood;

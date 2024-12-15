@@ -131,26 +131,32 @@ public class ConstantRotation : MonoBehaviour
     }
 
     /// <summary>
-    /// Método para manejar el clic izquierdo
+    /// Método para manejar el clic al boton izquierdo
     /// </summary>
     
     public void OnLeftButtonClick ()
     {
         if ( !Isfinish )
         {
+            //Reproducir sonido de clic al botono izquierdo
+            AudioManager.GetInstance().Play( AudioManager.GetInstance().leftBalance);
+
             angle += inputInterval;
             UpdateGameObjectRotation();
         }
     }
 
     /// <summary>
-    /// Método para manejar el clic derecho
+    /// Método para manejar el clic al boton derecho
     /// </summary>
     
     public void OnRightButtonClick ()
     {
         if ( !Isfinish )
         {
+            //Reproducir sonido de clic al botono derecho
+            AudioManager.GetInstance().Play( AudioManager.GetInstance().rightBalance);
+
             angle -= inputInterval;
             UpdateGameObjectRotation();
         }

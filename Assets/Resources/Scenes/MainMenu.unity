@@ -2402,6 +2402,7 @@ MonoBehaviour:
   currentPhase: 0
   maxPhases: 16
   puntuacionTotal: 0
+  puntuacionCondesa: 40
   nextIsPueblo: 0
   vecesMina: 0
   tieneQueHablarConSabio: 0
@@ -2804,10 +2805,12 @@ MonoBehaviour:
   grabPiece: {fileID: 8300000, guid: 960e94c4756ad3d44b4338ce5f66fd72, type: 3}
   dropPiece: {fileID: 8300000, guid: 960e94c4756ad3d44b4338ce5f66fd72, type: 3}
   rotatePiece: {fileID: 8300000, guid: 006a3facbf7efd34b82a0a841c449446, type: 3}
+  leftBalance: {fileID: 8300000, guid: 0abf95f879942714baa9e634e019e1ca, type: 3}
+  rightBalance: {fileID: 8300000, guid: 9302d1e31f8ffea4e9a95239ecacc1ca, type: 3}
   grabWood: {fileID: 8300000, guid: 9e37408240138dc4787e01c4f78cb6bf, type: 3}
   dropWood: {fileID: 8300000, guid: bc5f3b809aba4dd44872850a4002123d, type: 3}
   burningWood: {fileID: 8300000, guid: 8e1d2e3ef6c45414e95b9f1d421f516b, type: 3}
-  timeUpBell: {fileID: 8300000, guid: 8a9dc291d09445847a5e8f0e5f41c348, type: 3}
+  timeUpBell: {fileID: 8300000, guid: 94557b5ae16c0654c9d715a9c85327bd, type: 3}
   mixingSpoonEnamel: {fileID: 8300000, guid: d1cc30796aa0d654db017a08a873d72a, type: 3}
   grabEnamelPiece: {fileID: 0}
   EnamelPiece: {fileID: 8300000, guid: 17144a9e25ba3ae489950f13d9beee93, type: 3}
@@ -2818,7 +2821,7 @@ MonoBehaviour:
   insertSpoon: {fileID: 8300000, guid: c67a88ebcffa4154e8d22003b9178a6b, type: 3}
   putPigment: {fileID: 8300000, guid: c67a88ebcffa4154e8d22003b9178a6b, type: 3}
   mixingSpoonPigments: {fileID: 8300000, guid: d1cc30796aa0d654db017a08a873d72a, type: 3}
-  movePuzzlePiece: {fileID: 8300000, guid: 006a3facbf7efd34b82a0a841c449446, type: 3}
+  movePuzzlePiece: {fileID: 8300000, guid: 469a3cc897ce73e41912824bf6a3739f, type: 3}
 --- !u!4 &2020572072
 Transform:
   m_ObjectHideFlags: 0
