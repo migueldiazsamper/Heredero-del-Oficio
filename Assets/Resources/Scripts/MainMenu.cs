@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private SceneAsset firstScene; // Escena del primer nivel
+    // [SerializeField] private SceneAsset firstScene; // Escena del primer nivel
     [SerializeField] private GameObject settings;
     [SerializeField] private GameObject main;
     [SerializeField] private GameObject controls;
@@ -31,9 +31,9 @@ public class MainMenu : MonoBehaviour
         AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick);
 
         // Cargar la escena del menú principal
-        string scenePath = AssetDatabase.GetAssetPath(firstScene);
-        string sceneName = System.IO.Path.GetFileNameWithoutExtension(scenePath);
-        ChangeScenes.LoadScene(sceneName);
+        /* string scenePath = AssetDatabase.GetAssetPath(firstScene);
+        string sceneName = System.IO.Path.GetFileNameWithoutExtension(scenePath); */
+        ChangeScenes.LoadScene("DialogoInterior");
     }
 
     public void QuitGame()
