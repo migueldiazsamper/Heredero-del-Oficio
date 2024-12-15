@@ -25,6 +25,7 @@ public class CountDownTimer : MonoBehaviour
     private bool isTimeUp = false;
     private bool isFinished = false;
     private bool isDefeat = false;
+    private bool isVictory = false;
 
     // Referencia al componente ConstantRotation
     [SerializeField] ConstantRotation constantRotation;
@@ -41,6 +42,10 @@ public class CountDownTimer : MonoBehaviour
     public bool GetisDefeat()
     {
         return isDefeat;
+    }
+
+    public bool GetIsVictory(){
+        return isVictory;
     }
 
     public bool GetisTimeUp()
@@ -108,6 +113,7 @@ public class CountDownTimer : MonoBehaviour
                 UpdateTimerText();
 
                 victoryButton.gameObject.SetActive(true);
+
             }
         }
         else
@@ -120,6 +126,8 @@ public class CountDownTimer : MonoBehaviour
                     AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);
 
                     isFinished = true;
+
+                    isVictory = true;
                 }
             }
         }

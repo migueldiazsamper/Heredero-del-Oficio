@@ -65,7 +65,7 @@ public class EntradaHornos : MonoBehaviour
 
                 if (PhasesManager.instance.currentPhase > 15)
                 {
-                    if (PhasesManager.instance.puntuacionTotal >= 10) // Final Condesa
+                    if (PhasesManager.instance.PuntuacionTotal() >= PhasesManager.instance.PuntuacionCondesa()) // Final Condesa
                     {
                         ChangeScenes.LoadScene("Condesa");
                     }

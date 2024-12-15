@@ -2401,7 +2401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentPhase: 0
   maxPhases: 16
-  puntuacionTotal: 10
+  puntuacionTotal: 0
   nextIsPueblo: 0
   vecesMina: 0
   tieneQueHablarConSabio: 0

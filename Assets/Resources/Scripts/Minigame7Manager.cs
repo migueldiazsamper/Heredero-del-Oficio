@@ -222,4 +222,8 @@ public class Minigame7Manager : MonoBehaviour
             }
         }
     }
+
+    public int NumberOfMoves(){
+        return numberOfMoves;
+    }
 }

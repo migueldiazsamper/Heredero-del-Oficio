@@ -61,6 +61,9 @@ public class ChangeScenes : MonoBehaviour
     
     public static void LoadScene ( string sceneName )
     {
+        //Calcula la puntuación del minijuego actual
+        if(GameObject.FindAnyObjectByType<ScoreManager>() !=null) GameObject.FindAnyObjectByType<ScoreManager>().AddMinigameScore();
+
         //Activa la animación de transición de escena
         instance.StartCoroutine(SceneChangeTransition(() =>
         {

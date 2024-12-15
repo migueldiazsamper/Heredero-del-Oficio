@@ -12,6 +12,8 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     [SerializeField] GameObject resetButton;
     [SerializeField] PigmentosManager pigmentosManager;
 
+    private bool isValidColor = false;
+
     // Color al que se debe llegar al mezclar todos los pigmentos
     [SerializeField] private Color targetColor = PigmentosManager.colorNaranja; 
     
@@ -191,7 +193,8 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             if(pigmentosManager.mixedColorSpriteImage.GetComponent<Image>().color == targetColor)
             {
                 // Reproducir sonido feedback positivo
-                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);   
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);
+                isValidColor = true;
             }
 
             this.enabled = false;
@@ -214,5 +217,9 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
         rectTransform.anchoredPosition = new Vector2(STARTING_POSITION_X, STARTING_POSITION_Y);
         isLockedToBowl = true;
         OnEndDrag(null);
+    }
+
+    public bool IsValidColor(){
+        return isValidColor;
     }
 }
