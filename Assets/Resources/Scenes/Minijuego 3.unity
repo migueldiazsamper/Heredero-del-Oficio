@@ -1810,7 +1810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationReference: {fileID: 1194585856}
   countDownTimer: {fileID: 431172771}
-  resetButton: {fileID: 2146922974}
+  resetButton: {fileID: 0}
 --- !u!114 &1194585858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3657,4 +3657,3 @@ SceneRoots:
   - {fileID: 431172770}
   - {fileID: 424671198}
   - {fileID: 1219155879}
-  - {fileID: 1340018812}

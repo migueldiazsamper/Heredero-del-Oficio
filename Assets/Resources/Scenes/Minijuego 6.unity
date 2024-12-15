@@ -2457,13 +2457,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2526568034895677011, guid: b3ed8caf1f640d54e8f7ed0b9790338c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526568034895677011, guid: b3ed8caf1f640d54e8f7ed0b9790338c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2526568034895677011, guid: b3ed8caf1f640d54e8f7ed0b9790338c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1731773591}
+      objectReference: {fileID: 1315213167}
     - target: {fileID: 2526568034895677011, guid: b3ed8caf1f640d54e8f7ed0b9790338c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -2507,6 +2511,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1211383659173507300, guid: b3ed8caf1f640d54e8f7ed0b9790338c, type: 3}
   m_PrefabInstance: {fileID: 1315213164}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1315213167 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3859912430342986908, guid: b3ed8caf1f640d54e8f7ed0b9790338c, type: 3}
+  m_PrefabInstance: {fileID: 1315213164}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315213166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4d914261968c24082ce6228e5683d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1350126988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3939,4 +3954,3 @@ SceneRoots:
   - {fileID: 1699926176}
   - {fileID: 764332743}
   - {fileID: 1497837732}
-  - {fileID: 708863813}

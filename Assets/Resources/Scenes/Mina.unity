@@ -2791,7 +2791,7 @@ PrefabInstance:
     - target: {fileID: 6274426739441291991, guid: c19ad80263d85aa4287ac953ae720def, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1d8f5e2cb75438a49bdc03d181da0bda, type: 3}
+      objectReference: {fileID: 21300000, guid: 85c69162eaf7b2b46aade0c6c70cfac3, type: 3}
     - target: {fileID: 6274426739441291991, guid: c19ad80263d85aa4287ac953ae720def, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -2832,8 +2832,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   personaje: {fileID: 1259393204}
-  outlineSkin: {fileID: 21300000, guid: df461eb16961d6e44a37d7a2d3ed7b74, type: 3}
-  noOutlineSkin: {fileID: 21300000, guid: 1d8f5e2cb75438a49bdc03d181da0bda, type: 3}
+  outlineSkin: {fileID: 21300000, guid: ff88c2b1bffb479488ffc197ec9762db, type: 3}
+  noOutlineSkin: {fileID: 21300000, guid: 85c69162eaf7b2b46aade0c6c70cfac3, type: 3}
   inkJSON: {fileID: 4900000, guid: cca679482c6f96f4ba86b91252423375, type: 3}
   isInMina: 1
   isLluna: 0
