@@ -78,6 +78,8 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     }
 
     public void OnBeginDrag(PointerEventData pointerEventData){
+        if (pointerEventData.button != PointerEventData.InputButton.Left) return;
+        
         if(!isLockedToBowl){
             // Reduce la opacidad del objeto
             canvasGroup.alpha = .9f;
@@ -95,6 +97,8 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     }   
     public void OnDrag(PointerEventData pointerEventData)
     {   
+        if (pointerEventData.button != PointerEventData.InputButton.Left) return;
+
         if(isLockedToBowl){
             if(!isMixing){
                 StartCoroutine(MixingCountDown());
@@ -131,6 +135,8 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
 
     public void OnEndDrag(PointerEventData pointerEventData){
         
+        if (pointerEventData.button != PointerEventData.InputButton.Left) return;
+
         // Detener sonido mezclar pigmentos del bol
         if (AudioManager.GetInstance().SFXSource.isPlaying)
         {

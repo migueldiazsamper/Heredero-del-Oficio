@@ -31,6 +31,8 @@ public class DragDropMinigame4 : MonoBehaviour, IBeginDragHandler , IEndDragHand
     // Método que se llama al comenzar a arrastrar el objeto
     public void OnBeginDrag ( PointerEventData eventData )
     {   
+        if (eventData.button != PointerEventData.InputButton.Left) return;
+
         if(combustibleHorno.IsDraggingAllowed() && !CountDownTimer.instance.GetisTimeUp())
         {
             // Reproducir sonido coger madera
@@ -46,6 +48,8 @@ public class DragDropMinigame4 : MonoBehaviour, IBeginDragHandler , IEndDragHand
     // Método que se llama mientras se arrastra el objeto
     public void OnDrag ( PointerEventData eventData )
     {
+        if (eventData.button != PointerEventData.InputButton.Left) return;
+
         //Le pedimos al script de las mecánicas si está permitido mover el objeto
         if(combustibleHorno.IsDraggingAllowed() && !CountDownTimer.instance.GetisTimeUp())
         {
@@ -57,6 +61,8 @@ public class DragDropMinigame4 : MonoBehaviour, IBeginDragHandler , IEndDragHand
     // Método que se llama al finalizar el arrastre del objeto
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (eventData.button != PointerEventData.InputButton.Left) return;
+        
         if(combustibleHorno.IsDraggingAllowed() && !CountDownTimer.instance.GetisTimeUp())
         {
             // Restaura la opacidad del objeto
@@ -70,7 +76,7 @@ public class DragDropMinigame4 : MonoBehaviour, IBeginDragHandler , IEndDragHand
                 // Comprueba si existe el componente del script asociado al slot y lo obtiene en caso positivo
                 ItemSlot slotScript = eventData.pointerEnter.GetComponent<ItemSlot>();
 
-                if (slotScript != null)
+                if (slotScript != null && !combustibleHorno.IsBurnt())
                 {
                     if (slotScript.freeOfItem)
                     {
@@ -100,6 +106,10 @@ public class DragDropMinigame4 : MonoBehaviour, IBeginDragHandler , IEndDragHand
                     else woodHandler.ResetMaderita(this, true); //Si se posa una madera que viene del deck en la basura, se resetea normal
 
                 }
+                else{
+                    if(!combustibleHorno.IsBurnt()) woodHandler.ResetMaderita(this, true);
+                    else rectTransform.position = currentSlot.GetComponent<RectTransform>().position;
+                    }
 
             }
             

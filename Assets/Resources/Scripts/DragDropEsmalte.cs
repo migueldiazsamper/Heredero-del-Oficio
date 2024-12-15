@@ -35,6 +35,8 @@ public class DragDropEsmalte : MonoBehaviour , IBeginDragHandler , IEndDragHandl
     // Método que se llama al comenzar a arrastrar el objeto
     public void OnBeginDrag ( PointerEventData eventData )
     {
+        if (eventData.button != PointerEventData.InputButton.Left) return;
+
         // Reproducir sonido de coger pieza
         AudioManager.GetInstance().Play( AudioManager.GetInstance().grabEnamelPiece);
 
@@ -47,6 +49,8 @@ public class DragDropEsmalte : MonoBehaviour , IBeginDragHandler , IEndDragHandl
     // Método que se llama mientras se arrastra el objeto
     public void OnDrag ( PointerEventData eventData )
     {
+        if (eventData.button != PointerEventData.InputButton.Left) return;
+
         // Actualiza la posición anclada del objeto basado en el movimiento del puntero y el factor de escala del canvas
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
@@ -54,6 +58,8 @@ public class DragDropEsmalte : MonoBehaviour , IBeginDragHandler , IEndDragHandl
     // Método que se llama al finalizar el arrastre del objeto
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (eventData.button != PointerEventData.InputButton.Left) return;
+        
         // Restaura la opacidad del objeto
         canvasGroup.alpha = 1f;
         // Impide que el objeto sea atravesado por rayos de detección
