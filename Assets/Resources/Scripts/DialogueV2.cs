@@ -80,14 +80,14 @@ public class DialogueV2 : MonoBehaviour
             // Ajusta las posiciones según el valor de isLeft
             if (isLeft[PhasesManager.instance.currentPhase])
             {
-                nameText.rectTransform.anchoredPosition = new Vector2(35, nameText.rectTransform.anchoredPosition.y);
-                dialogueText.rectTransform.anchoredPosition = new Vector2(15, dialogueText.rectTransform.anchoredPosition.y);
+                nameText.rectTransform.anchoredPosition = new Vector2(-10, nameText.rectTransform.anchoredPosition.y);
+                dialogueText.rectTransform.anchoredPosition = new Vector2(-35, dialogueText.rectTransform.anchoredPosition.y);
                 portraitGameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-640, portraitGameObject.GetComponent<RectTransform>().anchoredPosition.y);
             }
             else
             {
-                nameText.rectTransform.anchoredPosition = new Vector2(-520, nameText.rectTransform.anchoredPosition.y);
-                dialogueText.rectTransform.anchoredPosition = new Vector2(-545, dialogueText.rectTransform.anchoredPosition.y);
+                nameText.rectTransform.anchoredPosition = new Vector2(-475, nameText.rectTransform.anchoredPosition.y);
+                dialogueText.rectTransform.anchoredPosition = new Vector2(-500, dialogueText.rectTransform.anchoredPosition.y);
                 portraitGameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(640, portraitGameObject.GetComponent<RectTransform>().anchoredPosition.y);
             }
 
