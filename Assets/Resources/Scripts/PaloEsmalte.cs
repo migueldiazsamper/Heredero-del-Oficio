@@ -8,11 +8,11 @@ public class PaloEsmalte : MonoBehaviour, IBeginDragHandler , IEndDragHandler , 
 {
     //Spawning position for mixing
     const int STARTING_POSITION_X = -500; 
-    const int STARTING_POSITION_Y = 200; 
+    const int STARTING_POSITION_Y = 125; 
     
     //Half points used to calculate the sense of the movement
-    const float HALF_POSITION_X = -650f;
-    const float HALF_POSITION_Y = 200f;
+    const float HALF_POSITION_X = -645f;
+    const float HALF_POSITION_Y = 125f;
 
     RectTransform rectTransform;
     float anchoredXAxis, anchoredYAxis;
@@ -22,6 +22,7 @@ public class PaloEsmalte : MonoBehaviour, IBeginDragHandler , IEndDragHandler , 
     bool isDraggable = true;
     [SerializeField] float mixingWaitTime;
     [SerializeField] GameObject logicManager;
+    [SerializeField] Animator animator;
     
     void Awake(){
         rectTransform = GetComponent<RectTransform>();
@@ -32,6 +33,7 @@ public class PaloEsmalte : MonoBehaviour, IBeginDragHandler , IEndDragHandler , 
     }
 
     void Update(){
+        
     }
 
     public void OnBeginDrag(PointerEventData pointerEventData){
@@ -44,6 +46,8 @@ public class PaloEsmalte : MonoBehaviour, IBeginDragHandler , IEndDragHandler , 
                 isMixing = true;
             }
 
+            animator.SetBool("isMixing", true);
+
             // Reproducir sonido mezclar esmalte del bol
             if (!AudioManager.GetInstance().SFXSource.isPlaying)
             {
@@ -53,16 +57,16 @@ public class PaloEsmalte : MonoBehaviour, IBeginDragHandler , IEndDragHandler , 
             anchoredXAxis = rectTransform.anchoredPosition.x;
             anchoredYAxis = rectTransform.anchoredPosition.y;
             if(anchoredXAxis > HALF_POSITION_X && anchoredYAxis >= HALF_POSITION_Y){ //Cuadrante superior derecho
-                rectTransform.anchoredPosition = new Vector2(anchoredXAxis - moveSpeed, anchoredYAxis + moveSpeed);
+                rectTransform.anchoredPosition = new Vector2(anchoredXAxis - moveSpeed, anchoredYAxis + moveSpeed/2);
             }
             else if(anchoredXAxis <= HALF_POSITION_X && anchoredYAxis > HALF_POSITION_Y){ //Cuadrante superior izquierdo
-                rectTransform.anchoredPosition = new Vector2(anchoredXAxis - moveSpeed, anchoredYAxis - moveSpeed);
+                rectTransform.anchoredPosition = new Vector2(anchoredXAxis - moveSpeed, anchoredYAxis - moveSpeed/2);
             }
             else if(anchoredXAxis < HALF_POSITION_X && anchoredYAxis <= HALF_POSITION_Y){ //Cuadrante inferior izquierdo
-                rectTransform.anchoredPosition = new Vector2(anchoredXAxis + moveSpeed, anchoredYAxis - moveSpeed);
+                rectTransform.anchoredPosition = new Vector2(anchoredXAxis + moveSpeed, anchoredYAxis - moveSpeed/2);
             }
             else if(anchoredXAxis >= HALF_POSITION_X && anchoredYAxis < HALF_POSITION_Y){ //Cuadrante inferior derecho
-                rectTransform.anchoredPosition = new Vector2(anchoredXAxis + moveSpeed, anchoredYAxis + moveSpeed);
+                rectTransform.anchoredPosition = new Vector2(anchoredXAxis + moveSpeed, anchoredYAxis + moveSpeed/2);
             }
         }
     }
@@ -82,7 +86,9 @@ public class PaloEsmalte : MonoBehaviour, IBeginDragHandler , IEndDragHandler , 
         else{
             rectTransform.anchoredPosition = new Vector2(STARTING_POSITION_X, STARTING_POSITION_Y);
             logicManager.GetComponent<LogicEsmalte>().FirstActivityFinished();
-        } 
+        }
+
+        animator.SetBool("isMixing", false); 
     }
 
     IEnumerator MixingCountDown(){

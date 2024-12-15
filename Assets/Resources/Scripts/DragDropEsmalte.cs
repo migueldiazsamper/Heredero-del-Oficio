@@ -74,7 +74,7 @@ public class DragDropEsmalte : MonoBehaviour , IBeginDragHandler , IEndDragHandl
 
         }
         else if(eventData.pointerEnter.CompareTag("EspacioMesa") && isEsmaltada){
-            rectTransform.anchoredPosition = new Vector2(321, -103);
+            rectTransform.anchoredPosition = new Vector2(232, -98);
             botonListo.SetActive(true);
         }
 
