@@ -652,8 +652,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "CORRER HACIA ARRIBA -> W\nCORRER HACIA ABAJO -> S\nCORRER HACIA IZQUIERDA
-    -> A\nCORRER HACIA DERECHA -> D\nAVANZAR L\xCDNEA DI\xC1LOGO -> ESPACIO\nABRIR/CERRAR
-    MAPA -> M\nINTERACTUAR -> E"
+    -> A\nCORRER HACIA DERECHA -> D\nAVANZAR L\xCDNEA DI\xC1LOGO -> ESPACIO\nINTERACTUAR
+    -> E"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f9e5b129fd2805a40894843b28cc57f7, type: 2}
   m_sharedMaterial: {fileID: -7875911035674727815, guid: f9e5b129fd2805a40894843b28cc57f7, type: 2}

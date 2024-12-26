@@ -3325,6 +3325,12 @@ PrefabInstance:
       value: -430
       objectReference: {fileID: 0}
     - target: {fileID: 9154197195187495272, guid: e2117ec882bd2664880b20016e5f4477, type: 3}
+      propertyPath: m_text
+      value: "CORRER HACIA ARRIBA -> W\nCORRER HACIA ABAJO -> S\nCORRER HACIA IZQUIERDA
+        -> A\nCORRER HACIA DERECHA -> D\nAVANZAR L\xCDNEA DI\xC1LOGO -> ESPACIO\nINTERACTUAR
+        -> E"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154197195187495272, guid: e2117ec882bd2664880b20016e5f4477, type: 3}
       propertyPath: m_fontSize
       value: 65
       objectReference: {fileID: 0}

@@ -10,8 +10,6 @@ public class MainCharacterManager : MonoBehaviour
     [SerializeField] private Transform characterTransform;
     [SerializeField] private GameObject visualCue;
     private Animator animator;
-    [SerializeField] private GameObject mapa;
-    private bool isShowingMap = false;
 
     private Rigidbody2D rb;
     [SerializeField] private GameObject transitionImage;
@@ -33,7 +31,6 @@ public class MainCharacterManager : MonoBehaviour
 
     private void Update()
     {
-        UpdateMap();
         if(transitionImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("TransitionImage_In")){
             animator.SetFloat("speedX", 0f);
             animator.SetFloat("speedY", 0f);
@@ -51,35 +48,11 @@ public class MainCharacterManager : MonoBehaviour
         UpdateMovement();
     }
 
-    private void UpdateMap ()
-    {
-        if (!DialogueManager.GetInstance().dialogueIsPlaying)
-        {
-            if (Input.GetKeyDown(KeyCode.M))
-            {
-                // mapa.SetActive(true);
-                isShowingMap = !isShowingMap;
-                
-                if (isShowingMap)
-                {
-                    mapa.SetActive(true);
-                    Time.timeScale = 0;
-                }
-                else
-                {
-                    mapa.SetActive(false);
-                    Time.timeScale = 1;
-                }
-            }
-
-        }
-    }
-
     private void UpdateMovement()
     {
         if (!DialogueManager.GetInstance().dialogueIsPlaying && !transitionImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("TransitionImage_In"))
         {
-            if (!isShowingMap)
+            if (!OpenMap.isShowingMap)
             {
                 // Obtiene las entradas de movimiento
                 float speedX = Input.GetAxis("Horizontal");
