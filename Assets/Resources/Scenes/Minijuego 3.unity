@@ -1810,7 +1810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationReference: {fileID: 1194585856}
   countDownTimer: {fileID: 431172771}
-  resetButton: {fileID: 0}
+  resetButton: {fileID: 1645352903}
 --- !u!114 &1194585858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2745,6 +2745,11 @@ PrefabInstance:
 --- !u!224 &1645352902 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1548514861473796304, guid: b3ed8caf1f640d54e8f7ed0b9790338c, type: 3}
+  m_PrefabInstance: {fileID: 1645352901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1645352903 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1211383659173507300, guid: b3ed8caf1f640d54e8f7ed0b9790338c, type: 3}
   m_PrefabInstance: {fileID: 1645352901}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1695232680
