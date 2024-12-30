@@ -81,12 +81,9 @@ public class DragDropMinigame2 : MonoBehaviour , IPointerDownHandler , IBeginDra
                 }
                 else
                 {
-                    // Genera una posición aleatoria en la pantalla
-                    float randomX = Random.Range(-Screen.width / 2, Screen.width / 2);
-                    float randomY = Random.Range(-Screen.height / 2, Screen.height / 2);
-
-                    // Asigna la nueva posición aleatoria al objeto arrastrado
-                    rectTransform.anchoredPosition = new Vector2(randomX, randomY);
+                    // Convierte la posición del ratón a la posición anclada en el espacio del rectángulo del canvas
+                    RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, eventData.position, canvas.worldCamera, out Vector2 localPoint);
+                    rectTransform.anchoredPosition = localPoint;
                 }
             }
         }
