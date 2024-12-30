@@ -12,6 +12,16 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider soundSlider;
 
+    [SerializeField] private GameObject audioManagerPrefab;
+
+    private void Awake()
+    {
+        // Comprobar si existe un AudioManager en la escena
+        if (AudioManager.GetInstance() == null)
+        {
+            Instantiate(audioManagerPrefab);
+        }
+    }
 
     private void Start()
     {

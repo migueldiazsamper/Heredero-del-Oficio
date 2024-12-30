@@ -1985,11 +1985,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6266402346702429688, guid: e2117ec882bd2664880b20016e5f4477, type: 3}
   m_PrefabInstance: {fileID: 462631049}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &462631051 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5113059178186080080, guid: e2117ec882bd2664880b20016e5f4477, type: 3}
-  m_PrefabInstance: {fileID: 462631049}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &465384441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10061,9 +10056,9 @@ MonoBehaviour:
   objetos: []
   settings: {fileID: 797904164}
   pause: {fileID: 797904163}
-  controles: {fileID: 462631051}
   musicSlider: {fileID: 797904162}
   soundSlider: {fileID: 797904158}
+  audioManagerPrefab: {fileID: 8399030810014285065, guid: 658839708b43f0b4a9700ba5b56b3b13, type: 3}
 --- !u!1 &1687862778
 GameObject:
   m_ObjectHideFlags: 0
