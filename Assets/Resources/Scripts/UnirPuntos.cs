@@ -25,7 +25,7 @@ public class UnirPuntos : MonoBehaviour
                 if (hit.collider != null && hit.collider.gameObject == gameObject) 
                 {
                     // Reproduce el sonido de clicar un punto
-                    AudioManager.GetInstance().Play(AudioManager.GetInstance().grabPoint);
+                    AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().grabPoint, AudioManager.GetInstance().grabPointVolume);
 
                     isDragging = true;
                     Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -49,7 +49,7 @@ public class UnirPuntos : MonoBehaviour
                                                                                                                             //la línea coincide con el que recibe
                 {
                     // Reproduce el sonido de unir un punto
-                    AudioManager.GetInstance().Play(AudioManager.GetInstance().linkPoint);
+                    AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().linkPoint, AudioManager.GetInstance().linkPointVolume);
 
                     Debug.Log("UNIÓN");
                     isConnected = true;

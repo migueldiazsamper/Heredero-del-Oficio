@@ -9,15 +9,14 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField] private GameObject settings;
     [SerializeField] private GameObject pause;
-    [SerializeField] private GameObject controles;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider soundSlider;
 
 
     private void Start()
     {
-        musicSlider.value = AudioManager.GetInstance().musicSource.volume;
-        soundSlider.value = AudioManager.GetInstance().SFXSource.volume; 
+        musicSlider.value = AudioManager.GetInstance().GetMusicVolume();
+        soundSlider.value = AudioManager.GetInstance().GetSFXVolume(); 
     }
     
     // Método para ir al menú principal
@@ -29,11 +28,6 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void playButtonSound()
-    {
-        // Reproducir sonido botón
-        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick);
-    }
     public void PausarJuego()
     {
         Time.timeScale = 0;
@@ -77,16 +71,10 @@ public class PauseMenu : MonoBehaviour
         settings.SetActive(false);
     }
 
-    public void AbrirControles ()
+    public void playButtonSound()
     {
-        settings.SetActive(false);
-        controles.SetActive(true);
-    }
-
-    public void CerrarControles()
-    {
-        controles.SetActive(false);
-        settings.SetActive(true);
+        // Reproducir sonido botón
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick, AudioManager.GetInstance().buttonClickVolume);
     }
 
     public void ChangeMusicVolume()

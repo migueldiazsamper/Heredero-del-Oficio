@@ -89,7 +89,7 @@ public class ButtonHighlighted : MonoBehaviour
 
     void OnHoverEnter(Button button)
     {
-        AudioManager.GetInstance().PlayLowSFX(AudioManager.GetInstance().buttonHover);
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonHover, AudioManager.GetInstance().buttonHoverVolume);
     }
 
     /*void OnHoverExit(Button button)

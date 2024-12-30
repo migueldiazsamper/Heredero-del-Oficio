@@ -95,12 +95,12 @@ public class CheckIfDefeat : MonoBehaviour
             Debug.Log( "Pan: " + rotationZ );
             if (rotationZ > -21f && rotationZ < 21f){
                 score += 2;
-                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback, AudioManager.GetInstance().positiveFeedbackVolume);
                 Debug.Log("currentScore = " + score);
             }
             else{
                 score -= 1;
-                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().negativeFeedback);
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().negativeFeedback, AudioManager.GetInstance().negativeFeedbackVolume);
             }
             
             yield return new WaitForSeconds(1f);

@@ -178,7 +178,7 @@ public class DialogueV2 : MonoBehaviour
                 yield return new WaitForSeconds(typingSpeed);
 
                 // Reproducir sonido diálogo
-                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().dialogueSound);
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().dialogueSound, AudioManager.GetInstance().dialogueSoundVolume);
             }
             isTyping = false;
         }

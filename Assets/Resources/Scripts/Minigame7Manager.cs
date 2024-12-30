@@ -111,7 +111,7 @@ public class Minigame7Manager : MonoBehaviour
                         if ( SwapIfValid( iterativePiece , -size , size ) )
                         {
                             // Reproducir sonido pieza
-                            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().movePuzzlePiece);
+                            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().movePuzzlePiece, AudioManager.GetInstance().movePuzzlePieceVolume);
 
                             numberOfMoves++;
                             break;
@@ -119,7 +119,7 @@ public class Minigame7Manager : MonoBehaviour
                         if ( SwapIfValid( iterativePiece , +size , size ) )
                         {
                             // Reproducir sonido pieza
-                            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().movePuzzlePiece);
+                            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().movePuzzlePiece, AudioManager.GetInstance().movePuzzlePieceVolume);
 
                             numberOfMoves++;
                             break;
@@ -127,7 +127,7 @@ public class Minigame7Manager : MonoBehaviour
                         if ( SwapIfValid( iterativePiece , -1 , 0 ) )
                         {
                             // Reproducir sonido pieza
-                            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().movePuzzlePiece);
+                            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().movePuzzlePiece, AudioManager.GetInstance().movePuzzlePieceVolume);
 
                             numberOfMoves++;
                             break;
@@ -135,7 +135,7 @@ public class Minigame7Manager : MonoBehaviour
                         if ( SwapIfValid( iterativePiece , +1 , size - 1 ) )
                         {
                             // Reproducir sonido pieza
-                            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().movePuzzlePiece);
+                            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().movePuzzlePiece, AudioManager.GetInstance().movePuzzlePieceVolume);
                             
                             numberOfMoves++;
                             break;
@@ -151,7 +151,7 @@ public class Minigame7Manager : MonoBehaviour
             if(notCompleted)
             {
                 notCompleted = false;
-                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback, AudioManager.GetInstance().positiveFeedbackVolume);
             }
 
             Debug.Log( "Game Completed!" );

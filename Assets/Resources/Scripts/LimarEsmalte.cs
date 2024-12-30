@@ -20,7 +20,7 @@ public class LimarEsmalte : MonoBehaviour , IDropHandler
             gameObject.SetActive ( false );
 
             //Reproducir sonido de limar esmalte
-            AudioManager.instance.PlaySFX( AudioManager.instance.scratchEnamel );
+            AudioManager.GetInstance().PlaySFX( AudioManager.GetInstance().scratchEnamel, AudioManager.GetInstance().scratchEnamelVolume);
 
             // Resta 1 al contador del script del botón girar
             if (boton != null)

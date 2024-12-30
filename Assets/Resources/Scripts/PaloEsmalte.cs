@@ -51,7 +51,7 @@ public class PaloEsmalte : MonoBehaviour, IBeginDragHandler , IEndDragHandler , 
             // Reproducir sonido mezclar esmalte del bol
             if (!AudioManager.GetInstance().SFXSource.isPlaying)
             {
-                AudioManager.GetInstance().Play(AudioManager.GetInstance().mixingSpoonEnamel);
+                AudioManager.GetInstance().PlayLoop(AudioManager.GetInstance().mixingSpoonEnamel);
             }
 
             anchoredXAxis = rectTransform.anchoredPosition.x;
@@ -76,7 +76,7 @@ public class PaloEsmalte : MonoBehaviour, IBeginDragHandler , IEndDragHandler , 
         // Detener sonido mezclar pigmentos del bol
         if (AudioManager.GetInstance().SFXSource.isPlaying)
         {
-            AudioManager.GetInstance().StopSFX();
+            AudioManager.GetInstance().StopLoop();
         }  
 
         if(!finishedMixing){

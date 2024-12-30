@@ -49,7 +49,7 @@ public class DraggableItem : MonoBehaviour , IBeginDragHandler , IEndDragHandler
     public void OnBeginDrag ( PointerEventData eventData )
     {
         // Reproducir sonido coger pieza
-        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().grabPiece);
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().grabPiece, AudioManager.GetInstance().grabPieceVolume);
 
         // Reduce la opacidad del objeto para indicar que está siendo arrastrado
         canvasGroup.alpha = .6f;
@@ -93,7 +93,7 @@ public class DraggableItem : MonoBehaviour , IBeginDragHandler , IEndDragHandler
         else
         {
             // Reproducir sonido soltar pieza
-            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().dropPiece);
+            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().dropPiece, AudioManager.GetInstance().dropPieceVolume);
         }
     }
 
@@ -109,7 +109,7 @@ public class DraggableItem : MonoBehaviour , IBeginDragHandler , IEndDragHandler
             rectTransform.Rotate( 0 , 0 , -90 );
 
             // Reproducir sonido rotar
-            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().rotatePiece);
+            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().rotatePiece, AudioManager.GetInstance().rotatePieceVolume);
 
             // Incrementa la rotación actual en 90 grados
             if ( ++currentRotation > 3 )
@@ -123,7 +123,7 @@ public class DraggableItem : MonoBehaviour , IBeginDragHandler , IEndDragHandler
             if ( isCorrect )
             {
                 // Reproducir sonido correcto
-                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback, AudioManager.GetInstance().positiveFeedbackVolume);
             }   
         }
     }

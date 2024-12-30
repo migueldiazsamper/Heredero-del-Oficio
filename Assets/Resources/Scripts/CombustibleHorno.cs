@@ -80,7 +80,7 @@ public class CombustibleHorno : MonoBehaviour
                 isBurnt = true;
 
                 // Reproducir sonido madera quemada
-                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().burningWood);
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().burningWood, AudioManager.GetInstance().burningWoodVolume);
 
                 // Cambia el color para indicar que la madera está quemada.
                 imageComponent.color = Color.red;

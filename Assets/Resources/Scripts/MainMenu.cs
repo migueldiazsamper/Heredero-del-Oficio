@@ -20,16 +20,8 @@ public class MainMenu : MonoBehaviour
         soundSlider.value = AudioManager.GetInstance().SFXSource.volume;
     }
 
-    public void playButtonSound()
-    {
-        // Reproducir sonido botón
-        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick);
-    }
     public void PlayGame()
     {
-        // Reproducir sonido botón
-        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick);
-
         // Cargar la escena del menú principal
         string scenePath = AssetDatabase.GetAssetPath(firstScene);
         string sceneName = System.IO.Path.GetFileNameWithoutExtension(scenePath);
@@ -38,18 +30,12 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        // Reproducir sonido botón
-        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick);
-
         // Salir del juego
         Application.Quit();
     }
 
     public void SettingsPanel()
     {
-        // Reproducir sonido botón
-        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick);
-
         // Cargar panel opciones
         main.SetActive(false);
         settings.SetActive(true);
@@ -57,9 +43,6 @@ public class MainMenu : MonoBehaviour
 
     public void SettingsReturn()
     {
-        // Reproducir sonido botón
-        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick);
-
         // Regresar al menú principal
         main.SetActive(true);
         settings.SetActive(false);
@@ -67,9 +50,6 @@ public class MainMenu : MonoBehaviour
 
     public void AbrirControles ()
     {
-        // Reproducir sonido botón
-        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick);
-
         // Regresar al menú principal
         controls.SetActive(true);
         settings.SetActive(false);
@@ -77,12 +57,15 @@ public class MainMenu : MonoBehaviour
 
     public void CerrarControles()
     {
-        // Reproducir sonido botón
-        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick);
-
         // Regresar al menú principal
         controls.SetActive(false);
         settings.SetActive(true);
+    }
+
+    public void playButtonSound()
+    {
+        // Reproducir sonido botón
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().buttonClick, AudioManager.GetInstance().buttonClickVolume);
     }
 
     public void ChangeMusicVolume()
@@ -94,6 +77,10 @@ public class MainMenu : MonoBehaviour
     public void ChangeSoundVolume()
     {
         // Cambiar volumen de la música
-        AudioManager.GetInstance().SFXSource.volume = soundSlider.value; 
+        AudioManager.GetInstance().SFXSource.volume = soundSlider.value;
+        if(SceneManager.GetActiveScene().name == "Pueblo" || SceneManager.GetActiveScene().name == "Mina")
+        {
+            CharacterMovementSound.GetInstance().characterMovementSource.volume = soundSlider.value;
+        }
     }
 }

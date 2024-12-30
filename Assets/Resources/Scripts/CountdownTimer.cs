@@ -62,7 +62,7 @@ public class CountDownTimer : MonoBehaviour
     public void SetDefeat()
     {
         // Reproducir sonido derrota
-        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().negativeFeedback);
+        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().negativeFeedback, AudioManager.GetInstance().negativeFeedbackVolume);
 
         isDefeat = true;
     }
@@ -103,7 +103,7 @@ public class CountDownTimer : MonoBehaviour
                 if (minigame == 4)
                 {
                     // Reproducir sonido campanario
-                    AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().timeUpBell);
+                    AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().timeUpBell, AudioManager.GetInstance().timeUpBellVolume);
                 }
 
                 isTimeUp = true;
@@ -120,7 +120,7 @@ public class CountDownTimer : MonoBehaviour
                 if(!isDefeat && !isFinished) 
                 {
                     // Reproducir sonido correcto
-                    AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);
+                    AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback, AudioManager.GetInstance().positiveFeedbackVolume);
 
                     isFinished = true;
 

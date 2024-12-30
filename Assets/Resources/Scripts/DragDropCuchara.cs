@@ -108,7 +108,7 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             // Reproducir sonido mezclar pigmentos del bol
             if (!AudioManager.GetInstance().SFXSource.isPlaying)
             {
-                AudioManager.GetInstance().Play(AudioManager.GetInstance().mixingSpoonPigments);
+                AudioManager.GetInstance().PlayLoop(AudioManager.GetInstance().mixingSpoonPigments);
             }
 
             anchoredXAxis = rectTransform.anchoredPosition.x;
@@ -140,7 +140,7 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
         // Detener sonido mezclar pigmentos del bol
         if (AudioManager.GetInstance().SFXSource.isPlaying)
         {
-            AudioManager.GetInstance().StopSFX();
+            AudioManager.GetInstance().StopLoop();
         }
 
         if(!isLockedToBowl){
@@ -154,7 +154,7 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             if(pointerEventData.pointerEnter.CompareTag("BotePigmento") && pointerEventData != null){
 
                 // Reproducir sonido meter cuchara en bote
-                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().insertSpoon);
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().insertSpoon, AudioManager.GetInstance().insertSpoonVolume);
 
                 cabezaCanvasGroup.alpha = 0;
                 liquidoCanvasGroup.alpha = 0;
@@ -173,7 +173,7 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
                     if(pigmentosManager.colorCounter < 5)
                     {
                         // Reproducir sonido meter pigmento en bol
-                        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().putPigment);
+                        AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().putPigment, AudioManager.GetInstance().putPigmentVolume);
 
                         pigmentosManager.AddColorToMix(currentColor);
                     }
@@ -199,7 +199,7 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             if(pigmentosManager.mixedColorSpriteImage.GetComponent<Image>().color == targetColor)
             {
                 // Reproducir sonido feedback positivo
-                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback, AudioManager.GetInstance().positiveFeedbackVolume);
                 isValidColor = true;
             }
 

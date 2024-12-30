@@ -27,7 +27,7 @@ public class ItemEliminate : MonoBehaviour , IDropHandler
                 UpdatePercentage.percentageOfTotal += 10;
 
                 // Reproducir sonido quitar impureza
-                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().grabImpurity);
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().grabImpurity, AudioManager.GetInstance().grabImpurityVolume);
             }
 
             bool is100 = UpdatePercentage.percentageOfTotal == 100;
@@ -35,7 +35,7 @@ public class ItemEliminate : MonoBehaviour , IDropHandler
             if ( is100 )
             {
                 // Reproducir sonido de completar porcentaje
-                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback, AudioManager.GetInstance().positiveFeedbackVolume);
             }
         }
     }

@@ -68,7 +68,7 @@ public class EntradaFabrica : MonoBehaviour
             if (  Input.GetKeyDown( KeyCode.E ) )
             {
                 // Reproducir sonido entrar edificio
-                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().enterBuilding);
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().enterBuilding, AudioManager.GetInstance().enterBuildingVolume);
 
                 if (PhasesManager.instance.currentPhase > 15)
                 {

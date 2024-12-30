@@ -64,7 +64,7 @@ public class EntradaMina : MonoBehaviour
             if (  Input.GetKeyDown( KeyCode.E ) )
             {
                 // Reproducir sonido camino del pueblo a la mina
-                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().enterMine);
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().enterMine, AudioManager.GetInstance().enterMineVolume);
                 
                 if ( PhasesManager.instance.vecesMina == 0 )
                 {

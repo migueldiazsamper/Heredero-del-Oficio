@@ -101,7 +101,7 @@ public class TemperaturaHorno : MonoBehaviour
                 score += 2;
 
                 // Reproducir sonido feedback positivo
-                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback);
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback, AudioManager.GetInstance().positiveFeedbackVolume);
 
                 yield return new WaitForSeconds(1.5f); //Espera 1.5s para volver a comprobar
             } 
@@ -109,7 +109,7 @@ public class TemperaturaHorno : MonoBehaviour
                 score -= 1;
 
                 // Reproducir sonido feedback negativo
-                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().negativeFeedback);
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().negativeFeedback, AudioManager.GetInstance().negativeFeedbackVolume);
 
                 yield return new WaitForSeconds(1f); //Si estás sobrecalentado, restas más puntos y más rápido
                 

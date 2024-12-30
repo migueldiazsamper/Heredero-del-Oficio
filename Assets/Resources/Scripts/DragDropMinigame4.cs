@@ -36,7 +36,7 @@ public class DragDropMinigame4 : MonoBehaviour, IBeginDragHandler , IEndDragHand
         if(combustibleHorno.IsDraggingAllowed() && !CountDownTimer.instance.GetisTimeUp())
         {
             // Reproducir sonido coger madera
-            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().grabWood);
+            AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().grabWood, AudioManager.GetInstance().grabWoodVolume);
 
             // Reduce la opacidad del objeto
             canvasGroup.alpha = .6f;
@@ -95,7 +95,7 @@ public class DragDropMinigame4 : MonoBehaviour, IBeginDragHandler , IEndDragHand
                 else if(eventData.pointerEnter.CompareTag("Trash"))
                 {   
                     // Reproducir sonido tirar madera a la basura
-                    AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().dropWood);
+                    AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().dropWood, AudioManager.GetInstance().dropWoodVolume);
 
                     if(combustibleHorno.IsBurnt())
                     {

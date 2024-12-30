@@ -100,7 +100,7 @@ public class EscenaCondesa : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
 
             // Reproducir sonido diálogo
-                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().dialogueSound);
+                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().dialogueSound, AudioManager.GetInstance().dialogueSoundVolume);
         }
     }
 }

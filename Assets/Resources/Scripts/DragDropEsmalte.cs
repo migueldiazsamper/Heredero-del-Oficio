@@ -38,7 +38,7 @@ public class DragDropEsmalte : MonoBehaviour , IBeginDragHandler , IEndDragHandl
         if (eventData.button != PointerEventData.InputButton.Left) return;
 
         // Reproducir sonido de coger pieza
-        AudioManager.GetInstance().Play( AudioManager.GetInstance().grabEnamelPiece);
+        AudioManager.GetInstance().PlaySFX( AudioManager.GetInstance().grabEnamelPiece, AudioManager.GetInstance().grabEnamelPieceVolume);
 
         // Reduce la opacidad del objeto
         canvasGroup.alpha = .6f;
@@ -84,13 +84,13 @@ public class DragDropEsmalte : MonoBehaviour , IBeginDragHandler , IEndDragHandl
     IEnumerator DelayedDeactivation(){
 
         // Reproducir sonido de pieza esmaltandose
-        AudioManager.GetInstance().Play( AudioManager.GetInstance().EnamelPiece);
+        AudioManager.GetInstance().PlaySFX( AudioManager.GetInstance().EnamelPiece, AudioManager.GetInstance().EnamelPieceVolume);
 
         yield return new WaitForSeconds(1);
         piezaEsmaltada.SetActive(true);
 
         // Reproducir sonido de pieza esmaltada
-        AudioManager.GetInstance().Play( AudioManager.GetInstance().EnamelPiece);
+        AudioManager.GetInstance().PlaySFX( AudioManager.GetInstance().EnamelPiece, AudioManager.GetInstance().EnamelPieceVolume);
 
         piezaEsmaltada.GetComponent<DragDropEsmalte>().enabled = true;
         gameObject.SetActive(false);
