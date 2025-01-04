@@ -23,7 +23,7 @@ public class CharacterMovementSound : MonoBehaviour
 
     private void Start ()
     {
-        characterMovementSource.volume = slider.value;
+        characterMovementSource.volume = slider.value * 0.4f;
     }
 
     public void PlayCharacterMovement ()

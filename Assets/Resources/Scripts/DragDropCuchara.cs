@@ -108,7 +108,7 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             // Reproducir sonido mezclar pigmentos del bol
             if (!AudioManager.GetInstance().SFXSource.isPlaying)
             {
-                AudioManager.GetInstance().PlayLoop(AudioManager.GetInstance().mixingSpoonPigments);
+                AudioManager.GetInstance().PlayLoop(AudioManager.GetInstance().mixingSpoonPigments, AudioManager.GetInstance().mixingSpoonPigmentsVolume);
             }
 
             anchoredXAxis = rectTransform.anchoredPosition.x;

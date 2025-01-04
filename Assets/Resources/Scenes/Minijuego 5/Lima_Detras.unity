@@ -2145,9 +2145,9 @@ MonoBehaviour:
   objetos: []
   settings: {fileID: 725499098}
   pause: {fileID: 725499097}
-  controles: {fileID: 1638498750}
   musicSlider: {fileID: 725499096}
   soundSlider: {fileID: 725499095}
+  audioManagerPrefab: {fileID: 0}
 --- !u!1001 &1091134764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2456,7 +2456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2526568034895677011, guid: b3ed8caf1f640d54e8f7ed0b9790338c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2526568034895677011, guid: b3ed8caf1f640d54e8f7ed0b9790338c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -2476,7 +2476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2526568034895677011, guid: b3ed8caf1f640d54e8f7ed0b9790338c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadSceneButton
+      value: LoadNextScene
       objectReference: {fileID: 0}
     - target: {fileID: 2526568034895677011, guid: b3ed8caf1f640d54e8f7ed0b9790338c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -2946,11 +2946,6 @@ PrefabInstance:
 --- !u!224 &1638498749 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6266402346702429688, guid: e2117ec882bd2664880b20016e5f4477, type: 3}
-  m_PrefabInstance: {fileID: 1638498748}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1638498750 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5113059178186080080, guid: e2117ec882bd2664880b20016e5f4477, type: 3}
   m_PrefabInstance: {fileID: 1638498748}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1650870266

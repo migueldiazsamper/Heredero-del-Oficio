@@ -9,11 +9,11 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     [ Header( "Audio Sources" ) ]
-    public AudioSource musicSource; public float musicSourceVolume = 1.0f;
-    public AudioSource SFXSource; public float SFXSourceVolume = 1.0f;
+    public AudioSource musicSource;
+    public AudioSource SFXSource;
 
     [ Header( "------- Audio Clips -------" ) ]
-    public AudioClip backgroundMusic;
+    public AudioClip backgroundMusic; public float backgroundMusicVolume = 1.0f;
     public AudioClip buttonClick; public float buttonClickVolume = 1.0f;
     public AudioClip buttonHover; public float buttonHoverVolume = 1.0f;
 
@@ -83,6 +83,11 @@ public class AudioManager : MonoBehaviour
     // Referencia al AudioMixer para controlar el volumen de la música y los efectos.
     public AudioMixer audioMixer;
 
+    public AudioMixerGroup loopSFXGroup;
+
+    private float musicSliderVolume = 1.0f;
+    private float soundSliderVolume = 1.0f;
+
     /// <summary>
     /// Devuelve la instancia única de AudioManager.
     /// </summary>
@@ -108,6 +113,10 @@ public class AudioManager : MonoBehaviour
 
             // Hace que este GameObject persista entre escenas.
             DontDestroyOnLoad( gameObject );
+
+            // Sincronizar variables con AudioMixer
+            SetMusicVolume( musicSliderVolume );
+            SetSFXVolume( soundSliderVolume );
         }
         else
         {
@@ -116,8 +125,10 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayLoop ( AudioClip clip )
+    public void PlayLoop ( AudioClip clip, float volume )
     {
+        SFXSource.outputAudioMixerGroup = loopSFXGroup; // Asigna el subgrupo
+        SFXSource.volume = dropWoodVolume;
         SFXSource.clip = clip;
         SFXSource.Play();
     }
@@ -137,24 +148,26 @@ public class AudioManager : MonoBehaviour
 
     public void SetMusicVolume ( float volume )
     {
-        audioMixer.SetFloat( "MusicVolume", Mathf.Log10(volume) * 20 ); // Convierte el volumen de 0 a 1 a una escala logarítmica.
+        musicSliderVolume = volume;
+
+        musicSource.volume = volume * backgroundMusicVolume;
     }
 
     public void SetSFXVolume ( float volume )
     {
-        audioMixer.SetFloat( "SFXVolume", Mathf.Log10(volume) * 20 ); // Convierte el volumen de 0 a 1 a una escala logarítmica.
+        soundSliderVolume = volume;
+
+        SFXSource.volume = volume;
     }
 
     public float GetMusicVolume()
     {
-        audioMixer.GetFloat("MusicVolume", out float volume);
-        return Mathf.Pow(10, volume / 20); // Convierte el volumen de una escala logarítmica a 0 a 1.
+        return musicSliderVolume;
     }
 
     public float GetSFXVolume()
     {
-        audioMixer.GetFloat("SFXVolume", out float volume);
-        return Mathf.Pow(10, volume / 20); // Convierte el volumen de una escala logarítmica a 0 a 1.
+        return soundSliderVolume;
     }
 
 }

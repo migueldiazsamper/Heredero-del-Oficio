@@ -13,11 +13,11 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Slider soundSlider;
 
 
-    // El metodo Awake prepara los elementos necesarios al inicio del juego
+    // Método que se ejecuta al inicio
     private void Start()
     {
-        musicSlider.value = AudioManager.GetInstance().musicSource.volume;
-        soundSlider.value = AudioManager.GetInstance().SFXSource.volume;
+        musicSlider.value = AudioManager.GetInstance().GetMusicVolume();
+        soundSlider.value = AudioManager.GetInstance().GetSFXVolume();
     }
 
     public void PlayGame()
@@ -70,17 +70,17 @@ public class MainMenu : MonoBehaviour
 
     public void ChangeMusicVolume()
     {
-        // Cambiar volumen de la música
-        AudioManager.GetInstance().musicSource.volume = musicSlider.value;    
+        // Cambiar volumen de la música 
+        AudioManager.GetInstance().SetMusicVolume(musicSlider.value);
     }
 
     public void ChangeSoundVolume()
     {
         // Cambiar volumen de la música
-        AudioManager.GetInstance().SFXSource.volume = soundSlider.value;
+        AudioManager.GetInstance().SetSFXVolume(soundSlider.value);
         if(SceneManager.GetActiveScene().name == "Pueblo" || SceneManager.GetActiveScene().name == "Mina")
         {
-            CharacterMovementSound.GetInstance().characterMovementSource.volume = soundSlider.value;
+            CharacterMovementSound.GetInstance().characterMovementSource.volume = soundSlider.value * 0.4f;
         }
     }
 }

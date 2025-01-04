@@ -26,7 +26,7 @@ public class PauseMenu : MonoBehaviour
     private void Start()
     {
         musicSlider.value = AudioManager.GetInstance().GetMusicVolume();
-        soundSlider.value = AudioManager.GetInstance().GetSFXVolume(); 
+        soundSlider.value = AudioManager.GetInstance().GetSFXVolume();
     }
     
     // Método para ir al menú principal
@@ -89,17 +89,17 @@ public class PauseMenu : MonoBehaviour
 
     public void ChangeMusicVolume()
     {
-        // Cambiar volumen de la música
-        AudioManager.GetInstance().musicSource.volume = musicSlider.value;    
+        // Cambiar volumen de la música 
+        AudioManager.GetInstance().SetMusicVolume(musicSlider.value);
     }
 
     public void ChangeSoundVolume()
     {
         // Cambiar volumen de la música
-        AudioManager.GetInstance().SFXSource.volume = soundSlider.value;
+        AudioManager.GetInstance().SetSFXVolume(soundSlider.value);
         if(SceneManager.GetActiveScene().name == "Pueblo" || SceneManager.GetActiveScene().name == "Mina")
         {
-            CharacterMovementSound.GetInstance().characterMovementSource.volume = soundSlider.value;
+            CharacterMovementSound.GetInstance().characterMovementSource.volume = soundSlider.value * 0.4f;
         }
     }
 }
