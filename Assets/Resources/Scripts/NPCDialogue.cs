@@ -48,6 +48,7 @@ public class NPCDialogue : MonoBehaviour
                     if ( isInMina )
                     {
                         PhasesManager.instance.vecesMina++;
+                        Debug.Log( "Veces mina: " + PhasesManager.instance.vecesMina );
                         // Desactiva su propio BoxCollider2D
                         BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
                         if (boxCollider != null)
