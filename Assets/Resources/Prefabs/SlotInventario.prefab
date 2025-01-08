@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 2515609018969027827}
   - component: {fileID: 1115607538991543480}
   - component: {fileID: 3872000312339836140}
+  - component: {fileID: 3231528834756700574}
   m_Layer: 5
   m_Name: SlotInventario
   m_TagString: Untagged
@@ -151,3 +152,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3231528834756700574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8790180316846884564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2a9b34a1fc6e584fb43272675479b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sacoArena: {fileID: 21300000, guid: 246477b0dc98dc34aa9341ecf7211ed9, type: 3}
+  sacoPigmento: {fileID: 21300000, guid: 1021a5aca8dec1043851a8c09ea2ab9e, type: 3}
+  slot: {fileID: 2873850616482460888}

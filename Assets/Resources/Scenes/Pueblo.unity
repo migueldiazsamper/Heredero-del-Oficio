@@ -39281,39 +39281,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8790180316846884564, guid: 5ab6888458aab184786a7fa85ce9ee4c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1986845705}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ab6888458aab184786a7fa85ce9ee4c, type: 3}
 --- !u!224 &1986845703 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2515609018969027827, guid: 5ab6888458aab184786a7fa85ce9ee4c, type: 3}
-  m_PrefabInstance: {fileID: 1986845702}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1986845704 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2873850616482460888, guid: 5ab6888458aab184786a7fa85ce9ee4c, type: 3}
-  m_PrefabInstance: {fileID: 1986845702}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1986845705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1986845706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2a9b34a1fc6e584fb43272675479b6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sacoArena: {fileID: 21300000, guid: 246477b0dc98dc34aa9341ecf7211ed9, type: 3}
-  sacoPigmento: {fileID: 21300000, guid: 1021a5aca8dec1043851a8c09ea2ab9e, type: 3}
-  slot: {fileID: 1986845704}
---- !u!1 &1986845706 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8790180316846884564, guid: 5ab6888458aab184786a7fa85ce9ee4c, type: 3}
   m_PrefabInstance: {fileID: 1986845702}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2061293621
