@@ -9,7 +9,7 @@ public class TransitionImage : MonoBehaviour
     public static TransitionImage instance;
     private Animator animator;
     
-    private GameObject transitionImage;
+    private static GameObject transitionImage;
 
 
     /// <summary>
@@ -59,11 +59,11 @@ public class TransitionImage : MonoBehaviour
 
     public void OnSceneChange(){
         Debug.Log("Call from OnSceneChange Correct");
-        StartCoroutine(LoadAnimationBeforeTransition());
+        instance.StartCoroutine(LoadAnimationBeforeTransition());
     }
 
     
-    private IEnumerator LoadAnimationBeforeTransition()
+    private static IEnumerator LoadAnimationBeforeTransition()
     {
         Debug.Log("Call from TransitionIn Coroutine Correct");
         transitionImage.SetActive(true);

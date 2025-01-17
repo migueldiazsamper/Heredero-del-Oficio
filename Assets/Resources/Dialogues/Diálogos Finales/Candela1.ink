@@ -1,6 +1,6 @@
 ¡Por fin llegaste, estaba esperando las piezas!
 ¿Por qué has tardado tanto?
-¿Pedro te mandó a por el viejo maestro?
+¿Pedro te mandó a por el anterior maestro?
 ¿Quién es Pedro?
 Bueno, da igual. ¡Ahora empieza lo interesante de verdad!
 ¡El calor!
