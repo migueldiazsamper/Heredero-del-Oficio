@@ -21,9 +21,10 @@ public class DialogueV2 : MonoBehaviour
     [ SerializeField ] private GameObject portraitGameObject;
     [ SerializeField ] private TextMeshProUGUI dialogueText;
     [ SerializeField ] private TextMeshProUGUI nameText;
-    /* [ SerializeField ] private Sprite fondoMina;
-    [ SerializeField ] private Sprite fondoDialogoNormal;
-    [ SerializeField ] private GameObject fondo; */
+    [ SerializeField ] private Sprite fondoHornos;
+    [ SerializeField ] private Sprite fondoFabrica;
+    [ SerializeField ] private Sprite fondoMadre;
+    [ SerializeField ] private GameObject fondo;
     
     private Story[] stories;
     private Story currentStory;
@@ -33,6 +34,8 @@ public class DialogueV2 : MonoBehaviour
 
     private bool isPlayingTransitionAnimation = false;
     private Animator transitionImageAnimator;
+
+    private int[] phasesFurnaces = { 8, 9, 14, 15 };
 
     private void Start ()
     {
@@ -68,6 +71,19 @@ public class DialogueV2 : MonoBehaviour
         {
             fondo.GetComponent<Image>().sprite = fondoDialogoNormal;
         } */
+
+        if ( PhasesManager.instance.currentPhase == 0 ) // Fondo de la casa
+        {
+            fondo.GetComponent<Image>().sprite = fondoMadre;
+        }
+        else if ( phasesFurnaces.Contains( PhasesManager.instance.currentPhase ) ) // Fondo de los hornos
+        {
+            fondo.GetComponent<Image>().sprite = fondoHornos;
+        }
+        else
+        {
+            fondo.GetComponent<Image>().sprite = fondoFabrica;
+        }
 
         //Chequeo para saber si se está mostrando la animación de cambio de escena, para evitar que el sprite cambie durante la transición
         isPlayingTransitionAnimation = transitionImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("TransitionImage_In");
