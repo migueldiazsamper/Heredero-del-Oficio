@@ -8,7 +8,9 @@ No te preocupes.
 ..
 ...
 ¿No tienes que ir a por el siguiente paso?
-¡Ah, claro! Que no te he dicho qué debes hacer.
+¡Ah, claro! 
+Que no te he dicho qué debes hacer.
 Lo siguiente será esmaltar la pieza.
-Ve a la fábrica en busca de Agustina, ella será tu maestra.
+Ve a la fábrica en busca de Agustina, 
+ella será tu maestra.
 ¡Con brío, que la vida te va a comer!
