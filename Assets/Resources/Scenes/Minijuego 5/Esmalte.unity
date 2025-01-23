@@ -485,7 +485,7 @@ MonoBehaviour:
   pause: {fileID: 1220248718}
   musicSlider: {fileID: 1220248717}
   soundSlider: {fileID: 1220248716}
-  audioManagerPrefab: {fileID: 0}
+  audioManagerPrefab: {fileID: 8399030810014285065, guid: 658839708b43f0b4a9700ba5b56b3b13, type: 3}
 --- !u!1001 &216950291
 PrefabInstance:
   m_ObjectHideFlags: 0

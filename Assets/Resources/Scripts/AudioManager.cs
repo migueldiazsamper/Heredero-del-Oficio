@@ -128,7 +128,6 @@ public class AudioManager : MonoBehaviour
     public void PlayLoop ( AudioClip clip, float volume )
     {
         SFXSource.outputAudioMixerGroup = loopSFXGroup; // Asigna el subgrupo
-        SFXSource.volume = dropWoodVolume;
         SFXSource.clip = clip;
         SFXSource.Play();
     }
@@ -136,6 +135,7 @@ public class AudioManager : MonoBehaviour
     public void StopLoop ()
     {
         SFXSource.Stop();
+        SFXSource.outputAudioMixerGroup = null; // Quita el subgrupo
         SFXSource.clip = null;
     }
 
