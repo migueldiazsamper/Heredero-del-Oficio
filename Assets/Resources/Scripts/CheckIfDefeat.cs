@@ -44,6 +44,7 @@ public class CheckIfDefeat : MonoBehaviour
 
     private void Update ()
     {
+        if(countDownTimer.isVictory){this.enabled = false;}
         // Comprueba si existe el objeto de referencia de rotación.
         bool referenciaDeRotacionExiste = rotationReference != null;
 

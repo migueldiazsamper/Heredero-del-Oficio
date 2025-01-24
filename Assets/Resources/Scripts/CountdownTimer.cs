@@ -25,7 +25,7 @@ public class CountDownTimer : MonoBehaviour
     private bool isTimeUp = false;
     private bool isFinished = false;
     private bool isDefeat = false;
-    private bool isVictory = false;
+    public bool isVictory = false;
 
     // Referencia al componente ConstantRotation
     [SerializeField] ConstantRotation constantRotation;
