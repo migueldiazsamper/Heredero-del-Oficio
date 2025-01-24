@@ -10,13 +10,13 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
 {
     [SerializeField] GameObject listoButton;
     [SerializeField] GameObject resetButton;
+    [SerializeField] GameObject saveColorButton;
     [SerializeField] PigmentosManager pigmentosManager;
 
-    private bool isValidColor = false;
+    private int numOfCorrectColors = 0;
 
     // Color al que se debe llegar al mezclar todos los pigmentos
-    [SerializeField] private Color targetColor = PigmentosManager.colorNaranja; 
-    
+    [SerializeField] private Color[] targetColors;
     //Referencias a las partes que conforman la cuchara
     [SerializeField] GameObject cabeza;
     [SerializeField] GameObject cuerpo;
@@ -75,6 +75,13 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
 
     public void Start (){
         liquidoCanvasGroup.alpha = 0f;
+        
+        targetColors = new Color[]
+        {
+            PigmentosManager.colorNaranja,
+            PigmentosManager.colorVerdeOlivaClaro,
+            PigmentosManager.colorAzulClaro
+        };
     }
 
     public void OnBeginDrag(PointerEventData pointerEventData){
@@ -193,15 +200,17 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
 
             rectTransform.anchoredPosition = new Vector2(STARTING_POSITION_X, STARTING_POSITION_Y);
             pigmentosManager.MixColors();
-            listoButton.SetActive(true);
-            resetButton.SetActive(true);
+            
 
-            if(pigmentosManager.mixedColorSpriteImage.GetComponent<Image>().color == targetColor)
+            if(pigmentosManager.mixedColorSpriteImage.GetComponent<Image>().color == targetColors[PhasesManager.instance.savedColors])
             {
                 // Reproducir sonido feedback positivo
                 AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback, AudioManager.GetInstance().positiveFeedbackVolume);
-                isValidColor = true;
+                numOfCorrectColors++;
             }
+
+            saveColorButton.SetActive(true);
+            resetButton.SetActive(true);
 
             this.enabled = false;
         }
@@ -225,7 +234,7 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
         OnEndDrag(null);
     }
 
-    public bool IsValidColor(){
-        return isValidColor;
+    public int NumOfCorrectColors(){
+        return numOfCorrectColors;
     }
 }

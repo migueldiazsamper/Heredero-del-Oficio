@@ -13,12 +13,15 @@ public class PigmentosManager : MonoBehaviour
     public int colorCounter {get; private set;} = 0;
     private int[] colorPalette = new int[5]; //Este array contiene el nº usado de cada color en formato {b, m, c, y, w}
 
+
+    //Colores de la paleta
     public static Color colorNaranja = new Color(1.0f, 0.392f, 0.129f); // Naranja
     public static Color colorVerdeOlivaOscuro = new Color(0.388f, 0.349f, 0.078f); // Verde Oliva Oscuro
     public static Color colorVerdeOlivaClaro = new Color(0.663f, 0.627f, 0.271f); // Verde Oliva Claro
     public static Color colorAzulOscuro = new Color(0.267f, 0.337f, 0.659f); // Azul Oscuro
     public static Color colorAzulClaro = new Color(0.588f, 0.733f, 0.898f); // Azul Claro
     public static Color colorMarron = new Color(0.596f, 0.329f, 0.0f); // Marrón
+
     void Awake(){
         for(int i = 0; i < 5; i++) colorPalette[i] = 0;
     }
@@ -47,7 +50,16 @@ public class PigmentosManager : MonoBehaviour
 
     private void DisplayColor(String colorString){
         ///Show the last color added
+        float colorAlphaValue = 1.0f;
+        switch(colorCounter){
+            case 1: colorAlphaValue = 0.588f; break;
+            case 2: colorAlphaValue = 0.686f; break;
+            case 3: colorAlphaValue = 0.784f; break;
+            case 4: colorAlphaValue = 0.882f; break;
+            case 5: colorAlphaValue = 1.0f; break;
+        }
         mixedColorSpriteImage.color = ProvideColor(colorString);
+        mixedColorSpriteImage.color = new Color(mixedColorSpriteImage.color.r, mixedColorSpriteImage.color.g, mixedColorSpriteImage.color.b, colorAlphaValue);
         Debug.Log(mixedColorSpriteImage.color);
     }
 
@@ -75,4 +87,12 @@ public class PigmentosManager : MonoBehaviour
         Debug.Log(colorPaletteString);
         DisplayColor(colorPaletteString);
     }
+
+    public void SaveColor(){
+        PhasesManager.instance.coloresMancerina[PhasesManager.instance.savedColors] = mixedColorSpriteImage.color;
+        PhasesManager.instance.savedColors++;
+        if(PhasesManager.instance.savedColors >= 3) ChangeScenes.LoadSceneButton("DialogoInterior"); 
+        else ChangeScenes.LoadSceneButton("Minijuego 6");
+    }
+    
 }

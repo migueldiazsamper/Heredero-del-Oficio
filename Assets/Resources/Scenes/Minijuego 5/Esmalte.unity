@@ -380,11 +380,11 @@ RectTransform:
   - {fileID: 1525460017}
   - {fileID: 1583833837}
   - {fileID: 1039656250}
+  - {fileID: 1031894358}
   - {fileID: 3628677767822276120}
   - {fileID: 3628677767232353629}
   - {fileID: 1220248714}
   - {fileID: 22629974}
-  - {fileID: 1031894358}
   m_Father: {fileID: 828623624}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -485,6 +485,7 @@ MonoBehaviour:
   pause: {fileID: 1220248718}
   musicSlider: {fileID: 1220248717}
   soundSlider: {fileID: 1220248716}
+  controls: {fileID: 0}
   audioManagerPrefab: {fileID: 8399030810014285065, guid: 658839708b43f0b4a9700ba5b56b3b13, type: 3}
 --- !u!1001 &216950291
 PrefabInstance:

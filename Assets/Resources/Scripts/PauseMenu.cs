@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject pause;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider soundSlider;
+    [SerializeField] private GameObject controls;
 
     [SerializeField] private GameObject audioManagerPrefab;
 
@@ -65,6 +66,13 @@ public class PauseMenu : MonoBehaviour
         {
             objeto.SetActive(true);
         }
+    }
+
+    public void AbrirControles()
+    {
+        // Regresar al menú principal
+        controls.SetActive(true);
+        settings.SetActive(false);
     }
 
     public void SettingsPanel()

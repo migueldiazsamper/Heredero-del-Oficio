@@ -52,14 +52,14 @@ public class MainMenu : MonoBehaviour
     {
         // Regresar al menú principal
         controls.SetActive(true);
-        settings.SetActive(false);
+        main.SetActive(false);
     }
 
     public void CerrarControles()
     {
         // Regresar al menú principal
         controls.SetActive(false);
-        settings.SetActive(true);
+        main.SetActive(true);
     }
 
     public void playButtonSound()

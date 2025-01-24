@@ -16,6 +16,13 @@ public class PhasesManager : MonoBehaviour
     public bool tieneQueHablarConSabio = false;
     public Vector2[] zonasDeAparicion = new Vector2[4];
 
+    //Los 3 colores que se usarán para pintar la mancerina final
+    private static Color primerColor;
+    private static Color segundoColor;
+    private static Color tercerColor;
+    public Color[] coloresMancerina = {primerColor, segundoColor, tercerColor};
+    public int savedColors = 0;
+
     private void Awake()
     {
         instance = this;
