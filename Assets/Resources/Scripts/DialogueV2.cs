@@ -72,24 +72,28 @@ public class DialogueV2 : MonoBehaviour
             fondo.GetComponent<Image>().sprite = fondoDialogoNormal;
         } */
 
-        if ( PhasesManager.instance.currentPhase == 0 ) // Fondo de la casa
-        {
-            fondo.GetComponent<Image>().sprite = fondoMadre;
-        }
-        else if ( phasesFurnaces.Contains( PhasesManager.instance.currentPhase ) ) // Fondo de los hornos
-        {
-            fondo.GetComponent<Image>().sprite = fondoHornos;
-        }
-        else
-        {
-            fondo.GetComponent<Image>().sprite = fondoFabrica;
-        }
+        
 
         //Chequeo para saber si se está mostrando la animación de cambio de escena, para evitar que el sprite cambie durante la transición
         isPlayingTransitionAnimation = transitionImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("TransitionImage_In");
 
         if (Time.timeScale == 1 && !isPlayingTransitionAnimation)
         {
+
+            if ( PhasesManager.instance.currentPhase == 0 ) // Fondo de la casa
+            {
+                fondo.GetComponent<Image>().sprite = fondoMadre;
+            }
+            else if ( phasesFurnaces.Contains( PhasesManager.instance.currentPhase ) ) // Fondo de los hornos
+            {
+                fondo.GetComponent<Image>().sprite = fondoHornos;
+            }
+            else
+            {
+                fondo.GetComponent<Image>().sprite = fondoFabrica;
+            }
+
+
             // Asigna la imagen del portrait correspondiente
             portraitGameObject.GetComponent<Image>().sprite = portraits[PhasesManager.instance.currentPhase];
 
