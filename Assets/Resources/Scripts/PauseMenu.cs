@@ -70,9 +70,15 @@ public class PauseMenu : MonoBehaviour
 
     public void AbrirControles()
     {
-        // Regresar al menú principal
+        pause.SetActive(false);
         controls.SetActive(true);
         settings.SetActive(false);
+    }
+
+    public void CerrarControles()
+    {
+        pause.SetActive(true);
+        controls.SetActive(false);
     }
 
     public void SettingsPanel()
