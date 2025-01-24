@@ -25,8 +25,17 @@ public class PhasesManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
-        DontDestroyOnLoad(this);
+        // Implementación del patrón singleton
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
         zonasDeAparicion[0] = new Vector2(44.95f, 81.85f); // Casa
         zonasDeAparicion[1] = new Vector2(-9.83f, 47.679f); // Mina
         zonasDeAparicion[2] = new Vector2(1.55f, 98.5f); // Fábrica
