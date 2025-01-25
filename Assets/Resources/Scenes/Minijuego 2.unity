@@ -516,6 +516,51 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5013347476216452984, guid: 4ccc11a44788d6049959ec0d8d2fc3ba, type: 3}
   m_PrefabInstance: {fileID: 44165951}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &44165953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6668780424564159702, guid: 4ccc11a44788d6049959ec0d8d2fc3ba, type: 3}
+  m_PrefabInstance: {fileID: 44165951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &44165954 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3862339201256545459, guid: 4ccc11a44788d6049959ec0d8d2fc3ba, type: 3}
+  m_PrefabInstance: {fileID: 44165951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &44165955 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2901896427597706392, guid: 4ccc11a44788d6049959ec0d8d2fc3ba, type: 3}
+  m_PrefabInstance: {fileID: 44165951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &44165956 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 214828948415633541, guid: 4ccc11a44788d6049959ec0d8d2fc3ba, type: 3}
+  m_PrefabInstance: {fileID: 44165951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &44165957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4623089939930336739, guid: 4ccc11a44788d6049959ec0d8d2fc3ba, type: 3}
+  m_PrefabInstance: {fileID: 44165951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &44165958 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 887277076964780729, guid: 4ccc11a44788d6049959ec0d8d2fc3ba, type: 3}
+  m_PrefabInstance: {fileID: 44165951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &44165959 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7778181923570171164, guid: 4ccc11a44788d6049959ec0d8d2fc3ba, type: 3}
+  m_PrefabInstance: {fileID: 44165951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &44165960 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1320530580103945927, guid: 4ccc11a44788d6049959ec0d8d2fc3ba, type: 3}
+  m_PrefabInstance: {fileID: 44165951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &44165961 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3293854155953799518, guid: 4ccc11a44788d6049959ec0d8d2fc3ba, type: 3}
+  m_PrefabInstance: {fileID: 44165951}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &212228493
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,6 +1397,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d74977f7b01e248999e33f67d10234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slots:
+  - {fileID: 44165961}
+  - {fileID: 44165960}
+  - {fileID: 44165959}
+  - {fileID: 44165958}
+  - {fileID: 44165957}
+  - {fileID: 44165956}
+  - {fileID: 44165955}
+  - {fileID: 44165954}
+  - {fileID: 44165953}
   pieces:
   - {fileID: 1447153779}
   - {fileID: 2103011171}
@@ -1363,6 +1418,7 @@ MonoBehaviour:
   - {fileID: 1628176232}
   - {fileID: 1824272037}
   listoButton: {fileID: 630828792}
+  correctRotation: -1
 --- !u!1 &1298342208
 GameObject:
   m_ObjectHideFlags: 0
@@ -1745,7 +1801,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
-  correctRotation: 0
+  checkCompletionMinigame2: {fileID: 0}
+  currentRotation: 0
   correctSlots: 06000000080000000400000002000000
 --- !u!114 &1386892873
 MonoBehaviour:
@@ -1985,7 +2042,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
-  correctRotation: 0
+  checkCompletionMinigame2: {fileID: 0}
+  currentRotation: 0
   correctSlots: 08000000040000000200000006000000
 --- !u!114 &1447153782
 MonoBehaviour:
@@ -2535,7 +2593,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
-  correctRotation: 0
+  checkCompletionMinigame2: {fileID: 0}
+  currentRotation: 0
   correctSlots: 05000000050000000500000005000000
 --- !u!114 &1609468851
 MonoBehaviour:
@@ -2653,7 +2712,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
-  correctRotation: 0
+  checkCompletionMinigame2: {fileID: 0}
+  currentRotation: 0
   correctSlots: 02000000060000000800000004000000
 --- !u!114 &1628176235
 MonoBehaviour:
@@ -2771,7 +2831,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
-  correctRotation: 0
+  checkCompletionMinigame2: {fileID: 0}
+  currentRotation: 0
   correctSlots: 04000000020000000600000008000000
 --- !u!114 &1629544349
 MonoBehaviour:
@@ -3586,7 +3647,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
-  correctRotation: 0
+  checkCompletionMinigame2: {fileID: 0}
+  currentRotation: 0
   correctSlots: 01000000030000000900000007000000
 --- !u!114 &1824272040
 MonoBehaviour:
@@ -3704,7 +3766,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
-  correctRotation: 0
+  checkCompletionMinigame2: {fileID: 0}
+  currentRotation: 0
   correctSlots: 03000000090000000700000001000000
 --- !u!114 &1828591720
 MonoBehaviour:
@@ -4027,7 +4090,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
-  correctRotation: 0
+  checkCompletionMinigame2: {fileID: 0}
+  currentRotation: 0
   correctSlots: 07000000010000000300000009000000
 --- !u!114 &2103011174
 MonoBehaviour:
@@ -4145,7 +4209,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSlot: {fileID: 0}
-  correctRotation: 0
+  checkCompletionMinigame2: {fileID: 0}
+  currentRotation: 0
   correctSlots: 09000000070000000100000003000000
 --- !u!114 &2105659118
 MonoBehaviour:

@@ -22,6 +22,7 @@ public class CheckCompletionMinigame2 : MonoBehaviour
         if(CheckCompletion()) {
             listoButton.SetActive(true);
             FindAnyObjectByType<Timer>().Stop();
+            DisableAllPieces();
         }
     }
 
