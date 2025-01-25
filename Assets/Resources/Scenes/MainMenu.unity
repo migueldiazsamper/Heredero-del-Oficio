@@ -2305,7 +2305,7 @@ MonoBehaviour:
   currentPhase: 0
   maxPhases: 16
   puntuacionTotal: 0
-  puntuacionCondesa: 40
+  puntuacionCondesa: 80
   nextIsPueblo: 0
   vecesMina: 0
   tieneQueHablarConSabio: 0
@@ -2314,6 +2314,11 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
+  coloresMancerina:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  savedColors: 0
 --- !u!4 &1741917712
 Transform:
   m_ObjectHideFlags: 0
