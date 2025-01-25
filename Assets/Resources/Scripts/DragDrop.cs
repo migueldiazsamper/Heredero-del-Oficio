@@ -33,6 +33,14 @@ public class DragDrop : MonoBehaviour , IPointerDownHandler , IBeginDragHandler 
         canvasGroup.blocksRaycasts = false;
         // Coloca el objeto en un ángulo de 45º
         rectTransform.rotation = Quaternion.Euler( 0 , 0 , 45 );
+
+        // Coloca el ancla del objeto en la posición del cursor
+        Vector2 localCursor;
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvas.transform as RectTransform, eventData.position, eventData.pressEventCamera, out localCursor))
+        {
+            rectTransform.anchoredPosition = localCursor;
+        }
     }
 
     // Método que se llama mientras se arrastra el objeto
@@ -40,8 +48,13 @@ public class DragDrop : MonoBehaviour , IPointerDownHandler , IBeginDragHandler 
     {
         if (eventData.button != PointerEventData.InputButton.Left) return;
 
-        // Actualiza la posición anclada del objeto basado en el movimiento del puntero y el factor de escala del canvas
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        // Actualiza la posición del objeto para que siga el cursor
+        Vector2 localCursor;
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvas.transform as RectTransform, eventData.position, eventData.pressEventCamera, out localCursor))
+        {
+            rectTransform.anchoredPosition = localCursor;
+        }
     }
 
     // Método que se llama al finalizar el arrastre del objeto
