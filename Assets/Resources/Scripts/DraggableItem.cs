@@ -7,13 +7,14 @@ using UnityEngine.EventSystems;
 public class DraggableItem : MonoBehaviour , IBeginDragHandler , IEndDragHandler , IDragHandler , IPointerClickHandler
 {
     public ItemSlot currentSlot; // Referencia al slot actual en el que se encuentra el objeto
+    public CheckCompletionMinigame2 checkCompletionMinigame2; // Referencia al script que comprueba la finalización del minijuego
 
     private RectTransform rectTransform; // Componente que controla la posición, tamaño y rotación del objeto
     private CanvasGroup canvasGroup; // Componente que controla la transparencia y la capacidad de recibir eventos del objeto
     private Canvas canvas; // Referencia al canvas (lienzo) en el que se encuentra el objeto
 
-    private int currentRotation = 0; // Rotación actual del objeto
-    [ SerializeField ] private int correctRotation = 0; // Rotación correcta que debe tener el objeto
+    public int currentRotation = 0; // Rotación actual del objeto
+    [SerializeField] private int[] correctSlots; // Slots correctos para cada rotación, para cuando la rotacion es [0, -90, 180, 90]
     int initialRotation = 0; // Rotación inicial aleatoria del objeto
 
     // Método que se llama al inicializar el script
@@ -43,7 +44,10 @@ public class DraggableItem : MonoBehaviour , IBeginDragHandler , IEndDragHandler
             default:
                 break;
         }
+        checkCompletionMinigame2 = FindObjectOfType<CheckCompletionMinigame2>();
     }
+
+
 
     // Método que se llama al comenzar a arrastrar el objeto
     public void OnBeginDrag ( PointerEventData eventData )
@@ -94,6 +98,24 @@ public class DraggableItem : MonoBehaviour , IBeginDragHandler , IEndDragHandler
         {
             // Reproducir sonido soltar pieza
             AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().dropPiece, AudioManager.GetInstance().dropPieceVolume);
+
+            // Verifica si el slot es uno de los corretos y si la rotación de la pieza es correcta para ese slot
+            bool isCorrectSlotAndRotation = currentSlot.slotID == correctSlots[currentRotation];
+
+            if ( isCorrectSlotAndRotation )
+            {
+                // Marca la rotación actual como correcta en el script de comprobación si no hay rotación correcta
+                if(checkCompletionMinigame2.correctRotation == -1) {
+                    checkCompletionMinigame2.correctRotation = currentRotation;
+                    // Reproducir sonido correcto
+                    AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback, AudioManager.GetInstance().positiveFeedbackVolume);
+                }
+                else if(checkCompletionMinigame2.correctRotation == currentRotation){ //Si la rotación es correcta
+                    // Reproducir sonido correcto
+                    AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback, AudioManager.GetInstance().positiveFeedbackVolume);
+                }
+                
+            }   
         }
     }
 
@@ -117,13 +139,23 @@ public class DraggableItem : MonoBehaviour , IBeginDragHandler , IEndDragHandler
                 currentRotation = 0; // Reinicia la rotación si supera los 360 grados
             }
 
-            // Verifica si la rotación actual es la correcta
-            bool isCorrect = currentRotation == correctRotation;
+            // Verifica si el slot es uno de los corretos y si la rotación de la pieza es correcta para ese slot
+            bool isCorrect = currentSlot.slotID == correctSlots[currentRotation];
+            // Verifica si es la pieza central
+            bool isCenterPiece = correctSlots[0] == 5 && correctSlots[1] == 5 && correctSlots[2] == 5 && correctSlots[3] == 5;
 
             if ( isCorrect )
             {
-                // Reproducir sonido correcto
-                AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback, AudioManager.GetInstance().positiveFeedbackVolume);
+                // Marca la rotación actual como correcta en el script de comprobación si no hay rotación correcta
+                if(checkCompletionMinigame2.correctRotation == -1) {
+                    checkCompletionMinigame2.correctRotation = currentRotation;
+                    // Reproducir sonido correcto
+                    AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback, AudioManager.GetInstance().positiveFeedbackVolume);
+                }
+                else if(checkCompletionMinigame2.correctRotation == currentRotation){ //Si la rotación es correcta
+                    // Reproducir sonido correcto
+                    AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback, AudioManager.GetInstance().positiveFeedbackVolume);
+                }
             }   
         }
     }

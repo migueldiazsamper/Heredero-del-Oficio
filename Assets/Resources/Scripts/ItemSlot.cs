@@ -8,6 +8,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 {
     public bool freeOfItem = true; // Indicador de si el área de este componente está libre de objetos
     public CombustibleHorno currentMaderita;
+    public int slotID;  // Identificador único de este slot
 
     // Método que se ejecuta cuando un objeto es soltado en el área de este componente
     public void OnDrop(PointerEventData eventData)
