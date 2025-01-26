@@ -1514,6 +1514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeOfItem: 1
   currentMaderita: {fileID: 0}
+  slotID: 0
 --- !u!114 &451663023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1899,6 +1900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeOfItem: 1
   currentMaderita: {fileID: 0}
+  slotID: 0
 --- !u!114 &469433675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3137,6 +3139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeOfItem: 1
   currentMaderita: {fileID: 0}
+  slotID: 0
 --- !u!114 &679817892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5225,6 +5228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeOfItem: 1
   currentMaderita: {fileID: 0}
+  slotID: 0
 --- !u!114 &927522112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5717,6 +5721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeOfItem: 1
   currentMaderita: {fileID: 0}
+  slotID: 0
 --- !u!114 &1053708630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7174,6 +7179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeOfItem: 1
   currentMaderita: {fileID: 0}
+  slotID: 0
 --- !u!114 &1298362562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7309,6 +7315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeOfItem: 1
   currentMaderita: {fileID: 0}
+  slotID: 0
 --- !u!114 &1348442151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9130,6 +9137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeOfItem: 1
   currentMaderita: {fileID: 0}
+  slotID: 0
 --- !u!114 &1635299112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9295,6 +9303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeOfItem: 1
   currentMaderita: {fileID: 0}
+  slotID: 0
 --- !u!114 &1649765435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10465,6 +10474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freeOfItem: 1
   currentMaderita: {fileID: 0}
+  slotID: 0
 --- !u!114 &1806856735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12264,6 +12274,10 @@ PrefabInstance:
     - target: {fileID: 1583824780243401111, guid: 8054e6904f55f5d4c83b1a0d5f92b367, type: 3}
       propertyPath: m_Name
       value: Instrucciones Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1583824780243401111, guid: 8054e6904f55f5d4c83b1a0d5f92b367, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1869115661018070076, guid: 8054e6904f55f5d4c83b1a0d5f92b367, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
