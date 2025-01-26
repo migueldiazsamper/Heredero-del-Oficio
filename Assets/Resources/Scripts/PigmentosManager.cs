@@ -9,18 +9,28 @@ public class PigmentosManager : MonoBehaviour
 
     [SerializeField] GameObject cuchara;
     public Image mixedColorSpriteImage;
+    public Image reflejoSpriteImage;
 
     public int colorCounter {get; private set;} = 0;
     private int[] colorPalette = new int[5]; //Este array contiene el nº usado de cada color en formato {b, m, c, y, w}
 
+    [SerializeField] private Sprite[] liquidSprites; // Array con los 5 tamaños del líquido del pote grande
+    [SerializeField] private Sprite[] reflejosSprites; // Array con los 5 tamaños del reflejo del pote grande
+
+
+    //Colores base de los potecitos
+    public static Color colorRojo = new Color(169f / 255f, 45f / 255f, 45f / 255f); // Rojo
+    public static Color colorAzul = new Color(87f / 255f, 162f / 255f, 220f / 255f); // Azul
+    public static Color colorAmarillo = new Color(255f / 255f, 226f / 255f, 109f / 255f); // Amarillo
 
     //Colores de la paleta
-    public static Color colorNaranja = new Color(1.0f, 0.392f, 0.129f); // Naranja
-    public static Color colorVerdeOlivaOscuro = new Color(0.388f, 0.349f, 0.078f); // Verde Oliva Oscuro
-    public static Color colorVerdeOlivaClaro = new Color(0.663f, 0.627f, 0.271f); // Verde Oliva Claro
-    public static Color colorAzulOscuro = new Color(0.267f, 0.337f, 0.659f); // Azul Oscuro
-    public static Color colorAzulClaro = new Color(0.588f, 0.733f, 0.898f); // Azul Claro
-    public static Color colorMarron = new Color(0.596f, 0.329f, 0.0f); // Marrón
+    public static Color colorNaranja = new Color(197f / 255f, 95f / 255f, 33f / 255f); // Naranja
+    public static Color colorVerdeOlivaOscuro = new Color(67f / 255f, 58f / 255f, 3f / 255f); // Verde Oliva Oscuro
+    public static Color colorVerdeOlivaClaro = new Color(141f / 255f, 132f / 255f, 73f / 255f); // Verde Oliva Claro
+    public static Color colorAzulOscuro = new Color(68f / 255f, 86f / 255f, 168f / 255f); // Azul Oscuro
+    public static Color colorAzulClaro = new Color(186f / 255f, 221f / 255f, 243f / 255f); // Azul Claro
+    public static Color colorMarron = new Color(194f / 255f, 140f / 255f, 102f / 255f); // Marrón
+    public static Color colorDorado = new Color(235f / 255f, 169f / 255f, 48f / 255f); // Dorado
 
     void Awake(){
         for(int i = 0; i < 5; i++) colorPalette[i] = 0;
@@ -29,6 +39,8 @@ public class PigmentosManager : MonoBehaviour
     public void AddColorToMix(String colorString){
         if(colorCounter <= 5){
             colorCounter++;
+            mixedColorSpriteImage.sprite = liquidSprites[colorCounter-1];
+            reflejoSpriteImage.sprite = reflejosSprites[colorCounter-1];
             AddColorToPalette(colorString);
             DisplayColor(colorString);
             Debug.Log(colorCounter);
@@ -40,43 +52,35 @@ public class PigmentosManager : MonoBehaviour
 
     private void AddColorToPalette(String color){
         switch (color){
-            case "Black": colorPalette[0]++; break;
-            case "Magenta": colorPalette[1]++; break;
-            case "Cyan": colorPalette[2]++; break;
-            case "Yellow": colorPalette[3]++; break;
-            case "White": colorPalette[4]++; break;
+            case "Negro": colorPalette[0]++; break;
+            case "Rojo": colorPalette[1]++; break;
+            case "Azul": colorPalette[2]++; break;
+            case "Amarillo": colorPalette[3]++; break;
+            case "Blanco": colorPalette[4]++; break;
         }
     }
 
     private void DisplayColor(String colorString){
         ///Show the last color added
-        float colorAlphaValue = 1.0f;
-        switch(colorCounter){
-            case 1: colorAlphaValue = 0.588f; break;
-            case 2: colorAlphaValue = 0.686f; break;
-            case 3: colorAlphaValue = 0.784f; break;
-            case 4: colorAlphaValue = 0.882f; break;
-            case 5: colorAlphaValue = 1.0f; break;
-        }
         mixedColorSpriteImage.color = ProvideColor(colorString);
-        mixedColorSpriteImage.color = new Color(mixedColorSpriteImage.color.r, mixedColorSpriteImage.color.g, mixedColorSpriteImage.color.b, colorAlphaValue);
-        Debug.Log(mixedColorSpriteImage.color);
+
     }
 
     public Color ProvideColor(String colorString){
         switch (colorString){
-            case "Black":   return Color.black;
-            case "Magenta": return Color.magenta;
-            case "Cyan":    return Color.cyan;
-            case "Yellow":  return Color.yellow;
-            case "White":   return Color.white;
-            //La paleta está en formato BMCYW
+            case "Negro":       return Color.black;
+            case "Rojo":        return colorRojo;
+            case "Azul":        return colorAzul;
+            case "Amarillo":    return colorAmarillo;
+            case "Blanco":      return Color.white;
+            //La paleta está en formato N-R-Az-Am-B
             case "02030": return colorNaranja;
             case "10220": return colorVerdeOlivaOscuro;
             case "10112": return colorVerdeOlivaClaro;
             case "10400": return colorAzulOscuro;
             case "00302": return colorAzulClaro;
             case "01112": return colorMarron;
+            case "01031": return colorDorado;
             default: return Color.grey;
         }
     }

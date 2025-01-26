@@ -1,4 +1,8 @@
+using System.Numerics;
+using Unity.VisualScripting;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
+using Vector2 = UnityEngine.Vector2;
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(LineRenderer))]
@@ -30,14 +34,14 @@ public class UnirPuntos : MonoBehaviour
                     isDragging = true;
                     Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     mousePosition.z = 0f;
-                    lineRenderer.SetPosition(0,mousePosition); //Creamos el primer punto de la línea donde está el ratón
+                    lineRenderer.SetPosition(0,new Vector3(mousePosition.x, mousePosition.y, -5)); //Creamos el primer punto de la línea donde está el ratón
                 }
             }
             if (isDragging)
             {
                 Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);    //Actualizamos la posición del ratón
                 mousePosition.z = 0f;                                                           //para asegurarnos que está en el plano correcto
-                lineRenderer.SetPosition(1,mousePosition); //Actualizamos el segundo punto de la línea, la línea sigue al ratón en tiempo real
+                lineRenderer.SetPosition(1,new Vector3(mousePosition.x, mousePosition.y, -5)); //Actualizamos el segundo punto de la línea, la línea sigue al ratón en tiempo real
                 endPoint = mousePosition;
             }
 
