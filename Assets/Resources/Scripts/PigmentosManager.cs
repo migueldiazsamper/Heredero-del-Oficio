@@ -24,13 +24,27 @@ public class PigmentosManager : MonoBehaviour
     public static Color colorAmarillo = new Color(255f / 255f, 226f / 255f, 109f / 255f); // Amarillo
 
     //Colores de la paleta
-    public static Color colorNaranja = new Color(197f / 255f, 95f / 255f, 33f / 255f); // Naranja
-    public static Color colorVerdeOlivaOscuro = new Color(67f / 255f, 58f / 255f, 3f / 255f); // Verde Oliva Oscuro
-    public static Color colorVerdeOlivaClaro = new Color(141f / 255f, 132f / 255f, 73f / 255f); // Verde Oliva Claro
-    public static Color colorAzulOscuro = new Color(68f / 255f, 86f / 255f, 168f / 255f); // Azul Oscuro
-    public static Color colorAzulClaro = new Color(186f / 255f, 221f / 255f, 243f / 255f); // Azul Claro
-    public static Color colorMarron = new Color(194f / 255f, 140f / 255f, 102f / 255f); // Marrón
-    public static Color colorDorado = new Color(235f / 255f, 169f / 255f, 48f / 255f); // Dorado
+    private static Color colorNaranja = new Color(197f / 255f, 95f / 255f, 33f / 255f); // Naranja
+    private static Color colorVerdeOlivaOscuro = new Color(67f / 255f, 58f / 255f, 3f / 255f); // Verde Oliva Oscuro
+    private static Color colorVerdeOlivaClaro = new Color(141f / 255f, 132f / 255f, 73f / 255f); // Verde Oliva Claro
+    private static Color colorAzulOscuro = new Color(68f / 255f, 86f / 255f, 168f / 255f); // Azul Oscuro
+    private static Color colorAzulClaro = new Color(186f / 255f, 221f / 255f, 243f / 255f); // Azul Claro
+    private static Color colorMarron = new Color(194f / 255f, 140f / 255f, 102f / 255f); // Marrón
+    private static Color colorDorado = new Color(235f / 255f, 169f / 255f, 48f / 255f); // Dorado
+
+    //Colores finales de la mancerina
+    //Solo algunos de los colores cambian en su versión final
+    private static Color colorVerdeOlivaOscuroFinal = new Color( 99f / 255f, 89f / 255f, 20f / 255f); // Verde Oliva Oscuro Final
+    private static Color colorDoradoFinal = new Color(245f / 255f, 208f / 255f, 111f / 255f); // Dorado Final
+
+    /* 197, 95, 33
+        67, 58, 3 —> 99, 89, 20
+        141, 132, 73 —> 141, 132, 73
+        68, 86, 168
+        186, 221, 243
+        194, 140, 102
+        235, 169, 48 —> 245, 208, 111
+    */
 
     void Awake(){
         for(int i = 0; i < 5; i++) colorPalette[i] = 0;
@@ -93,7 +107,12 @@ public class PigmentosManager : MonoBehaviour
     }
 
     public void SaveColor(){
-        PhasesManager.instance.coloresMancerina[PhasesManager.instance.savedColors] = mixedColorSpriteImage.color;
+        
+        //Checks para los casos
+        if(mixedColorSpriteImage.color == colorVerdeOlivaOscuro) PhasesManager.instance.coloresMancerina[PhasesManager.instance.savedColors] = colorVerdeOlivaOscuroFinal;
+        else if(mixedColorSpriteImage.color == colorDorado) PhasesManager.instance.coloresMancerina[PhasesManager.instance.savedColors] = colorDoradoFinal;
+        else PhasesManager.instance.coloresMancerina[PhasesManager.instance.savedColors] = mixedColorSpriteImage.color;
+
         PhasesManager.instance.savedColors++;
         if(PhasesManager.instance.savedColors >= 3) ChangeScenes.LoadSceneButton("DialogoInterior"); 
         else ChangeScenes.LoadSceneButton("Minijuego 6");
