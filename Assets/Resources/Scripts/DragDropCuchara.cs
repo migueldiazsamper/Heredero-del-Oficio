@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Microsoft.Unity.VisualStudio.Editor;
@@ -16,7 +17,7 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     private int numOfCorrectColors = 0;
 
     // Color al que se debe llegar al mezclar todos los pigmentos
-    [SerializeField] private Color[] targetColors;
+    [SerializeField] private Color[][] targetColors;
     //Referencias a las partes que conforman la cuchara
     [SerializeField] GameObject cabeza;
     [SerializeField] GameObject cuerpo;
@@ -74,14 +75,26 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     }
 
     public void Start (){
+
         liquidoCanvasGroup.alpha = 0f;
-        
-        targetColors = new Color[]
+        Color[] targetColorsFirst = new Color[]
         {
-            PigmentosManager.colorNaranja,
-            PigmentosManager.colorVerdeOlivaClaro,
-            PigmentosManager.colorAzulClaro
+            new Color(235f / 255f, 169f / 255f, 48f / 255f) // Dorado
         };
+        Color[] targetColorsSecond = new Color[]
+        {
+            new Color(68f / 255f, 86f / 255f, 168f / 255f), // Azul Oscuro
+            new Color(67f / 255f, 58f / 255f, 3f / 255f), // Verde Oliva Oscuro
+            new Color(197f / 255f, 95f / 255f, 33f / 255f) // Naranja
+        };
+        Color[] targetColorsThird = new Color[]
+        {
+            new Color(186f / 255f, 221f / 255f, 243f / 255f), // Azul Claro
+            new Color(141f / 255f, 132f / 255f, 73f / 255f), // Verde Oliva Claro
+            new Color(194f / 255f, 140f / 255f, 102f / 255f) // Marrón
+        };
+        targetColors = new Color[][] { targetColorsFirst, targetColorsSecond, targetColorsThird };
+        
     }
 
     public void OnBeginDrag(PointerEventData pointerEventData){
@@ -201,12 +214,15 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             rectTransform.anchoredPosition = new Vector2(STARTING_POSITION_X, STARTING_POSITION_Y);
             pigmentosManager.MixColors();
             
-
-            if(pigmentosManager.mixedColorSpriteImage.GetComponent<Image>().color == targetColors[PhasesManager.instance.savedColors])
+            
+            bool isColorCorrect = Array.Exists(targetColors[PhasesManager.instance.savedColors], element => element == pigmentosManager.mixedColorSpriteImage.GetComponent<Image>().color);
+            //pigmentosManager.mixedColorSpriteImage.GetComponent<Image>().color == Array.Exists(targetColors[PhasesManager.instance.savedColors]);
+            if(isColorCorrect)
             {
                 // Reproducir sonido feedback positivo
                 AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback, AudioManager.GetInstance().positiveFeedbackVolume);
                 numOfCorrectColors++;
+                Debug.Log("COLOR CORRECTO AMEGO");
             }
 
             saveColorButton.SetActive(true);
@@ -237,4 +253,5 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     public int NumOfCorrectColors(){
         return numOfCorrectColors;
     }
+
 }
