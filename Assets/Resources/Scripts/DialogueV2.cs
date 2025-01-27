@@ -37,6 +37,8 @@ public class DialogueV2 : MonoBehaviour
 
     private int[] phasesFurnaces = { 8, 9, 14, 15 };
 
+    private int currentDialogueIndex = 0; // Índice de diálogo actual
+
     private void Start ()
     {
         stories = new Story[ inkJSONs.Length ];
@@ -47,6 +49,7 @@ public class DialogueV2 : MonoBehaviour
         }
 
         currentStory = stories[ PhasesManager.instance.currentPhase ];
+        currentDialogueIndex = 0; // Inicializa el índice de diálogo actual
         StartCoroutine(WaitForTransitionToFinish());
         transitionImageAnimator = GameObject.Find("TransitionImage").GetComponent<Animator>();
     }
@@ -178,11 +181,22 @@ public class DialogueV2 : MonoBehaviour
                 StopAllCoroutines();
                 isTyping = true;
                 StartCoroutine(TypeLine(nextLine));
+
+                // Incrementamos el índice actual del diálogo
+                currentDialogueIndex++;
+
+                // Comprobamos si estamos en el Story 4 y en el diálogo específico (por ejemplo, el índice 3)
+                if (PhasesManager.instance.currentPhase == 4 && currentDialogueIndex == 16)
+                {
+                    // Reproducir sonido
+                    AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().brokenPiece, AudioManager.GetInstance().brokenPieceVolume);    
+                }
             }
             else
             {
                 NextNPC();
                 isTyping = false;
+                currentDialogueIndex = 0; // Reinicia el índice de diálogo actual
             }
         }
     }
