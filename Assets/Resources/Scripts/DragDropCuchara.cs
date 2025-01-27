@@ -22,9 +22,11 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     [SerializeField] GameObject cabeza;
     [SerializeField] GameObject cuerpo;
     [SerializeField] GameObject liquido;
+    [SerializeField] GameObject reflejo;
     private CanvasGroup cabezaCanvasGroup;
     private CanvasGroup cuerpoCanvasGroup;
     private CanvasGroup liquidoCanvasGroup;
+    private CanvasGroup reflejoCanvasGroup;
     //Offsets para asegurar que la cuchara queda bien al quedar solo el cuerpo visible en el bote
     [SerializeField] private float offSetBoteX;
     [SerializeField] private float offSetBoteY;
@@ -76,6 +78,7 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
         cabezaCanvasGroup =     cabeza.GetComponent< CanvasGroup >();
         cuerpoCanvasGroup =     cuerpo.GetComponent< CanvasGroup >();
         liquidoCanvasGroup =    liquido.GetComponent< CanvasGroup >();
+        reflejoCanvasGroup =    reflejo.GetComponent< CanvasGroup >();
     }
 
     public void Start (){
@@ -119,6 +122,7 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             if(isCarryingPigment){
                 liquidoCanvasGroup.alpha = 1f;
                 cabezaCanvasGroup.alpha = 1f;
+                reflejoCanvasGroup.alpha = 1f;
 
             }
         }
@@ -186,6 +190,7 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
 
                 cabezaCanvasGroup.alpha = 0;
                 liquidoCanvasGroup.alpha = 0;
+                reflejoCanvasGroup.alpha = 0;
                 rectTransform.rotation = Quaternion.Euler( 0, 0, 165);
                 RectTransform boteRectTransform = pointerEventData.pointerEnter.GetComponent< RectTransform >();
                 rectTransform.anchoredPosition = new Vector2(boteRectTransform.anchoredPosition.x + offSetBoteX ,boteRectTransform.anchoredPosition.y + offSetBoteY);
