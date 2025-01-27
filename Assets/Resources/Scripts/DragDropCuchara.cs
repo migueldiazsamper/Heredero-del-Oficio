@@ -38,6 +38,10 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     private bool isCarryingPigment = false; //Booleano que cambia a true después de sacar la cuchara de un bote de pigmento
 
     private string currentColor;
+    private Color firstColor;
+    private Color secondColor;
+    private Color thirdColor;
+    private Color[] savedColorsToCheck;
 
     ///Variables relacionadas con la fase de mezclar todos los pigmentos del bol
     ///Spawning position for mixing
@@ -79,6 +83,8 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
         liquidoCanvasGroup.alpha = 0f;
         Color[] targetColorsFirst = new Color[]
         {
+            new Color(235f / 255f, 169f / 255f, 48f / 255f), // Dorado
+            new Color(235f / 255f, 169f / 255f, 48f / 255f), // Dorado
             new Color(235f / 255f, 169f / 255f, 48f / 255f) // Dorado
         };
         Color[] targetColorsSecond = new Color[]
@@ -93,8 +99,10 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             new Color(141f / 255f, 132f / 255f, 73f / 255f), // Verde Oliva Claro
             new Color(194f / 255f, 140f / 255f, 102f / 255f) // Marrón
         };
+
         targetColors = new Color[][] { targetColorsFirst, targetColorsSecond, targetColorsThird };
         
+        savedColorsToCheck = new Color[] {firstColor, secondColor, thirdColor};
     }
 
     public void OnBeginDrag(PointerEventData pointerEventData){
@@ -222,6 +230,8 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
                 // Reproducir sonido feedback positivo
                 AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback, AudioManager.GetInstance().positiveFeedbackVolume);
                 numOfCorrectColors++;
+                savedColorsToCheck[PhasesManager.instance.savedColors] = pigmentosManager.mixedColorSpriteImage.GetComponent<Image>().color;
+                if(IsRightColorCombination()) numOfCorrectColors *= 2;
                 Debug.Log("COLOR CORRECTO AMEGO");
             }
 
@@ -231,6 +241,13 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             this.enabled = false;
         }
 
+    }
+
+    private bool IsRightColorCombination(){ // Sólo comprueba el segundo y tercer color porque el primero siempre es dorado
+        if(numOfCorrectColors != 3) return false; //Si los 3 colores no son correctos, no se comprueba si es una combinación correcta.
+        else if(Array.IndexOf(targetColors[1], secondColor) == Array.IndexOf(targetColors[2], thirdColor))
+            return true;
+        else return false;
     }
 
     IEnumerator MixingCountDown(){

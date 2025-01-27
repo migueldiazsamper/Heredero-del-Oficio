@@ -84,7 +84,7 @@ public class ScoreManager : MonoBehaviour
         return 0;
     }
 
-    //El rango de puntuación del minijuego 6 es de [0, 15]
+    //El rango de puntuación del minijuego 6 es de [0, 30]
     private int CalculateMinigameScore6(){
         return FindAnyObjectByType<DragDropCuchara>().NumOfCorrectColors() * 5;
         
