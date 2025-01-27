@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f13abaec044e5ea4da336c9dbc6d9a53
+guid: 8ff9d10a2c44fd3499700b7c52652f9e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,49 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gridpath_small_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fdec70ebfd08d8847a3961d074ca6050
-      internalID: -1229388488
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gridpath_small_1
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 89be4338cfa1c444cb24cb35be57a536
-      internalID: 106418371
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gridpath_small_2
+      name: tilegrass_0
       rect:
         serializedVersion: 2
         x: 0
@@ -179,29 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9009990b06c8938478274cb3430146b7
-      internalID: -200411478
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gridpath_small_3
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5fd336f6653d4d4d8f1471d79bd78b6
-      internalID: 809162206
+      spriteID: d43f7fdc784194f44bf6e772771294b2
+      internalID: 928601677
       vertices: []
       indices: 
       edges: []
@@ -217,10 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      gridpath_small_0: -1229388488
-      gridpath_small_1: 106418371
-      gridpath_small_2: -200411478
-      gridpath_small_3: 809162206
+      tilegrass_0: 928601677
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
