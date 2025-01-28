@@ -22,6 +22,7 @@ public class PhasesManager : MonoBehaviour
     private static Color tercerColor;
     public Color[] coloresMancerina = {primerColor, segundoColor, tercerColor};
     public int savedColors = 0;
+    public string currentQuest = "Fabrica";
 
     private void Awake()
     {
@@ -65,6 +66,31 @@ public class PhasesManager : MonoBehaviour
 
     public void NextPhase()
     {
+        int nextPhase = currentPhase + 1;
+        switch(nextPhase)
+        {
+            case 2:
+                currentQuest = "Mina";           
+            break;
+            case 8:
+                currentQuest = "Viejo";
+            break;
+            case 10:
+                currentQuest = "Fabrica";
+            break;
+            case 12:
+                currentQuest = "Tienda";
+            break;
+            case 14:
+                currentQuest = "Hornos";
+            break;
+            case 16:
+                currentQuest = "Palacio";
+            break;
+            default:
+            break;
+        }
+
         if (currentPhase < maxPhases)
         {
             if (++currentPhase == 8)

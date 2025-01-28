@@ -59,6 +59,12 @@ public class NPCDialogue : MonoBehaviour
                         if ( isSabio )
                         {
                             PhasesManager.instance.tieneQueHablarConSabio = false;
+                            PhasesManager.instance.currentQuest = "Hornos";
+                        }
+
+                        if(isLluna)
+                        {
+                            PhasesManager.instance.currentQuest = "Fabrica";
                         }
                     }
                 }

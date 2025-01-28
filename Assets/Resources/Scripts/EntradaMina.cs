@@ -76,6 +76,8 @@ public class EntradaMina : MonoBehaviour
                 }
 
                 PhasesManager.instance.vecesMina++;
+
+                PhasesManager.instance.currentQuest = "Fabrica";
             }
         }
     }
