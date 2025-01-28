@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -266,6 +265,7 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
         // Cuando llegas al límite de colores, la cuchara se bloquea en el bol para que remuevas
         cabezaCanvasGroup.alpha = 0;
         liquidoCanvasGroup.alpha = 0;
+        reflejoCanvasGroup.alpha = 0;
         rectTransform.rotation = Quaternion.Euler( 0, 0, 165);
         rectTransform.anchoredPosition = new Vector2(STARTING_POSITION_X, STARTING_POSITION_Y);
         isLockedToBowl = true;

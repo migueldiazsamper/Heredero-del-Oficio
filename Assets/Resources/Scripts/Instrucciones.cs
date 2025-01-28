@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Instrucciones : MonoBehaviour
@@ -26,6 +27,12 @@ public class Instrucciones : MonoBehaviour
         // Configurar el estado inicial
         currentIndex = 0;
         UpdateInstructions();
+
+        if(SceneManager.GetActiveScene().name == "Minijuego 3" && PhasesManager.instance.hasMinigame3HappenedAlready) this.enabled = false;
+        else PhasesManager.instance.hasMinigame3HappenedAlready = true;
+
+        if(SceneManager.GetActiveScene().name == "Minijuego 6" && PhasesManager.instance.hasMinigame6HappenedAlready) this.enabled = false;
+        else PhasesManager.instance.hasMinigame6HappenedAlready = true;
     }
 
     public void NextInstruction()

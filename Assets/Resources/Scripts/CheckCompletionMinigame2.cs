@@ -33,11 +33,20 @@ public class CheckCompletionMinigame2 : MonoBehaviour
         }
         return true;
     }
+
+    private bool IsAnySlotFree(){
+        foreach (var slot in slots)
+        {
+            if(slot.GetComponent<ItemSlot>().freeOfItem == true) return true;
+        }
+        return false;
+    }
+
     private bool CheckCompletion(){
         foreach (var piece in pieces)
         {  
             // Si alguna pieza no está en la rotación que se ha decidido como correcta, se devuelve false
-            if (piece.GetComponent<DraggableItem>().currentRotation != correctRotation) return false; 
+            if (piece.GetComponent<DraggableItem>().currentRotation != correctRotation || IsAnySlotFree()) return false; 
         }
         return true;
     }

@@ -382,7 +382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1583824780243401111, guid: 8054e6904f55f5d4c83b1a0d5f92b367, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1869115661018070076, guid: 8054e6904f55f5d4c83b1a0d5f92b367, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1233,7 +1233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4473210956156451606, guid: 1729eeba5dbc2cc4d9e81c5fac62b019, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2312,7 +2312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8399030810014285065, guid: 658839708b43f0b4a9700ba5b56b3b13, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3902,6 +3902,22 @@ PrefabInstance:
     - target: {fileID: 4287923325778199235, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500144749989853584, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500144749989853584, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500144749989853584, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500144749989853584, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 4737062301650792019, guid: 26d231cae05258c4f9135da57c2be968, type: 3}
       propertyPath: m_TagString

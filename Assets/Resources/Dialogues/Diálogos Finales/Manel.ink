@@ -8,4 +8,5 @@ para ser parte de la plantilla de la fábrica,
 pero no dudo que podrás entrar a su debido tiempo.
 Has hecho un muy buen trabajo, cariño.
 Tu madre y yo estamos muy contentos.
+¡Eres un pieza!
 ¡Sigue así!

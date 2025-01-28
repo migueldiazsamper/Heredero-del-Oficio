@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private SceneAsset firstScene; // Escena del primer nivel
+    [SerializeField] private string firstScene; // Escena del primer nivel
     [SerializeField] private GameObject settings;
     [SerializeField] private GameObject main;
     [SerializeField] private GameObject controls;
@@ -23,9 +23,9 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         // Cargar la escena del menú principal
-        string scenePath = AssetDatabase.GetAssetPath(firstScene);
-        string sceneName = System.IO.Path.GetFileNameWithoutExtension(scenePath);
-        ChangeScenes.LoadScene(sceneName);
+        //string scenePath = AssetDatabase.GetAssetPath(firstScene);
+        //string sceneName = System.IO.Path.GetFileNameWithoutExtension(scenePath);
+        ChangeScenes.LoadScene(firstScene);
     }
 
     public void QuitGame()

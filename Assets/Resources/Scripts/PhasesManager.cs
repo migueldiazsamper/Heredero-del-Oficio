@@ -23,6 +23,9 @@ public class PhasesManager : MonoBehaviour
     public Color[] coloresMancerina = {primerColor, segundoColor, tercerColor};
     public int savedColors = 0;
 
+    public bool hasMinigame3HappenedAlready = false;
+    public bool hasMinigame6HappenedAlready = false;
+
     private void Awake()
     {
         // Implementación del patrón singleton
