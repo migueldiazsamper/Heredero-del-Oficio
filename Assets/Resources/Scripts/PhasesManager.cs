@@ -73,28 +73,30 @@ public class PhasesManager : MonoBehaviour
         else hasMinigame6HappenedAlready = true; */
     }
 
-/*     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Add your code here that should run when the scene loads
-        Debug.Log("Scene loaded: " + scene.name);
-        
-        currentPhase = 0;
-        maxPhases = 16;
-        puntuacionTotal = 0;
-        puntuacionCondesa = 80;
-        nextIsPueblo = false;
-        vecesMina = 0;
-        tieneQueHablarConSabio = false;
-        zonasDeAparicion = new Vector2[4];
-        zonasDeAparicion[0] = new Vector2(44.95f, 81.85f); // Casa
-        zonasDeAparicion[1] = new Vector2(-9.83f, 47.679f); // Mina
-        zonasDeAparicion[2] = new Vector2(1.55f, 98.5f); // Fábrica
-        zonasDeAparicion[3] = new Vector2(28.1f, 117.0f); // Hornos
-        primerColor = new Color();
-        segundoColor = new Color();
-        tercerColor = new Color();
-        coloresMancerina = new Color[] { primerColor, segundoColor, tercerColor };
-        savedColors = 0;
+        if (SceneManager.GetActiveScene().name == "MainMenu"){
+            // Add your code here that should run when the scene loads
+            Debug.Log("Scene loaded: " + scene.name);
+            
+            currentPhase = 0;
+            maxPhases = 16;
+            puntuacionTotal = 0;
+            puntuacionCondesa = 80;
+            nextIsPueblo = false;
+            vecesMina = 0;
+            tieneQueHablarConSabio = false;
+            zonasDeAparicion = new Vector2[4];
+            zonasDeAparicion[0] = new Vector2(44.95f, 81.85f); // Casa
+            zonasDeAparicion[1] = new Vector2(-9.83f, 47.679f); // Mina
+            zonasDeAparicion[2] = new Vector2(1.55f, 98.5f); // Fábrica
+            zonasDeAparicion[3] = new Vector2(28.1f, 117.0f); // Hornos
+            primerColor = new Color();
+            segundoColor = new Color();
+            tercerColor = new Color();
+            coloresMancerina = new Color[] { primerColor, segundoColor, tercerColor };
+            savedColors = 0;
+        }
     }
 
     private void OnEnable()
@@ -105,7 +107,7 @@ public class PhasesManager : MonoBehaviour
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
-    } */
+    }
 
 
     public void NextPhase()
