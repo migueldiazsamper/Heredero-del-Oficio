@@ -65,6 +65,11 @@ public class PhasesManager : MonoBehaviour
         tercerColor = new Color();
         coloresMancerina = new Color[] { primerColor, segundoColor, tercerColor };
         savedColors = 0;
+
+        if (SceneManager.GetActiveScene().name == "Minijuego 3" && hasMinigame3HappenedAlready) this.enabled = false;
+        else hasMinigame3HappenedAlready = true;
+        if (SceneManager.GetActiveScene().name == "Minijuego 6" && hasMinigame6HappenedAlready) this.enabled = false;
+        else hasMinigame6HappenedAlready = true;
     }
 
     public void NextPhase()

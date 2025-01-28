@@ -67,8 +67,8 @@ public class TemperaturaHorno : MonoBehaviour
 
     void ChangeCeramicColor(){
         if(totalTemperature < 500){
-            ceramic1Image.color = Color.blue;
-            ceramic2Image.color = Color.blue;
+            ceramic1Image.color = new Color(0.4f, 0.4f, 0.4f);
+            ceramic2Image.color = new Color(0.4f, 0.4f, 0.4f);
         }
         else if(totalTemperature < 1000){
             ceramic1Image.color = Color.cyan;
