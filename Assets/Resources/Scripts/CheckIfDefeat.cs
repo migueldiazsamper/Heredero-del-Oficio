@@ -17,6 +17,7 @@ public class CheckIfDefeat : MonoBehaviour
 
     // Referencia pública al componente CountDownTimer.
     public CountDownTimer countDownTimer;
+    private bool coroutineStarted = false;
 
     // Botón que se activa cuando se alcanza la condición de derrota.
     [ SerializeField ]
@@ -35,15 +36,19 @@ public class CheckIfDefeat : MonoBehaviour
     }
 
     private void Start(){
-        StartCoroutine(ScoreManagementCoroutine());
+        //StartCoroutine(ScoreManagementCoroutine());
     }
 
     /// <summary>
     /// Método Update: verifica continuamente si la rotación del objeto de referencia excede el umbral permitido.
     /// </summary>
 
-    private void Update ()
+    private void FixedUpdate ()
     {
+        if (coroutineStarted == false){
+            StartCoroutine(ScoreManagementCoroutine());
+            coroutineStarted = true;
+        }
         if(countDownTimer.isVictory){this.enabled = false;}
         // Comprueba si existe el objeto de referencia de rotación.
         bool referenciaDeRotacionExiste = rotationReference != null;
