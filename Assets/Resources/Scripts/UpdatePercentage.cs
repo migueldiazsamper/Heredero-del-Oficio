@@ -29,7 +29,7 @@ public class UpdatePercentage : MonoBehaviour
         if ( percentageOfTotal == 100 && !isDone )
         {
             isDone = true;
-            ShowWellDone();
+            //ShowWellDone();
         }
     }
 
