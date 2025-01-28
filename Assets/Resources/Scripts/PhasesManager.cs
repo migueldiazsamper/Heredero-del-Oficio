@@ -73,7 +73,7 @@ public class PhasesManager : MonoBehaviour
         else hasMinigame6HappenedAlready = true; */
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+/*     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // Add your code here that should run when the scene loads
         Debug.Log("Scene loaded: " + scene.name);
@@ -105,7 +105,7 @@ public class PhasesManager : MonoBehaviour
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
+    } */
 
 
     public void NextPhase()
