@@ -7,6 +7,7 @@ public class MainCharacterManager : MonoBehaviour
     [SerializeField] private float speed = 10.0f;
     private float speedX;
     private float speedY;
+    private Vector2 lastVelocity;
     [SerializeField] private Transform characterTransform;
     [SerializeField] private GameObject visualCue;
     private Animator animator;
@@ -64,6 +65,13 @@ public class MainCharacterManager : MonoBehaviour
 
                 animator.SetFloat("speedX", inputVelocity.x);
                 animator.SetFloat("speedY", inputVelocity.y);
+
+                if(animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") && lastVelocity.x > 0) GetComponent<SpriteRenderer>().flipX = true;
+                else {
+                    GetComponent<SpriteRenderer>().flipX = false;
+                    lastVelocity = inputVelocity;
+                }
+                
 
                 rb.velocity = inputVelocity * speed;
 

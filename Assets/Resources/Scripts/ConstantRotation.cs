@@ -100,6 +100,15 @@ public class ConstantRotation : MonoBehaviour
         angle = 0.0f;
 
         // Inicia la corrutina de variación de rotación
+        //StartCoroutine(VariationCoroutine());
+    }
+
+    /// <summary>
+    /// Método OnActive que se llama cuando el GameObject se activa
+    /// </summary>
+    void OnEnable()
+    {
+        // Inicia la corrutina de variación de rotación
         StartCoroutine(VariationCoroutine());
     }
 

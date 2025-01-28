@@ -96,6 +96,11 @@ public class PigmentosManager : MonoBehaviour
             case "00302": return colorAzulClaro;
             case "01112": return colorMarron;
             case "01031": return colorDorado;
+            case "50000": return Color.black;
+            case "05000": return colorRojo;
+            case "00500": return colorAzul;
+            case "00050": return colorAmarillo;
+            case "00005": return Color.white;
             default: return Color.grey;
         }
     }

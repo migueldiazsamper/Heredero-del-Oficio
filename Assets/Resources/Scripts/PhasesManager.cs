@@ -67,10 +67,9 @@ public class PhasesManager : MonoBehaviour
         coloresMancerina = new Color[] { primerColor, segundoColor, tercerColor };
         savedColors = 0;
 
-        /* if (SceneManager.GetActiveScene().name == "Minijuego 3" && hasMinigame3HappenedAlready) this.enabled = false;
-        else hasMinigame3HappenedAlready = true;
-        if (SceneManager.GetActiveScene().name == "Minijuego 6" && hasMinigame6HappenedAlready) this.enabled = false;
-        else hasMinigame6HappenedAlready = true; */
+    
+
+
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -96,6 +95,17 @@ public class PhasesManager : MonoBehaviour
             tercerColor = new Color();
             coloresMancerina = new Color[] { primerColor, segundoColor, tercerColor };
             savedColors = 0;
+        }
+
+        if (SceneManager.GetActiveScene().name == "Minijuego 3") {
+            Debug.Log(SceneManager.GetActiveScene().name + " ESTE ES EL MINIJUEGO 3"); 
+            if(hasMinigame3HappenedAlready) GameObject.Find("Instrucciones Canvas").SetActive(false);
+            else hasMinigame3HappenedAlready = true;
+        }
+        if (SceneManager.GetActiveScene().name == "Minijuego 6") {
+            Debug.Log(SceneManager.GetActiveScene().name + " ESTE ES EL MINIJUEGO 6");
+            if(hasMinigame6HappenedAlready) GameObject.Find("Instrucciones Canvas").SetActive(false);
+            else hasMinigame6HappenedAlready = true;
         }
     }
 
