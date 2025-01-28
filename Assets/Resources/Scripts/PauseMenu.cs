@@ -22,7 +22,6 @@ public class PauseMenu : MonoBehaviour
         {
             Instantiate(audioManagerPrefab);
         }
-        
     }
 
     private void Start()
