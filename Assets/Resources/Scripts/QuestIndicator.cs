@@ -11,22 +11,22 @@ public class QuestIndicator : MonoBehaviour
         switch (PhasesManager.instance.currentQuest)
         {
             case "Fabrica":
-                indicador.transform.position = new Vector2(1.41f, 98.78f);
+                indicador.transform.position = new Vector2(3.66f, 99.37f);
                 break;
             case "Mina":
                 indicador.transform.position = new Vector2(-8.6f, 48.4f);
                 break;
             case "Hornos":
-                indicador.transform.position = new Vector2(27.4f, 117.1f);
+                indicador.transform.position = new Vector2(28.81f, 114.11f);
                 break;
             case "Viejo":
-                indicador.transform.position = new Vector2(14.8f, 70.2f);
+                indicador.transform.position = new Vector2(43.09f, 45.31f);
                 break;
             case "Tienda":
-                indicador.transform.position = new Vector2(35.8f, 69.8f);
+                indicador.transform.position = new Vector2(31.94f, 70.88f);
                 break;
             case "Palacio":
-                indicador.transform.position = new Vector2(52.1f, 98.2f);
+                indicador.transform.position = new Vector2(52.1f, 98.16f);
                 break;
         }
     }
