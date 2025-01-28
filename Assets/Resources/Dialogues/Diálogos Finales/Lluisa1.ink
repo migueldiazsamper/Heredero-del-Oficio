@@ -22,7 +22,8 @@ Es cierto que los moldes se suelen dividir
 en partes para desmontarlos más fácilmente, así que si lo reconstruyeses, 
 quizá todavía se pueda usar.
 Está bien, te daré un voto de confianza.
-Si de verdad eres capaz de arreglar el molde, te permitiré utilizarlo para tu pieza.
+Si de verdad eres capaz de arreglar el molde, 
+te permitiré utilizarlo para tu pieza.
 Arrastra las piezas hasta sus posiciones correctas y tócalas para rotarlas.
 Unas manos hábiles que sean capaces 
 de montar el molde rápidamente son fundamentales 
