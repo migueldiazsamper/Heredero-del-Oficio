@@ -875,6 +875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 916525283}
   objetos: []
+  numberOfDots: 0
   settings: {fileID: 916525282}
   pause: {fileID: 916525281}
   musicSlider: {fileID: 916525280}
@@ -1171,7 +1172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6565511453291284396, guid: 835bcbd473da1954483348de4c90d04a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6865765090255866806, guid: 835bcbd473da1954483348de4c90d04a, type: 3}
       propertyPath: m_Pivot.x
