@@ -71,7 +71,7 @@ public class EscenaCondesa : MonoBehaviour
 
     private void NextNPC ()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MancerinaFinal");
     }
 
     private void NextLine ()

@@ -850,6 +850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 741770620}
   objetos: []
+  numberOfDots: 0
   settings: {fileID: 741770619}
   pause: {fileID: 741770618}
   musicSlider: {fileID: 741770617}
@@ -1928,7 +1929,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3cb5d651ee8fd0f49812d62bbff709f2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2f355d6957c41cd4aa071ef578c84ce3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
