@@ -24,6 +24,9 @@ public class PhasesManager : MonoBehaviour
     public int savedColors = 0;
     public string currentQuest = "Fabrica";
 
+    public bool hasMinigame3HappenedAlready = false;
+    public bool hasMinigame6HappenedAlready = false;
+
     private void Awake()
     {
         // Implementación del patrón singleton

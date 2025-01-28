@@ -885,6 +885,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TransitionImage
       objectReference: {fileID: 0}
+    - target: {fileID: 4473210956156451606, guid: 1729eeba5dbc2cc4d9e81c5fac62b019, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2430,7 +2434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 508e32581d642f1449d5fc297bdc9269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: {fileID: 102900000, guid: 897c58aea0e4c354f9fcf4aeb462a568, type: 3}
+  sceneToLoad: 
 --- !u!114 &1259316701 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3859912430342986908, guid: b3ed8caf1f640d54e8f7ed0b9790338c, type: 3}
@@ -3323,6 +3327,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939458127}
   m_CullTransparentMesh: 1
+--- !u!1001 &2031454954
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1097283576715213148, guid: 658839708b43f0b4a9700ba5b56b3b13, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.38274598
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097283576715213148, guid: 658839708b43f0b4a9700ba5b56b3b13, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.297909
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097283576715213148, guid: 658839708b43f0b4a9700ba5b56b3b13, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.93115
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097283576715213148, guid: 658839708b43f0b4a9700ba5b56b3b13, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097283576715213148, guid: 658839708b43f0b4a9700ba5b56b3b13, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097283576715213148, guid: 658839708b43f0b4a9700ba5b56b3b13, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097283576715213148, guid: 658839708b43f0b4a9700ba5b56b3b13, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097283576715213148, guid: 658839708b43f0b4a9700ba5b56b3b13, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097283576715213148, guid: 658839708b43f0b4a9700ba5b56b3b13, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097283576715213148, guid: 658839708b43f0b4a9700ba5b56b3b13, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8399030810014285065, guid: 658839708b43f0b4a9700ba5b56b3b13, type: 3}
+      propertyPath: m_Name
+      value: '[DEBUG ONLY] AudioManager'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 658839708b43f0b4a9700ba5b56b3b13, type: 3}
 --- !u!1001 &2076623456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3334,6 +3395,10 @@ PrefabInstance:
     - target: {fileID: 992662739765303486, guid: ef8ccc54360acbc4ca49c8a47ccc4c28, type: 3}
       propertyPath: m_Name
       value: PausaAnim
+      objectReference: {fileID: 0}
+    - target: {fileID: 992662739765303486, guid: ef8ccc54360acbc4ca49c8a47ccc4c28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1698381969120639883, guid: ef8ccc54360acbc4ca49c8a47ccc4c28, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -3538,3 +3603,4 @@ SceneRoots:
   - {fileID: 2080173528}
   - {fileID: 1315926017}
   - {fileID: 1151156024}
+  - {fileID: 2031454954}

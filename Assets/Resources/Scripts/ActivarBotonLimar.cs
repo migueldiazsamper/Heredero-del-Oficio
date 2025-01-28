@@ -11,7 +11,7 @@ public class ActivarBotonLimar : MonoBehaviour
 {
     // Referencia a la escena que se cargará al ejecutar el método `CambiarEscena`.
     [ SerializeField ]
-    private SceneAsset sceneToLoad;
+    private string sceneToLoad;
 
     // Contador que rastrea la cantidad de esmaltes sobrantes.
     private int contador;
@@ -72,18 +72,18 @@ public class ActivarBotonLimar : MonoBehaviour
     public void CambiarEscena ()
     {
         // Verifica si hay una escena asignada para cargar.
-        bool escenaAsignada = sceneToLoad != null;
+        bool escenaAsignada = sceneToLoad != "";
 
         if ( escenaAsignada )
         {
             // Obtiene la ruta del asset de la escena seleccionada.
-            string scenePath = AssetDatabase.GetAssetPath( sceneToLoad );
+            //string scenePath = AssetDatabase.GetAssetPath( sceneToLoad );
 
             // Extrae el nombre de la escena desde la ruta.
-            string sceneName = System.IO.Path.GetFileNameWithoutExtension( scenePath );
+            //string sceneName = System.IO.Path.GetFileNameWithoutExtension( scenePath );
 
             // Carga la escena especificada.
-            SceneManager.LoadScene( sceneName );
+            SceneManager.LoadScene( sceneToLoad );
         }
         else
         {

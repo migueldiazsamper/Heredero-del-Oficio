@@ -107,7 +107,7 @@ public class ConstantRotation : MonoBehaviour
     /// Método Update que se llama una vez por frame
     /// </summary>
     
-    void Update ()
+    void FixedUpdate ()
     {
         // Actualiza la rotación del GameObject
         UpdateGameObjectRotation();
