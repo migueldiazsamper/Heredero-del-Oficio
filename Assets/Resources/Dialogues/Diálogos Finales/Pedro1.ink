@@ -14,5 +14,6 @@ Nada de lo que preocuparse.
 Prepárate que vamos directamente a trabajar.
 Llevar las piezas no es tan distinto de blandir una espada, 
 es cuestión de mantenerse erguido y tener buen juego de pies.
-Si te desequilibras hacia un lado, haz un poco de fuerza hacia el lado contrario, 
+Si te desequilibras hacia un lado, 
+haz un poco de fuerza hacia el lado contrario, 
 pero no te caigas.
