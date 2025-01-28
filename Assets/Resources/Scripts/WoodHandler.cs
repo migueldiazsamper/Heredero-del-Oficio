@@ -9,6 +9,13 @@ public class WoodHandler : MonoBehaviour
     [SerializeField] GameObject[] woodPool;
     [SerializeField] List<GameObject> deckSlots;
     private int woodTypesNum = 3;
+    public Sprite smallWoodSprite;
+    public Sprite burntSmallWoodSprite;
+    public Sprite mediumWoodSprite;
+    public Sprite burntMediumWoodSprite;
+    public Sprite bigWoodSprite;
+    public Sprite burntBigWoodSprite;
+
     private void Start()
     {
         /*
@@ -73,15 +80,18 @@ public class WoodHandler : MonoBehaviour
         {
             case 0: //Madera pequeña
                 maderita.GetComponent<CombustibleHorno>().SetWoodLife(3f); //Nuevo valor de duración (el calor viene dado por la duración)
-                maderita.GetComponent<Image>().color = Color.blue; //Nuevo sprite dependiendo del tipo
+                maderita.GetComponent<CombustibleHorno>().woodType = 0;
+                maderita.GetComponent<Image>().sprite = smallWoodSprite;//Nuevo sprite dependiendo del tipo
                 break;
             case 1: //Madera mediana
                 maderita.GetComponent<CombustibleHorno>().SetWoodLife(5f); //Nuevo valor de duración (el calor viene dado por la duración)
-                maderita.GetComponent<Image>().color = Color.green; //Nuevo sprite dependiendo del tipo
+                maderita.GetComponent<CombustibleHorno>().woodType = 1;
+                maderita.GetComponent<Image>().sprite = mediumWoodSprite; //Nuevo sprite dependiendo del tipo
                 break;
             default: //Madera grande
                 maderita.GetComponent<CombustibleHorno>().SetWoodLife(7f); //Nuevo valor de duración (el calor viene dado por la duración)
-                maderita.GetComponent<Image>().color = Color.magenta; //Nuevo sprite dependiendo del tipo
+                maderita.GetComponent<CombustibleHorno>().woodType = 2;
+                maderita.GetComponent<Image>().sprite = bigWoodSprite; //Nuevo sprite dependiendo del tipo
                 break;
         }
     }

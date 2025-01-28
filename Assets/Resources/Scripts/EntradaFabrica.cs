@@ -63,7 +63,7 @@ public class EntradaFabrica : MonoBehaviour
             transform.position = new Vector3( 52.2f, 98.76f, 0.0f );
         }
 
-        if ( playerInRange && !transitionImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("TransitionImage_In"))
+        if ( playerInRange && !transitionImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("TransitionImage_In") && !transitionImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("TransitionImage_Out") )
         {
             if (  Input.GetKeyDown( KeyCode.E ) )
             {

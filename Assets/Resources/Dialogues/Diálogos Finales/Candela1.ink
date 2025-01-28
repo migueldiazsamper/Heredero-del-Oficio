@@ -1,5 +1,4 @@
-¡Por fin llegaste, 
-estaba esperando las piezas!
+¡Por fin llegaste, estaba esperando las piezas!
 ¿Por qué has tardado tanto?
 ¿Pedro te mandó a por el anterior maestro?
 ¿Quién es Pedro?
@@ -10,18 +9,15 @@ Bueno, da igual.
 ¡LA PRIMERA COCCIÓN!
 Anímate un poco, criatura, 
 no te agazapes así mientras hablo.
-La primera cocción es todo 
-cuestión de consistencia.
-Has de asegurarte que el horno 
-mantiene la temperatura adecuada todo el tiempo.
+La primera cocción es todo cuestión de consistencia.
+Has de asegurarte de que el horno 
+mantenga la temperatura adecuada todo el tiempo.
 Arrastra madera a sus posiciones en el horno 
 para quemarla y calentarlo.
-Cada madera añadirá distintas cantidades de calor 
-mientras se quema.
+Cada madera añadirá distintas cantidades de calor.
 Cuanto más grande, más durará y más calor dará.
 Cuando la madera quede bien chamuscada, 
 recuerda retirarla a la pila de las ascuas para hacer espacio.
 Una pieza excepcional deberá ser cocinada 
 a temperatura perfecta durante toda su duración.
-¡Y la madera la vas a llevar toda a mano, 
-que te veo con poco músculo!
+¡Y la madera la vas a llevar toda a mano, que te veo con poco músculo!

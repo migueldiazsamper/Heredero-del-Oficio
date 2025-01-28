@@ -57,12 +57,13 @@ public class TemperaturaHorno : MonoBehaviour
     public void CalculateTotalTemp()
     {
         float maderitaHeatValue;
-        foreach (GameObject itemSlot in itemSlotArray)
+        totalTemperature = 1400;
+        /* foreach (GameObject itemSlot in itemSlotArray)
         {   
             maderitaHeatValue = itemSlot.GetComponent<ItemSlot>().CurrentMaderitaHeatValue();
             if(maderitaHeatValue >= 0) totalTemperature += maderitaHeatValue*Time.deltaTime;
             else totalTemperature -= coolingValue*Time.deltaTime;
-        }
+        } */
     }
 
     void ChangeCeramicColor(){

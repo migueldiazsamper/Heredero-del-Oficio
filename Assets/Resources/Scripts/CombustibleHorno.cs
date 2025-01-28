@@ -20,6 +20,7 @@ public class CombustibleHorno : MonoBehaviour
 
     // Duración en segundos de la madera al quemarse.
     [ SerializeField ] private float woodLife = 5f;
+    public int woodType;
 
     // Vida restante de la madera mientras se quema.
     private float currentLife;
@@ -82,7 +83,20 @@ public class CombustibleHorno : MonoBehaviour
                 AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().burningWood, AudioManager.GetInstance().burningWoodVolume);
 
                 // Cambia el color para indicar que la madera está quemada.
-                imageComponent.color = Color.red;
+                switch (woodType)
+                {
+                    case 0:
+                        imageComponent.sprite = FindObjectOfType<WoodHandler>().burntSmallWoodSprite;
+                        break;
+                    case 1:
+                        imageComponent.sprite = FindObjectOfType<WoodHandler>().burntMediumWoodSprite;
+                        break;
+                    case 2:
+                        imageComponent.sprite = FindObjectOfType<WoodHandler>().burntBigWoodSprite;
+                        break;
+                    default:
+                        break;
+                }
 
                 // Permite nuevamente el arrastre.
                 ChangeDragPermission( true );

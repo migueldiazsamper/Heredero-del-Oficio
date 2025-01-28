@@ -1,4 +1,3 @@
-Te doy la bienvenida.
 Eres la nueva incorporación de la academia, 
 ¿no es así?
 Yo soy Lluisa, recuérdalo bien.
@@ -20,14 +19,11 @@ por esto siempre pido que otros
 lleven las piezas secas a los hornos.
 ¿Cómo? ¿Que crees que puedes arreglar el molde?
 Es cierto que los moldes se suelen dividir 
-en partes para desmontarlos más fácilmente, 
-así que si lo reconstruyeses, 
+en partes para desmontarlos más fácilmente, así que si lo reconstruyeses, 
 quizá todavía se pueda usar.
 Está bien, te daré un voto de confianza.
-Si de verdad eres capaz de arreglar el molde, 
-te permitiré utilizarlo para tu pieza.
-Arrastra las piezas hasta sus posiciones correctas 
-y tócalas para rotarlas.
+Si de verdad eres capaz de arreglar el molde, te permitiré utilizarlo para tu pieza.
+Arrastra las piezas hasta sus posiciones correctas y tócalas para rotarlas.
 Unas manos hábiles que sean capaces 
 de montar el molde rápidamente son fundamentales 
 para crear una buena pieza.

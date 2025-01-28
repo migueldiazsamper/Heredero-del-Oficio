@@ -527,8 +527,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278230271
-  m_fontColor: {r: 1, g: 0.6117805, b: 0, a: 1}
+    rgba: 40191
+  m_fontColor: {r: 1, g: 0.6117805, b: 0, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -632,6 +632,7 @@ RectTransform:
   - {fileID: 1826369945}
   - {fileID: 521656590}
   - {fileID: 998100123}
+  - {fileID: 1225060427}
   - {fileID: 30744461}
   - {fileID: 1798738802}
   - {fileID: 1803677357}
@@ -734,6 +735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1474459139}
   objetos: []
+  numberOfDots: 0
   settings: {fileID: 1474459138}
   pause: {fileID: 1474459137}
   musicSlider: {fileID: 1474459136}
@@ -1480,8 +1482,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2807,6 +2809,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4433690904414740851, guid: ef8ccc54360acbc4ca49c8a47ccc4c28, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2829,7 +2835,7 @@ GameObject:
   - component: {fileID: 998100126}
   - component: {fileID: 998100125}
   m_Layer: 0
-  m_Name: Thermometer
+  m_Name: ThermometerFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2851,8 +2857,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 227, y: 289}
-  m_SizeDelta: {x: 100, y: 400}
+  m_AnchoredPosition: {x: 225, y: 324.20996}
+  m_SizeDelta: {x: 70.596, y: 261.301}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &998100125
 MonoBehaviour:
@@ -2867,14 +2873,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.036188602, a: 1}
+  m_Color: {r: 0.6415094, g: 0.06354574, b: 0.06816967, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bcec83adaa3b48c4fb5c35d575809a6e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5146bd86ccc929449d4beb198816f42, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3462,6 +3468,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162220602}
+  m_CullTransparentMesh: 1
+--- !u!1 &1225060426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1225060427}
+  - component: {fileID: 1225060429}
+  - component: {fileID: 1225060428}
+  m_Layer: 0
+  m_Name: Thermometer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1225060427
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225060426}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 197365061}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 227, y: 289}
+  m_SizeDelta: {x: 100, y: 400}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1225060428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225060426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 2db4603f76b4a294aac778e734569040, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 1
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1225060429
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225060426}
   m_CullTransparentMesh: 1
 --- !u!1 &1252619832
 GameObject:
@@ -4283,7 +4364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1583824780243401111, guid: 8054e6904f55f5d4c83b1a0d5f92b367, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1869115661018070076, guid: 8054e6904f55f5d4c83b1a0d5f92b367, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5019,6 +5100,12 @@ MonoBehaviour:
   - {fileID: 1325500310}
   - {fileID: 1582802264}
   - {fileID: 2140765078}
+  smallWoodSprite: {fileID: 21300000, guid: 919791c85cbe3d14cb5eedbd44a62849, type: 3}
+  burntSmallWoodSprite: {fileID: 21300000, guid: 3223d24dcca76994f946bf066a9b49f3, type: 3}
+  mediumWoodSprite: {fileID: 21300000, guid: 2254bcde3bb08a84596b9531873e713c, type: 3}
+  burntMediumWoodSprite: {fileID: 21300000, guid: cb6a1f9ac0b942045b819625572a8f19, type: 3}
+  bigWoodSprite: {fileID: 21300000, guid: b59e871312b6da246963bb1664bad338, type: 3}
+  burntBigWoodSprite: {fileID: 21300000, guid: 6558d2cfe5b80b2458b97a686148c085, type: 3}
 --- !u!1 &1914194606
 GameObject:
   m_ObjectHideFlags: 0

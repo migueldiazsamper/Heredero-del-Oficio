@@ -59,7 +59,7 @@ public class EntradaMina : MonoBehaviour
             }
         }
 
-        if ( playerInRange && !transitionImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("TransitionImage_In"))
+        if ( playerInRange && !transitionImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("TransitionImage_In") && !transitionImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("TransitionImage_Out") )
         {
             if (  Input.GetKeyDown( KeyCode.E ) )
             {

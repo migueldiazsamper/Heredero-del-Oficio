@@ -130,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.17134793, y: 0.17629634}
   m_EdgeRadius: 0
 --- !u!120 &4253530231769676556
 LineRenderer:
@@ -184,7 +184,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.4915275
+        value: 0.096005574
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -248,4 +248,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IDself: 0
-  IDConection: 0
+  IDConections: 
+  isConnected: 0
+  numOfConnections: 0

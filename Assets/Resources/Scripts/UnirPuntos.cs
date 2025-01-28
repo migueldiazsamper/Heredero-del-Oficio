@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 using Vector2 = UnityEngine.Vector2;
+using System;
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(LineRenderer))]
@@ -10,10 +11,12 @@ public class UnirPuntos : MonoBehaviour
 {
     private LineRenderer lineRenderer;
     [SerializeField] private int IDself; //Quién eres
-    [SerializeField] private int IDConection; //Con quién quieres conectar
+    [SerializeField] private int[] IDConections; //Con quién quieres conectar
     private bool isDragging; //Booleano que indica que la acción de arrastre está comenzada
     private Vector3 endPoint; //Punto final de la línea, se usa para comprobar si la línea llega hasta otro punto o no
-    private bool isConnected = false;
+    public bool isConnected = false;
+    public int numOfConnections;
+    private int numLinesDrawn = 0;
     private void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -23,7 +26,7 @@ public class UnirPuntos : MonoBehaviour
     private void Update()
     {
         if(!isConnected){
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && numOfConnections < IDConections.Length)
             {
                 RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero); //Creamos un raycast hacia el punto sobre el que se ha hecho click
                 if (hit.collider != null && hit.collider.gameObject == gameObject) 
@@ -34,14 +37,14 @@ public class UnirPuntos : MonoBehaviour
                     isDragging = true;
                     Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     mousePosition.z = 0f;
-                    lineRenderer.SetPosition(0,new Vector3(mousePosition.x, mousePosition.y, -5)); //Creamos el primer punto de la línea donde está el ratón
+                    lineRenderer.SetPosition(numLinesDrawn,new Vector3(mousePosition.x, mousePosition.y, -5)); //Creamos el primer punto de la línea donde está el ratón
                 }
             }
             if (isDragging)
             {
                 Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);    //Actualizamos la posición del ratón
                 mousePosition.z = 0f;                                                           //para asegurarnos que está en el plano correcto
-                lineRenderer.SetPosition(1,new Vector3(mousePosition.x, mousePosition.y, -5)); //Actualizamos el segundo punto de la línea, la línea sigue al ratón en tiempo real
+                lineRenderer.SetPosition(numLinesDrawn+1,new Vector3(mousePosition.x, mousePosition.y, -5)); //Actualizamos el segundo punto de la línea, la línea sigue al ratón en tiempo real
                 endPoint = mousePosition;
             }
 
@@ -49,7 +52,7 @@ public class UnirPuntos : MonoBehaviour
             {
                 isDragging = false;
                 RaycastHit2D hit = Physics2D.Raycast(endPoint, Vector2.zero);
-                if (hit.collider != null && hit.collider.TryGetComponent(out UnirPuntos unirPuntos) && IDConection == unirPuntos.GetIDin())  //Chequeamos que el ID del punto que comienza
+                if (hit.collider != null && hit.collider.TryGetComponent(out UnirPuntos unirPuntos) && Array.Exists(IDConections, element => element == unirPuntos.GetIDin()) && !unirPuntos.IsConnectedOnAllPosibles())  //Chequeamos que el ID del punto que comienza
                                                                                                                             //la línea coincide con el que recibe
                 {
                     // Reproduce el sonido de unir un punto
@@ -57,6 +60,10 @@ public class UnirPuntos : MonoBehaviour
 
                     Debug.Log("UNIÓN");
                     isConnected = true;
+                    unirPuntos.isConnected = true;
+                    numOfConnections++;
+                    unirPuntos.numOfConnections++;
+                    numLinesDrawn++;
 
                     FindAnyObjectByType<DotsCheckCompletion>().CheckCompletion();
                 }
@@ -68,6 +75,10 @@ public class UnirPuntos : MonoBehaviour
                 lineRenderer.positionCount = 2; //Aseguramos que la línea sigue teniendo los parámetros correctos
             }
         }
+    }
+
+    public bool IsConnectedOnAllPosibles(){
+        return numOfConnections == IDConections.Length;
     }
 
     public int GetIDin()

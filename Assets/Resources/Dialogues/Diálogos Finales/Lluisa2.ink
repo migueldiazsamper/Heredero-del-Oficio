@@ -15,7 +15,6 @@ Observa.
 Con el molde lleno, 
 justo antes de que termine de secar,
 sacaremos la pieza para hacer arreglos, 
-como suavizar la costura que queda del molde 
-y darle la textura que queramos.
+como suavizar la costura que queda del molde y darle la textura que queramos.
 Dejemos secar la pieza por aquí. 
 Vuelve más tarde y estará lista para que te la lleves.

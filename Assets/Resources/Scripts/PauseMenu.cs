@@ -6,7 +6,7 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenuUI; // Referencia al menú de pausa
     [SerializeField] private GameObject[] objetos; // Referencia al objeto de los puntos
-
+    [SerializeField] private int numberOfDots;
     [SerializeField] private GameObject settings;
     [SerializeField] private GameObject pause;
     [SerializeField] private Slider musicSlider;
@@ -29,6 +29,15 @@ public class PauseMenu : MonoBehaviour
     {
         musicSlider.value = AudioManager.GetInstance().GetMusicVolume();
         soundSlider.value = AudioManager.GetInstance().GetSFXVolume();
+        objetos = new GameObject[numberOfDots];
+        if(SceneManager.GetActiveScene().name == "Puntos")
+        {
+            Debug.Log("Puntos");
+            for(int i = 0; i < numberOfDots; i++)
+            {
+                objetos[i] = GameObject.Find("ID " + i);
+            }
+        }
     }
     
     // Método para ir al menú principal
@@ -57,7 +66,9 @@ public class PauseMenu : MonoBehaviour
     {
         foreach (GameObject objeto in objetos)
         {
-            objeto.SetActive(false);
+            objeto.GetComponent<UnirPuntos>().enabled = false;
+            objeto.GetComponent<LineRenderer>().enabled = false;
+            //objeto.SetActive(false);
         }
     }
 
@@ -65,7 +76,9 @@ public class PauseMenu : MonoBehaviour
     {
         foreach (GameObject objeto in objetos)
         {
-            objeto.SetActive(true);
+            objeto.GetComponent<UnirPuntos>().enabled = true;
+            objeto.GetComponent<LineRenderer>().enabled = true;
+            //objeto.SetActive(true);
         }
     }
 

@@ -28,16 +28,13 @@ public class CursorManager : MonoBehaviour
 
     void Update ()
     {
-        if ( Input.GetMouseButtonDown( 0 ) )
+        if ( Input.GetMouseButtonDown( 0 )  )
         {
-            StartCoroutine( ChangeCursor() );
+            Cursor.SetCursor(cursorTexture2, hotSpot, cursorMode);
         }
-    }
-
-    IEnumerator ChangeCursor()
-    {
-        Cursor.SetCursor(cursorTexture2, hotSpot, cursorMode);
-        yield return new WaitForSeconds(0.25f);
-        Cursor.SetCursor(cursorTexture1, hotSpot, cursorMode);
+        else if ( Input.GetMouseButtonUp( 0 ) )
+        {
+            Cursor.SetCursor(cursorTexture1, hotSpot, cursorMode);
+        }
     }
 }
