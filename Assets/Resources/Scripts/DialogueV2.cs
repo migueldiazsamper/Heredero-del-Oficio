@@ -186,7 +186,7 @@ public class DialogueV2 : MonoBehaviour
                 currentDialogueIndex++;
 
                 // Comprobamos si estamos en el Story 4 y en el diálogo específico (por ejemplo, el índice 3)
-                if (PhasesManager.instance.currentPhase == 4 && currentDialogueIndex == 16)
+                if (PhasesManager.instance.currentPhase == 4 && currentDialogueIndex == 15)
                 {
                     // Reproducir sonido
                     AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().brokenPiece, AudioManager.GetInstance().brokenPieceVolume);    

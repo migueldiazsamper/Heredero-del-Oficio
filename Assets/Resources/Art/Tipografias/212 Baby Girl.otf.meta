@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5c909558b22b2b243b6c6f250bab9058
+guid: eeef7e7684fc2584d92984037285c7a2
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Nice Chalk Demo
+  - 212 Baby Girl
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
