@@ -216,7 +216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4473210956156451606, guid: 1729eeba5dbc2cc4d9e81c5fac62b019, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2837,8 +2837,8 @@ BoxCollider2D:
   m_Offset: {x: 2.5384798, y: 9.461384}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.509071, y: 0.05295552}
-    oldSize: {x: 30.007326, y: 20}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 20.550001, y: 18.974634}
     newSize: {x: 30.007326, y: 20}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2888,7 +2888,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 60003a17650d1a04d9c039b60952981d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8c18898e3b7ef1f45841a792dacb60d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
