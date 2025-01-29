@@ -5007,6 +5007,14 @@ PrefabInstance:
         -> A\nCORRER HACIA DERECHA -> D\nAVANZAR L\xCDNEA DI\xC1LOGO -> ESPACIO\nINTERACTUAR
         -> E"
       objectReference: {fileID: 0}
+    - target: {fileID: 6873744158241153370, guid: fb948b1778505634b91d201634f90251, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2ee7e82c0fff84e4bac1d0a333223dec, type: 2}
+    - target: {fileID: 6873744158241153370, guid: fb948b1778505634b91d201634f90251, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5694,7 +5702,7 @@ Transform:
   m_GameObject: {fileID: 2087144256}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5736246, y: 1.53441, z: -10}
+  m_LocalPosition: {x: 0.57723665, y: 1.53441, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

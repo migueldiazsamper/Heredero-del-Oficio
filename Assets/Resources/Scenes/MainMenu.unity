@@ -1649,6 +1649,10 @@ PrefabInstance:
       value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 9154197195187495272, guid: e2117ec882bd2664880b20016e5f4477, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2ee7e82c0fff84e4bac1d0a333223dec, type: 2}
+    - target: {fileID: 9154197195187495272, guid: e2117ec882bd2664880b20016e5f4477, type: 3}
       propertyPath: m_fontColor.b
       value: 0.4862745
       objectReference: {fileID: 0}
@@ -1671,6 +1675,10 @@ PrefabInstance:
     - target: {fileID: 9154197195187495272, guid: e2117ec882bd2664880b20016e5f4477, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154197195187495272, guid: e2117ec882bd2664880b20016e5f4477, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
