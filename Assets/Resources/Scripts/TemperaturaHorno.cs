@@ -71,20 +71,20 @@ public class TemperaturaHorno : MonoBehaviour
             ceramic2Image.color = new Color(0.4f, 0.4f, 0.4f);
         }
         else if(totalTemperature < 1000){
-            ceramic1Image.color = Color.cyan;
-            ceramic2Image.color = Color.cyan;
+            ceramic1Image.color = new Color(0.6f, 0.6f, 0.6f);
+            ceramic2Image.color = new Color(0.6f, 0.6f, 0.6f);
         }
         else if(totalTemperature < 1200){
-            ceramic1Image.color = Color.yellow;
-            ceramic2Image.color = Color.yellow;
+            ceramic1Image.color = new Color(0.8f, 0.8f, 0.8f);
+            ceramic2Image.color = new Color(0.8f, 0.8f, 0.8f);
         }
         else if (totalTemperature <= 1400){
             ceramic1Image.color = Color.white;
             ceramic2Image.color = Color.white;
         }
         else{
-            ceramic1Image.color = Color.red;
-            ceramic2Image.color = Color.red;
+            ceramic1Image.color = Color.black;
+            ceramic2Image.color = Color.black;
         }
     }
 
