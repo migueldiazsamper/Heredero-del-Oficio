@@ -10,7 +10,7 @@ public class PhasesManager : MonoBehaviour
     public int currentPhase = 0;
     public int maxPhases = 16;
     [SerializeField] private int puntuacionTotal = 0;
-    [SerializeField] private int puntuacionCondesa = 80;
+    [SerializeField] private int puntuacionCondesa = 100;
     public bool nextIsPueblo = false;
     public int vecesMina = 0;
     public bool tieneQueHablarConSabio = false;
@@ -52,7 +52,7 @@ public class PhasesManager : MonoBehaviour
         currentPhase = 0;
         maxPhases = 16;
         puntuacionTotal = 0;
-        puntuacionCondesa = 80;
+        puntuacionCondesa = 100;
         nextIsPueblo = false;
         vecesMina = 0;
         tieneQueHablarConSabio = false;
@@ -81,7 +81,7 @@ public class PhasesManager : MonoBehaviour
             currentPhase = 0;
             maxPhases = 16;
             puntuacionTotal = 0;
-            puntuacionCondesa = 80;
+            puntuacionCondesa = 100;
             nextIsPueblo = false;
             vecesMina = 0;
             tieneQueHablarConSabio = false;
