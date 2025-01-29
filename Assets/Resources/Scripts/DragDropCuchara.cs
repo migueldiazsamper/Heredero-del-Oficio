@@ -124,6 +124,7 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
                 reflejoCanvasGroup.alpha = 1f;
 
             }
+            else reflejoCanvasGroup.alpha = 0f;
         }
     }   
     public void OnDrag(PointerEventData pointerEventData)
@@ -212,6 +213,7 @@ public class DragDropCuchara : MonoBehaviour, IBeginDragHandler, IEndDragHandler
                 }
                 isCarryingPigment = false;
                 liquidoCanvasGroup.alpha = 0;
+                reflejoCanvasGroup.alpha = 0;
             }
             // Coloca el objeto en un ángulo de 90º
             else rectTransform.rotation = Quaternion.Euler( 0 , 0 , 45 );  

@@ -55,7 +55,7 @@ public class PigmentosManager : MonoBehaviour
             colorCounter++;
             mixedColorSpriteImage.sprite = liquidSprites[colorCounter-1];
             reflejoSpriteImage.sprite = reflejosSprites[colorCounter-1];
-            reflejoSpriteImage.color = new Color(reflejoSpriteImage.color.r, reflejoSpriteImage.color.g, reflejoSpriteImage.color.b, 1f);
+            reflejoSpriteImage.color = new Color(reflejoSpriteImage.color.r, reflejoSpriteImage.color.g, reflejoSpriteImage.color.b, 20f / 255f);
             AddColorToPalette(colorString);
             DisplayColor(colorString);
             Debug.Log(colorCounter);

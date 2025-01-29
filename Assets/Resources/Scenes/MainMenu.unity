@@ -1321,7 +1321,7 @@ MonoBehaviour:
   currentPhase: 0
   maxPhases: 16
   puntuacionTotal: 0
-  puntuacionCondesa: 80
+  puntuacionCondesa: 110
   nextIsPueblo: 0
   vecesMina: 0
   tieneQueHablarConSabio: 0
