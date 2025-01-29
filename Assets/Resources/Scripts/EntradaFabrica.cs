@@ -60,7 +60,7 @@ public class EntradaFabrica : MonoBehaviour
 
         if ( PhasesManager.instance.currentPhase == 16 )
         {
-            transform.position = new Vector3( 52.2f, 98.76f, 0.0f );
+            transform.position = new Vector3( 53.55f, 99.02f, 0.0f );
         }
 
         if ( playerInRange && !transitionImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("TransitionImage_In") && !transitionImageAnimator.GetCurrentAnimatorStateInfo(0).IsName("TransitionImage_Out") )

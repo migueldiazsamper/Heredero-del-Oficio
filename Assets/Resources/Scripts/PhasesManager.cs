@@ -86,7 +86,7 @@ public class PhasesManager : MonoBehaviour
             vecesMina = 0;
             tieneQueHablarConSabio = false;
             zonasDeAparicion = new Vector2[4];
-            zonasDeAparicion[0] = new Vector2(44.95f, 81.85f); // Casa
+            zonasDeAparicion[0] = new Vector2(43.71f, 81.97f); // Casa
             zonasDeAparicion[1] = new Vector2(-9.83f, 47.679f); // Mina
             zonasDeAparicion[2] = new Vector2(1.55f, 98.5f); // Fábrica
             zonasDeAparicion[3] = new Vector2(28.1f, 117.0f); // Hornos
