@@ -10,10 +10,13 @@ public class CheckCompletionMinigame2 : MonoBehaviour
     [SerializeField] private GameObject[] pieces;// Array de piezas del minijuego
     [SerializeField] private GameObject listoButton; // Botón de listo
     public int correctRotation = -1; // Rotación correcta
+    [ SerializeField ] Animator bienHechoAnimator;
+    [ SerializeField ] GameObject bienHecho;
 
     void Start()
     {
         listoButton.SetActive(false);
+        bienHecho.SetActive(false);
     }
 
     void Update()
@@ -23,6 +26,11 @@ public class CheckCompletionMinigame2 : MonoBehaviour
             listoButton.SetActive(true);
             FindAnyObjectByType<Timer>().Stop();
             DisableAllPieces();
+            if ( ! bienHecho.activeSelf )
+            {
+                bienHecho.SetActive(true);
+                bienHechoAnimator.SetTrigger("BienHecho");
+            }
         }
     }
 

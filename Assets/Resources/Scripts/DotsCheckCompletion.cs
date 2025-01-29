@@ -11,6 +11,9 @@ public class DotsCheckCompletion : MonoBehaviour
     [SerializeField] GameObject mancerinaFinal;
     bool isComplete = false;
 
+    [ SerializeField ] Animator bienHechoAnimator;
+    [ SerializeField ] GameObject bienHecho;
+
     void Awake(){
         botonListo.SetActive(false);
         dotsArray = new UnirPuntos[numberOfDots];
@@ -18,6 +21,7 @@ public class DotsCheckCompletion : MonoBehaviour
             dotsArray[i] = GameObject.Find("ID " + i).GetComponent<UnirPuntos>();
         }
         mancerinaFinal.SetActive(false);
+        bienHecho.SetActive(false);
     }
 
     public void CheckCompletion(){
@@ -41,5 +45,11 @@ public class DotsCheckCompletion : MonoBehaviour
         }
         AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().linkPoint, AudioManager.GetInstance().linkPointVolume);
         mancerinaFinal.SetActive(true);
+
+        if ( ! bienHecho.activeSelf )
+        {
+            bienHecho.SetActive(true);
+            bienHechoAnimator.SetTrigger("BienHecho");
+        }
     }
 }

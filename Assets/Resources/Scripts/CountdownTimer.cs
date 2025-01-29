@@ -38,6 +38,9 @@ public class CountDownTimer : MonoBehaviour
     // Instancia estática para implementar el patrón Singleton
     public static CountDownTimer instance;
 
+    [ SerializeField ] Animator bienHechoAnimator;
+    [ SerializeField ] GameObject bienHecho;
+
     // Método que devuelve si el tiempo se ha agotado
     public bool GetisDefeat()
     {
@@ -56,6 +59,7 @@ public class CountDownTimer : MonoBehaviour
     public void Awake()
     {
         instance = this;
+        bienHecho.SetActive(false);
     }
     
     // Método que establece si el tiempo se ha agotado
@@ -111,6 +115,11 @@ public class CountDownTimer : MonoBehaviour
 
                 victoryButton.gameObject.SetActive(true);
 
+                if ( ! bienHecho.activeSelf )
+                {
+                    bienHecho.SetActive(true);
+                    bienHechoAnimator.SetTrigger("BienHecho");
+                }
             }
         }
         else
