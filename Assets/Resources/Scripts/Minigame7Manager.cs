@@ -20,6 +20,9 @@ public class Minigame7Manager : MonoBehaviour
     int numberOfMoves = 0; 
     [ SerializeField ] TextMeshProUGUI movesText;
 
+    [ SerializeField ] Animator bienHechoAnimator;
+    [ SerializeField ] GameObject bienHecho;
+
     private bool notCompleted = true;
 
     void CreateGamePieces ( float gapThickness )
@@ -72,6 +75,11 @@ public class Minigame7Manager : MonoBehaviour
 
         // Establece la posición del fondo, colocando un valor negativo en el eje Z para que esté detrás de las piezas
         background.localPosition = new Vector3(0, 0, 1);
+    }
+
+    private void Awake ()
+    {
+        bienHecho.SetActive( false );
     }
 
 
@@ -154,7 +162,11 @@ public class Minigame7Manager : MonoBehaviour
                 AudioManager.GetInstance().PlaySFX(AudioManager.GetInstance().positiveFeedback, AudioManager.GetInstance().positiveFeedbackVolume);
             }
 
-            Debug.Log( "Game Completed!" );
+            if ( ! bienHecho.activeSelf )
+            {
+                bienHecho.SetActive(true);
+                bienHechoAnimator.SetTrigger("BienHecho");
+            }
         }
     }
 

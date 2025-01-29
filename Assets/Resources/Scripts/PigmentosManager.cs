@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using Image = UnityEngine.UI.Image; //Hay overlap entre el image de UnityUI y el VSCode. Esto lo arregla
 
@@ -46,8 +47,12 @@ public class PigmentosManager : MonoBehaviour
         235, 169, 48 —> 245, 208, 111
     */
 
+    [ SerializeField ] Animator bienHechoAnimator;
+    [ SerializeField ] GameObject bienHecho;
+
     void Awake(){
         for(int i = 0; i < 5; i++) colorPalette[i] = 0;
+        bienHecho.SetActive(false);
     }
 
     public void AddColorToMix(String colorString){
@@ -119,9 +124,25 @@ public class PigmentosManager : MonoBehaviour
         else if(mixedColorSpriteImage.color == colorDorado) PhasesManager.instance.coloresMancerina[PhasesManager.instance.savedColors] = colorDoradoFinal;
         else PhasesManager.instance.coloresMancerina[PhasesManager.instance.savedColors] = mixedColorSpriteImage.color;
 
-        PhasesManager.instance.savedColors++;
-        if(PhasesManager.instance.savedColors >= 3) ChangeScenes.LoadSceneButton("DialogoInterior"); 
-        else ChangeScenes.LoadSceneButton("Minijuego 6");
+        if(++PhasesManager.instance.savedColors >= 3)
+        {
+            StartCoroutine(BienHechoAndNext());
+        }
+        else 
+        {
+            ChangeScenes.LoadSceneButton("Minijuego 6");
+        }
+    }
+
+    private IEnumerator BienHechoAndNext()
+    {
+        if ( ! bienHecho.activeSelf )
+        {
+            bienHecho.SetActive(true);
+            bienHechoAnimator.SetTrigger("BienHecho");
+        }
+        yield return new WaitForSeconds(1.5f);
+        ChangeScenes.LoadSceneButton("DialogoInterior");
     }
     
 }
